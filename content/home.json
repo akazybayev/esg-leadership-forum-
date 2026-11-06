@@ -1,0 +1,332 @@
+{
+  "hero": {
+    "supporting": {
+      "ru": "Международная площадка для лидеров бизнеса, государства и молодёжи Центральной Азии.",
+      "en": "An international stage for business, government and youth leaders across Central Asia.",
+      "kk": "Орталық Азиядағы бизнес, мемлекет және жастар көшбасшыларына арналған халықаралық алаң."
+    },
+    "image": {
+      "src": "/images/hero-astana-placeholder.svg",
+      "alt": {
+        "ru": "TODO: фото Астаны / EXPO / Hilton Astana",
+        "en": "TODO: Astana / EXPO / Hilton Astana photo",
+        "kk": "TODO: Астана / EXPO / Hilton Astana фотосы"
+      }
+    }
+  },
+  "whyAttend": {
+    "eyebrow": {
+      "ru": "Зачем приезжать",
+      "en": "Why attend",
+      "kk": "Неге келу керек"
+    },
+    "title": {
+      "ru": "Одна сцена — разные роли в переходе",
+      "en": "One stage — different roles in the transition",
+      "kk": "Бір сахна — өтпелі кезеңдегі әртүрлі рөлдер"
+    },
+    "items": [
+      {
+        "id": "business",
+        "title": {
+          "ru": "Для бизнеса и банков",
+          "en": "For business and banks",
+          "kk": "Бизнес пен банктер үшін"
+        },
+        "text": {
+          "ru": "Капитал, стандарты и партнёрства: от отчётности к сделкам и измеримым результатам.",
+          "en": "Capital, standards and partnerships: from reporting to deals and measurable results.",
+          "kk": "Капитал, стандарттар және серіктестік: есептіліктен мәмілелер мен өлшенетін нәтижеге."
+        },
+        "href": "/register"
+      },
+      {
+        "id": "youth",
+        "title": {
+          "ru": "Для молодёжи и вузов",
+          "en": "For youth and universities",
+          "kk": "Жастар мен жоғары оқу орындары үшін"
+        },
+        "text": {
+          "ru": "100 молодёжных делегатов, Youth Impact Pitch и доступ к наставникам и грантам.",
+          "en": "100 youth delegates, Youth Impact Pitch, and access to mentors and grants.",
+          "kk": "100 жас делегат, Youth Impact Pitch және тәлімгерлер мен гранттарға қолжетімділік."
+        },
+        "href": "/youth"
+      },
+      {
+        "id": "ngo",
+        "title": {
+          "ru": "Для НПО и соццентров",
+          "en": "For NGOs and social centres",
+          "kk": "ҮЕҰ және әлеуметтік орталықтар үшін"
+        },
+        "text": {
+          "ru": "Партнёрства с компаниями, аллея НПО и совместные номинации ESG Award.",
+          "en": "Partnerships with companies, the NGO alley, and joint ESG Award nominations.",
+          "kk": "Компаниялармен серіктестік, ҮЕҰ аллеясы және ESG Award бірлескен номинациялары."
+        },
+        "href": "/partners"
+      }
+    ]
+  },
+  "lines": {
+    "eyebrow": {
+      "ru": "Пять линий",
+      "en": "Five tracks",
+      "kk": "Бес бағыт"
+    },
+    "title": {
+      "ru": "Lead · Finance · Planet · People · Region",
+      "en": "Lead · Finance · Planet · People · Region",
+      "kk": "Lead · Finance · Planet · People · Region"
+    },
+    "items": [
+      {
+        "id": "Lead",
+        "title": { "ru": "Lead", "en": "Lead", "kk": "Lead" },
+        "text": {
+          "ru": "Лидерство после эпохи обещаний: стратегия, совет директоров, ответственность.",
+          "en": "Leadership after the age of pledges: strategy, boards, accountability.",
+          "kk": "Уәделер дәуірінен кейінгі көшбасшылық: стратегия, кеңес, жауапкершілік."
+        }
+      },
+      {
+        "id": "Finance",
+        "title": { "ru": "Finance", "en": "Finance", "kk": "Finance" },
+        "text": {
+          "ru": "Кто платит за переход: зелёные, социальные и переходные инструменты.",
+          "en": "Who pays for transition: green, social and transition instruments.",
+          "kk": "Кім төлейді: жасыл, әлеуметтік және өтпелі құралдар."
+        }
+      },
+      {
+        "id": "Planet",
+        "title": { "ru": "Planet", "en": "Planet", "kk": "Planet" },
+        "text": {
+          "ru": "Климат, вода, циркулярная экономика и природа с измеримым эффектом.",
+          "en": "Climate, water, circular economy and nature with measurable impact.",
+          "kk": "Климат, су, циркулярлық экономика және өлшенетін табиғат әсері."
+        }
+      },
+      {
+        "id": "People",
+        "title": { "ru": "People", "en": "People", "kk": "People" },
+        "text": {
+          "ru": "Человеческий капитал, инклюзия и социальные партнёрства.",
+          "en": "Human capital, inclusion and social partnerships.",
+          "kk": "Адами капитал, инклюзия және әлеуметтік серіктестік."
+        }
+      },
+      {
+        "id": "Region",
+        "title": { "ru": "Region", "en": "Region", "kk": "Region" },
+        "text": {
+          "ru": "Общая ESG-повестка Центральной Азии и соседних рынков.",
+          "en": "A shared ESG agenda for Central Asia and neighbouring markets.",
+          "kk": "Орталық Азия мен көрші нарықтардың ортақ ESG күн тәртібі."
+        }
+      }
+    ]
+  },
+  "agenda": {
+    "eyebrow": {
+      "ru": "Международная повестка",
+      "en": "International agenda",
+      "kk": "Халықаралық күн тәртібі"
+    },
+    "title": {
+      "ru": "Темы, которые связывают регион с глобальными правилами",
+      "en": "Themes that connect the region to global rules",
+      "kk": "Аймақты жаһандық қағидалармен байланыстыратын тақырыптар"
+    },
+    "items": [
+      {
+        "id": "standards",
+        "title": {
+          "ru": "Стандарты ISSB / GRI / ESRS",
+          "en": "ISSB / GRI / ESRS standards",
+          "kk": "ISSB / GRI / ESRS стандарттары"
+        },
+        "query": "line=Finance"
+      },
+      {
+        "id": "corsia",
+        "title": {
+          "ru": "CORSIA и углеродные рынки",
+          "en": "CORSIA and carbon markets",
+          "kk": "CORSIA және көміртегі нарықтары"
+        },
+        "query": "line=Planet"
+      },
+      {
+        "id": "ratings",
+        "title": {
+          "ru": "ESG-рейтинги",
+          "en": "ESG ratings",
+          "kk": "ESG рейтингтері"
+        },
+        "query": "line=Finance"
+      },
+      {
+        "id": "circular",
+        "title": {
+          "ru": "Циркулярная экономика",
+          "en": "Circular economy",
+          "kk": "Циркулярлық экономика"
+        },
+        "query": "line=Planet"
+      },
+      {
+        "id": "ca-partnership",
+        "title": {
+          "ru": "Партнёрство Центральной Азии",
+          "en": "Central Asia partnership",
+          "kk": "Орталық Азия серіктестігі"
+        },
+        "query": "line=Region"
+      },
+      {
+        "id": "ai-esg",
+        "title": {
+          "ru": "Цифровизация и ИИ в ESG",
+          "en": "Digitalisation and AI in ESG",
+          "kk": "ESG-тегі цифрландыру және ЖИ"
+        },
+        "query": "line=Lead"
+      }
+    ]
+  },
+  "programPreview": {
+    "eyebrow": {
+      "ru": "Программа",
+      "en": "Programme",
+      "kk": "Бағдарлама"
+    },
+    "title": {
+      "ru": "Два дня — главные сессии",
+      "en": "Two days — headline sessions",
+      "kk": "Екі күн — негізгі сессиялар"
+    }
+  },
+  "tickets": {
+    "eyebrow": {
+      "ru": "Участие",
+      "en": "Participation",
+      "kk": "Қатысу"
+    },
+    "title": {
+      "ru": "Гость или делегат",
+      "en": "Guest or delegate",
+      "kk": "Қонақ немесе делегат"
+    },
+    "guest": {
+      "title": { "ru": "Гость", "en": "Guest", "kk": "Қонақ" },
+      "priceLabel": {
+        "ru": "Бесплатно",
+        "en": "Free",
+        "kk": "Тегін"
+      },
+      "perks": {
+        "ru": "Main Stage, ESG Expo и Impact Stage",
+        "en": "Main Stage, ESG Expo and Impact Stage",
+        "kk": "Main Stage, ESG Expo және Impact Stage"
+      }
+    },
+    "delegate": {
+      "title": { "ru": "Делегат", "en": "Delegate", "kk": "Делегат" },
+      "perks": {
+        "ru": "Hall B, мастер-классы, B2B Lounge, гала ESG Award и материалы форума",
+        "en": "Hall B, masterclasses, B2B Lounge, ESG Award gala and forum materials",
+        "kk": "Hall B, мастер-класстер, B2B Lounge, ESG Award галасы және форум материалдары"
+      }
+    }
+  },
+  "awardTeaser": {
+    "eyebrow": {
+      "ru": "ESG Award",
+      "en": "ESG Award",
+      "kk": "ESG Award"
+    },
+    "title": {
+      "ru": "Барс — хранитель будущего",
+      "en": "Bars — Guardian of the Future",
+      "kk": "Барыс — болашақтың қорғаушысы"
+    },
+    "text": {
+      "ru": "14 номинаций и гран-при за подтверждённый результат, а не за заявления.",
+      "en": "14 categories and a Grand Prix for verified results — not pledges.",
+      "kk": "14 номинация және гран-при — уәде емес, расталған нәтиже үшін."
+    }
+  },
+  "youthTeaser": {
+    "eyebrow": {
+      "ru": "Молодёжь",
+      "en": "Youth",
+      "kk": "Жастар"
+    },
+    "title": {
+      "ru": "Делегаты и Youth Impact Pitch",
+      "en": "Delegates and Youth Impact Pitch",
+      "kk": "Делегаттар және Youth Impact Pitch"
+    },
+    "text": {
+      "ru": "100 молодёжных делегатов и 8 команд-финалистов на главной сцене 14 октября.",
+      "en": "100 youth delegates and 8 finalist teams on the main stage on 14 October.",
+      "kk": "100 жас делегат және 14 қазанда бас сахнадағы 8 финалист команда."
+    }
+  },
+  "venue": {
+    "eyebrow": {
+      "ru": "Площадка",
+      "en": "Venue",
+      "kk": "Алаң"
+    },
+    "title": {
+      "ru": "Hilton Astana, комплекс EXPO",
+      "en": "Hilton Astana, EXPO complex",
+      "kk": "Hilton Astana, EXPO кешені"
+    },
+    "text": {
+      "ru": "Main Stage, Hall B, Impact Stage, мастер-классы, закрытый зал и B2B Lounge.",
+      "en": "Main Stage, Hall B, Impact Stage, masterclasses, closed hall and B2B Lounge.",
+      "kk": "Main Stage, Hall B, Impact Stage, мастер-класстер, жабық зал және B2B Lounge."
+    },
+    "image": {
+      "src": "/images/venue-hilton-placeholder.svg",
+      "alt": {
+        "ru": "TODO: фото Hilton Astana",
+        "en": "TODO: Hilton Astana photo",
+        "kk": "TODO: Hilton Astana фотосы"
+      }
+    },
+    "mapUrl": "https://maps.google.com/?q=Hilton+Astana"
+  },
+  "newsletter": {
+    "eyebrow": {
+      "ru": "Новости",
+      "en": "News",
+      "kk": "Жаңалықтар"
+    },
+    "title": {
+      "ru": "Подпишитесь на обновления форума",
+      "en": "Subscribe to forum updates",
+      "kk": "Форум жаңалықтарына жазылыңыз"
+    },
+    "placeholder": {
+      "ru": "email@company.kz",
+      "en": "email@company.kz",
+      "kk": "email@company.kz"
+    },
+    "button": {
+      "ru": "Подписаться",
+      "en": "Subscribe",
+      "kk": "Жазылу"
+    },
+    "success": {
+      "ru": "Заявка принята. Это демо-подтверждение до подключения CRM.",
+      "en": "Request received. Demo confirmation until CRM is connected.",
+      "kk": "Өтінім қабылданды. CRM қосылғанға дейінгі демо-растау."
+    }
+  }
+}

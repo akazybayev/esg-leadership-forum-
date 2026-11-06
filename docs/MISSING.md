@@ -7,7 +7,7 @@ Items marked TODO until the client provides final assets or copy.
 - [ ] `docs/CONCEPT.md` — concept, five theme lines, international agenda, sponsor packages
 - [ ] Kazakh slogan native-speaker review (`Ұрпақтар үшін көшбасшылық` is provisional)
 - [ ] All `kk` UI strings — marked in footer as requiring native review
-- [ ] Hero photo/video of Astana / Hilton Astana / EXPO
+- [ ] Hero photo/video of Astana / Hilton Astana / EXPO (placeholders: `public/images/hero-astana-placeholder.svg`, `venue-hilton-placeholder.svg`)
 - [ ] Venue map assets and hotel partner list
 - [ ] Confirmed speakers (currently empty; announce date 2027-06-01)
 - [ ] Confirmed sponsor logos (levels exist, logos empty; announce date 2027-05-01)

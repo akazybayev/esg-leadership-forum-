@@ -24,7 +24,11 @@
     "becomePartner": "Серіктес болу",
     "applyAward": "Өтінім беру",
     "viewProgram": "Бағдарламаны қарау",
-    "allSpeakers": "Барлық спикерлер"
+    "allSpeakers": "Барлық спикерлер",
+    "applyYouth": "Делегат өтінімі",
+    "applyPitch": "Youth Impact Pitch",
+    "venueDetails": "Қатысушыға",
+    "openMap": "Картаны ашу"
   },
   "footer": {
     "organizer": "Ұйымдастырушы",
@@ -43,7 +47,28 @@
   },
   "status": {
     "comingSoon": "Құрамды {date} жариялаймыз",
-    "timezone": "Астана уақыты (UTC+5)"
+    "timezone": "Астана уақыты (UTC+5)",
+    "earlyBirdLeft": "Ерте баға тағы {days} күн жарамды",
+    "earlyBirdEnded": "Делегаттың стандартты бағасы қолданылады"
+  },
+  "countdown": {
+    "days": "күн",
+    "hours": "сағ",
+    "minutes": "мин",
+    "seconds": "сек"
+  },
+  "home": {
+    "day1": "1-күн · 13 қазан",
+    "day2": "2-күн · 14 қазан",
+    "speakersEyebrow": "Спикерлер",
+    "speakersTitle": "Форумның негізгі дауыстары",
+    "partnersEyebrow": "Серіктестер",
+    "partnersTitle": "Деңгей бойынша логотиптер",
+    "statsDays": "форум күні",
+    "statsParticipants": "қатысушы",
+    "statsCountries": "ел",
+    "statsYouth": "жас делегат",
+    "statsNominations": "ESG Award номинациясы"
   },
   "stage": {
     "stub": "Бет әзірленуде — {stage}-кезең."

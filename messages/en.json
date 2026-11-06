@@ -24,7 +24,11 @@
     "becomePartner": "Become a partner",
     "applyAward": "Apply",
     "viewProgram": "View programme",
-    "allSpeakers": "All speakers"
+    "allSpeakers": "All speakers",
+    "applyYouth": "Youth delegate application",
+    "applyPitch": "Youth Impact Pitch",
+    "venueDetails": "For attendees",
+    "openMap": "Open map"
   },
   "footer": {
     "organizer": "Organizer",
@@ -43,7 +47,28 @@
   },
   "status": {
     "comingSoon": "Line-up to be announced {date}",
-    "timezone": "Astana time (UTC+5)"
+    "timezone": "Astana time (UTC+5)",
+    "earlyBirdLeft": "Early-bird price lasts {days} more days",
+    "earlyBirdEnded": "Standard delegate price applies"
+  },
+  "countdown": {
+    "days": "days",
+    "hours": "hours",
+    "minutes": "min",
+    "seconds": "sec"
+  },
+  "home": {
+    "day1": "Day 1 · 13 October",
+    "day2": "Day 2 · 14 October",
+    "speakersEyebrow": "Speakers",
+    "speakersTitle": "Key voices of the forum",
+    "partnersEyebrow": "Partners",
+    "partnersTitle": "Logos by tier",
+    "statsDays": "forum days",
+    "statsParticipants": "participants",
+    "statsCountries": "countries",
+    "statsYouth": "youth delegates",
+    "statsNominations": "ESG Award categories"
   },
   "stage": {
     "stub": "Page under construction — stage {stage}."

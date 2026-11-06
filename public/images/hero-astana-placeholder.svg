@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Astana placeholder">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9EB6C4"/>
+      <stop offset="55%" stop-color="#D9E1E6"/>
+      <stop offset="100%" stop-color="#F4F1EC"/>
+    </linearGradient>
+    <linearGradient id="horizon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0B1F2A" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#0B1F2A" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0B1F2A" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <rect y="620" width="1600" height="380" fill="#E7E2D8"/>
+  <path d="M0 640 C280 600 420 700 640 660 C860 620 980 580 1200 620 C1380 650 1500 610 1600 630 L1600 1000 L0 1000 Z" fill="#D7D0C4"/>
+  <g fill="#0B1F2A" opacity="0.88">
+    <rect x="180" y="390" width="90" height="250"/>
+    <rect x="290" y="330" width="120" height="310"/>
+    <rect x="430" y="370" width="70" height="270"/>
+    <rect x="980" y="300" width="140" height="340"/>
+    <rect x="1140" y="360" width="80" height="280"/>
+    <rect x="1240" y="250" width="110" height="390"/>
+  </g>
+  <circle cx="800" cy="420" r="70" fill="#C45C26" opacity="0.85"/>
+  <rect y="618" width="1600" height="4" fill="url(#horizon)"/>
+  <text x="80" y="120" fill="#0B1F2A" font-family="Arial, sans-serif" font-size="42" font-weight="700">ASTANA · EXPO</text>
+  <text x="80" y="170" fill="#3A4650" font-family="Arial, sans-serif" font-size="24">TODO: replace with client photography</text>
+</svg>

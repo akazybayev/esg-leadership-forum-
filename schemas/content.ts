@@ -165,3 +165,93 @@ export const navigationSchema = z.object({
     }),
   ),
 });
+
+export const homeContentSchema = z.object({
+  hero: z.object({
+    supporting: localizedStringSchema,
+    image: z.object({
+      src: z.string(),
+      alt: localizedStringSchema,
+    }),
+  }),
+  whyAttend: z.object({
+    eyebrow: localizedStringSchema,
+    title: localizedStringSchema,
+    items: z.array(
+      z.object({
+        id: z.string(),
+        title: localizedStringSchema,
+        text: localizedStringSchema,
+        href: z.string(),
+      }),
+    ),
+  }),
+  lines: z.object({
+    eyebrow: localizedStringSchema,
+    title: localizedStringSchema,
+    items: z.array(
+      z.object({
+        id: themeLineSchema,
+        title: localizedStringSchema,
+        text: localizedStringSchema,
+      }),
+    ),
+  }),
+  agenda: z.object({
+    eyebrow: localizedStringSchema,
+    title: localizedStringSchema,
+    items: z.array(
+      z.object({
+        id: z.string(),
+        title: localizedStringSchema,
+        query: z.string(),
+      }),
+    ),
+  }),
+  programPreview: z.object({
+    eyebrow: localizedStringSchema,
+    title: localizedStringSchema,
+  }),
+  tickets: z.object({
+    eyebrow: localizedStringSchema,
+    title: localizedStringSchema,
+    guest: z.object({
+      title: localizedStringSchema,
+      priceLabel: localizedStringSchema,
+      perks: localizedStringSchema,
+    }),
+    delegate: z.object({
+      title: localizedStringSchema,
+      perks: localizedStringSchema,
+    }),
+  }),
+  awardTeaser: z.object({
+    eyebrow: localizedStringSchema,
+    title: localizedStringSchema,
+    text: localizedStringSchema,
+  }),
+  youthTeaser: z.object({
+    eyebrow: localizedStringSchema,
+    title: localizedStringSchema,
+    text: localizedStringSchema,
+  }),
+  venue: z.object({
+    eyebrow: localizedStringSchema,
+    title: localizedStringSchema,
+    text: localizedStringSchema,
+    image: z.object({
+      src: z.string(),
+      alt: localizedStringSchema,
+    }),
+    mapUrl: z.string().url(),
+  }),
+  newsletter: z.object({
+    eyebrow: localizedStringSchema,
+    title: localizedStringSchema,
+    placeholder: localizedStringSchema,
+    button: localizedStringSchema,
+    success: localizedStringSchema,
+  }),
+});
+
+export type HomeContent = z.infer<typeof homeContentSchema>;

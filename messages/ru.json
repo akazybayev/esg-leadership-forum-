@@ -24,7 +24,11 @@
     "becomePartner": "Стать партнёром",
     "applyAward": "Подать заявку",
     "viewProgram": "Смотреть программу",
-    "allSpeakers": "Все спикеры"
+    "allSpeakers": "Все спикеры",
+    "applyYouth": "Заявка делегата",
+    "applyPitch": "Youth Impact Pitch",
+    "venueDetails": "Для участника",
+    "openMap": "Открыть карту"
   },
   "footer": {
     "organizer": "Организатор",
@@ -43,7 +47,28 @@
   },
   "status": {
     "comingSoon": "Состав объявим {date}",
-    "timezone": "Время Астаны (UTC+5)"
+    "timezone": "Время Астаны (UTC+5)",
+    "earlyBirdLeft": "Ранняя цена действует ещё {days} дн.",
+    "earlyBirdEnded": "Действует стандартная цена делегата"
+  },
+  "countdown": {
+    "days": "дни",
+    "hours": "часы",
+    "minutes": "мин",
+    "seconds": "сек"
+  },
+  "home": {
+    "day1": "День 1 · 13 октября",
+    "day2": "День 2 · 14 октября",
+    "speakersEyebrow": "Спикеры",
+    "speakersTitle": "Ключевые голоса форума",
+    "partnersEyebrow": "Партнёры",
+    "partnersTitle": "Логотипы по уровням",
+    "statsDays": "дня форума",
+    "statsParticipants": "участников",
+    "statsCountries": "стран",
+    "statsYouth": "молодёжных делегатов",
+    "statsNominations": "номинаций ESG Award"
   },
   "stage": {
     "stub": "Страница в разработке — этап {stage}."
