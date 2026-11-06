@@ -170,7 +170,12 @@
     "fieldOrg": "Organisation",
     "fieldZone": "Preferred zone",
     "fieldContact": "Contact person",
-    "fieldDescription": "What you will showcase"
+    "fieldDescription": "What you will showcase",
+    "plan": "Venue and exhibition plan",
+    "planNote": "Concept diagram: zones 1–10 kept; exact placement of 20 stands is agreed with Hilton Astana.",
+    "legend": "Zone legend",
+    "fieldCompany": "Organisation",
+    "fieldMessage": "What you will show"
   },
   "registerPage": {
     "title": "Registration and pricing",
@@ -233,7 +238,8 @@
     "title": "Venue, travel, hotels and visa",
     "openMap": "Open map",
     "hotelsSoon": "Partner hotel list will appear after contracts",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "halls": "Halls"
   },
   "mediaPage": {
     "eyebrow": "Media",

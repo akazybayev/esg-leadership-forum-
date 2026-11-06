@@ -4,11 +4,13 @@ Items marked TODO until the client provides final assets or copy.
 
 ## Critical
 
-- [ ] `docs/CONCEPT.md` — concept, five theme lines, international agenda, sponsor packages
+- [x] `docs/CONCEPT.md` — from client PDF `ESG_Leadership_Forum_2027_CONCEPT.pdf`
 - [ ] Kazakh slogan native-speaker review (`Ұрпақтар үшін көшбасшылық` is provisional)
 - [ ] All `kk` UI strings — marked in footer as requiring native review
-- [ ] Hero photo/video of Astana / Hilton Astana / EXPO (placeholders: `public/images/hero-astana-placeholder.svg`, `venue-hilton-placeholder.svg`)
-- [ ] Venue map assets and hotel partner list
+- [x] Hilton Astana hall photos + floor plan (`public/images/venue/`)
+- [ ] Hero photo/video of Astana / EXPO exterior (optional)
+- [x] Venue floor plan + zone legend from concept
+- [ ] Hotel partner list
 - [ ] Confirmed speakers (currently empty; announce date 2027-06-01)
 - [ ] Confirmed sponsor logos (levels exist, logos empty; announce date 2027-05-01)
 - [ ] Jury list for ESG Award

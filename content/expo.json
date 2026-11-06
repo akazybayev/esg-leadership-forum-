@@ -1,99 +1,194 @@
 {
   "intro": {
-    "ru": "ESG Expo — выставка решений и партнёрств в зоне Impact Stage: компании, НПО, университеты и стартапы.",
-    "en": "ESG Expo is the solutions and partnerships exhibition around Impact Stage: companies, NGOs, universities and startups.",
-    "kk": "ESG Expo — Impact Stage аймағындағы шешімдер мен серіктестік көрмесі: компаниялар, ҮЕҰ, университеттер және стартаптар."
+    "ru": "ESG Expo — 20 экспонентов в фойе Hilton Astana: технологии, партнёрства и многоразовые стенды единого стиля форума.",
+    "en": "ESG Expo — 20 exhibitors in the Hilton Astana foyer: technologies, partnerships and reusable stands in the forum’s shared style.",
+    "kk": "ESG Expo — Hilton Astana фойесіндегі 20 экспонент: технологиялар, серіктестіктер және форумның бірыңғай стиліндегі қайта қолданылатын стендтер."
   },
   "zones": [
     {
-      "id": "impact",
+      "id": "tech",
       "title": {
-        "ru": "Impact Stage",
-        "en": "Impact Stage",
-        "kk": "Impact Stage"
+        "ru": "Технологии и решения",
+        "en": "Technologies and solutions",
+        "kk": "Технологиялар мен шешімдер"
       },
       "text": {
-        "ru": "Сцена в зоне выставки для коротких выступлений и питчей.",
-        "en": "Stage inside the expo for short talks and pitches.",
-        "kk": "Қысқа сөздер мен питчтерге арналған көрме сахнасы."
+        "ru": "Чистая энергия и климат; вода, ресурсы и циркулярная экономика; ESG-данные, цифровизация и ИИ.",
+        "en": "Clean energy and climate; water, resources and circular economy; ESG data, digitalisation and AI.",
+        "kk": "Таза энергия мен климат; су, ресурстар және айналмалы экономика; ESG-деректер, цифрландыру және ЖИ."
       }
     },
     {
-      "id": "corporate",
+      "id": "partners",
       "title": {
-        "ru": "Корпоративная аллея",
-        "en": "Corporate alley",
-        "kk": "Корпоративтік аллея"
+        "ru": "Партнёрства",
+        "en": "Partnerships",
+        "kk": "Серіктестіктер"
       },
       "text": {
-        "ru": "Стенды компаний и банков с кейсами перехода.",
-        "en": "Company and bank stands with transition case studies.",
-        "kk": "Өтпелі кейстері бар компаниялар мен банк стендтері."
+        "ru": "Проекты бизнеса, университетов и НПО; молодёжные инициативы; деловые встречи в фойе.",
+        "en": "Business, university and NGO projects; youth initiatives; business meetings in the foyer.",
+        "kk": "Бизнес, университет және ҮЕҰ жобалары; жастар бастамалары; фойедегі іскерлік кездесулер."
       }
     },
     {
-      "id": "ngo",
+      "id": "stands",
       "title": {
-        "ru": "Аллея НПО и соццентров",
-        "en": "NGO and social centres alley",
-        "kk": "ҮЕҰ және әлеуметтік орталықтар аллеясы"
+        "ru": "Многоразовые стенды",
+        "en": "Reusable stands",
+        "kk": "Қайта қолданылатын стендтер"
       },
       "text": {
-        "ru": "Некоммерческие организации и социальные центры — без платы за стенд для подтверждённых участников [TODO].",
-        "en": "Non-profits and social centres — booth fee waived for confirmed participants [TODO].",
-        "kk": "ҮЕҰ және әлеуметтік орталықтар — расталған қатысушыларға стенд тегін [TODO]."
+        "ru": "Модульные конструкции, повторное использование после форума, единый стиль ESG Leadership Forum.",
+        "en": "Modular builds, reuse after the forum, unified ESG Leadership Forum style.",
+        "kk": "Модульдік конструкциялар, форумнан кейін қайта пайдалану, ESG Leadership Forum бірыңғай стилі."
       }
     },
     {
       "id": "youth",
       "title": {
-        "ru": "Молодёжный кластер",
-        "en": "Youth cluster",
-        "kk": "Жастар кластері"
+        "ru": "Молодёжные и социальные проекты (зона 4)",
+        "en": "Youth and social projects (zone 4)",
+        "kk": "Жастар және әлеуметтік жобалар (4-аймақ)"
       },
       "text": {
-        "ru": "Университеты, Youth Impact Pitch и образовательные проекты.",
-        "en": "Universities, Youth Impact Pitch and education projects.",
-        "kk": "Университеттер, Youth Impact Pitch және білім жобалары."
+        "ru": "Отдельная зона на плане площадки рядом с кофе-брейком.",
+        "en": "Dedicated zone on the floor plan next to the coffee break.",
+        "kk": "Кофе-брейк жанындағы жоспардағы жеке аймақ."
       }
     },
     {
-      "id": "b2b",
+      "id": "key",
       "title": {
-        "ru": "B2B Lounge",
-        "en": "B2B Lounge",
-        "kk": "B2B Lounge"
+        "ru": "Стенды ключевых партнёров (зона 5)",
+        "en": "Key partner stands (zone 5)",
+        "kk": "Негізгі серіктестер стендтері (5-аймақ)"
       },
       "text": {
-        "ru": "Встречи 1:1 для делегатов рядом с выставкой.",
-        "en": "1:1 meetings for delegates next to the expo.",
-        "kk": "Көрме жанында делегаттарға 1:1 кездесулер."
+        "ru": "Видимость партнёров в центральном фойе.",
+        "en": "Partner visibility in the central foyer.",
+        "kk": "Орталық фойедегі серіктес көрінісі."
       }
     }
   ],
   "conditions": [
     {
-      "ru": "До 20 экспонентов; пакеты стендов публикуются с партнёрскими условиями [TODO PDF].",
-      "en": "Up to 20 exhibitors; booth packages published with partner terms [TODO PDF].",
-      "kk": "20 экспонентке дейін; стенд пакеттері серіктестік шарттарымен жарияланады [TODO PDF]."
+      "ru": "До 20 экспонентов в существующих зонах Expo без изменения залов.",
+      "en": "Up to 20 exhibitors in existing Expo zones without changing the halls.",
+      "kk": "Залдарды өзгертпей Expo аймақтарында 20 экспонентке дейін."
     },
     {
-      "ru": "Доступ гостей на выставку и Impact Stage бесплатный.",
-      "en": "Guest access to the expo and Impact Stage is free.",
-      "kk": "Қонақтарға көрме мен Impact Stage тегін."
+      "ru": "Зоны регистрации, фотозоны и кофе-брейка сохраняются. Точная схема стендов согласуется с Hilton Astana.",
+      "en": "Registration, photo zone and coffee break remain. Exact booth layout is agreed with Hilton Astana.",
+      "kk": "Тіркеу, фотоаймақ және кофе-брейк сақталады. Стенд схемасы Hilton Astana-мен келісіледі."
     },
     {
-      "ru": "НПО и социальные центры аллеи получают квоты по промокоду делегата.",
-      "en": "NGO/social-centre alley participants receive delegate promo quotas.",
-      "kk": "ҮЕҰ/әлеуметтік орталық аллеясы делегат промокоды бойынша квота алады."
+      "ru": "Доступ гостей на выставку в фойе бесплатный.",
+      "en": "Guest access to the foyer exhibition is free.",
+      "kk": "Қонақтарға фойе көрмесіне кіру тегін."
+    },
+    {
+      "ru": "НПО и социальные проекты получают квоты по промокоду делегата.",
+      "en": "NGOs and social projects receive delegate promo quotas.",
+      "kk": "ҮЕҰ және әлеуметтік жобалар делегат промокоды бойынша квота алады."
     }
   ],
   "planImage": {
-    "src": "/images/expo-plan-placeholder.svg",
+    "src": "/images/venue/floor-plan.png",
     "alt": {
-      "ru": "TODO: план зон ESG Expo",
-      "en": "TODO: ESG Expo zone plan",
-      "kk": "TODO: ESG Expo аймақ жоспары"
+      "ru": "Схема ESG Expo и залов Hilton Astana",
+      "en": "ESG Expo and Hilton Astana halls diagram",
+      "kk": "ESG Expo және Hilton Astana залдарының схемасы"
     }
-  }
+  },
+  "labeledPlanImage": {
+    "src": "/images/venue/floor-plan-labeled.png",
+    "alt": {
+      "ru": "План площадки с зонами выставки 1–10",
+      "en": "Floor plan with exhibition zones 1–10",
+      "kk": "Көрме аймақтары 1–10 бар жоспар"
+    }
+  },
+  "legend": [
+    {
+      "n": 1,
+      "title": {
+        "ru": "Регистрация",
+        "en": "Registration",
+        "kk": "Тіркеу"
+      }
+    },
+    {
+      "n": 2,
+      "title": {
+        "ru": "Кофе-брейк",
+        "en": "Coffee break",
+        "kk": "Кофе-брейк"
+      }
+    },
+    {
+      "n": 3,
+      "title": {
+        "ru": "Основной зал",
+        "en": "Main hall",
+        "kk": "Негізгі зал"
+      }
+    },
+    {
+      "n": 4,
+      "title": {
+        "ru": "Молодёжные и социальные проекты",
+        "en": "Youth and social projects",
+        "kk": "Жастар және әлеуметтік жобалар"
+      }
+    },
+    {
+      "n": 5,
+      "title": {
+        "ru": "Стенды ключевых партнёров",
+        "en": "Key partner stands",
+        "kk": "Негізгі серіктестер стендтері"
+      }
+    },
+    {
+      "n": 6,
+      "title": {
+        "ru": "ESG Expo — 20 экспонентов",
+        "en": "ESG Expo — 20 exhibitors",
+        "kk": "ESG Expo — 20 экспонент"
+      }
+    },
+    {
+      "n": 7,
+      "title": {
+        "ru": "Зона ожидания протокола",
+        "en": "Protocol waiting area",
+        "kk": "Хаттама күту аймағы"
+      }
+    },
+    {
+      "n": 8,
+      "title": {
+        "ru": "Малый зал 2",
+        "en": "Small hall 2",
+        "kk": "Шағын зал 2"
+      }
+    },
+    {
+      "n": 9,
+      "title": {
+        "ru": "Фотозона",
+        "en": "Photo zone",
+        "kk": "Фотоаймақ"
+      }
+    },
+    {
+      "n": 10,
+      "title": {
+        "ru": "Малый зал 1",
+        "en": "Small hall 1",
+        "kk": "Шағын зал 1"
+      }
+    }
+  ]
 }

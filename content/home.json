@@ -84,7 +84,11 @@
     "items": [
       {
         "id": "Lead",
-        "title": { "ru": "Lead", "en": "Lead", "kk": "Lead" },
+        "title": {
+          "ru": "Lead",
+          "en": "Lead",
+          "kk": "Lead"
+        },
         "text": {
           "ru": "Лидерство после эпохи обещаний: стратегия, совет директоров, ответственность.",
           "en": "Leadership after the age of pledges: strategy, boards, accountability.",
@@ -93,7 +97,11 @@
       },
       {
         "id": "Finance",
-        "title": { "ru": "Finance", "en": "Finance", "kk": "Finance" },
+        "title": {
+          "ru": "Finance",
+          "en": "Finance",
+          "kk": "Finance"
+        },
         "text": {
           "ru": "Кто платит за переход: зелёные, социальные и переходные инструменты.",
           "en": "Who pays for transition: green, social and transition instruments.",
@@ -102,7 +110,11 @@
       },
       {
         "id": "Planet",
-        "title": { "ru": "Planet", "en": "Planet", "kk": "Planet" },
+        "title": {
+          "ru": "Planet",
+          "en": "Planet",
+          "kk": "Planet"
+        },
         "text": {
           "ru": "Климат, вода, циркулярная экономика и природа с измеримым эффектом.",
           "en": "Climate, water, circular economy and nature with measurable impact.",
@@ -111,7 +123,11 @@
       },
       {
         "id": "People",
-        "title": { "ru": "People", "en": "People", "kk": "People" },
+        "title": {
+          "ru": "People",
+          "en": "People",
+          "kk": "People"
+        },
         "text": {
           "ru": "Человеческий капитал, инклюзия и социальные партнёрства.",
           "en": "Human capital, inclusion and social partnerships.",
@@ -120,7 +136,11 @@
       },
       {
         "id": "Region",
-        "title": { "ru": "Region", "en": "Region", "kk": "Region" },
+        "title": {
+          "ru": "Region",
+          "en": "Region",
+          "kk": "Region"
+        },
         "text": {
           "ru": "Общая ESG-повестка Центральной Азии и соседних рынков.",
           "en": "A shared ESG agenda for Central Asia and neighbouring markets.",
@@ -221,7 +241,11 @@
       "kk": "Қонақ немесе делегат"
     },
     "guest": {
-      "title": { "ru": "Гость", "en": "Guest", "kk": "Қонақ" },
+      "title": {
+        "ru": "Гость",
+        "en": "Guest",
+        "kk": "Қонақ"
+      },
       "priceLabel": {
         "ru": "Бесплатно",
         "en": "Free",
@@ -234,7 +258,11 @@
       }
     },
     "delegate": {
-      "title": { "ru": "Делегат", "en": "Delegate", "kk": "Делегат" },
+      "title": {
+        "ru": "Делегат",
+        "en": "Delegate",
+        "kk": "Делегат"
+      },
       "perks": {
         "ru": "Hall B, мастер-классы, B2B Lounge, гала ESG Award и материалы форума",
         "en": "Hall B, masterclasses, B2B Lounge, ESG Award gala and forum materials",
@@ -288,19 +316,27 @@
       "kk": "Hilton Astana, EXPO кешені"
     },
     "text": {
-      "ru": "Main Stage, Hall B, Impact Stage, мастер-классы, закрытый зал и B2B Lounge.",
-      "en": "Main Stage, Hall B, Impact Stage, masterclasses, closed hall and B2B Lounge.",
-      "kk": "Main Stage, Hall B, Impact Stage, мастер-класстер, жабық зал және B2B Lounge."
+      "ru": "Основной зал на 400 мест, малые залы 1–2 и ESG Expo в фойе Hilton Astana.",
+      "en": "Main hall for 400 seats, small halls 1–2 and ESG Expo in the Hilton Astana foyer.",
+      "kk": "400 орынды негізгі зал, 1–2 шағын залдар және Hilton Astana фойесіндегі ESG Expo."
     },
     "image": {
-      "src": "/images/venue-hilton-placeholder.svg",
+      "src": "/images/venue/main-hall.png",
       "alt": {
-        "ru": "TODO: фото Hilton Astana",
-        "en": "TODO: Hilton Astana photo",
-        "kk": "TODO: Hilton Astana фотосы"
+        "ru": "Основной зал Hilton Astana",
+        "en": "Hilton Astana main hall",
+        "kk": "Hilton Astana негізгі залы"
       }
     },
-    "mapUrl": "https://maps.google.com/?q=Hilton+Astana"
+    "mapUrl": "https://maps.google.com/?q=Hilton+Astana",
+    "planImage": {
+      "src": "/images/venue/floor-plan-labeled.png",
+      "alt": {
+        "ru": "План площадки форума",
+        "en": "Forum floor plan",
+        "kk": "Форум алаң жоспары"
+      }
+    }
   },
   "newsletter": {
     "eyebrow": {

@@ -401,7 +401,7 @@ export default async function HomePage({
 
       <section className="border-y border-line bg-white/40 py-16 md:py-20">
         <div className="container-shell grid gap-10 md:grid-cols-2 md:items-center">
-          <div className="relative aspect-[4/3] overflow-hidden bg-paper-2">
+          <div className="relative aspect-[16/10] overflow-hidden bg-paper-2">
             <Image
               src={home.venue.image.src}
               alt={tLocalized(home.venue.image.alt, locale)}
@@ -424,6 +424,9 @@ export default async function HomePage({
               <Link href="/attendees" className="btn btn-deep">
                 {t("venueDetails")}
               </Link>
+              <Link href="/expo" className="btn btn-secondary">
+                ESG Expo
+              </Link>
               <a
                 href={home.venue.mapUrl}
                 target="_blank"
@@ -435,6 +438,21 @@ export default async function HomePage({
             </div>
           </div>
         </div>
+        {home.venue.planImage ? (
+          <div className="container-shell mt-10">
+            <div className="overflow-hidden border border-line bg-white">
+              <div className="relative aspect-[16/9] w-full bg-paper-2">
+                <Image
+                  src={home.venue.planImage.src}
+                  alt={tLocalized(home.venue.planImage.alt, locale)}
+                  fill
+                  className="object-contain object-top p-2 md:p-4"
+                  sizes="100vw"
+                />
+              </div>
+            </div>
+          </div>
+        ) : null}
       </section>
 
       <section className="container-shell py-16 md:py-20">

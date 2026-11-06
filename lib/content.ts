@@ -102,6 +102,8 @@ export function getExpo() {
     }>;
     conditions: LocalizedString[];
     planImage: { src: string; alt: LocalizedString };
+    labeledPlanImage: { src: string; alt: LocalizedString };
+    legend: Array<{ n: number; title: LocalizedString }>;
   };
 }
 
@@ -141,6 +143,19 @@ export function getAttendeesContent() {
       text: LocalizedString;
       mapUrl: string;
       image: { src: string; alt: LocalizedString };
+    };
+    halls: Array<{
+      id: string;
+      title: LocalizedString;
+      text: LocalizedString;
+      image: { src: string; alt: LocalizedString };
+    }>;
+    floorPlan: {
+      title: LocalizedString;
+      note: LocalizedString;
+      image: { src: string; alt: LocalizedString };
+      diagram: { src: string; alt: LocalizedString };
+      zones: Array<{ n: number; title: LocalizedString }>;
     };
     transport: { title: LocalizedString; items: LocalizedString[] };
     hotels: {

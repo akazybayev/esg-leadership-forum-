@@ -243,6 +243,12 @@ export const homeContentSchema = z.object({
       src: z.string(),
       alt: localizedStringSchema,
     }),
+    planImage: z
+      .object({
+        src: z.string(),
+        alt: localizedStringSchema,
+      })
+      .optional(),
     mapUrl: z.string().url(),
   }),
   newsletter: z.object({

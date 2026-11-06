@@ -32,13 +32,14 @@ export default async function AttendeesPage({
 
       <section className="border-y border-line bg-white/40 py-14">
         <div className="container-shell grid gap-10 md:grid-cols-2 md:items-center">
-          <div className="relative aspect-[4/3] overflow-hidden bg-paper-2">
+          <div className="relative aspect-[16/10] overflow-hidden bg-paper-2">
             <Image
               src={content.venue.image.src}
               alt={tLocalized(content.venue.image.alt, locale)}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
+              priority
             />
           </div>
           <div>
@@ -56,6 +57,83 @@ export default async function AttendeesPage({
             >
               {t("openMap")}
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-shell py-14">
+        <h2 className="text-3xl font-bold text-deep">{t("halls")}</h2>
+        <div className="mt-8 grid gap-8 md:grid-cols-2">
+          {content.halls.map((hall) => (
+            <article key={hall.id}>
+              <div className="relative aspect-[16/10] overflow-hidden bg-paper-2">
+                <Image
+                  src={hall.image.src}
+                  alt={tLocalized(hall.image.alt, locale)}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <h3 className="mt-4 text-2xl font-bold text-deep">
+                {tLocalized(hall.title, locale)}
+              </h3>
+              <p className="mt-2 text-ink-soft">
+                {tLocalized(hall.text, locale)}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y border-line bg-white/40 py-14">
+        <div className="container-shell">
+          <h2 className="text-3xl font-bold text-deep">
+            {tLocalized(content.floorPlan.title, locale)}
+          </h2>
+          <p className="mt-3 max-w-3xl text-ink-soft">
+            {tLocalized(content.floorPlan.note, locale)}
+          </p>
+
+          <div className="mt-8 overflow-hidden border border-line bg-white">
+            <div className="relative aspect-[16/10] w-full bg-paper-2">
+              <Image
+                src={content.floorPlan.image.src}
+                alt={tLocalized(content.floorPlan.image.alt, locale)}
+                fill
+                className="object-contain object-top p-2 md:p-4"
+                sizes="100vw"
+              />
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+            <div className="overflow-hidden border border-line bg-white">
+              <div className="relative aspect-square w-full bg-white">
+                <Image
+                  src={content.floorPlan.diagram.src}
+                  alt={tLocalized(content.floorPlan.diagram.alt, locale)}
+                  fill
+                  className="object-contain p-3"
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                />
+              </div>
+            </div>
+            <ol className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
+              {content.floorPlan.zones.map((zone) => (
+                <li
+                  key={zone.n}
+                  className="flex items-start gap-3 border-t border-line py-3 first:border-t-0 first:pt-0"
+                >
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center bg-deep text-sm font-bold text-white">
+                    {zone.n}
+                  </span>
+                  <span className="pt-1 font-medium text-ink">
+                    {tLocalized(zone.title, locale)}
+                  </span>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </section>
