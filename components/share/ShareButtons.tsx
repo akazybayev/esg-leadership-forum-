@@ -6,6 +6,7 @@ export function ShareButtons({
   url,
   title,
   labels,
+  hrefs,
 }: {
   url: string;
   title: string;
@@ -17,16 +18,28 @@ export function ShareButtons({
     copy: string;
     copied: string;
   };
+  hrefs?: {
+    linkedin?: string;
+    telegram?: string;
+    whatsapp?: string;
+  };
 }) {
   const [copied, setCopied] = useState(false);
   const encodedUrl = encodeURIComponent(url);
   const encodedText = encodeURIComponent(`${title} ${url}`);
+  const linkedin =
+    hrefs?.linkedin ??
+    `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+  const telegram =
+    hrefs?.telegram ??
+    `https://t.me/share/url?url=${encodedUrl}&text=${encodeURIComponent(title)}`;
+  const whatsapp = hrefs?.whatsapp ?? `https://wa.me/?text=${encodedText}`;
 
   return (
     <div className="mt-6 flex flex-wrap gap-2" role="group" aria-label={labels.share}>
       <a
         className="btn btn-secondary min-h-11"
-        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
+        href={linkedin}
         target="_blank"
         rel="noreferrer"
       >
@@ -34,7 +47,7 @@ export function ShareButtons({
       </a>
       <a
         className="btn btn-secondary min-h-11"
-        href={`https://t.me/share/url?url=${encodedUrl}&text=${encodeURIComponent(title)}`}
+        href={telegram}
         target="_blank"
         rel="noreferrer"
       >
@@ -42,7 +55,7 @@ export function ShareButtons({
       </a>
       <a
         className="btn btn-secondary min-h-11"
-        href={`https://wa.me/?text=${encodedText}`}
+        href={whatsapp}
         target="_blank"
         rel="noreferrer"
       >

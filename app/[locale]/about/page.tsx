@@ -53,6 +53,11 @@ export default async function AboutPage({
         <ShareButtons
           url={absoluteUrl(locale, "/about")}
           title={t("title")}
+          hrefs={{
+            linkedin: "https://www.linkedin.com/in/akazybayev",
+            telegram: "https://t.me/esg_school",
+            whatsapp: "https://wa.me/77015552576",
+          }}
           labels={{
             share: tShare("label"),
             linkedin: tShare("linkedin"),

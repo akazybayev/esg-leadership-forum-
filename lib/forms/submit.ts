@@ -1,4 +1,4 @@
-import { appendFile, mkdir } from "fs/promises";
+import { appendFile, mkdir, stat } from "fs/promises";
 import path from "path";
 import type { FormType } from "@/schemas/forms";
 import { formSchemaByType } from "@/schemas/forms";
@@ -33,21 +33,35 @@ function isHoneypotFilled(
   return typeof value === "string" && value.trim().length > 0;
 }
 
+const MAX_STORE_BYTES = 1_000_000;
+
 async function persistSubmission(record: Record<string, unknown>) {
   const dir = path.join(process.cwd(), "data", "submissions");
   await mkdir(dir, { recursive: true });
   const file = path.join(dir, `${String(record.type)}.jsonl`);
+  const current = await stat(file).catch(() => null);
+  if (current && current.size >= MAX_STORE_BYTES) {
+    throw new Error("Submission store is full");
+  }
   await appendFile(file, `${JSON.stringify(record)}\n`, "utf8");
 }
 
-async function deliverWebhook(record: Record<string, unknown>) {
+async function deliverWebhook(notice: {
+  id: string;
+  type: string;
+  createdAt: string;
+}) {
   const url = process.env.FORM_WEBHOOK_URL?.trim();
   if (!url) return { delivered: false as const };
 
   const response = await fetch(url, {
     method: "POST",
     headers: { "content-type": "application/json" },
-    body: JSON.stringify(record),
+    body: JSON.stringify({
+      id: notice.id,
+      type: notice.type,
+      createdAt: notice.createdAt,
+    }),
   });
 
   if (!response.ok) {
@@ -106,7 +120,7 @@ export async function processFormSubmission(
 
   try {
     await persistSubmission(record);
-    await deliverWebhook(record);
+    await deliverWebhook({ id, type, createdAt: record.createdAt });
   } catch (error) {
     console.error("[forms] delivery failed", error);
     return {

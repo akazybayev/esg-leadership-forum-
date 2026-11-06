@@ -59,7 +59,7 @@ Client materials and open TODOs: [`docs/`](docs/), [`docs/MISSING.md`](docs/MISS
 - Validation: shared Zod schemas + React Hook Form
 - Spam: honeypot + per-IP hourly rate limit
 - Storage: `data/submissions/*.jsonl` (gitignored)
-- Optional CRM: `FORM_WEBHOOK_URL`
+- Optional notice: `FORM_WEBHOOK_URL` receives only the submission id, form type and time. Names, email, phone and invoice text stay in the local store.
 - Delegates: invoice draft via `PAYMENT_PROVIDER=invoice` until a live gateway is connected. The KZT rate and card checkout (Visa/Mastercard, Kaspi) are not connected yet. This note stays in code and this README, not on the registration page.
 
 ## SEO & accessibility (Stage 7)
