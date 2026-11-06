@@ -25,7 +25,7 @@ export const SITE_PATHS = [
 export function getSiteUrl(): string {
   return (
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "http://localhost:3000"
+    "https://esg-leadership-forum.apps.grok.bot"
   );
 }
 
