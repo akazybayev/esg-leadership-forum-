@@ -79,6 +79,7 @@ export default async function GuestCountryPage({
         <h2 className="text-3xl font-bold text-deep">{t("requestTitle")}</h2>
         <p className="mt-3 text-ink-soft">{t("requestText")}</p>
         <DemoApplyForm
+            formType="guest-country"
           id="guest-country-request"
           submitLabel={t("submit")}
           successMessage={t("success")}

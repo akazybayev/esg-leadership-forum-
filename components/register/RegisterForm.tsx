@@ -27,50 +27,54 @@ export function RegisterForm({
       : t("priceStandard", { amount: standardPrice });
   }, [status, isEarly, earlyPrice, standardPrice, earlyDaysLeft, t]);
 
-  const fields: DemoField[] = [
-    { name: "name", label: t("fieldName"), required: true },
-    { name: "organization", label: t("fieldOrg"), required: true },
-    { name: "title", label: t("fieldTitle"), required: true },
-    { name: "country", label: t("fieldCountry"), required: true },
-    { name: "email", label: "Email", type: "email", required: true },
-    { name: "phone", label: t("fieldPhone"), type: "tel" },
-    {
-      name: "category",
-      label: t("fieldCategory"),
-      type: "select",
-      required: true,
-      options: [
-        { value: "business", label: t("catBusiness") },
-        { value: "government", label: t("catGovernment") },
-        { value: "international", label: t("catInternational") },
-        { value: "university", label: t("catUniversity") },
-        { value: "ngo", label: t("catNgo") },
-        { value: "media", label: t("catMedia") },
-      ],
-    },
-    {
-      name: "lines",
-      label: t("fieldLines"),
-      type: "select",
-      options: lines.map((line) => ({ value: line, label: line })),
-    },
-  ];
+  const fields: DemoField[] = useMemo(() => {
+    const base: DemoField[] = [
+      { name: "name", label: t("fieldName"), required: true },
+      { name: "organization", label: t("fieldOrg"), required: true },
+      { name: "title", label: t("fieldTitle"), required: true },
+      { name: "country", label: t("fieldCountry"), required: true },
+      { name: "email", label: "Email", type: "email", required: true },
+      { name: "phone", label: t("fieldPhone"), type: "tel" },
+      {
+        name: "category",
+        label: t("fieldCategory"),
+        type: "select",
+        required: true,
+        options: [
+          { value: "business", label: t("catBusiness") },
+          { value: "government", label: t("catGovernment") },
+          { value: "international", label: t("catInternational") },
+          { value: "university", label: t("catUniversity") },
+          { value: "ngo", label: t("catNgo") },
+          { value: "media", label: t("catMedia") },
+        ],
+      },
+      {
+        name: "lines",
+        label: t("fieldLines"),
+        type: "select",
+        options: lines.map((line) => ({ value: line, label: line })),
+      },
+    ];
 
-  if (status === "delegate") {
-    fields.push(
-      {
-        name: "promo",
-        label: t("fieldPromo"),
-        placeholder: t("fieldPromoHint"),
-      },
-      {
-        name: "invoice",
-        label: t("fieldInvoice"),
-        type: "textarea",
-        placeholder: t("fieldInvoiceHint"),
-      },
-    );
-  }
+    if (status === "delegate") {
+      base.push(
+        {
+          name: "promo",
+          label: t("fieldPromo"),
+          placeholder: t("fieldPromoHint"),
+        },
+        {
+          name: "invoice",
+          label: t("fieldInvoice"),
+          type: "textarea",
+          placeholder: t("fieldInvoiceHint"),
+        },
+      );
+    }
+
+    return base;
+  }, [status, lines, t]);
 
   return (
     <div className="mt-8">
@@ -94,8 +98,11 @@ export function RegisterForm({
       <DemoApplyForm
         key={status}
         id="register-form"
+        formType="register"
         submitLabel={t("submit")}
-        successMessage={t("success")}
+        successMessage={
+          status === "delegate" ? t("success") : t("successGuest")
+        }
         hiddenFields={{ status }}
         fields={fields}
       />

@@ -195,7 +195,7 @@
     "formTitle": "Registration form",
     "status": "Status",
     "submit": "Submit application",
-    "success": "Application saved locally. Payment/invoice comes in stage 6.",
+    "success": "Application accepted. An invoice draft was created for delegates.",
     "fieldName": "Full name",
     "fieldOrg": "Organisation",
     "fieldTitle": "Job title",
@@ -213,7 +213,8 @@
     "catUniversity": "University",
     "catNgo": "NGO",
     "catMedia": "Media",
-    "paymentNote": "Until a payment provider is connected, applications generate an invoice. Prices in USD; KZT at payment-stage FX."
+    "paymentNote": "Payment via invoice stub (PAYMENT_PROVIDER=invoice). Live gateway and KZT FX come later.",
+    "successGuest": "Guest application accepted. We will email a confirmation."
   },
   "partnersPage": {
     "eyebrow": "For partners",

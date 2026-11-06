@@ -170,6 +170,7 @@ export default async function AwardPage({
           <h2 className="text-3xl font-bold text-deep">{t("applyTitle")}</h2>
           <p className="mt-3 text-ink-soft">{t("applyText")}</p>
           <DemoApplyForm
+            formType="award"
             id="award-apply"
             submitLabel={tCta("applyAward")}
             successMessage={t("applySuccess")}
@@ -221,7 +222,8 @@ export default async function AwardPage({
               {
                 name: "documents",
                 label: t("fieldDocs"),
-                type: "file",
+                type: "url",
+                placeholder: "https://…",
               },
             ]}
           />

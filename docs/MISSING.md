@@ -16,7 +16,9 @@ Items marked TODO until the client provides final assets or copy.
 - [ ] Jury list for ESG Award
 - [ ] Brand book / official brand colors (using Palette A — Horizon Deep until provided)
 - [ ] Partner presentation PDF for download
-- [ ] Payment provider credentials and KZT FX source
+- [x] Invoice payment adapter stub (`PAYMENT_PROVIDER=invoice`)
+- [ ] Live payment provider credentials and KZT FX source
+- [x] Form API + local JSONL storage (Stage 6)
 - [ ] CRM / email destination for forms (`FORM_WEBHOOK_URL`)
 - [ ] Social links (LinkedIn, Instagram, YouTube)
 - [ ] Legal texts: privacy, consent, payment/refund terms (lawyer review)

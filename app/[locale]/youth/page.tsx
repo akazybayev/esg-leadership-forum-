@@ -55,6 +55,7 @@ export default async function YouthPage({
           <div>
             <h3 className="text-xl font-bold text-deep">{t("delegateApply")}</h3>
             <DemoApplyForm
+            formType="youth-delegate"
               id="youth-delegate"
               submitLabel={tCta("applyYouth")}
               successMessage={t("success")}
@@ -159,6 +160,7 @@ export default async function YouthPage({
         <div className="container-shell max-w-3xl">
           <h2 className="text-3xl font-bold text-deep">{t("pitchApply")}</h2>
           <DemoApplyForm
+            formType="youth-pitch"
             id="youth-pitch"
             submitLabel={tCta("applyPitch")}
             successMessage={t("success")}
@@ -204,7 +206,8 @@ export default async function YouthPage({
               {
                 name: "file",
                 label: t("fieldFile"),
-                type: "file",
+                type: "url",
+                placeholder: "https://…",
               },
             ]}
           />

@@ -72,6 +72,7 @@ export default async function MediaPage({
             {tLocalized(content.accreditationNote, locale)}
           </p>
           <DemoApplyForm
+            formType="media"
             id="media-accreditation"
             submitLabel={t("submit")}
             successMessage={t("success")}

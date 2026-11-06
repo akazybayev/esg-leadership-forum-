@@ -81,6 +81,7 @@ export default async function ContactPage({
       <section className="container-shell max-w-3xl py-14">
         <h2 className="text-3xl font-bold text-deep">{t("formTitle")}</h2>
         <DemoApplyForm
+            formType="contact"
           id="contact-form"
           submitLabel={t("submit")}
           successMessage={t("success")}

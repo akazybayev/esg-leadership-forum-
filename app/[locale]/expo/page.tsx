@@ -120,6 +120,7 @@ export default async function ExpoPage({
         <h2 className="text-3xl font-bold text-deep">{t("applyTitle")}</h2>
         <p className="mt-3 text-ink-soft">{t("applyText")}</p>
         <DemoApplyForm
+            formType="expo"
           id="expo-apply"
           submitLabel={t("submit")}
           successMessage={t("success")}

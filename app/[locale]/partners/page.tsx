@@ -78,6 +78,7 @@ export default async function PartnersPage({
         <div className="container-shell max-w-3xl">
           <h2 className="text-3xl font-bold text-deep">{t("requestTitle")}</h2>
           <DemoApplyForm
+            formType="partners"
             id="partner-request"
             submitLabel={t("submit")}
             successMessage={t("success")}
