@@ -6,7 +6,11 @@ Items marked TODO until the client provides final assets or copy.
 
 - [x] `docs/CONCEPT.md` — from client PDF `ESG_Leadership_Forum_2027_CONCEPT.pdf`
 - [ ] Kazakh slogan native-speaker review (`Ұрпақтар үшін көшбасшылық` is provisional)
-- [ ] All `kk` UI strings — marked in footer as requiring native review
+- [ ] All `kk` UI strings — native-speaker review (note lives in `messages/kk.json` and this file, not in the public footer)
+- [x] Portrait and facsimile of Aidar Kazybayev (`public/images/people/aidar-kazybayev.jpg`, `aidar-kazybayev-signature.png`)
+- [ ] Confirm standard (300 USD) and late (350 USD) delegate prices in `lib/pricing.ts`
+- [ ] Lawyer text for payment and refund terms (`content/legal.json`)
+- [ ] Online card payment provider (Visa/Mastercard, Kaspi); invoices remain the current path
 - [x] Hilton Astana hall photos + floor plan (`public/images/venue/`)
 - [ ] Hero photo/video of Astana / EXPO exterior (optional)
 - [x] Venue floor plan + zone legend from concept

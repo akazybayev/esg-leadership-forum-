@@ -50,7 +50,8 @@
   "pricing": {
     "guestUsd": 0,
     "delegateEarlyUsd": 250,
-    "delegateStandardUsd": 500,
+    "delegateStandardUsd": 300,
+    "delegateLateUsd": 350,
     "currencyDisplay": [
       "USD",
       "KZT"
@@ -69,8 +70,7 @@
   "contact": {
     "email": "forum@esgpartners.kz",
     "emails": [
-      "forum@esgpartners.kz",
-      "esg@inbox.eu"
+      "forum@esgpartners.kz"
     ],
     "phone": "+7 777 655 5860",
     "coordinator": {

@@ -140,6 +140,30 @@ export default async function HomePage({
         </div>
       </section>
 
+      <section className="container-shell grid gap-8 py-16 md:grid-cols-[minmax(0,240px)_1fr] md:items-center md:py-20">
+        <div className="relative aspect-[4/5] overflow-hidden bg-deep">
+          <Image
+            src="/images/people/aidar-kazybayev.jpg"
+            alt={tHome("initiatorAlt")}
+            fill
+            className="object-cover object-top"
+            sizes="(min-width: 768px) 240px, 100vw"
+          />
+        </div>
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
+            {tHome("initiatorEyebrow")}
+          </p>
+          <blockquote className="mt-4 text-2xl font-semibold leading-snug text-deep md:text-3xl">
+            {tHome("initiatorQuote")}
+          </blockquote>
+          <p className="mt-4 text-sm text-ink-soft">{tHome("initiatorName")}</p>
+          <Link href="/about#address" className="btn btn-secondary mt-6">
+            {tHome("initiatorCta")}
+          </Link>
+        </div>
+      </section>
+
       <section className="container-shell py-16 md:py-20">
         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
           {tLocalized(home.whyAttend.eyebrow, locale)}

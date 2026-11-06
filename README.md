@@ -38,7 +38,8 @@ npm run lint
 
 | Change | File |
 | --- | --- |
-| Dates, prices, coordinator, scale | `content/site.json` |
+| Dates, coordinator, scale | `content/site.json` |
+| Delegate prices (early / standard / late) | `lib/pricing.ts` |
 | Programme sessions | `content/program.json` |
 | Speakers | `content/speakers.json` |
 | Award nominations | `content/award.json` |
@@ -47,7 +48,7 @@ npm run lint
 | Partners packages | `content/partners.json` |
 | UI chrome | `messages/{ru,en,kk}.json` |
 
-All visitor-facing copy is localized. Kazakh strings need native review.
+All visitor-facing copy is localized. Kazakh strings need native-speaker review (`messages/kk.json`, key `_nativeSpeakerReview`: «требует проверки носителем языка»). The note is kept out of the public footer.
 
 Client materials and open TODOs: [`docs/`](docs/), [`docs/MISSING.md`](docs/MISSING.md).
 
@@ -59,7 +60,7 @@ Client materials and open TODOs: [`docs/`](docs/), [`docs/MISSING.md`](docs/MISS
 - Spam: honeypot + per-IP hourly rate limit
 - Storage: `data/submissions/*.jsonl` (gitignored)
 - Optional CRM: `FORM_WEBHOOK_URL`
-- Delegates: invoice draft via `PAYMENT_PROVIDER=invoice` until a live gateway is connected
+- Delegates: invoice draft via `PAYMENT_PROVIDER=invoice` until a live gateway is connected. The KZT rate and card checkout (Visa/Mastercard, Kaspi) are not connected yet. This note stays in code and this README, not on the registration page.
 
 ## SEO & accessibility (Stage 7)
 
@@ -81,4 +82,4 @@ Palette A — Horizon Deep (`#0B1F2A`) + accent (`#C45C26`), Manrope with Cyrill
 
 ## Coordinator
 
-Nadiya Dosmukhanova · +7 777 655 5860 · esg@inbox.eu · forum@esgpartners.kz
+Nadiya Dosmukhanova · +7 777 655 5860 · forum@esgpartners.kz · WhatsApp https://wa.me/77776555860 · Telegram https://t.me/+77776555860

@@ -12,10 +12,12 @@ export function NewsletterForm({
   placeholder,
   button,
   success,
+  id = "newsletter-email",
 }: {
   placeholder: string;
   button: string;
   success: string;
+  id?: string;
 }) {
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
@@ -51,11 +53,11 @@ export function NewsletterForm({
       onSubmit={onSubmit}
       noValidate
     >
-      <label className="sr-only" htmlFor="newsletter-email">
+      <label className="sr-only" htmlFor={id}>
         Email
       </label>
       <input
-        id="newsletter-email"
+        id={id}
         type="email"
         placeholder={placeholder}
         className="min-h-12 flex-1 rounded-full border border-line bg-white px-4 text-ink"

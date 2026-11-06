@@ -43,6 +43,7 @@ export const siteConfigSchema = z.object({
     guestUsd: z.number(),
     delegateEarlyUsd: z.number(),
     delegateStandardUsd: z.number(),
+    delegateLateUsd: z.number(),
     currencyDisplay: z.array(z.enum(["USD", "KZT"])),
   }),
   scale: z.object({

@@ -44,7 +44,7 @@ export function createInvoiceDraft(
     createdAt: now.toISOString(),
     billTo: {
       name: values.name,
-      organization: values.organization,
+      organization: values.organization?.trim() || values.name,
       email: values.email,
       country: values.country,
       invoiceDetails: values.invoice?.trim() || undefined,
@@ -53,9 +53,11 @@ export function createInvoiceDraft(
       {
         description: promo
           ? `Delegate pass (promo ${promo}) — complimentary`
-          : pricing.isEarly
-            ? "Delegate pass — early-bird"
-            : "Delegate pass — standard",
+          : pricing.tier === "early"
+            ? "Delegate pass — early"
+            : pricing.tier === "late"
+              ? "Delegate pass — late"
+              : "Delegate pass — standard",
         quantity: 1,
         unitUsd: amountUsd,
       },

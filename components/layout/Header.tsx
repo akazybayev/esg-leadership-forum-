@@ -48,29 +48,33 @@ export function Header({
           <Link href="/register" className="btn btn-primary hidden sm:inline-flex">
             {tCta("register")}
           </Link>
-          <details className="relative lg:hidden">
+          <details className="lg:hidden">
             <summary className="inline-flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-full border border-line [&::-webkit-details-marker]:hidden">
               <Menu size={18} />
               <span className="sr-only">{t("menu")}</span>
             </summary>
-            <nav
-              id="mobile-nav"
-              className="absolute right-0 top-12 z-50 w-64 border border-line bg-paper p-2 shadow-lg"
-              aria-label={tA11y("mobileNav")}
-            >
-              {items.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block rounded-lg px-3 py-3 text-base font-medium text-ink"
-                >
-                  {t(item.labelKey)}
+            <div className="fixed inset-x-0 bottom-0 top-16 z-50 flex flex-col bg-paper">
+              <nav
+                id="mobile-nav"
+                className="flex-1 overflow-y-auto px-4 py-4"
+                aria-label={tA11y("mobileNav")}
+              >
+                {items.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block rounded-lg px-3 py-3 text-base font-medium text-ink"
+                  >
+                    {t(item.labelKey)}
+                  </Link>
+                ))}
+              </nav>
+              <div className="sticky bottom-0 border-t border-line bg-paper p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+                <Link href="/register" className="btn btn-primary w-full">
+                  {tCta("register")}
                 </Link>
-              ))}
-              <Link href="/register" className="btn btn-primary mt-2 w-full">
-                {tCta("register")}
-              </Link>
-            </nav>
+              </div>
+            </div>
           </details>
         </div>
       </div>
