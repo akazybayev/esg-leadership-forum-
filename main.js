@@ -19,7 +19,7 @@
   }
 
   const revealItems = document.querySelectorAll(
-    ".about, .pillars article, .program-list li, .speaker-list li, .register-layout > *"
+    ".about, .award-layout > *, .pillars article, .program-list li, .speaker-list li, .register-layout > *"
   );
 
   revealItems.forEach((el) => el.classList.add("reveal"));

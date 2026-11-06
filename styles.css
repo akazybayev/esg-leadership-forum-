@@ -1,14 +1,16 @@
 :root {
-  --ink: #f4f1ea;
-  --ink-soft: #c7d0cb;
-  --deep: #071412;
-  --deep-2: #0d2420;
-  --panel: rgba(12, 36, 32, 0.72);
-  --accent: #c9a35b;
-  --accent-soft: #e2c48a;
-  --mint: #6fad95;
-  --line: rgba(244, 241, 234, 0.14);
-  --shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  --ink: #1c1712;
+  --ink-soft: #5c564e;
+  --deep: #f3f1ec;
+  --deep-2: #e7e4dd;
+  --panel: rgba(255, 255, 255, 0.72);
+  --accent: #0f6e57;
+  --accent-soft: #1f8a6d;
+  --mint: #0f6e57;
+  --stone: #6b3f2e;
+  --sand: #c4a574;
+  --line: rgba(28, 23, 18, 0.12);
+  --shadow: 0 24px 60px rgba(40, 28, 18, 0.12);
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Outfit", "Segoe UI", sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -30,9 +32,9 @@ body {
   color: var(--ink);
   font-family: var(--font-body);
   background:
-    radial-gradient(1200px 700px at 80% -10%, rgba(111, 173, 149, 0.18), transparent 55%),
-    radial-gradient(900px 500px at 10% 20%, rgba(201, 163, 91, 0.12), transparent 50%),
-    linear-gradient(180deg, var(--deep) 0%, var(--deep-2) 45%, #102f2a 100%);
+    radial-gradient(1000px 600px at 85% 8%, rgba(15, 110, 87, 0.12), transparent 55%),
+    radial-gradient(800px 500px at 8% 18%, rgba(196, 165, 116, 0.16), transparent 50%),
+    linear-gradient(180deg, #f7f5f1 0%, var(--deep) 40%, var(--deep-2) 100%);
   line-height: 1.55;
 }
 
@@ -64,7 +66,7 @@ a {
   justify-content: space-between;
   gap: 1.5rem;
   padding: 1.1rem clamp(1.2rem, 4vw, 3rem);
-  background: linear-gradient(180deg, rgba(7, 20, 18, 0.78), rgba(7, 20, 18, 0));
+  background: linear-gradient(180deg, rgba(247, 245, 241, 0.92), rgba(247, 245, 241, 0));
   backdrop-filter: blur(8px);
 }
 
@@ -89,7 +91,7 @@ a {
 }
 
 .nav-cta {
-  color: var(--deep) !important;
+  color: #f7f5f1 !important;
   background: var(--accent);
   padding: 0.55rem 0.95rem;
   border-radius: 999px;
@@ -117,7 +119,7 @@ a {
   position: relative;
   min-height: 100vh;
   display: grid;
-  align-content: end;
+  align-content: center;
   padding: clamp(5.5rem, 12vh, 8rem) clamp(1.2rem, 4vw, 3rem) 2.5rem;
   overflow: hidden;
 }
@@ -126,36 +128,37 @@ a {
   position: absolute;
   inset: 0;
   z-index: 0;
+  background: #eceae6;
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transform: scale(1.06);
-  animation: drift 18s var(--ease) infinite alternate;
-  filter: saturate(0.85) contrast(1.05);
+  object-fit: contain;
+  object-position: 78% 52%;
+  transform: scale(1.04);
+  animation: float-award 7s var(--ease) infinite alternate;
 }
 
 .hero-veil {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(7, 20, 18, 0.35) 0%, rgba(7, 20, 18, 0.55) 42%, rgba(7, 20, 18, 0.92) 100%),
-    linear-gradient(90deg, rgba(7, 20, 18, 0.55), transparent 55%);
+    linear-gradient(90deg, rgba(236, 234, 230, 0.97) 0%, rgba(236, 234, 230, 0.82) 28%, rgba(236, 234, 230, 0.18) 50%, transparent 62%),
+    linear-gradient(180deg, rgba(236, 234, 230, 0.45) 0%, transparent 24%, rgba(236, 234, 230, 0.4) 100%);
 }
 
 .hero-content,
 .hero-meta {
   position: relative;
   z-index: 1;
-  max-width: 44rem;
+  max-width: 36rem;
 }
 
 .brand {
   margin: 0 0 1rem;
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  font-size: clamp(2.6rem, 6.4vw, 5rem);
   font-weight: 600;
   line-height: 1.02;
   letter-spacing: -0.03em;
@@ -166,12 +169,12 @@ a {
 
 .hero h1 {
   margin: 0 0 1rem;
-  max-width: 16ch;
+  max-width: 14ch;
   font-family: var(--font-display);
   font-size: clamp(1.55rem, 3.4vw, 2.35rem);
   font-weight: 500;
   line-height: 1.2;
-  color: var(--accent-soft);
+  color: var(--accent);
   opacity: 0;
   transform: translateY(24px);
   animation: rise 1s var(--ease) 0.3s forwards;
@@ -179,7 +182,7 @@ a {
 
 .lede {
   margin: 0 0 1.75rem;
-  max-width: 34rem;
+  max-width: 30rem;
   color: var(--ink-soft);
   font-size: 1.05rem;
   font-weight: 300;
@@ -199,7 +202,7 @@ a {
 
 .hero-meta {
   margin-top: 3rem;
-  color: var(--ink-soft);
+  color: var(--stone);
   font-size: 0.95rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -226,7 +229,7 @@ a {
 }
 
 .btn-primary {
-  color: var(--deep);
+  color: #f7f5f1;
   background: var(--accent);
 }
 
@@ -236,11 +239,11 @@ a {
 
 .btn-ghost {
   border-color: var(--line);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.45);
 }
 
 .btn-ghost:hover {
-  border-color: rgba(244, 241, 234, 0.35);
+  border-color: rgba(28, 23, 18, 0.28);
 }
 
 .section {
@@ -278,8 +281,35 @@ a {
   font-weight: 300;
 }
 
-.about {
+.about,
+.award {
   border-top: 1px solid var(--line);
+}
+
+.award-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.award-figure {
+  margin: 0;
+}
+
+.award-figure img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.award-figure figcaption {
+  margin-top: 0.9rem;
+  color: var(--stone);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .pillars-grid {
@@ -316,7 +346,7 @@ a {
 }
 
 .program {
-  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.18));
+  background: linear-gradient(180deg, transparent, rgba(15, 110, 87, 0.05));
 }
 
 .program-list {
@@ -403,7 +433,6 @@ a {
   border: 1px solid var(--line);
   background: var(--panel);
   backdrop-filter: blur(12px);
-  box-shadow: var(--shadow);
 }
 
 .register-form label {
@@ -420,19 +449,19 @@ a {
   border: 1px solid var(--line);
   border-radius: 0.7rem;
   color: var(--ink);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.85);
   font: inherit;
 }
 
 .register-form input:focus {
-  outline: 2px solid rgba(201, 163, 91, 0.45);
+  outline: 2px solid rgba(15, 110, 87, 0.35);
   outline-offset: 1px;
 }
 
 .form-status {
   min-height: 1.4rem;
   margin: 0;
-  color: var(--mint);
+  color: var(--accent);
   font-size: 0.95rem;
 }
 
@@ -471,11 +500,33 @@ a {
   }
 }
 
+@keyframes float-award {
+  to {
+    transform: scale(1.04) translate3d(0, -12px, 0);
+  }
+}
+
 @media (max-width: 900px) {
   .pillars-grid,
   .speaker-list,
-  .register-layout {
+  .register-layout,
+  .award-layout {
     grid-template-columns: 1fr;
+  }
+
+  .hero {
+    align-content: end;
+    min-height: 100svh;
+  }
+
+  .hero-image {
+    object-position: center 18%;
+    transform: scale(1.12);
+  }
+
+  .hero-veil {
+    background:
+      linear-gradient(180deg, rgba(236, 234, 230, 0.12) 0%, rgba(236, 234, 230, 0.05) 40%, rgba(236, 234, 230, 0.95) 66%);
   }
 
   .nav {
@@ -487,7 +538,7 @@ a {
     align-items: stretch;
     gap: 0;
     padding: 0.5rem 1.2rem 1rem;
-    background: rgba(7, 20, 18, 0.96);
+    background: rgba(247, 245, 241, 0.98);
     border-bottom: 1px solid var(--line);
   }
 
@@ -530,5 +581,9 @@ a {
     transition: none !important;
     opacity: 1;
     transform: none;
+  }
+
+  .hero-image {
+    transform: scale(1.04);
   }
 }
