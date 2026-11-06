@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -5,6 +6,7 @@ import type { Locale } from "@/i18n/routing";
 import { AddToCalendarButton } from "@/components/program/AddToCalendarButton";
 import { getSiteConfig, tLocalized } from "@/lib/content";
 import { getAllSessionIds, getSessionById } from "@/lib/program";
+import { buildPageMetadata } from "@/lib/seo";
 import { routing } from "@/i18n/routing";
 
 export function generateStaticParams() {
@@ -12,6 +14,24 @@ export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
     ids.map((sessionId) => ({ locale, sessionId })),
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; sessionId: string }>;
+}): Promise<Metadata> {
+  const { locale: localeParam, sessionId } = await params;
+  const locale = localeParam as Locale;
+  const session = getSessionById(sessionId);
+  if (!session) return {};
+  const title = tLocalized(session.title, locale);
+  return buildPageMetadata({
+    locale,
+    path: `/program/${sessionId}`,
+    title,
+    description: title,
+  });
 }
 
 export default async function SessionPage({

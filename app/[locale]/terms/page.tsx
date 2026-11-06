@@ -1,6 +1,17 @@
 import { setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { getLegalContent, tLocalized } from "@/lib/content";
+import { pageMetadata } from "@/lib/page-meta";
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageMetadata(locale, "terms");
+}
 
 export default async function TermsPage({
   params,

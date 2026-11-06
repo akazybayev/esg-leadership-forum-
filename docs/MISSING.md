@@ -38,4 +38,11 @@ Items marked TODO until the client provides final assets or copy.
 - Legal pages are TODO stubs for counsel review
 - Partner deck / brand kit / hotel list marked unavailable until files exist
 
+## Stage 7 notes
+
+- [x] Metadata / OG / hreflang / Event JSON-LD / sitemap / robots
+- [x] Skip link, landmarks, focus-visible, reduced motion
+- [ ] Production `NEXT_PUBLIC_SITE_URL` on hosting
+- [ ] External Lighthouse / axe audit before public launch
+
 - [ ] Guest country name (package confirmed; country TBA)

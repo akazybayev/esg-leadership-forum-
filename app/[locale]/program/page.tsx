@@ -2,6 +2,17 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { ProgramExplorer } from "@/components/program/ProgramExplorer";
 import { getProgram } from "@/lib/content";
+import { pageMetadata } from "@/lib/page-meta";
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageMetadata(locale, "program");
+}
 
 export default async function ProgramPage({
   params,

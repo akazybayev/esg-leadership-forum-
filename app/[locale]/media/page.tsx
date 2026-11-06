@@ -4,6 +4,17 @@ import { DemoApplyForm } from "@/components/forms/DemoApplyForm";
 import { EmptyAnnounce } from "@/components/home/EmptyAnnounce";
 import { getMediaContent, tLocalized } from "@/lib/content";
 import { formatForumDate } from "@/lib/dates";
+import { pageMetadata } from "@/lib/page-meta";
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageMetadata(locale, "media");
+}
 
 export default async function MediaPage({
   params,

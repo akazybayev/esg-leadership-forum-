@@ -1,12 +1,22 @@
 # ESG Leadership Forum Astana 2027
 
-Official event site (Next.js App Router, TypeScript, Tailwind CSS, next-intl).
+Official multi-language event site for **ESG Leadership Forum Astana 2027**  
+*(Leadership for Generations / Лидерство ради поколений / Ұрпақтар үшін көшбасшылық)*  
+13–14 October 2027 · Hilton Astana · Organizer: Global ESG Partnership
+
+Stack: **Next.js App Router**, TypeScript, Tailwind CSS, **next-intl** (`ru` default, `en`, `kk`).
 
 ## Stage status
 
-- **Stages 1–5:** scaffold, home, programme/speakers, award/youth/expo, registration/partners/attendees/media/legal, venue diagrams, guest-country package
-- **Stage 6 (current):** React Hook Form + Zod, `/api/forms/[type]`, honeypot, rate limit, invoice payment adapter stub
-- **Stage 7:** SEO, accessibility pass, final polish
+| Stage | Status |
+| --- | --- |
+| 1 Scaffold, i18n, tokens, schemas | Done |
+| 2 Homepage | Done |
+| 3 Programme + speakers | Done |
+| 4 Award / youth / expo | Done |
+| 5 Register, partners, attendees, media, legal | Done |
+| 6 Forms API + invoice stub | Done |
+| **7 SEO, a11y, performance, README** | **Done** |
 
 ## Run locally
 
@@ -21,67 +31,54 @@ Open [http://localhost:3000/ru](http://localhost:3000/ru).
 ```bash
 npm run build
 npm run typecheck
+npm run lint
 ```
+
+## Content without code
+
+| Change | File |
+| --- | --- |
+| Dates, prices, coordinator, scale | `content/site.json` |
+| Programme sessions | `content/program.json` |
+| Speakers | `content/speakers.json` |
+| Award nominations | `content/award.json` |
+| Guest country package | `content/guest-country.json` |
+| Expo zones / plan | `content/expo.json` |
+| Partners packages | `content/partners.json` |
+| UI chrome | `messages/{ru,en,kk}.json` |
+
+All visitor-facing copy is localized. Kazakh strings need native review.
+
+Client materials and open TODOs: [`docs/`](docs/), [`docs/MISSING.md`](docs/MISSING.md).
 
 ## Forms & payment (Stage 6)
 
-| Endpoint | Purpose |
-| --- | --- |
-| `POST /api/forms/register` | Guest/delegate registration (+ invoice draft for delegates) |
-| `POST /api/forms/award` | ESG Award application |
-| `POST /api/forms/youth-delegate` | Youth delegate |
-| `POST /api/forms/youth-pitch` | Youth Impact Pitch |
-| `POST /api/forms/expo` | Exhibitor request |
-| `POST /api/forms/partners` | Partner package request |
-| `POST /api/forms/guest-country` | Guest-country package request |
-| `POST /api/forms/media` | Media accreditation |
-| `POST /api/forms/contact` | Contact form |
-| `POST /api/forms/newsletter` | Newsletter |
+`POST /api/forms/[type]` for register, award, youth-delegate, youth-pitch, expo, partners, guest-country, media, contact, newsletter.
 
-Behaviour:
+- Validation: shared Zod schemas + React Hook Form
+- Spam: honeypot + per-IP hourly rate limit
+- Storage: `data/submissions/*.jsonl` (gitignored)
+- Optional CRM: `FORM_WEBHOOK_URL`
+- Delegates: invoice draft via `PAYMENT_PROVIDER=invoice` until a live gateway is connected
 
-- Client: React Hook Form + Zod (`schemas/forms.ts`)
-- Server: same Zod schemas, honeypot fields ignored as “success”, per-IP rate limit (`FORM_RATE_LIMIT_PER_HOUR`)
-- Storage: append-only `data/submissions/*.jsonl` (gitignored)
-- Optional forward: `FORM_WEBHOOK_URL`
-- Payment: `PAYMENT_PROVIDER=invoice` creates a draft invoice for delegate registrations until a live gateway is connected
+## SEO & accessibility (Stage 7)
 
-## Change dates and prices (no code)
+- Per-locale metadata, Open Graph, Twitter cards, hreflang alternates
+- `sitemap.xml`, `robots.txt`
+- schema.org **Event** JSON-LD (dates, venue, offers, organizer)
+- Skip link, labelled landmarks, visible `:focus-visible`, `prefers-reduced-motion`
+- `lang` on `<html>`, main landmark `#main-content`
 
-Edit [`content/site.json`](content/site.json):
+Set `NEXT_PUBLIC_SITE_URL` in production for canonical URLs and the sitemap.
 
-- `dates.*` — arrival, forum days, award/pitch windows, early-bird end, announce dates
-- `pricing.*` — guest / early / standard delegate USD
-- `stage` — `before` | `during` | `after`
-- `contact.*` — coordinator, phone, emails
+## Design
 
-## Add content later
+Palette A — Horizon Deep (`#0B1F2A`) + accent (`#C45C26`), Manrope with Cyrillic (Kazakh glyphs `ә ғ қ ң ө ұ ү һ і`). Venue photos and floor plan: `public/images/venue/`.
 
-| What | File |
-| --- | --- |
-| Session | `content/program.json` |
-| Speaker | `content/speakers.json` |
-| Award nomination | `content/award.json` |
-| Guest country | `content/guest-country.json` |
-| Sponsor logo | `content/sponsors.json` |
-| UI chrome strings | `messages/{ru,en,kk}.json` |
+## Key routes
 
-All content fields that appear in the UI are localized (`ru` / `en` / `kk`). Kazakh copy needs native review.
+`/ru`, `/program`, `/award`, `/youth`, `/expo`, `/guest-country`, `/register`, `/partners`, `/attendees`, `/media`, `/contact`
 
-## Client materials
+## Coordinator
 
-See [`docs/`](docs/) and the checklist in [`docs/MISSING.md`](docs/MISSING.md).
-
-## Dependencies (why each)
-
-- `next`, `react`, `react-dom` — app framework
-- `next-intl` — `/ru` `/en` `/kk` routing and messages
-- `zod` — content + form validation
-- `react-hook-form` + `@hookform/resolvers` — forms
-- `framer-motion` — restrained motion
-- `lucide-react` — icons
-- `tailwindcss` — styling
-
-## Font check (Kazakh)
-
-Primary font: **Manrope** via `next/font` with `latin` + `cyrillic` subsets. Sample glyph coverage: `ә ғ қ ң ө ұ ү һ і`. Verify visually on `/kk`.
+Nadiya Dosmukhanova · +7 777 655 5860 · esg@inbox.eu · forum@esgpartners.kz

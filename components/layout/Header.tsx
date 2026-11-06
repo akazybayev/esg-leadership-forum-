@@ -17,16 +17,23 @@ export function Header({
 }) {
   const t = useTranslations("nav");
   const tCta = useTranslations("cta");
+  const tA11y = useTranslations("a11y");
   const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-[rgba(244,241,236,0.92)] backdrop-blur-md">
       <div className="container-shell flex items-center justify-between gap-4 py-3">
-        <Link href="/" className="max-w-[14rem] text-sm font-bold leading-tight text-deep sm:max-w-none sm:text-base">
+        <Link
+          href="/"
+          className="max-w-[14rem] text-sm font-bold leading-tight text-deep sm:max-w-none sm:text-base"
+        >
           {siteName}
         </Link>
 
-        <nav className="hidden items-center gap-4 lg:flex" aria-label="Primary">
+        <nav
+          className="hidden items-center gap-4 lg:flex"
+          aria-label={tA11y("primaryNav")}
+        >
           {items.map((item) => (
             <Link
               key={item.href}
@@ -58,7 +65,10 @@ export function Header({
 
       {open ? (
         <div id="mobile-nav" className="border-t border-line bg-paper lg:hidden">
-          <nav className="container-shell flex flex-col gap-1 py-3" aria-label="Mobile">
+          <nav
+            className="container-shell flex flex-col gap-1 py-3"
+            aria-label={tA11y("mobileNav")}
+          >
             {items.map((item) => (
               <Link
                 key={item.href}

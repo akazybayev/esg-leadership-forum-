@@ -3,6 +3,17 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { DemoApplyForm } from "@/components/forms/DemoApplyForm";
 import { getExpo, tLocalized } from "@/lib/content";
+import { pageMetadata } from "@/lib/page-meta";
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageMetadata(locale, "expo");
+}
 
 export default async function ExpoPage({
   params,

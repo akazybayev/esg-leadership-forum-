@@ -3,6 +3,17 @@ import type { Locale } from "@/i18n/routing";
 import { DemoApplyForm } from "@/components/forms/DemoApplyForm";
 import { getSiteConfig, getYouth, tLocalized } from "@/lib/content";
 import { formatForumDate } from "@/lib/dates";
+import { pageMetadata } from "@/lib/page-meta";
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageMetadata(locale, "youth");
+}
 
 export default async function YouthPage({
   params,

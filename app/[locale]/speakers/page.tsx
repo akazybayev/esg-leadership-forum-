@@ -3,6 +3,17 @@ import type { Locale } from "@/i18n/routing";
 import { SpeakersExplorer } from "@/components/speakers/SpeakersExplorer";
 import { getSpeakers } from "@/lib/content";
 import { formatForumDate } from "@/lib/dates";
+import { pageMetadata } from "@/lib/page-meta";
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageMetadata(locale, "speakers");
+}
 
 export default async function SpeakersPage({
   params,
