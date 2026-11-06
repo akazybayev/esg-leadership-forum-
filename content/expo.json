@@ -1,0 +1,207 @@
+{
+  "intro": {
+    "ru": "ESG Expo — 20 экспонентов и национальный павильон страны-гостя из 5 секций (всего 25 стендов) в фойе Hilton Astana.",
+    "en": "ESG Expo — 20 exhibitors plus a guest-country national pavilion of 5 sections (25 stands in total) in the Hilton Astana foyer.",
+    "kk": "ESG Expo — Hilton Astana фойесіндегі 20 экспонент және қонақ елдің 5 секциялы ұлттық павильоны (барлығы 25 стенд)."
+  },
+  "zones": [
+    {
+      "id": "guest-pavilion",
+      "title": {
+        "ru": "Павильон страны-гостя (5 секций)",
+        "en": "Guest-country pavilion (5 sections)",
+        "kk": "Қонақ ел павильоны (5 секция)"
+      },
+      "text": {
+        "ru": "Единый блок у входа в ESG Expo для компаний и организаций страны-гостя — дополнительно к 20 стендам экспонентов. Страна объявляется после подтверждения пакета.",
+        "en": "A single block at the ESG Expo entrance for guest-country companies and organisations — in addition to 20 exhibitor stands. Country announced after package confirmation.",
+        "kk": "ESG Expo кіреберісіндегі бірыңғай блок — қонақ ел компаниялары мен ұйымдары үшін, 20 экспонент стендіне қосымша. Ел пакет расталғаннан кейін жарияланады."
+      }
+    },
+    {
+      "id": "tech",
+      "title": {
+        "ru": "Технологии и решения",
+        "en": "Technologies and solutions",
+        "kk": "Технологиялар мен шешімдер"
+      },
+      "text": {
+        "ru": "Чистая энергия и климат; вода, ресурсы и циркулярная экономика; ESG-данные, цифровизация и ИИ.",
+        "en": "Clean energy and climate; water, resources and circular economy; ESG data, digitalisation and AI.",
+        "kk": "Таза энергия мен климат; су, ресурстар және айналмалы экономика; ESG-деректер, цифрландыру және ЖИ."
+      }
+    },
+    {
+      "id": "partners",
+      "title": {
+        "ru": "Партнёрства",
+        "en": "Partnerships",
+        "kk": "Серіктестіктер"
+      },
+      "text": {
+        "ru": "Проекты бизнеса, университетов и НПО; молодёжные инициативы; деловые встречи в фойе.",
+        "en": "Business, university and NGO projects; youth initiatives; business meetings in the foyer.",
+        "kk": "Бизнес, университет және ҮЕҰ жобалары; жастар бастамалары; фойедегі іскерлік кездесулер."
+      }
+    },
+    {
+      "id": "stands",
+      "title": {
+        "ru": "Многоразовые стенды",
+        "en": "Reusable stands",
+        "kk": "Қайта қолданылатын стендтер"
+      },
+      "text": {
+        "ru": "Модульные конструкции, повторное использование после форума, единый стиль ESG Leadership Forum.",
+        "en": "Modular builds, reuse after the forum, unified ESG Leadership Forum style.",
+        "kk": "Модульдік конструкциялар, форумнан кейін қайта пайдалану, ESG Leadership Forum бірыңғай стилі."
+      }
+    },
+    {
+      "id": "youth",
+      "title": {
+        "ru": "Молодёжные и социальные проекты (зона 4)",
+        "en": "Youth and social projects (zone 4)",
+        "kk": "Жастар және әлеуметтік жобалар (4-аймақ)"
+      },
+      "text": {
+        "ru": "Отдельная зона на плане площадки рядом с кофе-брейком.",
+        "en": "Dedicated zone on the floor plan next to the coffee break.",
+        "kk": "Кофе-брейк жанындағы жоспардағы жеке аймақ."
+      }
+    },
+    {
+      "id": "key",
+      "title": {
+        "ru": "Стенды ключевых партнёров (зона 5)",
+        "en": "Key partner stands (zone 5)",
+        "kk": "Негізгі серіктестер стендтері (5-аймақ)"
+      },
+      "text": {
+        "ru": "Видимость партнёров в центральном фойе.",
+        "en": "Partner visibility in the central foyer.",
+        "kk": "Орталық фойедегі серіктес көрінісі."
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "ru": "До 20 экспонентов плюс 5 секций павильона страны-гостя; точная схема стендов согласуется с Hilton Astana.",
+      "en": "Up to 20 exhibitors plus 5 guest-country pavilion sections; exact booth layout agreed with Hilton Astana.",
+      "kk": "20 экспонентке дейін және қонақ ел павильонының 5 секциясы; стенд схемасы Hilton Astana-мен келісіледі."
+    },
+    {
+      "ru": "Зоны регистрации, фотозоны и кофе-брейка сохраняются. Точная схема стендов согласуется с Hilton Astana.",
+      "en": "Registration, photo zone and coffee break remain. Exact booth layout is agreed with Hilton Astana.",
+      "kk": "Тіркеу, фотоаймақ және кофе-брейк сақталады. Стенд схемасы Hilton Astana-мен келісіледі."
+    },
+    {
+      "ru": "Доступ гостей на выставку в фойе бесплатный.",
+      "en": "Guest access to the foyer exhibition is free.",
+      "kk": "Қонақтарға фойе көрмесіне кіру тегін."
+    },
+    {
+      "ru": "НПО и социальные проекты получают квоты по промокоду делегата.",
+      "en": "NGOs and social projects receive delegate promo quotas.",
+      "kk": "ҮЕҰ және әлеуметтік жобалар делегат промокоды бойынша квота алады."
+    }
+  ],
+  "planImage": {
+    "src": "/images/venue/floor-plan.png",
+    "alt": {
+      "ru": "Схема ESG Expo и залов Hilton Astana",
+      "en": "ESG Expo and Hilton Astana halls diagram",
+      "kk": "ESG Expo және Hilton Astana залдарының схемасы"
+    }
+  },
+  "labeledPlanImage": {
+    "src": "/images/venue/floor-plan-labeled.png",
+    "alt": {
+      "ru": "План площадки с зонами выставки 1–10",
+      "en": "Floor plan with exhibition zones 1–10",
+      "kk": "Көрме аймақтары 1–10 бар жоспар"
+    }
+  },
+  "legend": [
+    {
+      "n": 1,
+      "title": {
+        "ru": "Регистрация",
+        "en": "Registration",
+        "kk": "Тіркеу"
+      }
+    },
+    {
+      "n": 2,
+      "title": {
+        "ru": "Кофе-брейк",
+        "en": "Coffee break",
+        "kk": "Кофе-брейк"
+      }
+    },
+    {
+      "n": 3,
+      "title": {
+        "ru": "Основной зал",
+        "en": "Main hall",
+        "kk": "Негізгі зал"
+      }
+    },
+    {
+      "n": 4,
+      "title": {
+        "ru": "Молодёжные и социальные проекты",
+        "en": "Youth and social projects",
+        "kk": "Жастар және әлеуметтік жобалар"
+      }
+    },
+    {
+      "n": 5,
+      "title": {
+        "ru": "Стенды ключевых партнёров",
+        "en": "Key partner stands",
+        "kk": "Негізгі серіктестер стендтері"
+      }
+    },
+    {
+      "n": 6,
+      "title": {
+        "ru": "ESG Expo — 20 экспонентов",
+        "en": "ESG Expo — 20 exhibitors",
+        "kk": "ESG Expo — 20 экспонент"
+      }
+    },
+    {
+      "n": 7,
+      "title": {
+        "ru": "Зона ожидания протокола",
+        "en": "Protocol waiting area",
+        "kk": "Хаттама күту аймағы"
+      }
+    },
+    {
+      "n": 8,
+      "title": {
+        "ru": "Малый зал 2",
+        "en": "Small hall 2",
+        "kk": "Шағын зал 2"
+      }
+    },
+    {
+      "n": 9,
+      "title": {
+        "ru": "Фотозона",
+        "en": "Photo zone",
+        "kk": "Фотоаймақ"
+      }
+    },
+    {
+      "n": 10,
+      "title": {
+        "ru": "Малый зал 1",
+        "en": "Small hall 1",
+        "kk": "Шағын зал 1"
+      }
+    }
+  ]
+}

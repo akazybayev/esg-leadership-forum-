@@ -1,0 +1,51 @@
+{
+  "intro": {
+    "ru": "Свяжитесь с координатором форума Global ESG Partnership.",
+    "en": "Contact the Global ESG Partnership forum coordinator.",
+    "kk": "Global ESG Partnership форум үйлестірушісімен байланысыңыз."
+  },
+  "coordinator": {
+    "name": {
+      "ru": "Надия Досмуханова",
+      "en": "Nadiya Dosmukhanova",
+      "kk": "Надия Досмуханова"
+    },
+    "role": {
+      "ru": "Координатор Форума",
+      "en": "Forum Coordinator",
+      "kk": "Форум үйлестірушісі"
+    },
+    "phone": "+7 777 655 5860",
+    "emails": ["esg@inbox.eu", "forum@esgpartners.kz"]
+  },
+  "channels": [
+    {
+      "id": "forum",
+      "label": {
+        "ru": "Форум",
+        "en": "Forum",
+        "kk": "Форум"
+      },
+      "value": "forum@esgpartners.kz"
+    },
+    {
+      "id": "esg",
+      "label": {
+        "ru": "ESG / общие вопросы",
+        "en": "ESG / general",
+        "kk": "ESG / жалпы сұрақтар"
+      },
+      "value": "esg@inbox.eu"
+    }
+  ],
+  "address": {
+    "ru": "Астана, комплекс EXPO / Hilton Astana",
+    "en": "Astana, EXPO complex / Hilton Astana",
+    "kk": "Астана, EXPO кешені / Hilton Astana"
+  },
+  "note": {
+    "ru": "Организатор: Global ESG Partnership.",
+    "en": "Organizer: Global ESG Partnership.",
+    "kk": "Ұйымдастырушы: Global ESG Partnership."
+  }
+}

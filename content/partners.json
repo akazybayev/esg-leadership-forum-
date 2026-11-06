@@ -1,0 +1,208 @@
+{
+  "intro": {
+    "ru": "Партнёрство форума — доступ к 500 участникам, 20+ странам, павильону страны-гостя и повестке ESG Центральной Азии.",
+    "en": "Forum partnership reaches 500 participants, 20+ countries, the guest-country pavilion and Central Asia’s ESG agenda.",
+    "kk": "Форум серіктестігі — 500 қатысушы, 20+ ел, қонақ ел павильоны және Орталық Азия ESG күн тәртібі."
+  },
+  "audience": [
+    {
+      "value": "500",
+      "label": {
+        "ru": "участников",
+        "en": "participants",
+        "kk": "қатысушы"
+      }
+    },
+    {
+      "value": "20+",
+      "label": {
+        "ru": "стран",
+        "en": "countries",
+        "kk": "ел"
+      }
+    },
+    {
+      "value": "100",
+      "label": {
+        "ru": "молодёжных делегатов",
+        "en": "youth delegates",
+        "kk": "жас делегат"
+      }
+    },
+    {
+      "value": "25",
+      "label": {
+        "ru": "стендов на выставке",
+        "en": "exhibition stands",
+        "kk": "көрме стендтері"
+      }
+    },
+    {
+      "value": "14",
+      "label": {
+        "ru": "номинаций ESG Award",
+        "en": "ESG Award categories",
+        "kk": "ESG Award номинациясы"
+      }
+    }
+  ],
+  "packages": [
+    {
+      "id": "guest-country",
+      "title": {
+        "ru": "Страна — гость форума",
+        "en": "Guest country of the forum",
+        "kk": "Форумның қонақ елі"
+      },
+      "summary": {
+        "ru": "1 пакет. Стоимость по договорённости: страновая сессия, национальный павильон из 5 секций, B2B-офис, приветствие на открытии. В протоколе выше генерального партнёра.",
+        "en": "1 package. Price by agreement: country session, national pavilion of 5 sections, B2B office, opening welcome. Ranks above the general partner in protocol.",
+        "kk": "1 пакет. Баға келісім бойынша: ел сессиясы, 5 секциялы ұлттық павильон, B2B-кеңсе, ашылудағы құттықтау. Хаттамада бас серіктестен жоғары."
+      },
+      "includes": [
+        {
+          "ru": "Страновая сессия 70 минут на Main Stage (13 октября, 14:40–15:50) с синхронным переводом на язык страны",
+          "en": "70-minute country session on Main Stage (13 October, 14:40–15:50) with interpretation into the country’s language",
+          "kk": "Main Stage-та 70 минуттық ел сессиясы (13 қазан, 14:40–15:50) ел тіліне синхронды аудармамен"
+        },
+        {
+          "ru": "Национальный павильон: 5 выставочных секций у входа в ESG Expo (дополнительно к 20 стендам экспонентов)",
+          "en": "National pavilion: 5 exhibition sections at the ESG Expo entrance (in addition to 20 exhibitor stands)",
+          "kk": "Ұлттық павильон: ESG Expo кіреберісіндегі 5 көрме секциясы (20 экспонент стендіне қосымша)"
+        },
+        {
+          "ru": "B2B-офис на площадке Hilton Astana на оба дня",
+          "en": "On-site B2B office at Hilton Astana for both days",
+          "kk": "Hilton Astana алаңында екі күнге B2B-кеңсе"
+        },
+        {
+          "ru": "Приветствие главы делегации на открытии и место в пленарной панели о региональном партнёрстве",
+          "en": "Delegation head welcome at the opening and a seat on the regional partnership plenary",
+          "kk": "Делегация басшысының ашылудағы құттықтауы және өңірлік серіктестік пленарлық панеліндегі орын"
+        },
+        {
+          "ru": "До трёх спикеров страны в тематических сессиях",
+          "en": "Up to three country speakers in theme sessions",
+          "kk": "Тақырыптық сессияларда елдің үш спикеріне дейін"
+        },
+        {
+          "ru": "20 делегатских мест и два стола на гала-ужине",
+          "en": "20 delegate seats and two tables at the gala dinner",
+          "kk": "20 делегат орны және гала-кешкі аста екі үстел"
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "title": {
+        "ru": "Генеральный партнёр",
+        "en": "General partner",
+        "kk": "Бас серіктес"
+      },
+      "summary": {
+        "ru": "Приветствие на открытии, кейноут или место в главной панели, лучший стенд, статус партнёра гала-церемонии.",
+        "en": "Opening welcome, keynote or main-panel seat, premier booth, gala-ceremony partner status.",
+        "kk": "Ашылудағы құттықтау, кейноут немесе бас панельдегі орын, үздік стенд, гала-салтанат серіктесі мәртебесі."
+      },
+      "includes": [
+        {
+          "ru": "Брендинг сцены и церемонии [TODO]",
+          "en": "Stage and ceremony branding [TODO]",
+          "kk": "Сахна мен салтанат брендингі [TODO]"
+        },
+        {
+          "ru": "Квота делегатов [TODO]",
+          "en": "Delegate quota [TODO]",
+          "kk": "Делегат квотасы [TODO]"
+        },
+        {
+          "ru": "Участие в программном комитете [TODO]",
+          "en": "Programme committee seat [TODO]",
+          "kk": "Бағдарлама комитетіндегі орын [TODO]"
+        }
+      ]
+    },
+    {
+      "id": "strategic",
+      "title": {
+        "ru": "Стратегический партнёр",
+        "en": "Strategic partner",
+        "kk": "Стратегиялық серіктес"
+      },
+      "summary": {
+        "ru": "Видимость на тематических линиях и в деловой программе. Детали — TODO.",
+        "en": "Visibility across theme tracks and the business programme. Details TODO.",
+        "kk": "Тақырыптық бағыттар мен іскерлік бағдарламадағы көрініс. Детальдар TODO."
+      },
+      "includes": [
+        {
+          "ru": "Спонсорство сессии/линии [TODO]",
+          "en": "Session/track sponsorship [TODO]",
+          "kk": "Сессия/бағыт демеушілігі [TODO]"
+        },
+        {
+          "ru": "Стенд на ESG Expo [TODO]",
+          "en": "ESG Expo booth [TODO]",
+          "kk": "ESG Expo стенді [TODO]"
+        },
+        {
+          "ru": "Квота делегатов [TODO]",
+          "en": "Delegate quota [TODO]",
+          "kk": "Делегат квотасы [TODO]"
+        }
+      ]
+    },
+    {
+      "id": "session",
+      "title": {
+        "ru": "Партнёр сессии",
+        "en": "Session partner",
+        "kk": "Сессия серіктесі"
+      },
+      "summary": {
+        "ru": "Поддержка одной сессии Hall B или мастер-класса. Детали — TODO.",
+        "en": "Support one Hall B session or masterclass. Details TODO.",
+        "kk": "Бір Hall B сессиясын немесе мастер-классты қолдау. Детальдар TODO."
+      },
+      "includes": [
+        {
+          "ru": "Логотип в материалах сессии [TODO]",
+          "en": "Logo in session materials [TODO]",
+          "kk": "Сессия материалдарындағы логотип [TODO]"
+        },
+        {
+          "ru": "Упоминание модератором [TODO]",
+          "en": "Moderator acknowledgement [TODO]",
+          "kk": "Модератордың атауы [TODO]"
+        }
+      ]
+    },
+    {
+      "id": "media",
+      "title": {
+        "ru": "Медиапартнёр",
+        "en": "Media partner",
+        "kk": "Медиа серіктес"
+      },
+      "summary": {
+        "ru": "Информационная поддержка и аккредитация команды. Детали — TODO.",
+        "en": "Media coverage and team accreditation. Details TODO.",
+        "kk": "Ақпараттық қолдау және команда аккредитациясы. Детальдар TODO."
+      },
+      "includes": [
+        {
+          "ru": "Логотип в медиаблоке [TODO]",
+          "en": "Logo in media block [TODO]",
+          "kk": "Медиа блоктағы логотип [TODO]"
+        },
+        {
+          "ru": "Пресс-квоты [TODO]",
+          "en": "Press quotas [TODO]",
+          "kk": "Баспасөз квоталары [TODO]"
+        }
+      ]
+    }
+  ],
+  "deckUrl": "/docs/partner-deck-TODO.pdf",
+  "deckAvailable": false
+}

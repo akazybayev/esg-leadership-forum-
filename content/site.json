@@ -1,0 +1,90 @@
+{
+  "name": {
+    "ru": "ESG Leadership Forum Astana 2027",
+    "en": "ESG Leadership Forum Astana 2027",
+    "kk": "ESG Leadership Forum Astana 2027"
+  },
+  "slogan": {
+    "ru": "Лидерство ради поколений",
+    "en": "Leadership for Generations",
+    "kk": "Ұрпақтар үшін көшбасшылық"
+  },
+  "organizer": {
+    "name": "Global ESG Partnership",
+    "url": "https://esgpartners.kz"
+  },
+  "venue": {
+    "name": "Hilton Astana",
+    "complex": {
+      "ru": "комплекс EXPO",
+      "en": "EXPO complex",
+      "kk": "EXPO кешені"
+    },
+    "city": {
+      "ru": "Астана",
+      "en": "Astana",
+      "kk": "Астана"
+    },
+    "country": {
+      "ru": "Казахстан",
+      "en": "Kazakhstan",
+      "kk": "Қазақстан"
+    }
+  },
+  "timezone": "Asia/Almaty",
+  "stage": "before",
+  "dates": {
+    "arrival": "2027-10-12",
+    "day1": "2027-10-13",
+    "day2": "2027-10-14",
+    "youthPitchOpen": "2027-03-01",
+    "youthPitchClose": "2027-05-31",
+    "awardOpen": "2027-03-01",
+    "awardClose": "2027-06-30",
+    "earlyBirdEnds": "2027-07-31",
+    "shortlistMonth": "2027-09",
+    "speakersAnnounce": "2027-06-01",
+    "sponsorsAnnounce": "2027-05-01",
+    "guestCountryAnnounce": "2027-03-01"
+  },
+  "pricing": {
+    "guestUsd": 0,
+    "delegateEarlyUsd": 250,
+    "delegateStandardUsd": 500,
+    "currencyDisplay": [
+      "USD",
+      "KZT"
+    ]
+  },
+  "scale": {
+    "days": 2,
+    "participants": 500,
+    "countries": "20+",
+    "youthDelegates": 100,
+    "exhibitors": 20,
+    "awardNominations": 14,
+    "guestCountrySections": 5,
+    "exhibitionStands": 25
+  },
+  "contact": {
+    "email": "forum@esgpartners.kz",
+    "emails": [
+      "forum@esgpartners.kz",
+      "esg@inbox.eu"
+    ],
+    "phone": "+7 777 655 5860",
+    "coordinator": {
+      "name": {
+        "ru": "Надия Досмуханова",
+        "en": "Nadiya Dosmukhanova",
+        "kk": "Надия Досмуханова"
+      },
+      "role": {
+        "ru": "Координатор Форума",
+        "en": "Forum Coordinator",
+        "kk": "Форум үйлестірушісі"
+      }
+    }
+  },
+  "social": {}
+}

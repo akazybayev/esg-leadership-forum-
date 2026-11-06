@@ -1,0 +1,216 @@
+{
+  "intro": {
+    "ru": "100 молодёжных делегатов и Youth Impact Pitch — сцена, гранты и наставники для проектов с измеримым эффектом.",
+    "en": "100 youth delegates and Youth Impact Pitch — a stage, grants and mentors for projects with measurable impact.",
+    "kk": "100 жас делегат және Youth Impact Pitch — өлшенетін әсері бар жобаларға сахна, гранттар және тәлімгерлер."
+  },
+  "delegate": {
+    "title": {
+      "ru": "Молодёжный делегат",
+      "en": "Youth delegate",
+      "kk": "Жас делегат"
+    },
+    "text": {
+      "ru": "Возраст 18–30 лет. Участие в установочной сессии Дня 0, открытых сессиях и молодёжной программе форума.",
+      "en": "Age 18–30. Orientation on Day 0, open sessions and the youth programme.",
+      "kk": "Жасы 18–30. 0-күнгі кіріспе сессия, ашық сессиялар және жастар бағдарламасы."
+    },
+    "requirements": [
+      {
+        "ru": "Возраст 18–30 на 13 октября 2027",
+        "en": "Age 18–30 on 13 October 2027",
+        "kk": "2027 жылғы 13 қазанда жасы 18–30"
+      },
+      {
+        "ru": "Вуз, НПО или молодая организация",
+        "en": "University, NGO or youth organisation",
+        "kk": "ЖОО, ҮЕҰ немесе жастар ұйымы"
+      },
+      {
+        "ru": "Краткая мотивация",
+        "en": "Short motivation statement",
+        "kk": "Қысқа мотивация"
+      }
+    ]
+  },
+  "pitch": {
+    "title": {
+      "ru": "Youth Impact Pitch",
+      "en": "Youth Impact Pitch",
+      "kk": "Youth Impact Pitch"
+    },
+    "text": {
+      "ru": "Восемь команд-финалистов выступают на Main Stage 14 октября 2027 и получают гранты и наставников.",
+      "en": "Eight finalist teams pitch on Main Stage on 14 October 2027 and receive grants and mentors.",
+      "kk": "Сегіз финалист команда 2027 жылғы 14 қазанда Main Stage-те сөйлеп, грант пен тәлімгер алады."
+    },
+    "tracks": [
+      {
+        "id": "Planet",
+        "title": {
+          "ru": "Planet",
+          "en": "Planet",
+          "kk": "Planet"
+        },
+        "examples": {
+          "ru": "Климат, вода, отходы, чистая энергия, биоразнообразие",
+          "en": "Climate, water, waste, clean energy, biodiversity",
+          "kk": "Климат, су, қалдықтар, таза энергия, биоәртүрлілік"
+        }
+      },
+      {
+        "id": "People",
+        "title": {
+          "ru": "People",
+          "en": "People",
+          "kk": "People"
+        },
+        "examples": {
+          "ru": "Инклюзия, образование, здоровье, занятость, сельские сообщества",
+          "en": "Inclusion, education, health, jobs, rural communities",
+          "kk": "Инклюзия, білім, денсаулық, жұмыс, ауыл қауымдастықтары"
+        }
+      },
+      {
+        "id": "Digital",
+        "title": {
+          "ru": "Digital & Governance",
+          "en": "Digital & Governance",
+          "kk": "Digital & Governance"
+        },
+        "examples": {
+          "ru": "ИИ для ESG, прозрачность данных, ответственное потребление, зелёные финансы",
+          "en": "AI for ESG, data transparency, responsible consumption, green finance",
+          "kk": "ESG үшін ЖИ, дерек ашықтығы, жауапты тұтыну, жасыл қаржы"
+        }
+      }
+    ],
+    "stages": [
+      {
+        "id": "apply",
+        "when": {
+          "ru": "1 марта – 31 мая 2027",
+          "en": "1 March – 31 May 2027",
+          "kk": "1 наурыз – 31 мамыр 2027"
+        },
+        "result": {
+          "ru": "Заявки проверены на соответствие правилам",
+          "en": "Applications checked for eligibility",
+          "kk": "Өтінімдер ережеге сәйкестігі тексерілді"
+        }
+      },
+      {
+        "id": "remote",
+        "when": {
+          "ru": "июнь 2027",
+          "en": "June 2027",
+          "kk": "маусым 2027"
+        },
+        "result": {
+          "ru": "20 полуфиналистов",
+          "en": "20 semi-finalists",
+          "kk": "20 жартылай финалист"
+        }
+      },
+      {
+        "id": "mentor",
+        "when": {
+          "ru": "июль – август 2027",
+          "en": "July – August 2027",
+          "kk": "шілде – тамыз 2027"
+        },
+        "result": {
+          "ru": "Онлайн-подготовка с наставниками",
+          "en": "Online mentoring prep",
+          "kk": "Тәлімгерлермен онлайн дайындық"
+        }
+      },
+      {
+        "id": "semi",
+        "when": {
+          "ru": "сентябрь 2027",
+          "en": "September 2027",
+          "kk": "қыркүйек 2027"
+        },
+        "result": {
+          "ru": "8 финалистов",
+          "en": "8 finalists",
+          "kk": "8 финалист"
+        }
+      },
+      {
+        "id": "final",
+        "when": {
+          "ru": "14 октября 2027, 13:45–15:15, Main Stage",
+          "en": "14 October 2027, 13:45–15:15, Main Stage",
+          "kk": "14 қазан 2027, 13:45–15:15, Main Stage"
+        },
+        "result": {
+          "ru": "Победители; награждение на закрытии",
+          "en": "Winners; awards at closing",
+          "kk": "Жеңімпаздар; жабылуда марапаттау"
+        }
+      }
+    ],
+    "criteria": [
+      {
+        "score": 25,
+        "title": {
+          "ru": "Измеримый ESG-эффект",
+          "en": "Measurable ESG impact",
+          "kk": "Өлшенетін ESG әсер"
+        }
+      },
+      {
+        "score": 20,
+        "title": {
+          "ru": "Проблема и её значимость",
+          "en": "Problem and relevance",
+          "kk": "Мәселе және оның маңыздылығы"
+        }
+      },
+      {
+        "score": 20,
+        "title": {
+          "ru": "Решение и новизна",
+          "en": "Solution and novelty",
+          "kk": "Шешім және жаңалық"
+        }
+      },
+      {
+        "score": 20,
+        "title": {
+          "ru": "Реализуемость и команда",
+          "en": "Feasibility and team",
+          "kk": "Іске асырылымдылық және команда"
+        }
+      },
+      {
+        "score": 15,
+        "title": {
+          "ru": "Качество выступления",
+          "en": "Pitch quality",
+          "kk": "Сөйлеу сапасы"
+        }
+      }
+    ],
+    "prizes": [
+      {
+        "ru": "1–3 место: целевой грант [сумма TODO] и наставник на 12 месяцев",
+        "en": "1–3 place: earmarked grant [amount TODO] and a 12-month mentor",
+        "kk": "1–3 орын: мақсатты грант [сома TODO] және 12 айлық тәлімгер"
+      },
+      {
+        "ru": "Приз зрительских симпатий [приз от партнёра TODO]",
+        "en": "Audience award [partner prize TODO]",
+        "kk": "Көрермендер жүлдесі [серіктес жүлдесі TODO]"
+      },
+      {
+        "ru": "Все финалисты: статус ESG Youth Ambassador и стажировки у партнёров [TODO]",
+        "en": "All finalists: ESG Youth Ambassador status and partner internships [TODO]",
+        "kk": "Барлық финалистер: ESG Youth Ambassador мәртебесі және серіктес тәжірибелері [TODO]"
+      }
+    ],
+    "rulesSource": "docs/PITCH_RULES.md"
+  }
+}
