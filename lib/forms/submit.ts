@@ -21,12 +21,16 @@ export type FormSubmitResult =
       status: number;
     };
 
-function isHoneypotFilled(payload: Record<string, unknown>): boolean {
-  const traps = ["company_website", "company"];
-  return traps.some((key) => {
-    const value = payload[key];
-    return typeof value === "string" && value.trim().length > 0;
-  });
+function honeypotKey(type: FormType): "company" | "company_website" {
+  return type === "newsletter" ? "company" : "company_website";
+}
+
+function isHoneypotFilled(
+  type: FormType,
+  payload: Record<string, unknown>,
+): boolean {
+  const value = payload[honeypotKey(type)];
+  return typeof value === "string" && value.trim().length > 0;
 }
 
 async function persistSubmission(record: Record<string, unknown>) {
@@ -61,7 +65,7 @@ export async function processFormSubmission(
   }
 
   const data = payload as Record<string, unknown>;
-  if (isHoneypotFilled(data)) {
+  if (isHoneypotFilled(type, data)) {
     // Pretend success to bots.
     return { ok: true, id: "ignored" };
   }
