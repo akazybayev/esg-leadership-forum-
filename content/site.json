@@ -61,7 +61,21 @@
     "awardNominations": 14
   },
   "contact": {
-    "email": "info@esgpartners.kz"
+    "email": "forum@esgpartners.kz",
+    "emails": ["forum@esgpartners.kz", "esg@inbox.eu"],
+    "phone": "+7 777 655 5860",
+    "coordinator": {
+      "name": {
+        "ru": "Надия Досмуханова",
+        "en": "Nadiya Dosmukhanova",
+        "kk": "Надия Досмуханова"
+      },
+      "role": {
+        "ru": "Координатор Форума",
+        "en": "Forum Coordinator",
+        "kk": "Форум үйлестірушісі"
+      }
+    }
   },
   "social": {}
 }

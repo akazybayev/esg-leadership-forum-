@@ -54,7 +54,14 @@ export const siteConfigSchema = z.object({
   }),
   contact: z.object({
     email: z.string().email(),
+    emails: z.array(z.string().email()).optional(),
     phone: z.string().optional(),
+    coordinator: z
+      .object({
+        name: localizedStringSchema,
+        role: localizedStringSchema,
+      })
+      .optional(),
   }),
   social: z.object({
     linkedin: z.string().url().optional(),

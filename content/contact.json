@@ -1,36 +1,41 @@
 {
   "intro": {
-    "ru": "Свяжитесь с командой Global ESG Partnership по партнёрству, регистрации и медиа.",
-    "en": "Contact the Global ESG Partnership team about partnership, registration and media.",
-    "kk": "Серіктестік, тіркелу және медиа туралы Global ESG Partnership командасымен байланысыңыз."
+    "ru": "Свяжитесь с координатором форума Global ESG Partnership.",
+    "en": "Contact the Global ESG Partnership forum coordinator.",
+    "kk": "Global ESG Partnership форум үйлестірушісімен байланысыңыз."
+  },
+  "coordinator": {
+    "name": {
+      "ru": "Надия Досмуханова",
+      "en": "Nadiya Dosmukhanova",
+      "kk": "Надия Досмуханова"
+    },
+    "role": {
+      "ru": "Координатор Форума",
+      "en": "Forum Coordinator",
+      "kk": "Форум үйлестірушісі"
+    },
+    "phone": "+7 777 655 5860",
+    "emails": ["esg@inbox.eu", "forum@esgpartners.kz"]
   },
   "channels": [
     {
-      "id": "general",
+      "id": "forum",
       "label": {
-        "ru": "Общие вопросы",
-        "en": "General enquiries",
-        "kk": "Жалпы сұрақтар"
+        "ru": "Форум",
+        "en": "Forum",
+        "kk": "Форум"
       },
-      "value": "info@esgpartners.kz"
+      "value": "forum@esgpartners.kz"
     },
     {
-      "id": "partners",
+      "id": "esg",
       "label": {
-        "ru": "Партнёрство",
-        "en": "Partnerships",
-        "kk": "Серіктестік"
+        "ru": "ESG / общие вопросы",
+        "en": "ESG / general",
+        "kk": "ESG / жалпы сұрақтар"
       },
-      "value": "partners@esgpartners.kz"
-    },
-    {
-      "id": "media",
-      "label": {
-        "ru": "Медиа",
-        "en": "Media",
-        "kk": "Медиа"
-      },
-      "value": "media@esgpartners.kz"
+      "value": "esg@inbox.eu"
     }
   ],
   "address": {
@@ -39,8 +44,8 @@
     "kk": "Астана, EXPO кешені / Hilton Astana"
   },
   "note": {
-    "ru": "Телефон и соцсети — TODO после подтверждения заказчика.",
-    "en": "Phone and social links — TODO pending client confirmation.",
-    "kk": "Телефон және әлеуметтік желілер — тапсырыс беруші растауынан кейінгі TODO."
+    "ru": "Организатор: Global ESG Partnership.",
+    "en": "Organizer: Global ESG Partnership.",
+    "kk": "Ұйымдастырушы: Global ESG Partnership."
   }
 }

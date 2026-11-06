@@ -183,6 +183,12 @@ export function getMediaContent() {
 export function getContactContent() {
   return loadJson("contact.json") as {
     intro: LocalizedString;
+    coordinator: {
+      name: LocalizedString;
+      role: LocalizedString;
+      phone: string;
+      emails: string[];
+    };
     channels: Array<{
       id: string;
       label: LocalizedString;

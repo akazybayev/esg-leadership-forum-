@@ -13,6 +13,11 @@ export async function Footer({
 }) {
   const t = await getTranslations("footer");
   const tNav = await getTranslations("nav");
+  const phone = site.contact.phone;
+  const phoneHref = phone?.replace(/\s+/g, "");
+  const emails = site.contact.emails?.length
+    ? site.contact.emails
+    : [site.contact.email];
 
   return (
     <footer className="mt-16 border-t border-line bg-deep text-[#f4f1ec]">
@@ -39,7 +44,35 @@ export async function Footer({
           >
             {site.organizer.name}
           </a>
-          <p className="mt-2 text-sm text-[#9aadb8]">{site.contact.email}</p>
+          {site.contact.coordinator ? (
+            <div className="mt-4">
+              <p className="text-sm text-[#9aadb8]">
+                {tLocalized(site.contact.coordinator.role, locale)}
+              </p>
+              <p className="mt-1 font-medium">
+                {tLocalized(site.contact.coordinator.name, locale)}
+              </p>
+              {phone && phoneHref ? (
+                <a
+                  href={`tel:${phoneHref}`}
+                  className="mt-2 block text-sm text-[#c9d2d8] hover:underline"
+                >
+                  {phone}
+                </a>
+              ) : null}
+              {emails.map((email) => (
+                <a
+                  key={email}
+                  href={`mailto:${email}`}
+                  className="mt-1 block text-sm text-[#c9d2d8] hover:underline"
+                >
+                  {email}
+                </a>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-2 text-sm text-[#9aadb8]">{site.contact.email}</p>
+          )}
         </div>
 
         <div>

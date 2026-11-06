@@ -267,6 +267,7 @@
     "success": "Сообщение принято локально. Демо до этапа 6.",
     "fieldName": "Имя",
     "fieldTopic": "Тема",
-    "fieldMessage": "Сообщение"
+    "fieldMessage": "Сообщение",
+    "phone": "Телефон"
   }
 }

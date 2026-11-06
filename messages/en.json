@@ -267,6 +267,7 @@
     "success": "Message saved locally. Demo until stage 6.",
     "fieldName": "Name",
     "fieldTopic": "Topic",
-    "fieldMessage": "Message"
+    "fieldMessage": "Message",
+    "phone": "Phone"
   }
 }
