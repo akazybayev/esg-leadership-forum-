@@ -1,0 +1,38 @@
+{
+  "privacy": {
+    "title": {
+      "ru": "Политика конфиденциальности",
+      "en": "Privacy policy",
+      "kk": "Құпиялылық саясаты"
+    },
+    "body": {
+      "ru": "TODO (юрист): политика обработки персональных данных участников, заявителей ESG Award / Youth Impact Pitch и подписчиков. До утверждения текста формы собирают демо-данные локально.",
+      "en": "TODO (legal counsel): privacy policy for participants, ESG Award / Youth Impact Pitch applicants and subscribers. Until approved, forms store demo data locally.",
+      "kk": "TODO (заңгер): қатысушылар, ESG Award / Youth Impact Pitch өтініш берушілері және жазылушылар үшін дербес деректер саясаты. Бекітілгенше формалар демо-деректерді жергілікті сақтайды."
+    }
+  },
+  "consent": {
+    "title": {
+      "ru": "Согласие на обработку данных",
+      "en": "Data processing consent",
+      "kk": "Деректерді өңдеуге келісім"
+    },
+    "body": {
+      "ru": "TODO (юрист): текст согласия на обработку персональных данных и использование материалов форума.",
+      "en": "TODO (legal counsel): consent text for personal data processing and use of forum materials.",
+      "kk": "TODO (заңгер): дербес деректерді өңдеуге және форум материалдарын пайдалануға келісім мәтіні."
+    }
+  },
+  "terms": {
+    "title": {
+      "ru": "Условия оплаты и возврата",
+      "en": "Payment and refund terms",
+      "kk": "Төлем және қайтару шарттары"
+    },
+    "body": {
+      "ru": "TODO (юрист + финансы): оплата делегата в USD/KZT, счета для юрлиц, промокоды, возвраты и отмена. До подключения платёжного провайдера — выставление счёта по заявке.",
+      "en": "TODO (legal + finance): delegate payment in USD/KZT, corporate invoices, promo codes, refunds and cancellation. Until a payment provider is connected, applications generate invoices.",
+      "kk": "TODO (заңгер + қаржы): делегат төлемі USD/KZT, заңды тұлға шоттары, промокодтар, қайтару және болдыру. Төлем провайдері қосылғанға дейін — өтінім бойынша шот."
+    }
+  }
+}

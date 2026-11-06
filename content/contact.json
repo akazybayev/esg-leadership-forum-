@@ -1,0 +1,46 @@
+{
+  "intro": {
+    "ru": "Свяжитесь с командой Global ESG Partnership по партнёрству, регистрации и медиа.",
+    "en": "Contact the Global ESG Partnership team about partnership, registration and media.",
+    "kk": "Серіктестік, тіркелу және медиа туралы Global ESG Partnership командасымен байланысыңыз."
+  },
+  "channels": [
+    {
+      "id": "general",
+      "label": {
+        "ru": "Общие вопросы",
+        "en": "General enquiries",
+        "kk": "Жалпы сұрақтар"
+      },
+      "value": "info@esgpartners.kz"
+    },
+    {
+      "id": "partners",
+      "label": {
+        "ru": "Партнёрство",
+        "en": "Partnerships",
+        "kk": "Серіктестік"
+      },
+      "value": "partners@esgpartners.kz"
+    },
+    {
+      "id": "media",
+      "label": {
+        "ru": "Медиа",
+        "en": "Media",
+        "kk": "Медиа"
+      },
+      "value": "media@esgpartners.kz"
+    }
+  ],
+  "address": {
+    "ru": "Астана, комплекс EXPO / Hilton Astana",
+    "en": "Astana, EXPO complex / Hilton Astana",
+    "kk": "Астана, EXPO кешені / Hilton Astana"
+  },
+  "note": {
+    "ru": "Телефон и соцсети — TODO после подтверждения заказчика.",
+    "en": "Phone and social links — TODO pending client confirmation.",
+    "kk": "Телефон және әлеуметтік желілер — тапсырыс беруші растауынан кейінгі TODO."
+  }
+}

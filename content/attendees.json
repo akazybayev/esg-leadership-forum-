@@ -1,0 +1,127 @@
+{
+  "intro": {
+    "ru": "Практическая информация для гостей и делегатов: площадка, дорога, отели, виза и FAQ.",
+    "en": "Practical information for guests and delegates: venue, transport, hotels, visa and FAQ.",
+    "kk": "Қонақтар мен делегаттарға арналған практикалық ақпарат: алаң, жол, қонақүйлер, виза және FAQ."
+  },
+  "venue": {
+    "title": {
+      "ru": "Площадка",
+      "en": "Venue",
+      "kk": "Алаң"
+    },
+    "text": {
+      "ru": "Hilton Astana, комплекс EXPO, Астана, Казахстан. Залы: Main Stage, Hall B, Impact Stage, Master Class 1–2, закрытый зал, B2B Lounge.",
+      "en": "Hilton Astana, EXPO complex, Astana, Kazakhstan. Rooms: Main Stage, Hall B, Impact Stage, Master Class 1–2, closed hall, B2B Lounge.",
+      "kk": "Hilton Astana, EXPO кешені, Астана, Қазақстан. Залдар: Main Stage, Hall B, Impact Stage, Master Class 1–2, жабық зал, B2B Lounge."
+    },
+    "mapUrl": "https://maps.google.com/?q=Hilton+Astana",
+    "image": {
+      "src": "/images/venue-hilton-placeholder.svg",
+      "alt": {
+        "ru": "TODO: фото Hilton Astana",
+        "en": "TODO: Hilton Astana photo",
+        "kk": "TODO: Hilton Astana фотосы"
+      }
+    }
+  },
+  "transport": {
+    "title": {
+      "ru": "Как добраться",
+      "en": "How to get there",
+      "kk": "Қалай жетуге болады"
+    },
+    "items": [
+      {
+        "ru": "Аэропорт Нурсултан Назарбаев (NQZ) — такси/трансфер до EXPO ~30–40 минут [уточнить].",
+        "en": "Nursultan Nazarbayev Airport (NQZ) — taxi/transfer to EXPO ~30–40 minutes [confirm].",
+        "kk": "Нұрсұлтан Назарбаев әуежайы (NQZ) — EXPO-ға такси/трансфер ~30–40 минут [нақтылау]."
+      },
+      {
+        "ru": "Метро / автобус до EXPO — расписание TODO.",
+        "en": "Metro / bus to EXPO — timetable TODO.",
+        "kk": "EXPO-ға метро / автобус — кесте TODO."
+      },
+      {
+        "ru": "Парковка отеля — условия для делегатов TODO.",
+        "en": "Hotel parking — delegate terms TODO.",
+        "kk": "Қонақүй тұрағы — делегат шарттары TODO."
+      }
+    ]
+  },
+  "hotels": {
+    "title": {
+      "ru": "Отели",
+      "en": "Hotels",
+      "kk": "Қонақүйлер"
+    },
+    "text": {
+      "ru": "Основная площадка — Hilton Astana. Список партнёрских отелей с промокодами появится после договоров [TODO].",
+      "en": "Primary venue — Hilton Astana. Partner hotel list with promo codes after contracts [TODO].",
+      "kk": "Негізгі алаң — Hilton Astana. Промокодты серіктес қонақүйлер тізімі шарттан кейін [TODO]."
+    },
+    "items": []
+  },
+  "visa": {
+    "title": {
+      "ru": "Виза",
+      "en": "Visa",
+      "kk": "Виза"
+    },
+    "text": {
+      "ru": "Правила въезда зависят от гражданства. Организатор может предоставить письмо-приглашение делегатам после регистрации [TODO процесс]. Проверьте актуальные требования МВД РК / МИД.",
+      "en": "Entry rules depend on nationality. Organizer may issue invitation letters to registered delegates [TODO process]. Check current MoI / MFA requirements.",
+      "kk": "Кіру ережелері азаматтыққа байланысты. Ұйымдастырушы тіркелген делегаттарға шақыру хатын бере алады [TODO процесс]. ІІМ / СІМ талаптарын тексеріңіз."
+    }
+  },
+  "faq": [
+    {
+      "q": {
+        "ru": "Чем гость отличается от делегата?",
+        "en": "How is a guest different from a delegate?",
+        "kk": "Қонақ делегаттан несімен ерекшеленеді?"
+      },
+      "a": {
+        "ru": "Гость — бесплатный доступ к Main Stage, Expo и Impact Stage. Делегат получает Hall B, мастер-классы, B2B, питание и гала ESG Award.",
+        "en": "Guests get free Main Stage, Expo and Impact Stage access. Delegates also get Hall B, masterclasses, B2B, meals and the ESG Award gala.",
+        "kk": "Қонаққа Main Stage, Expo және Impact Stage тегін. Делегатқа Hall B, мастер-класстер, B2B, тамақ және ESG Award галасы қосылады."
+      }
+    },
+    {
+      "q": {
+        "ru": "Нужна ли запись на мастер-классы?",
+        "en": "Do masterclasses require registration?",
+        "kk": "Мастер-класстерге жазылу керек пе?"
+      },
+      "a": {
+        "ru": "Да, мастер-классы и закрытые сессии — по записи для делегатов, места ограничены.",
+        "en": "Yes, masterclasses and closed sessions require advance registration for delegates; seats are limited.",
+        "kk": "Иә, мастер-класстер мен жабық сессиялар делегаттарға алдын ала жазылу бойынша, орын шектеулі."
+      }
+    },
+    {
+      "q": {
+        "ru": "На каком языке проходит форум?",
+        "en": "What languages is the forum in?",
+        "kk": "Форум қай тілде өтеді?"
+      },
+      "a": {
+        "ru": "Казахский, русский и английский; на ключевых сессиях планируется синхронный перевод [подтвердить].",
+        "en": "Kazakh, Russian and English; simultaneous interpretation planned for key sessions [confirm].",
+        "kk": "Қазақ, орыс және ағылшын; негізгі сессияларда синхронды аударма жоспарланған [растау]."
+      }
+    },
+    {
+      "q": {
+        "ru": "Когда объявят спикеров?",
+        "en": "When will speakers be announced?",
+        "kk": "Спикерлер қашан жарияланады?"
+      },
+      "a": {
+        "ru": "После подтверждений; ориентир — 1 июня 2027.",
+        "en": "After confirmations; target date 1 June 2027.",
+        "kk": "Растаудан кейін; бағдар — 2027 жылғы 1 маусым."
+      }
+    }
+  ]
+}

@@ -105,6 +105,87 @@ export function getExpo() {
   };
 }
 
+export function getRegisterContent() {
+  return loadJson("register.json") as {
+    intro: LocalizedString;
+    comparison: Array<{
+      id: string;
+      label: LocalizedString;
+      guest: boolean;
+      delegate: boolean;
+    }>;
+    freeDelegate: LocalizedString[];
+  };
+}
+
+export function getPartnersContent() {
+  return loadJson("partners.json") as {
+    intro: LocalizedString;
+    audience: Array<{ value: string; label: LocalizedString }>;
+    packages: Array<{
+      id: string;
+      title: LocalizedString;
+      summary: LocalizedString;
+      includes: LocalizedString[];
+    }>;
+    deckUrl: string;
+    deckAvailable: boolean;
+  };
+}
+
+export function getAttendeesContent() {
+  return loadJson("attendees.json") as {
+    intro: LocalizedString;
+    venue: {
+      title: LocalizedString;
+      text: LocalizedString;
+      mapUrl: string;
+      image: { src: string; alt: LocalizedString };
+    };
+    transport: { title: LocalizedString; items: LocalizedString[] };
+    hotels: {
+      title: LocalizedString;
+      text: LocalizedString;
+      items: unknown[];
+    };
+    visa: { title: LocalizedString; text: LocalizedString };
+    faq: Array<{ q: LocalizedString; a: LocalizedString }>;
+  };
+}
+
+export function getMediaContent() {
+  return loadJson("media.json") as {
+    intro: LocalizedString;
+    news: unknown[];
+    newsAnnounceDate: string;
+    pressReleases: unknown[];
+    brandKitUrl: string;
+    brandKitAvailable: boolean;
+    accreditationNote: LocalizedString;
+  };
+}
+
+export function getContactContent() {
+  return loadJson("contact.json") as {
+    intro: LocalizedString;
+    channels: Array<{
+      id: string;
+      label: LocalizedString;
+      value: string;
+    }>;
+    address: LocalizedString;
+    note: LocalizedString;
+  };
+}
+
+export function getLegalContent() {
+  return loadJson("legal.json") as {
+    privacy: { title: LocalizedString; body: LocalizedString };
+    consent: { title: LocalizedString; body: LocalizedString };
+    terms: { title: LocalizedString; body: LocalizedString };
+  };
+}
+
 export function getSponsors() {
   return loadJson("sponsors.json") as {
     announceDate: string;

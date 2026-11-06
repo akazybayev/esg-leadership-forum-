@@ -1,14 +1,25 @@
 import { setRequestLocale } from "next-intl/server";
-import { getTranslations } from "next-intl/server";
-import { PageStub } from "@/components/ui/PageStub";
+import type { Locale } from "@/i18n/routing";
+import { getLegalContent, tLocalized } from "@/lib/content";
 
-export default async function Page({
+export default async function TermsPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: localeParam } = await params;
+  const locale = localeParam as Locale;
   setRequestLocale(locale);
-  const t = await getTranslations("footer");
-  return <PageStub title={t("terms")} stage="1" />;
+  const legal = getLegalContent().terms;
+
+  return (
+    <section className="container-shell max-w-3xl py-12 md:py-16">
+      <h1 className="text-4xl font-bold tracking-tight text-deep md:text-5xl">
+        {tLocalized(legal.title, locale)}
+      </h1>
+      <p className="mt-6 text-lg leading-relaxed text-ink-soft">
+        {tLocalized(legal.body, locale)}
+      </p>
+    </section>
+  );
 }

@@ -1,0 +1,17 @@
+{
+  "intro": {
+    "ru": "Новости, пресс-релизы, аккредитация СМИ и фирменные материалы форума.",
+    "en": "News, press releases, media accreditation and brand assets.",
+    "kk": "Форум жаңалықтары, баспасөз хабарламалары, БАҚ аккредитациясы және фирмалық материалдар."
+  },
+  "news": [],
+  "newsAnnounceDate": "2027-03-01",
+  "pressReleases": [],
+  "brandKitUrl": "/brand/esg-forum-kit-TODO.zip",
+  "brandKitAvailable": false,
+  "accreditationNote": {
+    "ru": "Аккредитованные СМИ получают статус делегата по промокоду. Демо-форма до CRM.",
+    "en": "Accredited media receive delegate status via promo code. Demo form until CRM.",
+    "kk": "Аккредиттелген БАҚ промокодпен делегат мәртебесін алады. CRM-ге дейін демо-форма."
+  }
+}

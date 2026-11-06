@@ -27,3 +27,9 @@ Items marked TODO until the client provides final assets or copy.
 - Award rules sourced from uploaded PDF → `docs/AWARD_RULES.md`
 - Pitch rules sourced from uploaded PDF → `docs/PITCH_RULES.md`
 - Statue image: `public/images/award/esg-award-2027.jpg`
+
+## Stage 5 notes
+
+- Partner package details scaffolded pending `CONCEPT.md`
+- Legal pages are TODO stubs for counsel review
+- Partner deck / brand kit / hotel list marked unavailable until files exist

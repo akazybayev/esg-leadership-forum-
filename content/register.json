@@ -1,0 +1,131 @@
+{
+  "intro": {
+    "ru": "Выберите статус участия. Цена делегата переключается автоматически после 31 июля 2027.",
+    "en": "Choose your participation status. Delegate pricing switches automatically after 31 July 2027.",
+    "kk": "Қатысу мәртебесін таңдаңыз. Делегат бағасы 2027 жылғы 31 шілдеден кейін автоматты ауысады."
+  },
+  "comparison": [
+    {
+      "id": "main",
+      "label": {
+        "ru": "Main Stage (открытие, кейноуты, пленарные, финал питча, закрытие)",
+        "en": "Main Stage (opening, keynotes, plenaries, pitch final, closing)",
+        "kk": "Main Stage (ашылу, кейноуттар, пленарлық, питч финалы, жабылу)"
+      },
+      "guest": true,
+      "delegate": true
+    },
+    {
+      "id": "expo",
+      "label": {
+        "ru": "ESG Expo и Impact Stage",
+        "en": "ESG Expo and Impact Stage",
+        "kk": "ESG Expo және Impact Stage"
+      },
+      "guest": true,
+      "delegate": true
+    },
+    {
+      "id": "hallb",
+      "label": {
+        "ru": "Сессии Hall B",
+        "en": "Hall B sessions",
+        "kk": "Hall B сессиялары"
+      },
+      "guest": false,
+      "delegate": true
+    },
+    {
+      "id": "master",
+      "label": {
+        "ru": "Мастер-классы с сертификатом",
+        "en": "Masterclasses with certificate",
+        "kk": "Сертификатты мастер-класстер"
+      },
+      "guest": false,
+      "delegate": true
+    },
+    {
+      "id": "closed",
+      "label": {
+        "ru": "Закрытые сессии и B2B Lounge / 1:1",
+        "en": "Closed sessions and B2B Lounge / 1:1",
+        "kk": "Жабық сессиялар және B2B Lounge / 1:1"
+      },
+      "guest": false,
+      "delegate": true
+    },
+    {
+      "id": "meals",
+      "label": {
+        "ru": "Обеды, кофе-брейки, вечерний приём",
+        "en": "Lunches, coffee breaks, evening reception",
+        "kk": "Түскі ас, кофе-брейктер, кешкі қабылдау"
+      },
+      "guest": false,
+      "delegate": true
+    },
+    {
+      "id": "gala",
+      "label": {
+        "ru": "Гала-ужин и церемония ESG Award",
+        "en": "Gala dinner and ESG Award ceremony",
+        "kk": "Гала-кешкі ас және ESG Award салтанаты"
+      },
+      "guest": false,
+      "delegate": true
+    },
+    {
+      "id": "day0",
+      "label": {
+        "ru": "Визиты Дня 0 и встречи со спикерами",
+        "en": "Day 0 visits and speaker roundtables",
+        "kk": "0-күн сапарлары және спикер кездесулері"
+      },
+      "guest": false,
+      "delegate": true
+    },
+    {
+      "id": "materials",
+      "label": {
+        "ru": "Сборник кейсов, записи, список участников, бейдж",
+        "en": "Casebook, recordings, participant list, badge",
+        "kk": "Кейс жинағы, жазбалар, қатысушылар тізімі, бейдж"
+      },
+      "guest": false,
+      "delegate": true
+    }
+  ],
+  "freeDelegate": [
+    {
+      "ru": "Спикеры, модераторы и жюри",
+      "en": "Speakers, moderators and jury",
+      "kk": "Спикерлер, модераторлар және қазылар алқасы"
+    },
+    {
+      "ru": "Молодёжные делегаты",
+      "en": "Youth delegates",
+      "kk": "Жас делегаттар"
+    },
+    {
+      "ru": "НПО и социальные центры аллеи",
+      "en": "NGO and social-centre alley participants",
+      "kk": "ҮЕҰ және әлеуметтік орталық аллеясы"
+    },
+    {
+      "ru": "Финалисты ESG Award (по два места)",
+      "en": "ESG Award finalists (two seats each)",
+      "kk": "ESG Award финалистері (екі орыннан)"
+    },
+    {
+      "ru": "Аккредитованные СМИ",
+      "en": "Accredited media",
+      "kk": "Аккредиттелген БАҚ"
+    },
+    {
+      "ru": "Спонсоры по квотам пакетов",
+      "en": "Sponsors per package quotas",
+      "kk": "Пакет квоталары бойынша демеушілер"
+    }
+  ]
+}

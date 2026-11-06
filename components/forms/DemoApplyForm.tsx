@@ -16,11 +16,13 @@ export function DemoApplyForm({
   fields,
   submitLabel,
   successMessage,
+  hiddenFields,
 }: {
   id: string;
   fields: DemoField[];
   submitLabel: string;
   successMessage: string;
+  hiddenFields?: Record<string, string>;
 }) {
   const [status, setStatus] = useState("");
 
@@ -37,6 +39,11 @@ export function DemoApplyForm({
         form.reset();
       }}
     >
+      {hiddenFields
+        ? Object.entries(hiddenFields).map(([name, value]) => (
+            <input key={name} type="hidden" name={name} value={value} />
+          ))
+        : null}
       {fields.map((field) => (
         <label key={field.name} className="grid gap-1.5 text-sm">
           <span className="font-medium text-ink">
