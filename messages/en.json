@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "siteName": "ESG Leadership Forum Astana 2027",
+    "defaultDescription": "International ESG forum in Astana: leadership for generations."
+  },
+  "nav": {
+    "about": "About",
+    "program": "Programme",
+    "speakers": "Speakers",
+    "award": "ESG Award",
+    "expo": "Expo",
+    "youth": "Youth",
+    "partners": "Partners",
+    "sponsors": "Sponsors",
+    "attendees": "Attendees",
+    "media": "Media",
+    "register": "Register",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "cta": {
+    "register": "Register",
+    "becomePartner": "Become a partner",
+    "applyAward": "Apply",
+    "viewProgram": "View programme",
+    "allSpeakers": "All speakers"
+  },
+  "footer": {
+    "organizer": "Organizer",
+    "legal": "Legal",
+    "privacy": "Privacy policy",
+    "consent": "Data processing consent",
+    "terms": "Payment and refund terms",
+    "languages": "Languages",
+    "rights": "All rights reserved.",
+    "kkReviewNote": "Kazakh copy requires native-speaker review."
+  },
+  "access": {
+    "open": "Open to all",
+    "delegates": "Delegates only",
+    "byRegistration": "By registration"
+  },
+  "status": {
+    "comingSoon": "Line-up to be announced {date}",
+    "timezone": "Astana time (UTC+5)"
+  },
+  "stage": {
+    "stub": "Page under construction — stage {stage}."
+  }
+}

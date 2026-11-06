@@ -1,0 +1,282 @@
+{
+  "statueCaption": {
+    "ru": "Барс — хранитель будущего",
+    "en": "Bars — Guardian of the Future",
+    "kk": "Барыс — болашақтың қорғаушысы"
+  },
+  "statueImage": "/images/award/esg-award-2027.jpg",
+  "grandPrix": {
+    "ru": "Гран-при ESG Award",
+    "en": "ESG Award Grand Prix",
+    "kk": "ESG Award гран-приі"
+  },
+  "nominations": [
+    {
+      "id": "env-decarb",
+      "block": "Environment",
+      "title": {
+        "ru": "Лидер декарбонизации",
+        "en": "Leader in Decarbonization",
+        "kk": "Декарбонизация көшбасшысы"
+      },
+      "eligible": {
+        "ru": "Компании",
+        "en": "Companies",
+        "kk": "Компаниялар"
+      },
+      "evaluates": {
+        "ru": "Фактическое сокращение выбросов и план",
+        "en": "Verified emissions cut and plan",
+        "kk": "Шығарындыларды нақты қысқарту және жоспар"
+      }
+    },
+    {
+      "id": "env-water",
+      "block": "Environment",
+      "title": {
+        "ru": "Ответственное управление водой и природой",
+        "en": "Responsible water and nature stewardship",
+        "kk": "Су мен табиғатты жауапты басқару"
+      },
+      "eligible": {
+        "ru": "Компании, гос. и коммунальные организации",
+        "en": "Companies, public and utilities",
+        "kk": "Компаниялар, мемлекеттік және коммуналдық ұйымдар"
+      },
+      "evaluates": {
+        "ru": "Вода, экосистемы, биоразнообразие",
+        "en": "Water, ecosystems, biodiversity",
+        "kk": "Су, экожүйелер, биоәртүрлілік"
+      }
+    },
+    {
+      "id": "env-circular",
+      "block": "Environment",
+      "title": {
+        "ru": "Проект циркулярной экономики",
+        "en": "Circular economy project",
+        "kk": "Циркулярлық экономика жобасы"
+      },
+      "eligible": {
+        "ru": "Компании, города, НПО",
+        "en": "Companies, cities, NGOs",
+        "kk": "Компаниялар, қалалар, ҮЕҰ"
+      },
+      "evaluates": {
+        "ru": "Переработка / повторное использование",
+        "en": "Recycling / reuse",
+        "kk": "Қайта өңдеу / қайта пайдалану"
+      }
+    },
+    {
+      "id": "soc-partnership",
+      "block": "Social",
+      "title": {
+        "ru": "Социальное партнёрство года",
+        "en": "Social partnership of the year",
+        "kk": "Жылдың әлеуметтік серіктестігі"
+      },
+      "eligible": {
+        "ru": "Совместная заявка компании и НПО",
+        "en": "Joint company + NGO application",
+        "kk": "Компания мен ҮЕҰ бірлескен өтінімі"
+      },
+      "evaluates": {
+        "ru": "Совместный измеримый социальный эффект",
+        "en": "Shared measurable social impact",
+        "kk": "Бірлескен өлшенетін әлеуметтік әсер"
+      }
+    },
+    {
+      "id": "soc-inclusion",
+      "block": "Social",
+      "title": {
+        "ru": "Инклюзия и доступность",
+        "en": "Inclusion and accessibility",
+        "kk": "Инклюзия және қолжетімділік"
+      },
+      "eligible": {
+        "ru": "Компании, НПО, госорганы",
+        "en": "Companies, NGOs, public bodies",
+        "kk": "Компаниялар, ҮЕҰ, мемлекеттік органдар"
+      },
+      "evaluates": {
+        "ru": "Инклюзивные практики и доступ",
+        "en": "Inclusive practices and access",
+        "kk": "Инклюзивті тәжірибелер мен қолжетімділік"
+      }
+    },
+    {
+      "id": "soc-labor",
+      "block": "Social",
+      "title": {
+        "ru": "Достойный труд и развитие людей",
+        "en": "Decent work and people development",
+        "kk": "Лайықты еңбек және адам дамуы"
+      },
+      "eligible": {
+        "ru": "Компании",
+        "en": "Companies",
+        "kk": "Компаниялар"
+      },
+      "evaluates": {
+        "ru": "Условия труда, обучение, безопасность",
+        "en": "Labour conditions, learning, safety",
+        "kk": "Еңбек жағдайы, оқыту, қауіпсіздік"
+      }
+    },
+    {
+      "id": "gov-transparency",
+      "block": "Governance",
+      "title": {
+        "ru": "Прозрачность и отчётность",
+        "en": "Transparency and reporting",
+        "kk": "Ашықтық және есептілік"
+      },
+      "eligible": {
+        "ru": "Компании и организации",
+        "en": "Companies and organizations",
+        "kk": "Компаниялар мен ұйымдар"
+      },
+      "evaluates": {
+        "ru": "Качество ESG-раскрытия",
+        "en": "ESG disclosure quality",
+        "kk": "ESG ашып көрсету сапасы"
+      }
+    },
+    {
+      "id": "gov-ethics",
+      "block": "Governance",
+      "title": {
+        "ru": "Этика и антикоррупция",
+        "en": "Ethics and anti-corruption",
+        "kk": "Этика және сыбайлас жемқорлыққа қарсы іс"
+      },
+      "eligible": {
+        "ru": "Компании и организации",
+        "en": "Companies and organizations",
+        "kk": "Компаниялар мен ұйымдар"
+      },
+      "evaluates": {
+        "ru": "Системы комплаенса и этики",
+        "en": "Compliance and ethics systems",
+        "kk": "Комплаенс және этика жүйелері"
+      }
+    },
+    {
+      "id": "gov-board",
+      "block": "Governance",
+      "title": {
+        "ru": "ESG в совете директоров",
+        "en": "ESG at the board",
+        "kk": "Директорлар кеңесіндегі ESG"
+      },
+      "eligible": {
+        "ru": "Компании",
+        "en": "Companies",
+        "kk": "Компаниялар"
+      },
+      "evaluates": {
+        "ru": "Управление ESG на уровне совета",
+        "en": "Board-level ESG oversight",
+        "kk": "Кеңес деңгейіндегі ESG басқару"
+      }
+    },
+    {
+      "id": "next-youth",
+      "block": "Next Generation",
+      "title": {
+        "ru": "Молодёжное воздействие",
+        "en": "Youth impact",
+        "kk": "Жастар ықпалы"
+      },
+      "eligible": {
+        "ru": "Молодёжные команды и проекты",
+        "en": "Youth teams and projects",
+        "kk": "Жастар командалары мен жобалары"
+      },
+      "evaluates": {
+        "ru": "Масштабируемый молодёжный эффект",
+        "en": "Scalable youth impact",
+        "kk": "Масштабталатын жастар әсері"
+      }
+    },
+    {
+      "id": "next-edu",
+      "block": "Next Generation",
+      "title": {
+        "ru": "ESG-образование года",
+        "en": "ESG education of the year",
+        "kk": "Жылдың ESG білімі"
+      },
+      "eligible": {
+        "ru": "Вузы и образовательные проекты",
+        "en": "Universities and education projects",
+        "kk": "ЖОО және білім жобалары"
+      },
+      "evaluates": {
+        "ru": "Образовательные результаты",
+        "en": "Education outcomes",
+        "kk": "Білім нәтижелері"
+      }
+    },
+    {
+      "id": "next-startup",
+      "block": "Next Generation",
+      "title": {
+        "ru": "Импакт-стартап",
+        "en": "Impact startup",
+        "kk": "Импакт-стартап"
+      },
+      "eligible": {
+        "ru": "Стартапы и соцпредприниматели",
+        "en": "Startups and social entrepreneurs",
+        "kk": "Стартаптар және әлеуметтік кәсіпкерлер"
+      },
+      "evaluates": {
+        "ru": "Инновация с измеримым эффектом",
+        "en": "Innovation with measurable effect",
+        "kk": "Өлшенетін әсері бар инновация"
+      }
+    },
+    {
+      "id": "next-media",
+      "block": "Next Generation",
+      "title": {
+        "ru": "Медиа за устойчивость",
+        "en": "Media for sustainability",
+        "kk": "Тұрақтылық үшін медиа"
+      },
+      "eligible": {
+        "ru": "СМИ и медиапроекты",
+        "en": "Media outlets and projects",
+        "kk": "БАҚ және медиа жобалар"
+      },
+      "evaluates": {
+        "ru": "Качество освещения ESG",
+        "en": "Quality of ESG coverage",
+        "kk": "ESG қамту сапасы"
+      }
+    },
+    {
+      "id": "next-city",
+      "block": "Next Generation",
+      "title": {
+        "ru": "Город / сообщество будущего",
+        "en": "City / community of the future",
+        "kk": "Болашақ қаласы / қоғамдастығы"
+      },
+      "eligible": {
+        "ru": "Города, районы, сообщества",
+        "en": "Cities, districts, communities",
+        "kk": "Қалалар, аудандар, қоғамдастықтар"
+      },
+      "evaluates": {
+        "ru": "Локальные устойчивые решения",
+        "en": "Local sustainable solutions",
+        "kk": "Жергілікті тұрақты шешімдер"
+      }
+    }
+  ],
+  "juryAnnounceDate": "2027-06-01"
+}

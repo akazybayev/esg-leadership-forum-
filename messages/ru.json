@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "siteName": "ESG Leadership Forum Astana 2027",
+    "defaultDescription": "Международный форум по ESG в Астане: лидерство ради поколений."
+  },
+  "nav": {
+    "about": "О форуме",
+    "program": "Программа",
+    "speakers": "Спикеры",
+    "award": "ESG Award",
+    "expo": "Выставка",
+    "youth": "Молодёжь",
+    "partners": "Партнёрам",
+    "sponsors": "Партнёры",
+    "attendees": "Участнику",
+    "media": "Медиа",
+    "register": "Регистрация",
+    "contact": "Контакты",
+    "menu": "Меню",
+    "close": "Закрыть"
+  },
+  "cta": {
+    "register": "Зарегистрироваться",
+    "becomePartner": "Стать партнёром",
+    "applyAward": "Подать заявку",
+    "viewProgram": "Смотреть программу",
+    "allSpeakers": "Все спикеры"
+  },
+  "footer": {
+    "organizer": "Организатор",
+    "legal": "Правовая информация",
+    "privacy": "Политика конфиденциальности",
+    "consent": "Согласие на обработку данных",
+    "terms": "Условия оплаты и возврата",
+    "languages": "Языки",
+    "rights": "Все права защищены.",
+    "kkReviewNote": "Казахские тексты требуют проверки носителем языка."
+  },
+  "access": {
+    "open": "Открыто всем",
+    "delegates": "Для делегатов",
+    "byRegistration": "По записи"
+  },
+  "status": {
+    "comingSoon": "Состав объявим {date}",
+    "timezone": "Время Астаны (UTC+5)"
+  },
+  "stage": {
+    "stub": "Страница в разработке — этап {stage}."
+  }
+}

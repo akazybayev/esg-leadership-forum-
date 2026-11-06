@@ -1,0 +1,12 @@
+{
+  "primary": [
+    { "href": "/about", "labelKey": "about" },
+    { "href": "/program", "labelKey": "program" },
+    { "href": "/speakers", "labelKey": "speakers" },
+    { "href": "/award", "labelKey": "award" },
+    { "href": "/expo", "labelKey": "expo" },
+    { "href": "/youth", "labelKey": "youth" },
+    { "href": "/partners", "labelKey": "partners" },
+    { "href": "/register", "labelKey": "register" }
+  ]
+}

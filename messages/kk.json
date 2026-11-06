@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "siteName": "ESG Leadership Forum Astana 2027",
+    "defaultDescription": "Астанадағы халықаралық ESG форумы: ұрпақтар үшін көшбасшылық."
+  },
+  "nav": {
+    "about": "Форум туралы",
+    "program": "Бағдарлама",
+    "speakers": "Спикерлер",
+    "award": "ESG Award",
+    "expo": "Көрме",
+    "youth": "Жастар",
+    "partners": "Серіктестерге",
+    "sponsors": "Серіктестер",
+    "attendees": "Қатысушыға",
+    "media": "Медиа",
+    "register": "Тіркелу",
+    "contact": "Байланыс",
+    "menu": "Мәзір",
+    "close": "Жабу"
+  },
+  "cta": {
+    "register": "Тіркелу",
+    "becomePartner": "Серіктес болу",
+    "applyAward": "Өтінім беру",
+    "viewProgram": "Бағдарламаны қарау",
+    "allSpeakers": "Барлық спикерлер"
+  },
+  "footer": {
+    "organizer": "Ұйымдастырушы",
+    "legal": "Құқықтық ақпарат",
+    "privacy": "Құпиялылық саясаты",
+    "consent": "Деректерді өңдеуге келісім",
+    "terms": "Төлем және қайтару шарттары",
+    "languages": "Тілдер",
+    "rights": "Барлық құқықтар қорғалған.",
+    "kkReviewNote": "Қазақша мәтіндерді ана тілінде сөйлейтін маман тексеруі керек."
+  },
+  "access": {
+    "open": "Барлығына ашық",
+    "delegates": "Делегаттарға",
+    "byRegistration": "Алдын ала жазылу бойынша"
+  },
+  "status": {
+    "comingSoon": "Құрамды {date} жариялаймыз",
+    "timezone": "Астана уақыты (UTC+5)"
+  },
+  "stage": {
+    "stub": "Бет әзірленуде — {stage}-кезең."
+  }
+}

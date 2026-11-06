@@ -1,0 +1,41 @@
+{
+  "announceDate": "2027-05-01",
+  "levels": [
+    {
+      "id": "general",
+      "title": {
+        "ru": "Генеральный партнёр",
+        "en": "General partner",
+        "kk": "Бас серіктес"
+      },
+      "logos": []
+    },
+    {
+      "id": "strategic",
+      "title": {
+        "ru": "Стратегический партнёр",
+        "en": "Strategic partner",
+        "kk": "Стратегиялық серіктес"
+      },
+      "logos": []
+    },
+    {
+      "id": "session",
+      "title": {
+        "ru": "Партнёр сессии",
+        "en": "Session partner",
+        "kk": "Сессия серіктесі"
+      },
+      "logos": []
+    },
+    {
+      "id": "media",
+      "title": {
+        "ru": "Медиапартнёр",
+        "en": "Media partner",
+        "kk": "Медиа серіктес"
+      },
+      "logos": []
+    }
+  ]
+}
