@@ -72,5 +72,51 @@
   },
   "stage": {
     "stub": "Page under construction — stage {stage}."
+  },
+  "program": {
+    "intro": "Arrival day and two forum days. Filter by track, room, format and access.",
+    "days": "Days",
+    "day0": "Day 0 · 12 October",
+    "day1": "Day 1 · 13 October",
+    "day2": "Day 2 · 14 October",
+    "timezone": "Astana time (UTC+5)",
+    "filterLine": "Track",
+    "filterRoom": "Room",
+    "filterFormat": "Format",
+    "filterAccess": "Access",
+    "any": "Any",
+    "search": "Search",
+    "searchPlaceholder": "Session title",
+    "results": "Found: {count}",
+    "noDescription": "Full description will appear after speakers are confirmed.",
+    "registrationHint": "Advance registration required for delegates.",
+    "registerDelegate": "Delegate registration",
+    "openSession": "Session page",
+    "addToCalendar": "Add to calendar",
+    "backToProgram": "Back to programme",
+    "format": {
+      "keynote": "Keynote",
+      "plenary": "Plenary",
+      "session": "Session",
+      "masterclass": "Masterclass",
+      "closed": "Closed",
+      "ceremony": "Ceremony",
+      "pitch": "Pitch",
+      "networking": "Networking",
+      "visit": "Visit",
+      "exhibition": "Exhibition",
+      "other": "Other"
+    }
+  },
+  "speakers": {
+    "intro": "The speaker line-up is published after confirmations. We do not invent names.",
+    "comingSoon": "Line-up to be announced {date}",
+    "filterLine": "Track",
+    "any": "Any",
+    "photoSoon": "Photo coming soon",
+    "speaker": "Speaker",
+    "sessions": "Speaker sessions",
+    "noSessions": "No sessions linked yet.",
+    "back": "All speakers"
   }
 }

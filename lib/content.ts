@@ -10,12 +10,12 @@ import {
   type LocalizedString,
   type SiteConfig,
 } from "@/schemas/content";
-import type { Locale } from "@/i18n/routing";
-
 function loadJson(file: string): unknown {
   const full = path.join(process.cwd(), "content", file);
   return JSON.parse(readFileSync(full, "utf8"));
 }
+
+export { tLocalized } from "@/lib/i18n-content";
 
 export function getSiteConfig(): SiteConfig {
   return siteConfigSchema.parse(loadJson("site.json"));
@@ -119,10 +119,6 @@ export function getHeadlineSessions() {
     day1: pick("1", ["keynote", "plenary", "session", "ceremony"], 4),
     day2: pick("2", ["keynote", "plenary", "pitch", "ceremony", "session"], 4),
   };
-}
-
-export function tLocalized(value: LocalizedString, locale: Locale): string {
-  return value[locale] || value.ru;
 }
 
 export function getDelegatePriceUsd(now = new Date()): {

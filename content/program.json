@@ -7,6 +7,60 @@
   },
   "sessions": [
     {
+      "id": "d0-visit-1",
+      "day": "0",
+      "start": "10:00",
+      "end": "16:00",
+      "room": "Expo",
+      "format": "visit",
+      "access": "delegates",
+      "byRegistration": true,
+      "title": {
+        "ru": "Визиты в социальные центры и университеты Астаны",
+        "en": "Visits to social centres and universities in Astana",
+        "kk": "Астанадағы әлеуметтік орталықтар мен университеттерге сапарлар"
+      },
+      "description": {
+        "ru": "Для делегатов: знакомство с социальными и образовательными площадками города.",
+        "en": "For delegates: visits to the city’s social and education venues.",
+        "kk": "Делегаттар үшін: қаланың әлеуметтік және білім алаңдарымен танысу."
+      },
+      "speakers": []
+    },
+    {
+      "id": "d0-youth-2",
+      "day": "0",
+      "start": "16:00",
+      "end": "18:00",
+      "room": "Hall B",
+      "format": "session",
+      "line": "People",
+      "access": "delegates",
+      "byRegistration": true,
+      "title": {
+        "ru": "Установочная сессия для 100 молодёжных делегатов",
+        "en": "Orientation session for 100 youth delegates",
+        "kk": "100 жас делегатқа арналған кіріспе сессия"
+      },
+      "speakers": []
+    },
+    {
+      "id": "d0-dinner-3",
+      "day": "0",
+      "start": "19:00",
+      "end": "21:30",
+      "room": "Closed Hall",
+      "format": "networking",
+      "access": "delegates",
+      "byRegistration": true,
+      "title": {
+        "ru": "Ужин спикеров и генеральных партнёров",
+        "en": "Speakers and general partners dinner",
+        "kk": "Спикерлер мен бас серіктестердің кешкі асы"
+      },
+      "speakers": []
+    },
+    {
       "id": "d1-0800-1",
       "day": "1",
       "start": "08:00",
