@@ -44,13 +44,17 @@
     "earlyBirdEnds": "2027-07-31",
     "shortlistMonth": "2027-09",
     "speakersAnnounce": "2027-06-01",
-    "sponsorsAnnounce": "2027-05-01"
+    "sponsorsAnnounce": "2027-05-01",
+    "guestCountryAnnounce": "2027-03-01"
   },
   "pricing": {
     "guestUsd": 0,
     "delegateEarlyUsd": 250,
     "delegateStandardUsd": 500,
-    "currencyDisplay": ["USD", "KZT"]
+    "currencyDisplay": [
+      "USD",
+      "KZT"
+    ]
   },
   "scale": {
     "days": 2,
@@ -58,11 +62,16 @@
     "countries": "20+",
     "youthDelegates": 100,
     "exhibitors": 20,
-    "awardNominations": 14
+    "awardNominations": 14,
+    "guestCountrySections": 5,
+    "exhibitionStands": 25
   },
   "contact": {
     "email": "forum@esgpartners.kz",
-    "emails": ["forum@esgpartners.kz", "esg@inbox.eu"],
+    "emails": [
+      "forum@esgpartners.kz",
+      "esg@inbox.eu"
+    ],
     "phone": "+7 777 655 5860",
     "coordinator": {
       "name": {

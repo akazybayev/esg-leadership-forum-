@@ -17,7 +17,8 @@
     "register": "Register",
     "contact": "Contact",
     "menu": "Menu",
-    "close": "Close"
+    "close": "Close",
+    "guestCountry": "Guest country"
   },
   "cta": {
     "register": "Register",
@@ -68,7 +69,8 @@
     "statsParticipants": "participants",
     "statsCountries": "countries",
     "statsYouth": "youth delegates",
-    "statsNominations": "ESG Award categories"
+    "statsNominations": "ESG Award categories",
+    "guestCountryCta": "Learn about the status"
   },
   "stage": {
     "stub": "Page under construction — stage {stage}."
@@ -269,5 +271,19 @@
     "fieldTopic": "Topic",
     "fieldMessage": "Message",
     "phone": "Phone"
+  },
+  "guestCountryPage": {
+    "eyebrow": "Guest country of the forum",
+    "title": "A package above the general partner",
+    "includes": "What’s included",
+    "seeProgram": "See in the programme",
+    "requestTitle": "Guest-country status request",
+    "requestText": "For embassies, trade and investment agencies and line ministries. Demo form until stage 6.",
+    "submit": "Send request",
+    "success": "Request saved locally.",
+    "fieldCountry": "Country",
+    "fieldOrg": "Organisation",
+    "fieldContact": "Contact person",
+    "fieldMessage": "Message"
   }
 }

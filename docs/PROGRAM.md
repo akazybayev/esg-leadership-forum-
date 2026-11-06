@@ -1,3 +1,5 @@
+> Updated from PROGRAM_UPDATED.docx (6 Nov 2026): guest-country session on Main Stage Day 1 14:40; energy transition moved to Impact Stage; human capital moved to Day 2; national evening; Day 0 bilateral roundtable.
+
 # ESG Leadership Forum 2027 — Program
 
 ESG Leadership Forum Astana 2027 — программа

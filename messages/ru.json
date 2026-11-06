@@ -17,7 +17,8 @@
     "register": "Регистрация",
     "contact": "Контакты",
     "menu": "Меню",
-    "close": "Закрыть"
+    "close": "Закрыть",
+    "guestCountry": "Страна-гость"
   },
   "cta": {
     "register": "Зарегистрироваться",
@@ -68,7 +69,8 @@
     "statsParticipants": "участников",
     "statsCountries": "стран",
     "statsYouth": "молодёжных делегатов",
-    "statsNominations": "номинаций ESG Award"
+    "statsNominations": "номинаций ESG Award",
+    "guestCountryCta": "Подробнее о статусе"
   },
   "stage": {
     "stub": "Страница в разработке — этап {stage}."
@@ -269,5 +271,19 @@
     "fieldTopic": "Тема",
     "fieldMessage": "Сообщение",
     "phone": "Телефон"
+  },
+  "guestCountryPage": {
+    "eyebrow": "Страна — гость форума",
+    "title": "Пакет выше генерального партнёра",
+    "includes": "Что входит",
+    "seeProgram": "Смотреть в программе",
+    "requestTitle": "Запрос статуса страны-гостя",
+    "requestText": "Для посольств, агентств по продвижению торговли и инвестиций и профильных министерств. Демо-форма до этапа 6.",
+    "submit": "Отправить запрос",
+    "success": "Запрос принят локально.",
+    "fieldCountry": "Страна",
+    "fieldOrg": "Организация",
+    "fieldContact": "Контактное лицо",
+    "fieldMessage": "Комментарий"
   }
 }

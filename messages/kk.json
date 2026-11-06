@@ -17,7 +17,8 @@
     "register": "Тіркелу",
     "contact": "Байланыс",
     "menu": "Мәзір",
-    "close": "Жабу"
+    "close": "Жабу",
+    "guestCountry": "Қонақ ел"
   },
   "cta": {
     "register": "Тіркелу",
@@ -68,7 +69,8 @@
     "statsParticipants": "қатысушы",
     "statsCountries": "ел",
     "statsYouth": "жас делегат",
-    "statsNominations": "ESG Award номинациясы"
+    "statsNominations": "ESG Award номинациясы",
+    "guestCountryCta": "Мәртебе туралы толығырақ"
   },
   "stage": {
     "stub": "Бет әзірленуде — {stage}-кезең."
@@ -269,5 +271,19 @@
     "fieldTopic": "Тақырып",
     "fieldMessage": "Хабарлама",
     "phone": "Телефон"
+  },
+  "guestCountryPage": {
+    "eyebrow": "Форумның қонақ елі",
+    "title": "Бас серіктестен жоғары пакет",
+    "includes": "Не кіреді",
+    "seeProgram": "Бағдарламадан қарау",
+    "requestTitle": "Қонақ ел мәртебесін сұрау",
+    "requestText": "Елшіліктер, сауда мен инвестиция агенттіктері және бейінді министрліктер үшін. 6-кезеңге дейінгі демо-форма.",
+    "submit": "Сұрау жіберу",
+    "success": "Сұрау жергілікті сақталды.",
+    "fieldCountry": "Ел",
+    "fieldOrg": "Ұйым",
+    "fieldContact": "Байланыс адамы",
+    "fieldMessage": "Пікір"
   }
 }

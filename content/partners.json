@@ -1,8 +1,8 @@
 {
   "intro": {
-    "ru": "Партнёрство форума — доступ к 500 участникам, 20+ странам и повестке ESG Центральной Азии. Полные пакеты из CONCEPT.md ещё не загружены: ниже каркас уровней.",
-    "en": "Forum partnership reaches 500 participants, 20+ countries and Central Asia’s ESG agenda. Full packages from CONCEPT.md are not uploaded yet: tier scaffold below.",
-    "kk": "Форум серіктестігі — 500 қатысушы, 20+ ел және Орталық Азия ESG күн тәртібі. CONCEPT.md пакеттері әлі жоқ: төменде деңгей қаңқасы."
+    "ru": "Партнёрство форума — доступ к 500 участникам, 20+ странам, павильону страны-гостя и повестке ESG Центральной Азии.",
+    "en": "Forum partnership reaches 500 participants, 20+ countries, the guest-country pavilion and Central Asia’s ESG agenda.",
+    "kk": "Форум серіктестігі — 500 қатысушы, 20+ ел, қонақ ел павильоны және Орталық Азия ESG күн тәртібі."
   },
   "audience": [
     {
@@ -30,11 +30,11 @@
       }
     },
     {
-      "value": "20",
+      "value": "25",
       "label": {
-        "ru": "экспонентов",
-        "en": "exhibitors",
-        "kk": "экспонент"
+        "ru": "стендов на выставке",
+        "en": "exhibition stands",
+        "kk": "көрме стендтері"
       }
     },
     {
@@ -48,6 +48,51 @@
   ],
   "packages": [
     {
+      "id": "guest-country",
+      "title": {
+        "ru": "Страна — гость форума",
+        "en": "Guest country of the forum",
+        "kk": "Форумның қонақ елі"
+      },
+      "summary": {
+        "ru": "1 пакет. Стоимость по договорённости: страновая сессия, национальный павильон из 5 секций, B2B-офис, приветствие на открытии. В протоколе выше генерального партнёра.",
+        "en": "1 package. Price by agreement: country session, national pavilion of 5 sections, B2B office, opening welcome. Ranks above the general partner in protocol.",
+        "kk": "1 пакет. Баға келісім бойынша: ел сессиясы, 5 секциялы ұлттық павильон, B2B-кеңсе, ашылудағы құттықтау. Хаттамада бас серіктестен жоғары."
+      },
+      "includes": [
+        {
+          "ru": "Страновая сессия 70 минут на Main Stage (13 октября, 14:40–15:50) с синхронным переводом на язык страны",
+          "en": "70-minute country session on Main Stage (13 October, 14:40–15:50) with interpretation into the country’s language",
+          "kk": "Main Stage-та 70 минуттық ел сессиясы (13 қазан, 14:40–15:50) ел тіліне синхронды аудармамен"
+        },
+        {
+          "ru": "Национальный павильон: 5 выставочных секций у входа в ESG Expo (дополнительно к 20 стендам экспонентов)",
+          "en": "National pavilion: 5 exhibition sections at the ESG Expo entrance (in addition to 20 exhibitor stands)",
+          "kk": "Ұлттық павильон: ESG Expo кіреберісіндегі 5 көрме секциясы (20 экспонент стендіне қосымша)"
+        },
+        {
+          "ru": "B2B-офис на площадке Hilton Astana на оба дня",
+          "en": "On-site B2B office at Hilton Astana for both days",
+          "kk": "Hilton Astana алаңында екі күнге B2B-кеңсе"
+        },
+        {
+          "ru": "Приветствие главы делегации на открытии и место в пленарной панели о региональном партнёрстве",
+          "en": "Delegation head welcome at the opening and a seat on the regional partnership plenary",
+          "kk": "Делегация басшысының ашылудағы құттықтауы және өңірлік серіктестік пленарлық панеліндегі орын"
+        },
+        {
+          "ru": "До трёх спикеров страны в тематических сессиях",
+          "en": "Up to three country speakers in theme sessions",
+          "kk": "Тақырыптық сессияларда елдің үш спикеріне дейін"
+        },
+        {
+          "ru": "20 делегатских мест и два стола на гала-ужине",
+          "en": "20 delegate seats and two tables at the gala dinner",
+          "kk": "20 делегат орны және гала-кешкі аста екі үстел"
+        }
+      ]
+    },
+    {
       "id": "general",
       "title": {
         "ru": "Генеральный партнёр",
@@ -55,9 +100,9 @@
         "kk": "Бас серіктес"
       },
       "summary": {
-        "ru": "Максимальная видимость на Main Stage, гала ESG Award и в материалах форума. Детали пакета — TODO из CONCEPT.md.",
-        "en": "Maximum visibility on Main Stage, ESG Award gala and forum materials. Package detail TODO from CONCEPT.md.",
-        "kk": "Main Stage, ESG Award галасы және форум материалдарындағы ең жоғары көрініс. Пакет деталі — CONCEPT.md TODO."
+        "ru": "Приветствие на открытии, кейноут или место в главной панели, лучший стенд, статус партнёра гала-церемонии.",
+        "en": "Opening welcome, keynote or main-panel seat, premier booth, gala-ceremony partner status.",
+        "kk": "Ашылудағы құттықтау, кейноут немесе бас панельдегі орын, үздік стенд, гала-салтанат серіктесі мәртебесі."
       },
       "includes": [
         {

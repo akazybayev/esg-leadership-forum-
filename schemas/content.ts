@@ -37,6 +37,7 @@ export const siteConfigSchema = z.object({
     shortlistMonth: z.string(),
     speakersAnnounce: z.string().optional(),
     sponsorsAnnounce: z.string().optional(),
+    guestCountryAnnounce: z.string().optional(),
   }),
   pricing: z.object({
     guestUsd: z.number(),
@@ -51,6 +52,8 @@ export const siteConfigSchema = z.object({
     youthDelegates: z.number(),
     exhibitors: z.number(),
     awardNominations: z.number(),
+    guestCountrySections: z.number().optional(),
+    exhibitionStands: z.number().optional(),
   }),
   contact: z.object({
     email: z.string().email(),
@@ -242,6 +245,14 @@ export const homeContentSchema = z.object({
     title: localizedStringSchema,
     text: localizedStringSchema,
   }),
+  guestCountry: z
+    .object({
+      eyebrow: localizedStringSchema,
+      title: localizedStringSchema,
+      text: localizedStringSchema,
+      href: z.string(),
+    })
+    .optional(),
   venue: z.object({
     eyebrow: localizedStringSchema,
     title: localizedStringSchema,

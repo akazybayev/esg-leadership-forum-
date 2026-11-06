@@ -269,6 +269,26 @@ export default async function HomePage({
         <p className="mt-6 text-sm text-ink-soft">{tStatus("timezone")}</p>
       </section>
 
+      {home.guestCountry ? (
+        <section className="container-shell py-16 md:py-20">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
+            {tLocalized(home.guestCountry.eyebrow, locale)}
+          </p>
+          <h2 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-deep md:text-5xl">
+            {tLocalized(home.guestCountry.title, locale)}
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg text-ink-soft">
+            {tLocalized(home.guestCountry.text, locale)}
+          </p>
+          <Link
+            href={home.guestCountry.href}
+            className="btn btn-deep mt-8 inline-flex"
+          >
+            {tHome("guestCountryCta")}
+          </Link>
+        </section>
+      ) : null}
+
       <section className="border-y border-line bg-deep py-16 text-white md:py-20">
         <div className="container-shell">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#e2b79a]">

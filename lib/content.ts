@@ -180,6 +180,17 @@ export function getMediaContent() {
   };
 }
 
+export function getGuestCountry() {
+  return loadJson("guest-country.json") as {
+    announceDate: string;
+    countryConfirmed: boolean;
+    country: LocalizedString | null;
+    intro: LocalizedString;
+    buyerNote: LocalizedString;
+    includes: LocalizedString[];
+  };
+}
+
 export function getContactContent() {
   return loadJson("contact.json") as {
     intro: LocalizedString;

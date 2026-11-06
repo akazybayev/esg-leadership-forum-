@@ -35,3 +35,5 @@ Items marked TODO until the client provides final assets or copy.
 - Partner package details scaffolded pending `CONCEPT.md`
 - Legal pages are TODO stubs for counsel review
 - Partner deck / brand kit / hotel list marked unavailable until files exist
+
+- [ ] Guest country name (package confirmed; country TBA)

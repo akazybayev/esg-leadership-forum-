@@ -364,5 +364,23 @@
       "en": "Request received. Demo confirmation until CRM is connected.",
       "kk": "Өтінім қабылданды. CRM қосылғанға дейінгі демо-растау."
     }
+  },
+  "guestCountry": {
+    "eyebrow": {
+      "ru": "Страна — гость",
+      "en": "Guest country",
+      "kk": "Қонақ ел"
+    },
+    "title": {
+      "ru": "Статус выше генерального партнёра",
+      "en": "Status above the general partner",
+      "kk": "Бас серіктестен жоғары мәртебе"
+    },
+    "text": {
+      "ru": "Страновая сессия на Main Stage, павильон из 5 секций и национальный вечер. Страну объявим после подтверждения пакета.",
+      "en": "Main Stage country session, a 5-section pavilion and a national evening. Country announced after package confirmation.",
+      "kk": "Main Stage-тағы ел сессиясы, 5 секциялы павильон және ұлттық кеш. Ел пакет расталғаннан кейін жарияланады."
+    },
+    "href": "/guest-country"
   }
 }
