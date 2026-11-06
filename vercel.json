@@ -1,0 +1,15 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/:locale(ru|en|kk)", "destination": "/:locale.html" },
+    {
+      "source": "/:locale(ru|en|kk)/:page",
+      "destination": "/:locale/:page.html"
+    },
+    {
+      "source": "/:locale(ru|en|kk)/:section/:id",
+      "destination": "/:locale/:section/:id.html"
+    }
+  ]
+}

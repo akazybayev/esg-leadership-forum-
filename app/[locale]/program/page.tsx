@@ -16,20 +16,12 @@ export async function generateMetadata({
 
 export default async function ProgramPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { locale: localeParam } = await params;
   const locale = localeParam as Locale;
   setRequestLocale(locale);
-
-  const query = await searchParams;
-  const pick = (key: string) => {
-    const value = query[key];
-    return Array.isArray(value) ? value[0] ?? "" : value ?? "";
-  };
 
   const t = await getTranslations("nav");
   const tProgram = await getTranslations("program");
@@ -50,12 +42,7 @@ export default async function ProgramPage({
         <ProgramExplorer
           note={program.note}
           sessions={program.sessions}
-          initialDay={pick("day") || "1"}
-          initialLine={pick("line")}
-          initialRoom={pick("room")}
-          initialFormat={pick("format")}
-          initialAccess={pick("access")}
-          initialQuery={pick("q")}
+          initialDay="1"
         />
       </div>
     </section>
