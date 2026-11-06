@@ -1,7 +1,6 @@
 import { readFileSync } from "fs";
 import path from "path";
 import {
-  awardSchema,
   homeContentSchema,
   navigationSchema,
   programSchema,
@@ -38,7 +37,72 @@ export function getSpeakers() {
 }
 
 export function getAward() {
-  return awardSchema.parse(loadJson("award.json"));
+  return loadJson("award.json") as {
+    statueCaption: LocalizedString;
+    statueImage: string;
+    intro: LocalizedString;
+    grandPrix: LocalizedString;
+    grandPrixNote: LocalizedString;
+    principles: LocalizedString[];
+    timeline: Array<{ id: string; date: string; label: LocalizedString }>;
+    criteria: Array<{
+      score: number;
+      title: LocalizedString;
+      text: LocalizedString;
+    }>;
+    scoringNote: LocalizedString;
+    juryAnnounceDate: string;
+    rulesSource: string;
+    nominations: Array<{
+      id: string;
+      block: "Environment" | "Social" | "Governance" | "Next Generation";
+      title: LocalizedString;
+      eligible: LocalizedString;
+      evaluates: LocalizedString;
+    }>;
+    winnersByYear: unknown[];
+  };
+}
+
+export function getYouth() {
+  return loadJson("youth.json") as {
+    intro: LocalizedString;
+    delegate: {
+      title: LocalizedString;
+      text: LocalizedString;
+      requirements: LocalizedString[];
+    };
+    pitch: {
+      title: LocalizedString;
+      text: LocalizedString;
+      tracks: Array<{
+        id: string;
+        title: LocalizedString;
+        examples: LocalizedString;
+      }>;
+      stages: Array<{
+        id: string;
+        when: LocalizedString;
+        result: LocalizedString;
+      }>;
+      criteria: Array<{ score: number; title: LocalizedString }>;
+      prizes: LocalizedString[];
+      rulesSource: string;
+    };
+  };
+}
+
+export function getExpo() {
+  return loadJson("expo.json") as {
+    intro: LocalizedString;
+    zones: Array<{
+      id: string;
+      title: LocalizedString;
+      text: LocalizedString;
+    }>;
+    conditions: LocalizedString[];
+    planImage: { src: string; alt: LocalizedString };
+  };
 }
 
 export function getSponsors() {

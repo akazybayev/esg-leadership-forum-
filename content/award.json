@@ -5,11 +5,195 @@
     "kk": "Барыс — болашақтың қорғаушысы"
   },
   "statueImage": "/images/award/esg-award-2027.jpg",
-  "grandPrix": {
-    "ru": "Гран-при ESG Award",
-    "en": "ESG Award Grand Prix",
-    "kk": "ESG Award гран-приі"
+  "intro": {
+    "ru": "Премия оценивает подтверждённый результат, а не заявления: 14 номинаций и гран-при, независимое жюри, открытые критерии и публичная защита финалистов.",
+    "en": "The award evaluates verified results, not pledges: 14 categories and a Grand Prix, an independent jury, open criteria and a public finalist defence.",
+    "kk": "Марапат уәдені емес, расталған нәтижені бағалайды: 14 номинация және гран-при, тәуелсіз қазылар алқасы, ашық критерийлер және финалистердің жария қорғауы."
   },
+  "grandPrix": {
+    "ru": "Гран-при «ESG-лидер года»",
+    "en": "Grand Prix “ESG Leader of the Year”",
+    "kk": "Гран-при «Жылдың ESG көшбасшысы»"
+  },
+  "grandPrixNote": {
+    "ru": "Персональная награда; самовыдвижение не допускается.",
+    "en": "Individual award; self-nomination is not allowed.",
+    "kk": "Жеке марапат; өзін-өзі ұсынуға болмайды."
+  },
+  "principles": [
+    {
+      "ru": "Независимость оценки",
+      "en": "Independent assessment",
+      "kk": "Бағалау тәуелсіздігі"
+    },
+    {
+      "ru": "Открытость критериев",
+      "en": "Open criteria",
+      "kk": "Критерийлердің ашықтығы"
+    },
+    {
+      "ru": "Проверяемость данных",
+      "en": "Verifiable data",
+      "kk": "Деректердің тексерілуі"
+    },
+    {
+      "ru": "Награду нельзя купить",
+      "en": "The award cannot be bought",
+      "kk": "Марапатты сатып алуға болмайды"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "publish",
+      "date": "2027-02",
+      "label": {
+        "ru": "Публикация положения и состава жюри",
+        "en": "Publication of rules and jury",
+        "kk": "Ереже мен қазылар алқасын жариялау"
+      }
+    },
+    {
+      "id": "apply",
+      "date": "2027-03-01/2027-06-30",
+      "label": {
+        "ru": "Приём заявок",
+        "en": "Applications open",
+        "kk": "Өтінім қабылдау"
+      }
+    },
+    {
+      "id": "check",
+      "date": "2027-07",
+      "label": {
+        "ru": "Проверка комплектности и достоверности",
+        "en": "Completeness and integrity check",
+        "kk": "Толықтық пен шынайылықты тексеру"
+      }
+    },
+    {
+      "id": "jury",
+      "date": "2027-08",
+      "label": {
+        "ru": "Оценка жюри",
+        "en": "Jury scoring",
+        "kk": "Қазылар алқасының бағалауы"
+      }
+    },
+    {
+      "id": "shortlist",
+      "date": "2027-09",
+      "label": {
+        "ru": "Шорт-лист: до трёх финалистов в номинации",
+        "en": "Shortlist: up to three finalists per category",
+        "kk": "Шорт-лист: номинацияда үш финалистке дейін"
+      }
+    },
+    {
+      "id": "defence",
+      "date": "2027-10-13",
+      "label": {
+        "ru": "Публичная защита финалистов",
+        "en": "Public finalist defence",
+        "kk": "Финалистердің жария қорғауы"
+      }
+    },
+    {
+      "id": "gala",
+      "date": "2027-10-14",
+      "label": {
+        "ru": "Гала-церемония награждения",
+        "en": "Awards gala ceremony",
+        "kk": "Марапаттау гала-салтанаты"
+      }
+    }
+  ],
+  "criteria": [
+    {
+      "score": 30,
+      "title": {
+        "ru": "Измеримый результат",
+        "en": "Measurable result",
+        "kk": "Өлшенетін нәтиже"
+      },
+      "text": {
+        "ru": "Фактические показатели против базового уровня",
+        "en": "Actual indicators versus baseline",
+        "kk": "Базалық деңгейге қарсы нақты көрсеткіштер"
+      }
+    },
+    {
+      "score": 20,
+      "title": {
+        "ru": "Масштаб и значимость",
+        "en": "Scale and significance",
+        "kk": "Ауқым мен маңыздылық"
+      },
+      "text": {
+        "ru": "Сколько людей, ресурсов или территорий затронуто",
+        "en": "How many people, resources or territories are affected",
+        "kk": "Қанша адам, ресурс немесе аумақ қамтылған"
+      }
+    },
+    {
+      "score": 15,
+      "title": {
+        "ru": "Системность и управление",
+        "en": "Systems and governance",
+        "kk": "Жүйелілік және басқару"
+      },
+      "text": {
+        "ru": "Встроенность в стратегию, ответственные, бюджет и контроль",
+        "en": "Embedded in strategy, owners, budget and controls",
+        "kk": "Стратегияға енуі, жауаптылар, бюджет және бақылау"
+      }
+    },
+    {
+      "score": 15,
+      "title": {
+        "ru": "Новизна подхода",
+        "en": "Novelty of approach",
+        "kk": "Тәсілдің жаңалығы"
+      },
+      "text": {
+        "ru": "Что сделано иначе, чем принято в отрасли или регионе",
+        "en": "What is done differently from industry or regional practice",
+        "kk": "Салалық немесе өңірлік тәжірибеден өзгеше не істелді"
+      }
+    },
+    {
+      "score": 10,
+      "title": {
+        "ru": "Тиражируемость",
+        "en": "Replicability",
+        "kk": "Қайталанушылық"
+      },
+      "text": {
+        "ru": "Можно ли повторить опыт в других организациях региона",
+        "en": "Whether the practice can be repeated elsewhere in the region",
+        "kk": "Тәжірибені өңірдің басқа ұйымдарында қайталауға бола ма"
+      }
+    },
+    {
+      "score": 10,
+      "title": {
+        "ru": "Прозрачность данных",
+        "en": "Data transparency",
+        "kk": "Деректер ашықтығы"
+      },
+      "text": {
+        "ru": "Качество доказательств, верификация, публичное раскрытие",
+        "en": "Evidence quality, verification, public disclosure",
+        "kk": "Дәлел сапасы, верификация, жария ашып көрсету"
+      }
+    }
+  ],
+  "scoringNote": {
+    "ru": "Итоговый балл финалиста = 70% оценки заявки + 30% публичной защиты. Ниже 60 баллов награда не присуждается.",
+    "en": "Finalist score = 70% application + 30% public defence. No award below 60 points.",
+    "kk": "Финалист балы = өтінімнің 70%-ы + жария қорғаудың 30%-ы. 60 баллдан төмен марапат берілмейді."
+  },
+  "juryAnnounceDate": "2027-02-01",
+  "rulesSource": "docs/AWARD_RULES.md",
   "nominations": [
     {
       "id": "env-decarb",
@@ -25,9 +209,9 @@
         "kk": "Компаниялар"
       },
       "evaluates": {
-        "ru": "Фактическое сокращение выбросов и план",
-        "en": "Verified emissions cut and plan",
-        "kk": "Шығарындыларды нақты қысқарту және жоспар"
+        "ru": "Фактическое сокращение выбросов и план до целевого года",
+        "en": "Verified emissions reduction and plan to the target year",
+        "kk": "Шығарындыларды нақты қысқарту және мақсатты жылға жоспар"
       }
     },
     {
@@ -39,14 +223,14 @@
         "kk": "Су мен табиғатты жауапты басқару"
       },
       "eligible": {
-        "ru": "Компании, гос. и коммунальные организации",
-        "en": "Companies, public and utilities",
+        "ru": "Компании, государственные и коммунальные организации",
+        "en": "Companies, public and utility organisations",
         "kk": "Компаниялар, мемлекеттік және коммуналдық ұйымдар"
       },
       "evaluates": {
-        "ru": "Вода, экосистемы, биоразнообразие",
-        "en": "Water, ecosystems, biodiversity",
-        "kk": "Су, экожүйелер, биоәртүрлілік"
+        "ru": "Снижение водопотребления, восстановление экосистем, защита биоразнообразия",
+        "en": "Water use reduction, ecosystem restoration, biodiversity protection",
+        "kk": "Суды үнемдеу, экожүйені қалпына келтіру, биоәртүрлілікті қорғау"
       }
     },
     {
@@ -63,9 +247,9 @@
         "kk": "Компаниялар, қалалар, ҮЕҰ"
       },
       "evaluates": {
-        "ru": "Переработка / повторное использование",
-        "en": "Recycling / reuse",
-        "kk": "Қайта өңдеу / қайта пайдалану"
+        "ru": "Объём переработки или повторного использования, экономическая устойчивость модели",
+        "en": "Recycling/reuse volume and economic sustainability of the model",
+        "kk": "Қайта өңдеу/пайдалану көлемі және модельдің экономикалық тұрақтылығы"
       }
     },
     {
@@ -77,42 +261,23 @@
         "kk": "Жылдың әлеуметтік серіктестігі"
       },
       "eligible": {
-        "ru": "Совместная заявка компании и НПО",
-        "en": "Joint company + NGO application",
-        "kk": "Компания мен ҮЕҰ бірлескен өтінімі"
+        "ru": "Совместная заявка компании и НПО или социального центра",
+        "en": "Joint company + NGO/social centre application",
+        "kk": "Компания мен ҮЕҰ/әлеуметтік орталықтың бірлескен өтінімі"
       },
       "evaluates": {
-        "ru": "Совместный измеримый социальный эффект",
-        "en": "Shared measurable social impact",
-        "kk": "Бірлескен өлшенетін әлеуметтік әсер"
+        "ru": "Результат для благополучателей, равноправие партнёров, длительность сотрудничества",
+        "en": "Outcomes for beneficiaries, partner equality, duration of collaboration",
+        "kk": "Бенефициарлар үшін нәтиже, серіктестер теңдігі, ынтымақтастық ұзақтығы"
       }
     },
     {
-      "id": "soc-inclusion",
+      "id": "soc-employer",
       "block": "Social",
       "title": {
-        "ru": "Инклюзия и доступность",
-        "en": "Inclusion and accessibility",
-        "kk": "Инклюзия және қолжетімділік"
-      },
-      "eligible": {
-        "ru": "Компании, НПО, госорганы",
-        "en": "Companies, NGOs, public bodies",
-        "kk": "Компаниялар, ҮЕҰ, мемлекеттік органдар"
-      },
-      "evaluates": {
-        "ru": "Инклюзивные практики и доступ",
-        "en": "Inclusive practices and access",
-        "kk": "Инклюзивті тәжірибелер мен қолжетімділік"
-      }
-    },
-    {
-      "id": "soc-labor",
-      "block": "Social",
-      "title": {
-        "ru": "Достойный труд и развитие людей",
-        "en": "Decent work and people development",
-        "kk": "Лайықты еңбек және адам дамуы"
+        "ru": "Работодатель для людей",
+        "en": "Employer for people",
+        "kk": "Адамдар үшін жұмыс беруші"
       },
       "eligible": {
         "ru": "Компании",
@@ -120,163 +285,182 @@
         "kk": "Компаниялар"
       },
       "evaluates": {
-        "ru": "Условия труда, обучение, безопасность",
-        "en": "Labour conditions, learning, safety",
-        "kk": "Еңбек жағдайы, оқыту, қауіпсіздік"
+        "ru": "Безопасность труда, инклюзия, обучение, условия для сотрудников и местных сообществ",
+        "en": "Occupational safety, inclusion, learning, conditions for employees and communities",
+        "kk": "Еңбек қауіпсіздігі, инклюзия, оқыту, қызметкерлер мен қауымдастықтар үшін жағдай"
       }
     },
     {
-      "id": "gov-transparency",
-      "block": "Governance",
+      "id": "soc-ngo",
+      "block": "Social",
       "title": {
-        "ru": "Прозрачность и отчётность",
-        "en": "Transparency and reporting",
-        "kk": "Ашықтық және есептілік"
+        "ru": "НПО или социальный центр года",
+        "en": "NGO or social centre of the year",
+        "kk": "Жылдың ҮЕҰ немесе әлеуметтік орталығы"
       },
       "eligible": {
-        "ru": "Компании и организации",
-        "en": "Companies and organizations",
-        "kk": "Компаниялар мен ұйымдар"
+        "ru": "НПО, социальные центры, социальные предприятия",
+        "en": "NGOs, social centres, social enterprises",
+        "kk": "ҮЕҰ, әлеуметтік орталықтар, әлеуметтік кәсіпорындар"
       },
       "evaluates": {
-        "ru": "Качество ESG-раскрытия",
-        "en": "ESG disclosure quality",
-        "kk": "ESG ашып көрсету сапасы"
+        "ru": "Измеренный социальный эффект, прозрачность, устойчивость организации",
+        "en": "Measured social impact, transparency, organisational resilience",
+        "kk": "Өлшенген әлеуметтік әсер, ашықтық, ұйым тұрақтылығы"
       }
     },
     {
-      "id": "gov-ethics",
+      "id": "gov-report",
       "block": "Governance",
       "title": {
-        "ru": "Этика и антикоррупция",
-        "en": "Ethics and anti-corruption",
-        "kk": "Этика және сыбайлас жемқорлыққа қарсы іс"
+        "ru": "Лучший ESG-отчёт и прозрачность",
+        "en": "Best ESG report and transparency",
+        "kk": "Үздік ESG есеп және ашықтық"
       },
       "eligible": {
-        "ru": "Компании и организации",
-        "en": "Companies and organizations",
-        "kk": "Компаниялар мен ұйымдар"
+        "ru": "Компании и финансовые организации",
+        "en": "Companies and financial organisations",
+        "kk": "Компаниялар және қаржы ұйымдары"
       },
       "evaluates": {
-        "ru": "Системы комплаенса и этики",
-        "en": "Compliance and ethics systems",
-        "kk": "Комплаенс және этика жүйелері"
+        "ru": "Полнота и сопоставимость раскрытия, соответствие стандартам, наличие заверения",
+        "en": "Completeness and comparability of disclosure, standards alignment, assurance",
+        "kk": "Ашып көрсетудің толықтығы мен салыстырымдылығы, стандарттарға сәйкестік, растау"
       }
     },
     {
       "id": "gov-board",
       "block": "Governance",
       "title": {
-        "ru": "ESG в совете директоров",
-        "en": "ESG at the board",
-        "kk": "Директорлар кеңесіндегі ESG"
+        "ru": "Совет директоров года",
+        "en": "Board of the year",
+        "kk": "Жылдың директорлар кеңесі"
       },
       "eligible": {
-        "ru": "Компании",
-        "en": "Companies",
-        "kk": "Компаниялар"
+        "ru": "Компании с действующим советом директоров",
+        "en": "Companies with an active board",
+        "kk": "Қолданыстағы директорлар кеңесі бар компаниялар"
       },
       "evaluates": {
-        "ru": "Управление ESG на уровне совета",
-        "en": "Board-level ESG oversight",
-        "kk": "Кеңес деңгейіндегі ESG басқару"
+        "ru": "Роль совета в ESG-стратегии, независимость, разнообразие, управление рисками",
+        "en": "Board role in ESG strategy, independence, diversity, risk oversight",
+        "kk": "ESG стратегиядағы кеңес рөлі, тәуелсіздік, әртүрлілік, тәуекелдерді басқару"
+      }
+    },
+    {
+      "id": "gov-deal",
+      "block": "Governance",
+      "title": {
+        "ru": "Сделка устойчивого финансирования года",
+        "en": "Sustainable finance deal of the year",
+        "kk": "Жылдың тұрақты қаржыландыру мәмілесі"
+      },
+      "eligible": {
+        "ru": "Эмитенты, банки, организаторы сделок",
+        "en": "Issuers, banks, deal arrangers",
+        "kk": "Эмитенттер, банктер, мәміле ұйымдастырушылары"
+      },
+      "evaluates": {
+        "ru": "Структура сделки, целевое использование средств, независимая верификация",
+        "en": "Deal structure, use of proceeds, independent verification",
+        "kk": "Мәміле құрылымы, қаражаттың мақсатты пайдаланылуы, тәуелсіз тексеру"
+      }
+    },
+    {
+      "id": "gov-team",
+      "block": "Governance",
+      "title": {
+        "ru": "ESG-команда года",
+        "en": "ESG team of the year",
+        "kk": "Жылдың ESG командасы"
+      },
+      "eligible": {
+        "ru": "Команды по устойчивому развитию компаний и финансовых организаций",
+        "en": "Sustainability teams of companies and financial organisations",
+        "kk": "Компаниялар мен қаржы ұйымдарының тұрақты даму командалары"
+      },
+      "evaluates": {
+        "ru": "Результаты команды, влияние на решения руководства, вовлечение подразделений",
+        "en": "Team results, influence on leadership decisions, cross-team engagement",
+        "kk": "Команда нәтижелері, басшылық шешімдеріне ықпал, бөлімшелерді тарту"
       }
     },
     {
       "id": "next-youth",
       "block": "Next Generation",
       "title": {
-        "ru": "Молодёжное воздействие",
-        "en": "Youth impact",
-        "kk": "Жастар ықпалы"
+        "ru": "Молодёжная инициатива года",
+        "en": "Youth initiative of the year",
+        "kk": "Жылдың жастар бастамасы"
       },
       "eligible": {
-        "ru": "Молодёжные команды и проекты",
-        "en": "Youth teams and projects",
-        "kk": "Жастар командалары мен жобалары"
+        "ru": "Команды и организации, где руководителю до 30 лет",
+        "en": "Teams/organisations led by someone under 30",
+        "kk": "Басшысы 30 жасқа дейінгі командалар мен ұйымдар"
       },
       "evaluates": {
-        "ru": "Масштабируемый молодёжный эффект",
-        "en": "Scalable youth impact",
-        "kk": "Масштабталатын жастар әсері"
+        "ru": "Результат уже работающего проекта и вовлечение сверстников",
+        "en": "Results of an operating project and peer engagement",
+        "kk": "Жұмыс істеп тұрған жоба нәтижесі және құрдастарды тарту"
       }
     },
     {
-      "id": "next-edu",
+      "id": "next-uni",
       "block": "Next Generation",
       "title": {
-        "ru": "ESG-образование года",
-        "en": "ESG education of the year",
-        "kk": "Жылдың ESG білімі"
+        "ru": "Университет года",
+        "en": "University of the year",
+        "kk": "Жылдың университеті"
       },
       "eligible": {
-        "ru": "Вузы и образовательные проекты",
-        "en": "Universities and education projects",
-        "kk": "ЖОО және білім жобалары"
+        "ru": "Высшие учебные заведения",
+        "en": "Higher education institutions",
+        "kk": "Жоғары оқу орындары"
       },
       "evaluates": {
-        "ru": "Образовательные результаты",
-        "en": "Education outcomes",
-        "kk": "Білім нәтижелері"
+        "ru": "ESG в учебных программах, исследованиях и управлении кампусом",
+        "en": "ESG in curricula, research and campus management",
+        "kk": "Оқу бағдарламаларында, зерттеулерде және кампус басқаруында ESG"
       }
     },
     {
-      "id": "next-startup",
+      "id": "next-sme",
       "block": "Next Generation",
       "title": {
-        "ru": "Импакт-стартап",
-        "en": "Impact startup",
-        "kk": "Импакт-стартап"
+        "ru": "ESG-чемпион среди малого и среднего бизнеса",
+        "en": "ESG champion among SMEs",
+        "kk": "ШОБ арасындағы ESG чемпионы"
       },
       "eligible": {
-        "ru": "Стартапы и соцпредприниматели",
-        "en": "Startups and social entrepreneurs",
-        "kk": "Стартаптар және әлеуметтік кәсіпкерлер"
+        "ru": "Малые и средние предприятия",
+        "en": "Small and medium-sized enterprises",
+        "kk": "Шағын және орта кәсіпорындар"
       },
       "evaluates": {
-        "ru": "Инновация с измеримым эффектом",
-        "en": "Innovation with measurable effect",
-        "kk": "Өлшенетін әсері бар инновация"
+        "ru": "Практики, соразмерные масштабу бизнеса, и их влияние на результат",
+        "en": "Practices proportionate to business scale and their impact",
+        "kk": "Бизнес ауқымына сай тәжірибелер және олардың нәтижеге әсері"
       }
     },
     {
-      "id": "next-media",
+      "id": "next-ai",
       "block": "Next Generation",
       "title": {
-        "ru": "Медиа за устойчивость",
-        "en": "Media for sustainability",
-        "kk": "Тұрақтылық үшін медиа"
+        "ru": "Лучшее ИИ-решение для ESG",
+        "en": "Best AI solution for ESG",
+        "kk": "ESG үшін үздік ЖИ шешімі"
       },
       "eligible": {
-        "ru": "СМИ и медиапроекты",
-        "en": "Media outlets and projects",
-        "kk": "БАҚ және медиа жобалар"
+        "ru": "Разработчики и организации, внедрившие решение; можно совместной заявкой",
+        "en": "Developors and adopters; joint applications allowed",
+        "kk": "Әзірлеушілер мен енгізген ұйымдар; бірлескен өтінімге болады"
       },
       "evaluates": {
-        "ru": "Качество освещения ESG",
-        "en": "Quality of ESG coverage",
-        "kk": "ESG қамту сапасы"
-      }
-    },
-    {
-      "id": "next-city",
-      "block": "Next Generation",
-      "title": {
-        "ru": "Город / сообщество будущего",
-        "en": "City / community of the future",
-        "kk": "Болашақ қаласы / қоғамдастығы"
-      },
-      "eligible": {
-        "ru": "Города, районы, сообщества",
-        "en": "Cities, districts, communities",
-        "kk": "Қалалар, аудандар, қоғамдастықтар"
-      },
-      "evaluates": {
-        "ru": "Локальные устойчивые решения",
-        "en": "Local sustainable solutions",
-        "kk": "Жергілікті тұрақты шешімдер"
+        "ru": "Измеренный эффект внедрения, качество данных, ответственное использование ИИ",
+        "en": "Measured adoption impact, data quality, responsible AI use",
+        "kk": "Енгізудің өлшенген әсері, дерек сапасы, ЖИ-ды жауапты пайдалану"
       }
     }
   ],
-  "juryAnnounceDate": "2027-06-01"
+  "winnersByYear": []
 }

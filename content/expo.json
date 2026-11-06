@@ -1,0 +1,99 @@
+{
+  "intro": {
+    "ru": "ESG Expo — выставка решений и партнёрств в зоне Impact Stage: компании, НПО, университеты и стартапы.",
+    "en": "ESG Expo is the solutions and partnerships exhibition around Impact Stage: companies, NGOs, universities and startups.",
+    "kk": "ESG Expo — Impact Stage аймағындағы шешімдер мен серіктестік көрмесі: компаниялар, ҮЕҰ, университеттер және стартаптар."
+  },
+  "zones": [
+    {
+      "id": "impact",
+      "title": {
+        "ru": "Impact Stage",
+        "en": "Impact Stage",
+        "kk": "Impact Stage"
+      },
+      "text": {
+        "ru": "Сцена в зоне выставки для коротких выступлений и питчей.",
+        "en": "Stage inside the expo for short talks and pitches.",
+        "kk": "Қысқа сөздер мен питчтерге арналған көрме сахнасы."
+      }
+    },
+    {
+      "id": "corporate",
+      "title": {
+        "ru": "Корпоративная аллея",
+        "en": "Corporate alley",
+        "kk": "Корпоративтік аллея"
+      },
+      "text": {
+        "ru": "Стенды компаний и банков с кейсами перехода.",
+        "en": "Company and bank stands with transition case studies.",
+        "kk": "Өтпелі кейстері бар компаниялар мен банк стендтері."
+      }
+    },
+    {
+      "id": "ngo",
+      "title": {
+        "ru": "Аллея НПО и соццентров",
+        "en": "NGO and social centres alley",
+        "kk": "ҮЕҰ және әлеуметтік орталықтар аллеясы"
+      },
+      "text": {
+        "ru": "Некоммерческие организации и социальные центры — без платы за стенд для подтверждённых участников [TODO].",
+        "en": "Non-profits and social centres — booth fee waived for confirmed participants [TODO].",
+        "kk": "ҮЕҰ және әлеуметтік орталықтар — расталған қатысушыларға стенд тегін [TODO]."
+      }
+    },
+    {
+      "id": "youth",
+      "title": {
+        "ru": "Молодёжный кластер",
+        "en": "Youth cluster",
+        "kk": "Жастар кластері"
+      },
+      "text": {
+        "ru": "Университеты, Youth Impact Pitch и образовательные проекты.",
+        "en": "Universities, Youth Impact Pitch and education projects.",
+        "kk": "Университеттер, Youth Impact Pitch және білім жобалары."
+      }
+    },
+    {
+      "id": "b2b",
+      "title": {
+        "ru": "B2B Lounge",
+        "en": "B2B Lounge",
+        "kk": "B2B Lounge"
+      },
+      "text": {
+        "ru": "Встречи 1:1 для делегатов рядом с выставкой.",
+        "en": "1:1 meetings for delegates next to the expo.",
+        "kk": "Көрме жанында делегаттарға 1:1 кездесулер."
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "ru": "До 20 экспонентов; пакеты стендов публикуются с партнёрскими условиями [TODO PDF].",
+      "en": "Up to 20 exhibitors; booth packages published with partner terms [TODO PDF].",
+      "kk": "20 экспонентке дейін; стенд пакеттері серіктестік шарттарымен жарияланады [TODO PDF]."
+    },
+    {
+      "ru": "Доступ гостей на выставку и Impact Stage бесплатный.",
+      "en": "Guest access to the expo and Impact Stage is free.",
+      "kk": "Қонақтарға көрме мен Impact Stage тегін."
+    },
+    {
+      "ru": "НПО и социальные центры аллеи получают квоты по промокоду делегата.",
+      "en": "NGO/social-centre alley participants receive delegate promo quotas.",
+      "kk": "ҮЕҰ/әлеуметтік орталық аллеясы делегат промокоды бойынша квота алады."
+    }
+  ],
+  "planImage": {
+    "src": "/images/expo-plan-placeholder.svg",
+    "alt": {
+      "ru": "TODO: план зон ESG Expo",
+      "en": "TODO: ESG Expo zone plan",
+      "kk": "TODO: ESG Expo аймақ жоспары"
+    }
+  }
+}
