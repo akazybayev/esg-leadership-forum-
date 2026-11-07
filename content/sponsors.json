@@ -20,20 +20,11 @@
       "logos": []
     },
     {
-      "id": "session",
+      "id": "theme",
       "title": {
-        "ru": "Партнёр сессии",
-        "en": "Session partner",
-        "kk": "Сессия серіктесі"
-      },
-      "logos": []
-    },
-    {
-      "id": "media",
-      "title": {
-        "ru": "Медиапартнёр",
-        "en": "Media partner",
-        "kk": "Медиа серіктес"
+        "ru": "Партнёр тематической линии",
+        "en": "Theme-track partner",
+        "kk": "Тақырыптық бағыт серіктесі"
       },
       "logos": []
     }

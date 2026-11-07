@@ -6,11 +6,11 @@
       "kk": "Орталық Азиядағы бизнес, мемлекет және жастар көшбасшыларына арналған халықаралық алаң."
     },
     "image": {
-      "src": "/images/hero/hilton-main-hall.jpg",
+      "src": "/images/hero/astana.jpg",
       "alt": {
-        "ru": "Главный зал Hilton Astana",
-        "en": "Hilton Astana main hall",
-        "kk": "Hilton Astana негізгі залы"
+        "ru": "Астана: резиденция Акорда, река Ишим и городской парк",
+        "en": "Astana: the Akorda residence, the Ishim river and the city park",
+        "kk": "Астана: Ақорда резиденциясы, Есіл өзені және қалалық саябақ"
       }
     }
   },
@@ -372,9 +372,9 @@
       "kk": "Қонақ ел"
     },
     "title": {
-      "ru": "Статус выше генерального партнёра",
-      "en": "Status above the general partner",
-      "kk": "Бас серіктестен жоғары мәртебе"
+      "ru": "Отдельный формат международного партнёрства",
+      "en": "A separate format of international partnership",
+      "kk": "Халықаралық серіктестіктің жеке форматы"
     },
     "text": {
       "ru": "Страновая сессия на Main Stage, павильон из 5 секций и национальный вечер. Страну объявим после подтверждения пакета.",
