@@ -180,12 +180,12 @@ export default async function AboutPage({
             <h3 className="text-xl font-bold text-deep">{t("schoolName")}</h3>
             <p className="mt-3 leading-relaxed text-ink-soft">{t("schoolText")}</p>
             <a
-              href="https://esgpartners.kz"
+              href="https://www.esgschool.kz"
               className="mt-4 inline-block text-sm font-semibold text-deep underline"
               target="_blank"
               rel="noreferrer"
             >
-              esgpartners.kz
+              www.esgschool.kz
             </a>
           </article>
         </div>

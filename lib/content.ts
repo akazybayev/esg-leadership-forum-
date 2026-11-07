@@ -251,7 +251,7 @@ export function getNearestDeadline(now = new Date()): {
       id: "youthPitch",
       date: site.dates.youthPitchClose,
       label: {
-        ru: "Приём заявок Youth Impact Pitch",
+        ru: "Прием заявок Youth Impact Pitch",
         en: "Youth Impact Pitch applications close",
         kk: "Youth Impact Pitch өтінімдері аяқталады",
       },
@@ -260,7 +260,7 @@ export function getNearestDeadline(now = new Date()): {
       id: "award",
       date: site.dates.awardClose,
       label: {
-        ru: "Приём заявок ESG Award",
+        ru: "Прием заявок ESG Award",
         en: "ESG Award applications close",
         kk: "ESG Award өтінімдері аяқталады",
       },
