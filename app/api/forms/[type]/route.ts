@@ -13,6 +13,46 @@ import {
 
 const MAX_BODY_CHARS = 12_000;
 
+function declaredBodyIsTooLarge(request: Request, maxBytes: number): boolean {
+  const declared = request.headers.get("content-length");
+  if (declared === null) return false;
+  if (!/^\d+$/.test(declared.trim())) return true;
+  const size = Number(declared);
+  return !Number.isSafeInteger(size) || size > maxBytes;
+}
+
+async function readLimited(request: Request, maxBytes: number): Promise<string | null> {
+  if (!request.body) return "";
+  const reader = request.body.getReader();
+  const chunks: Uint8Array[] = [];
+  let bytes = 0;
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      bytes += value.byteLength;
+      if (bytes > maxBytes) {
+        await reader.cancel();
+        return null;
+      }
+      chunks.push(value);
+    }
+  } finally {
+    try {
+      reader.releaseLock();
+    } catch {
+      // Cancel already released the reader.
+    }
+  }
+  const body = new Uint8Array(bytes);
+  let offset = 0;
+  for (const chunk of chunks) {
+    body.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  return new TextDecoder().decode(body);
+}
+
 export const runtime = "nodejs";
 
 function isFormType(value: string): value is FormType {
@@ -99,6 +139,10 @@ export async function POST(
     return reply(html, locale, 403, "refused", backHref);
   }
 
+  if (declaredBodyIsTooLarge(request, MAX_BODY_CHARS)) {
+    return reply(html, locale, 413, "large", backHref);
+  }
+
   const limited = await checkRateLimit(clientAddress(request));
   if (!limited.ok) {
     return reply(html, locale, 429, "limited", backHref, {
@@ -109,8 +153,8 @@ export async function POST(
   let payload: unknown;
   let fields: Record<string, string> = {};
   try {
-    const raw = await request.text();
-    if (raw.length > MAX_BODY_CHARS) {
+    const raw = await readLimited(request, MAX_BODY_CHARS);
+    if (raw === null) {
       return reply(html, locale, 413, "large", backHref);
     }
     if (html) {

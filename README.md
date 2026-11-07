@@ -55,7 +55,7 @@ All visitor-facing copy is localized. Kazakh strings need native-speaker review 
 `POST /api/forms/[type]` for register, award, youth-delegate, youth-pitch, expo, partners, guest-country, media, contact, newsletter.
 
 - Validation: shared Zod schemas + React Hook Form
-- Spam: honeypot. Each client address may send `FORM_RATE_LIMIT_PER_HOUR` submissions per hour (default 3). The address is the last proxy hop, not the first forwarded value. The whole site also stops at 15 submissions an hour, 40 a day, and 80 KB of stored text a day. Those counters are kept in the site database, so every server shares one limit.
+- Spam: honeypot. Each visitor may send `FORM_RATE_LIMIT_PER_HOUR` submissions per hour (default 3). The visitor is the first address in `X-Forwarded-For`. Later addresses are ignored, and a missing address shares one bucket. The whole site also stops at 15 submissions an hour, 40 a day, and 80 KB of stored text a day. Those counters are kept in the site database, so every server shares one limit. After a limit is reached, further requests are refused from memory until that window ends, and only a few checks may use the database at once. A body larger than 12 KB is refused before it is stored.
 - A browser submission must come from this site. A page on another site is refused.
 - Stored applications are encrypted with `FORM_STORE_KEY` and kept in the site database, not in a file the site can serve. The published site refuses to save an application until that key is set. A local run without the key keeps only the receipt id, form type and time.
 - Static pages post forms to `/api/forms/[type]`. A submit does not put the fields in the page address.
