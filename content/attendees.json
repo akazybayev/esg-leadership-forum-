@@ -27,9 +27,9 @@
   },
   "transport": {
     "title": {
-      "ru": "Как добраться",
-      "en": "How to get there",
-      "kk": "Қалай жетуге болады"
+      "ru": "Трансфер",
+      "en": "Transfer",
+      "kk": "Трансфер"
     },
     "items": [
       {
@@ -46,9 +46,9 @@
       "kk": "Қонақүйлер"
     },
     "text": {
-      "ru": "Основная площадка — Hilton Astana.",
-      "en": "The venue is Hilton Astana.",
-      "kk": "Негізгі алаң — Hilton Astana."
+      "ru": "Форум проходит в Hilton Astana, и участники могут жить в этом отеле. Партнерские тарифы других отелей появятся здесь после договоров.",
+      "en": "The forum is at Hilton Astana, and participants can stay at that hotel. Partner rates at other hotels will be listed here after the agreements.",
+      "kk": "Форум Hilton Astana қонақүйінде өтеді, қатысушылар осы қонақүйде тұра алады. Басқа қонақүйлердің серіктестік тарифтері келісімдерден кейін осында шығады."
     },
     "items": []
   },

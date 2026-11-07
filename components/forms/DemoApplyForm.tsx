@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { z } from "zod";
 import { formSchemaByType, type FormType } from "@/schemas/forms";
+import { ConsentCheckbox } from "@/components/forms/ConsentCheckbox";
 
 export type DemoField = {
   name: string;
@@ -48,11 +49,12 @@ export function DemoApplyForm({
   const hiddenKey = JSON.stringify(hiddenFields || {});
 
   const defaultValues = useMemo(() => {
-    const values: Record<string, string> = {};
+    const values: Record<string, string | boolean> = {};
     for (const field of fields) values[field.name] = "";
     if (hiddenFields) Object.assign(values, hiddenFields);
     values.company_website = "";
     if (formType === "newsletter") values.company = "";
+    values.consent = false;
     return values as Values;
     // eslint-disable-next-line react-hooks/exhaustive-deps -- keyed by fieldKey/hiddenKey
   }, [fieldKey, hiddenKey, formType]);
@@ -159,6 +161,14 @@ export function DemoApplyForm({
         className="hidden"
         aria-hidden="true"
         {...register("company_website" as never)}
+      />
+
+      <ConsentCheckbox
+        id={`${id}-consent`}
+        invalid={Boolean(
+          (errors as Record<string, { message?: string } | undefined>).consent,
+        )}
+        inputProps={register("consent" as never)}
       />
 
       <button

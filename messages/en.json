@@ -261,7 +261,7 @@
     "phoneHint": "+7 …",
     "payAsLegal": "Payment by a legal entity",
     "promoHow": "How do I get a promo code?",
-    "promoHowBody": "Free delegate places by promo code go to speakers, moderators and the jury, youth delegates, NGOs on the social-projects alley, ESG Award finalists (two places), accredited media and sponsors within package quotas. Request a code: <email>forum@esgpartners.kz</email>.",
+    "promoHowBody": "Global ESG Partnership issues promo codes. Write to <email>forum@esgpartners.kz</email>.",
     "consentLabel": "I agree to the <link>processing of personal data</link>",
     "termsLabel": "I accept the <link>payment and refund terms</link>",
     "addToCalendar": "Add to calendar",
@@ -390,10 +390,15 @@
   "share": {
     "label": "Share",
     "linkedin": "LinkedIn",
+    "instagram": "Instagram",
     "telegram": "Telegram",
     "whatsapp": "WhatsApp",
     "copy": "Copy link",
     "copied": "Link copied"
+  },
+  "consentBox": {
+    "label": "I agree to the <link>processing of personal data</link>",
+    "error": "Consent to process personal data is required"
   },
   "lines": {
     "Lead": {

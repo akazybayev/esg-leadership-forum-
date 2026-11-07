@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { newsletterFormSchema } from "@/schemas/forms";
 import type { z } from "zod";
+import { ConsentCheckbox } from "@/components/forms/ConsentCheckbox";
 
 type Values = z.infer<typeof newsletterFormSchema>;
 
@@ -27,7 +28,7 @@ export function NewsletterForm({
     formState: { isSubmitting, errors },
   } = useForm<Values>({
     resolver: zodResolver(newsletterFormSchema),
-    defaultValues: { email: "", company: "" },
+    defaultValues: { email: "", company: "", consent: false } as unknown as Values,
   });
 
   const onSubmit = handleSubmit(() => {
@@ -39,10 +40,11 @@ export function NewsletterForm({
       ref={formRef}
       method="post"
       action="/api/forms/newsletter"
-      className="mt-6 flex flex-col gap-3 sm:flex-row"
+      className="mt-6 grid gap-3"
       onSubmit={onSubmit}
     >
       <input type="hidden" name="locale" value={locale} />
+      <div className="flex flex-col gap-3 sm:flex-row">
       <label className="sr-only" htmlFor={id}>
         Email
       </label>
@@ -70,6 +72,12 @@ export function NewsletterForm({
       >
         {isSubmitting ? "…" : button}
       </button>
+      </div>
+      <ConsentCheckbox
+        id={`${id}-consent`}
+        invalid={Boolean(errors.consent)}
+        inputProps={register("consent")}
+      />
     </form>
   );
 }

@@ -261,7 +261,7 @@
     "phoneHint": "+7 …",
     "payAsLegal": "Оплата от юридического лица",
     "promoHow": "Как получить промокод?",
-    "promoHowBody": "Бесплатные делегатские места по промокоду получают спикеры, модераторы и жюри, молодежные делегаты, НПО аллеи социальных проектов, финалисты ESG Award (два места), аккредитованные СМИ и спонсоры по квотам пакетов. Запросить промокод: <email>forum@esgpartners.kz</email>.",
+    "promoHowBody": "Промокод выдает организатор Global ESG Partnership. Напишите на <email>forum@esgpartners.kz</email>.",
     "consentLabel": "Я согласен(на) на <link>обработку персональных данных</link>",
     "termsLabel": "Я принимаю <link>условия оплаты и возврата</link>",
     "addToCalendar": "Добавить в календарь",
@@ -390,10 +390,15 @@
   "share": {
     "label": "Поделиться",
     "linkedin": "LinkedIn",
+    "instagram": "Instagram",
     "telegram": "Telegram",
     "whatsapp": "WhatsApp",
     "copy": "Копировать ссылку",
     "copied": "Ссылка скопирована"
+  },
+  "consentBox": {
+    "label": "Я согласен(на) на <link>обработку персональных данных</link>",
+    "error": "Нужно согласие на обработку персональных данных"
   },
   "lines": {
     "Lead": {

@@ -13,6 +13,7 @@ export function ShareButtons({
   labels: {
     share: string;
     linkedin: string;
+    instagram?: string;
     telegram: string;
     whatsapp: string;
     copy: string;
@@ -20,6 +21,7 @@ export function ShareButtons({
   };
   hrefs?: {
     linkedin?: string;
+    instagram?: string;
     telegram?: string;
     whatsapp?: string;
   };
@@ -45,6 +47,16 @@ export function ShareButtons({
       >
         {labels.linkedin}
       </a>
+      {hrefs?.instagram ? (
+        <a
+          className="btn btn-secondary min-h-11"
+          href={hrefs.instagram}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {labels.instagram}
+        </a>
+      ) : null}
       <a
         className="btn btn-secondary min-h-11"
         href={telegram}

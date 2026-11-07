@@ -261,7 +261,7 @@
     "phoneHint": "+7 …",
     "payAsLegal": "Заңды тұлғадан төлем",
     "promoHow": "Промокодты қалай алуға болады?",
-    "promoHowBody": "Промокод бойынша тегін делегат орындарын спикерлер, модераторлар мен қазылар алқасы, жас делегаттар, әлеуметтік жобалар аллеясының ҮЕҰ-лары, ESG Award финалистері (екі орын), аккредиттелген БАҚ және пакет квотасы бойынша демеушілер алады. Промокод сұрау: <email>forum@esgpartners.kz</email>.",
+    "promoHowBody": "Промокодты ұйымдастырушы Global ESG Partnership береді. <email>forum@esgpartners.kz</email> мекенжайына жазыңыз.",
     "consentLabel": "<link>Дербес деректерді өңдеуге</link> келісемін",
     "termsLabel": "<link>Төлем және қайтару шарттарын</link> қабылдаймын",
     "addToCalendar": "Күнтізбеге қосу",
@@ -390,10 +390,15 @@
   "share": {
     "label": "Бөлісу",
     "linkedin": "LinkedIn",
+    "instagram": "Instagram",
     "telegram": "Telegram",
     "whatsapp": "WhatsApp",
     "copy": "Сілтемені көшіру",
     "copied": "Сілтеме көшірілді"
+  },
+  "consentBox": {
+    "label": "<link>Дербес деректерді өңдеуге</link> келісемін",
+    "error": "Дербес деректерді өңдеуге келісім керек"
   },
   "lines": {
     "Lead": {
