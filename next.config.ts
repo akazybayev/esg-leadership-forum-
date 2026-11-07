@@ -15,6 +15,7 @@ const localeSegments = [
   "partners",
   "privacy",
   "program",
+  "received",
   "register",
   "speakers",
   "sponsors",

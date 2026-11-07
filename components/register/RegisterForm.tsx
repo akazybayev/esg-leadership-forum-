@@ -1,12 +1,13 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
+import { useMemo, useRef, type ReactNode } from "react";
 import { useForm, type FieldErrors, type UseFormRegister } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { z } from "zod";
+import { InboxFields } from "@/components/forms/InboxFields";
 import { Link } from "@/i18n/navigation";
-import { downloadForumIcs } from "@/lib/calendar";
+import { INBOX_FORM_ACTION } from "@/lib/forms/inbox";
 import { forumLineIds } from "@/lib/pricing";
 
 type Status = "guest" | "delegate";
@@ -83,8 +84,7 @@ const inputClass = "min-h-11 w-full rounded-lg border border-line bg-white px-3"
 export function RegisterForm({ priceLabel }: { priceLabel: string }) {
   const t = useTranslations("registerPage");
   const tLines = useTranslations("lines");
-  const [done, setDone] = useState(false);
-  const [serverError, setServerError] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const schema = useMemo(() => buildSchema((key) => t(key)), [t]);
 
   const {
@@ -112,45 +112,8 @@ export function RegisterForm({ priceLabel }: { priceLabel: string }) {
     },
   });
 
-  async function onSubmit(values: FormValues) {
-    setServerError(null);
-    // PAYMENT_PROVIDER=invoice. Card checkout and the KZT rate are connected later.
-    const response = await fetch("/api/forms/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...values,
-        organization: values.organization || undefined,
-        title: values.title || undefined,
-        phone: values.phone || undefined,
-        category: values.category || undefined,
-        lines: values.lines || undefined,
-        promo: values.promo || undefined,
-        invoice: values.payAsLegal ? values.invoice || undefined : undefined,
-        company_website: values.company_website || "",
-      }),
-    });
-    if (!response.ok) {
-      setServerError(t("errorSubmit"));
-      return;
-    }
-    setDone(true);
-  }
-
-  if (done) {
-    return (
-      <div className="mt-8 border border-line bg-white/70 p-6" role="status">
-        <p className="text-lg leading-relaxed text-ink">{t("success")}</p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <button type="button" className="btn btn-primary" onClick={downloadForumIcs}>
-            {t("addToCalendar")}
-          </button>
-          <Link href="/" className="btn btn-secondary">
-            {t("backHome")}
-          </Link>
-        </div>
-      </div>
-    );
+  function onSubmit() {
+    formRef.current?.submit();
   }
 
   const categories = [
@@ -164,33 +127,35 @@ export function RegisterForm({ priceLabel }: { priceLabel: string }) {
 
   return (
     <form
+      ref={formRef}
       id="register-form"
       method="post"
-      action="/api/forms/register"
+      action={INBOX_FORM_ACTION}
       className="group mt-8 grid gap-4 border border-line bg-white/70 p-5 md:p-6 [&:not(:has(#consent:checked))_button[type=submit]]:pointer-events-none [&:not(:has(#consent:checked))_button[type=submit]]:opacity-60 [&:has(#status-delegate:checked):not(:has(#terms:checked))_button[type=submit]]:pointer-events-none [&:has(#status-delegate:checked):not(:has(#terms:checked))_button[type=submit]]:opacity-60 [&:has(#status-guest:checked)_.for-delegate]:hidden [&:has(#status-guest:checked)_.for-guest]:block [&:has(#status-delegate:checked)_.fields]:grid [&:has(#tell-more:checked)_.fields]:grid [&:has(#pay-legal:checked)_.invoice]:block [&:has(#status-delegate:checked)_.req]:inline"
       onSubmit={handleSubmit(onSubmit)}
-      noValidate
     >
+      <InboxFields formType="register" />
+      <input type="hidden" name="price" value={priceLabel} />
       <div className="flex flex-wrap gap-2" role="radiogroup" aria-label={t("status")}>
         <label className="cursor-pointer rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink-soft has-[:checked]:border-deep has-[:checked]:bg-deep has-[:checked]:text-white">
           <input id="status-guest" type="radio" value="guest" className="sr-only" {...register("status")} />
           {t("guestFree")}
         </label>
         <label className="cursor-pointer rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink-soft has-[:checked]:border-deep has-[:checked]:bg-deep has-[:checked]:text-white">
-          <input id="status-delegate" type="radio" value="delegate" className="sr-only" {...register("status")} />
+          <input id="status-delegate" type="radio" value="delegate" defaultChecked className="sr-only" {...register("status")} />
           {t("delegatePaid")}
         </label>
       </div>
       <p className="text-lg font-semibold text-accent">{priceLabel}</p>
 
       <Field label={t("fieldName")} required error={errors.name?.message} id="name">
-        <input id="name" className={inputClass} autoComplete="name" aria-invalid={Boolean(errors.name)} {...register("name")} />
+        <input id="name" required className={inputClass} autoComplete="name" aria-invalid={Boolean(errors.name)} {...register("name")} />
       </Field>
       <Field label="Email" required error={errors.email?.message} id="email">
-        <input id="email" type="email" autoComplete="email" className={inputClass} aria-invalid={Boolean(errors.email)} {...register("email")} />
+        <input id="email" type="email" required autoComplete="email" className={inputClass} aria-invalid={Boolean(errors.email)} {...register("email")} />
       </Field>
       <Field label={t("fieldCountry")} required error={errors.country?.message} id="country">
-        <input id="country" className={inputClass} autoComplete="country-name" aria-invalid={Boolean(errors.country)} {...register("country")} />
+        <input id="country" required className={inputClass} autoComplete="country-name" aria-invalid={Boolean(errors.country)} {...register("country")} />
       </Field>
 
       <label className="for-guest hidden cursor-pointer text-sm font-semibold text-deep">
@@ -276,11 +241,6 @@ export function RegisterForm({ priceLabel }: { priceLabel: string }) {
       <button type="submit" className="btn btn-primary justify-self-start" disabled={isSubmitting}>
         {isSubmitting ? "…" : t("submit")}
       </button>
-      {serverError ? (
-        <p className="text-sm text-accent" role="alert">
-          {serverError}
-        </p>
-      ) : null}
     </form>
   );
 }

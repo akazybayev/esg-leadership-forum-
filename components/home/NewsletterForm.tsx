@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { InboxFields } from "@/components/forms/InboxFields";
+import { INBOX_FORM_ACTION } from "@/lib/forms/inbox";
 import { newsletterFormSchema } from "@/schemas/forms";
 import type { z } from "zod";
 
@@ -11,50 +13,36 @@ type Values = z.infer<typeof newsletterFormSchema>;
 export function NewsletterForm({
   placeholder,
   button,
-  success,
   id = "newsletter-email",
 }: {
   placeholder: string;
   button: string;
-  success: string;
+  success?: string;
   id?: string;
 }) {
-  const [status, setStatus] = useState("");
-  const [error, setError] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
   const {
     register,
     handleSubmit,
-    reset,
     formState: { isSubmitting, errors },
   } = useForm<Values>({
     resolver: zodResolver(newsletterFormSchema),
     defaultValues: { email: "", company: "" },
   });
 
-  const onSubmit = handleSubmit(async (values) => {
-    setError("");
-    setStatus("");
-    const response = await fetch("/api/forms/newsletter", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ ...values, company: "" }),
-    });
-    if (!response.ok) {
-      setError("Could not subscribe. Please try again.");
-      return;
-    }
-    setStatus(success);
-    reset();
+  const onSubmit = handleSubmit(() => {
+    formRef.current?.submit();
   });
 
   return (
     <form
+      ref={formRef}
       method="post"
-      action="/api/forms/newsletter"
+      action={INBOX_FORM_ACTION}
       className="mt-6 flex flex-col gap-3 sm:flex-row"
       onSubmit={onSubmit}
-      noValidate
     >
+      <InboxFields formType="newsletter" />
       <label className="sr-only" htmlFor={id}>
         Email
       </label>
@@ -63,6 +51,7 @@ export function NewsletterForm({
         type="email"
         placeholder={placeholder}
         className="min-h-12 flex-1 rounded-full border border-line bg-white px-4 text-ink"
+        required
         aria-invalid={Boolean(errors.email)}
         {...register("email")}
       />
@@ -81,16 +70,6 @@ export function NewsletterForm({
       >
         {isSubmitting ? "…" : button}
       </button>
-      {error ? (
-        <p className="basis-full text-sm text-accent" role="alert">
-          {error}
-        </p>
-      ) : null}
-      {status ? (
-        <p className="basis-full text-sm text-accent" role="status">
-          {status}
-        </p>
-      ) : null}
     </form>
   );
 }
