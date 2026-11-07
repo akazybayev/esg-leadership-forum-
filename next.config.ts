@@ -15,6 +15,7 @@ const localeSegments = [
   "partners",
   "privacy",
   "program",
+  "received",
   "register",
   "speakers",
   "sponsors",
@@ -23,6 +24,7 @@ const localeSegments = [
 ] as const;
 
 const nextConfig: NextConfig = {
+  serverExternalPackages: ["@electric-sql/pglite"],
   poweredByHeader: false,
   compress: true,
   images: {

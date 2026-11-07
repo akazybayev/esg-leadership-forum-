@@ -144,24 +144,29 @@ export async function processFormSubmission(
     id,
     type,
     createdAt: new Date().toISOString(),
-    to: process.env.FORM_TO_EMAIL || null,
+    to: null,
     payload: parsed.data,
     invoice: invoice ?? null,
   };
 
   try {
     await persistSubmission(record);
-    await deliverWebhook({ id, type, createdAt: record.createdAt });
   } catch (error) {
     if (error instanceof Error && error.message.includes("daily budget")) {
       return { ok: false, error: "Too many requests", status: 429 };
     }
-    console.error("[forms] delivery failed");
+    console.error("[forms] store failed");
     return {
       ok: false,
-      error: "Could not store or deliver submission",
+      error: "Could not store submission",
       status: 502,
     };
+  }
+
+  try {
+    await deliverWebhook({ id, type, createdAt: record.createdAt });
+  } catch {
+    console.error("[forms] notice failed");
   }
 
   if (process.env.NODE_ENV !== "production") {
