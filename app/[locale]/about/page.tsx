@@ -169,7 +169,14 @@ export default async function AboutPage({
         <div className="container-shell grid gap-6">
           <h2 className="text-3xl font-bold text-deep">{t("organizerTitle")}</h2>
           <article className="border border-line bg-paper p-6">
-            <h3 className="text-xl font-bold text-deep">{t("orgName")}</h3>
+            <img
+              src="/images/brand/global-esg-partnership-logo.png"
+              alt={t("orgName")}
+              width={220}
+              height={175}
+              className="h-auto w-52"
+            />
+            <h3 className="mt-4 text-xl font-bold text-deep">{t("orgName")}</h3>
             <p className="mt-3 leading-relaxed text-ink-soft">{t("orgText")}</p>
           </article>
           <article className="border border-line bg-paper p-6">
