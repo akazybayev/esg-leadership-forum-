@@ -66,7 +66,7 @@ export function buildForumIcs(): string {
     "DTSTAMP:20271013T040000Z",
     "DTSTART:20271013T040000Z",
     "DTEND:20271014T160000Z",
-    "SUMMARY:ESG Leadership Forum Astana 2027",
+    "SUMMARY:ESG Leadership Forum 2027",
     "DESCRIPTION:13–14 October 2027\\, 09:00–21:00 Asia/Almaty (UTC+5)",
     "LOCATION:Hilton Astana\\, Astana",
     "END:VEVENT",

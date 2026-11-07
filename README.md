@@ -1,6 +1,6 @@
-# ESG Leadership Forum Astana 2027
+# ESG Leadership Forum 2027
 
-Official multi-language event site for **ESG Leadership Forum Astana 2027**  
+Official multi-language event site for **ESG Leadership Forum 2027**  
 *(Leadership for Generations / Лидерство ради поколений / Ұрпақтар үшін көшбасшылық)*  
 13–14 October 2027 · Hilton Astana · Organizer: Global ESG Partnership
 
