@@ -21,18 +21,15 @@ export function Header({
   return (
     <header className="sticky top-0 z-40">
       <div className="border-b border-line bg-[rgba(244,241,236,0.92)] backdrop-blur-md">
-        <div className="container-shell flex items-center justify-between gap-4 py-3">
-        <Link href="/" className="flex shrink-0 items-center gap-2.5">
+        <div className="container-shell flex items-center justify-between gap-4 py-2">
+        <Link href="/" className="shrink-0">
           <img
-            src="/images/brand/forum-mark.png"
-            alt=""
-            width={40}
-            height={40}
-            className="h-10 w-10 max-w-none shrink-0"
+            src="/images/brand/forum-logo.png"
+            alt={siteName}
+            width={551}
+            height={542}
+            className="h-20 w-auto max-w-none"
           />
-          <span className="hidden max-w-[9.5rem] text-[13px] font-bold leading-tight text-deep xl:block">
-            {siteName}
-          </span>
         </Link>
 
         <nav
@@ -60,11 +57,11 @@ export function Header({
       </div>
       </div>
       <details className="xl:hidden">
-        <summary className="absolute right-4 top-3 inline-flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-full border border-line bg-paper [&::-webkit-details-marker]:hidden">
+        <summary className="absolute right-4 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 cursor-pointer list-none items-center justify-center rounded-full border border-line bg-paper [&::-webkit-details-marker]:hidden">
           <Menu size={18} />
           <span className="sr-only">{t("menu")}</span>
         </summary>
-        <div className="fixed inset-x-0 bottom-0 top-16 z-50 flex flex-col bg-paper">
+        <div className="fixed inset-x-0 bottom-0 top-24 z-50 flex flex-col bg-paper">
           <nav
             id="mobile-nav"
             className="flex-1 overflow-y-auto px-4 py-4"
