@@ -2,6 +2,8 @@ import { mkdir, readFile, rename, writeFile } from "fs/promises";
 import path from "path";
 import type { FormType } from "@/schemas/forms";
 import { formSchemaByType } from "@/schemas/forms";
+import { reserveStoreBytes } from "@/lib/forms/rate-limit";
+import { sealRecord } from "@/lib/forms/seal";
 import {
   createInvoiceDraft,
   submitPaymentIntent,
@@ -33,8 +35,8 @@ function isHoneypotFilled(
   return typeof value === "string" && value.trim().length > 0;
 }
 
-const MAX_STORE_BYTES = 1_000_000;
-const MAX_RECORD_BYTES = 24_000;
+const MAX_STORE_BYTES = 200_000;
+const MAX_RECORD_BYTES = 16_000;
 
 let storeChain: Promise<void> = Promise.resolve();
 
@@ -42,9 +44,14 @@ async function writeRecord(record: Record<string, unknown>) {
   const dir = path.join(process.cwd(), "data", "submissions");
   await mkdir(dir, { recursive: true });
   const file = path.join(dir, `${String(record.type)}.jsonl`);
-  const line = `${JSON.stringify(record)}\n`;
+  const stored = sealRecord(record);
+  const line = `${JSON.stringify(stored)}\n`;
   if (Buffer.byteLength(line) > MAX_RECORD_BYTES) {
     throw new Error("Submission is too large");
+  }
+  const budget = await reserveStoreBytes(Buffer.byteLength(line));
+  if (!budget.ok) {
+    throw new Error("Submission store is over the daily budget");
   }
   const existing = await readFile(file, "utf8").catch(() => "");
   let next = existing + line;
@@ -146,7 +153,10 @@ export async function processFormSubmission(
     await persistSubmission(record);
     await deliverWebhook({ id, type, createdAt: record.createdAt });
   } catch (error) {
-    console.error("[forms] delivery failed", error);
+    if (error instanceof Error && error.message.includes("daily budget")) {
+      return { ok: false, error: "Too many requests", status: 429 };
+    }
+    console.error("[forms] delivery failed");
     return {
       ok: false,
       error: "Could not store or deliver submission",

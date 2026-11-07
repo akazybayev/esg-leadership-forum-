@@ -4,9 +4,10 @@ import path from "path";
 
 const HOUR_MS = 60 * 60 * 1000;
 const DAY_MS = 24 * HOUR_MS;
-const DEFAULT_PER_HOUR = 8;
-const GLOBAL_PER_HOUR = 60;
-const GLOBAL_PER_DAY = 200;
+const DEFAULT_PER_HOUR = 3;
+const GLOBAL_PER_HOUR = 15;
+const GLOBAL_PER_DAY = 40;
+const DAILY_BYTE_BUDGET = 80_000;
 const MAX_TRACKED_CLIENTS = 2_000;
 
 type Bucket = { start: number; count: number };
@@ -16,6 +17,7 @@ type QuotaState = {
   hourCount: number;
   dayStart: number;
   dayCount: number;
+  dayBytes: number;
   clients: Record<string, Bucket>;
 };
 
@@ -25,6 +27,7 @@ function emptyState(now: number): QuotaState {
     hourCount: 0,
     dayStart: now,
     dayCount: 0,
+    dayBytes: 0,
     clients: {},
   };
 }
@@ -58,6 +61,7 @@ async function loadState(now: number): Promise<QuotaState> {
       parsed.clients &&
       typeof parsed.clients === "object"
     ) {
+      if (typeof parsed.dayBytes !== "number") parsed.dayBytes = 0;
       memory = parsed;
       return memory;
     }
@@ -100,6 +104,7 @@ async function enforce(
   if (now - state.dayStart >= DAY_MS) {
     state.dayStart = now;
     state.dayCount = 0;
+    state.dayBytes = 0;
   }
   pruneClients(state, now);
 
@@ -142,10 +147,50 @@ async function enforce(
 }
 
 export function clientAddress(request: Request): string {
+  // The first forwarded address is chosen by the caller. The last one is the
+  // hop added by the proxy in front of this app.
   const forwarded = request.headers.get("x-forwarded-for");
-  const hop = forwarded?.split(",")[0]?.trim();
-  const raw = hop || request.headers.get("x-real-ip")?.trim() || "unknown";
+  const hops = forwarded
+    ?.split(",")
+    .map((item) => item.trim())
+    .filter(Boolean);
+  const lastHop = hops && hops.length > 0 ? hops[hops.length - 1] : "";
+  const raw = lastHop || "unknown";
   return raw.slice(0, 64);
+}
+
+export async function reserveStoreBytes(
+  bytes: number,
+  now = Date.now(),
+): Promise<{ ok: true } | { ok: false; retryAfterSec: number }> {
+  const run = async () => {
+    const state = await loadState(now);
+    if (now - state.dayStart >= DAY_MS) {
+      state.dayStart = now;
+      state.dayCount = 0;
+      state.dayBytes = 0;
+    }
+    if (state.dayBytes + bytes > DAILY_BYTE_BUDGET) {
+      return {
+        ok: false as const,
+        retryAfterSec: Math.max(1, Math.ceil((state.dayStart + DAY_MS - now) / 1000)),
+      };
+    }
+    state.dayBytes += bytes;
+    memory = state;
+    try {
+      await saveState(state);
+    } catch {
+      // The in-memory budget still applies for this process.
+    }
+    return { ok: true as const };
+  };
+  const task = chain.then(run);
+  chain = task.then(
+    () => undefined,
+    () => undefined,
+  );
+  return task;
 }
 
 export function checkRateLimit(

@@ -50,14 +50,14 @@ npm run lint
 
 All visitor-facing copy is localized. Kazakh strings need native-speaker review (`messages/kk.json`, key `_nativeSpeakerReview`: «требует проверки носителем языка»). The note is kept out of the public footer.
 
-Client materials and open TODOs: [`docs/`](docs/), [`docs/MISSING.md`](docs/MISSING.md).
-
 ## Forms & payment (Stage 6)
 
 `POST /api/forms/[type]` for register, award, youth-delegate, youth-pitch, expo, partners, guest-country, media, contact, newsletter.
 
 - Validation: shared Zod schemas + React Hook Form
-- Spam: honeypot. Each client address may send `FORM_RATE_LIMIT_PER_HOUR` submissions per hour (default 8). The whole site also stops at 60 submissions an hour and 200 a day. Counters are saved on disk and only store a hash of the address.
+- Spam: honeypot. Each client address may send `FORM_RATE_LIMIT_PER_HOUR` submissions per hour (default 3). The address is the last proxy hop, not the first forwarded value. The whole site also stops at 15 submissions an hour, 40 a day, and 80 KB of stored text a day.
+- A browser submission must come from this site. A page on another site is refused.
+- Stored applications are encrypted with `FORM_STORE_KEY`. Until that key is set, the log keeps only the receipt id, form type and time.
 - Static pages post forms to `/api/forms/[type]`. A submit does not put the fields in the page address. When the saved log reaches its size cap, the oldest line is dropped so a later applicant can still be stored.
 - Promo: a delegate invoice is complimentary only when the code matches `PROMO_CODES` on the server. Any other code is rejected. An empty field pays the published price.
 - Storage: `data/submissions/*.jsonl` (gitignored)

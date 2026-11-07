@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { formTypes, type FormType } from "@/schemas/forms";
 import { processFormSubmission } from "@/lib/forms/submit";
+import { requestIsSameOrigin } from "@/lib/forms/origin";
 import { checkRateLimit, clientAddress } from "@/lib/forms/rate-limit";
 
 const MAX_BODY_CHARS = 12_000;
@@ -18,6 +19,10 @@ export async function POST(
   const { type: rawType } = await context.params;
   if (!isFormType(rawType)) {
     return NextResponse.json({ error: "Unknown form type" }, { status: 404 });
+  }
+
+  if (!requestIsSameOrigin(request)) {
+    return NextResponse.json({ error: "Cross-site submission refused" }, { status: 403 });
   }
 
   const limited = await checkRateLimit(clientAddress(request));
