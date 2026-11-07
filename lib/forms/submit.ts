@@ -100,8 +100,11 @@ export async function processFormSubmission(
 
   if (type === "register") {
     const draft = createInvoiceDraft(parsed.data as never);
-    if (draft) {
-      const paid = await submitPaymentIntent(draft);
+    if (!draft.ok) {
+      return { ok: false, error: "Promo code is not valid", status: 422 };
+    }
+    if (draft.invoice) {
+      const paid = await submitPaymentIntent(draft.invoice);
       if (!paid.ok) {
         return { ok: false, error: paid.error, status: 502 };
       }

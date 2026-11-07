@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { formTypes, type FormType } from "@/schemas/forms";
 import { processFormSubmission } from "@/lib/forms/submit";
-import { checkRateLimit } from "@/lib/forms/rate-limit";
+import { checkRateLimit, clientAddress } from "@/lib/forms/rate-limit";
 
 const MAX_BODY_CHARS = 12_000;
 
@@ -20,7 +20,7 @@ export async function POST(
     return NextResponse.json({ error: "Unknown form type" }, { status: 404 });
   }
 
-  const limited = checkRateLimit();
+  const limited = checkRateLimit(clientAddress(request));
   if (!limited.ok) {
     return NextResponse.json(
       { error: "Too many requests", retryAfterSec: limited.retryAfterSec },

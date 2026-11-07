@@ -57,7 +57,8 @@ Client materials and open TODOs: [`docs/`](docs/), [`docs/MISSING.md`](docs/MISS
 `POST /api/forms/[type]` for register, award, youth-delegate, youth-pitch, expo, partners, guest-country, media, contact, newsletter.
 
 - Validation: shared Zod schemas + React Hook Form
-- Spam: honeypot + per-IP hourly rate limit
+- Spam: honeypot. Each client address may send `FORM_RATE_LIMIT_PER_HOUR` submissions per hour (default 30). The address list is capped so it cannot grow without bound.
+- Promo: a delegate invoice is complimentary only when the code matches `PROMO_CODES` on the server. Any other code is rejected. An empty field pays the published price.
 - Storage: `data/submissions/*.jsonl` (gitignored)
 - Optional notice: `FORM_WEBHOOK_URL` receives only the submission id, form type and time. Names, email, phone and invoice text stay in the local store.
 - Delegates: invoice draft via `PAYMENT_PROVIDER=invoice` until a live gateway is connected. The KZT rate and card checkout (Visa/Mastercard, Kaspi) are not connected yet. This note stays in code and this README, not on the registration page.
