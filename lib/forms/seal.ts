@@ -6,6 +6,10 @@ function keyBytes(): Buffer | null {
   return createHash("sha256").update(secret).digest();
 }
 
+export function hasStoreKey(): boolean {
+  return keyBytes() !== null;
+}
+
 /** Encrypts a record so names, emails and phones are not stored in clear text. */
 export function sealRecord(record: Record<string, unknown>): Record<string, unknown> {
   const key = keyBytes();

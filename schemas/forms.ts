@@ -29,6 +29,7 @@ export const formTypes = [
 export type FormType = (typeof formTypes)[number];
 
 const optionalShort = z.string().trim().max(200).optional().or(z.literal(""));
+const consent = z.literal(true);
 
 export const registerFormSchema = z
   .object({
@@ -45,7 +46,7 @@ export const registerFormSchema = z
     promo: z.string().trim().max(80).optional().or(z.literal("")),
     invoice: optionalText,
     payAsLegal: z.boolean().optional(),
-    consent: z.literal(true),
+    consent,
     terms: z.boolean().optional(),
   })
   .superRefine((value, ctx) => {
@@ -79,6 +80,7 @@ export const awardFormSchema = z.object({
   email,
   disclosure: optionalText,
   documents: optionalText,
+  consent,
 });
 
 export const youthDelegateFormSchema = z.object({
@@ -88,6 +90,7 @@ export const youthDelegateFormSchema = z.object({
   org: nonEmpty,
   email,
   motivation: longText,
+  consent,
 });
 
 export const youthPitchFormSchema = z.object({
@@ -99,6 +102,7 @@ export const youthPitchFormSchema = z.object({
   summary: longText,
   video: z.string().trim().url().optional().or(z.literal("")),
   file: optionalText,
+  consent,
 });
 
 export const expoFormSchema = z
@@ -110,6 +114,7 @@ export const expoFormSchema = z
     email,
     zone: z.string().trim().max(100).optional().or(z.literal("")),
     message: optionalText,
+    consent,
   })
   .refine((v) => Boolean((v.company || "").trim() || (v.organization || "").trim()), {
     message: "Organization required",
@@ -123,6 +128,7 @@ export const partnersFormSchema = z.object({
   contact: nonEmpty,
   email,
   message: optionalText,
+  consent,
 });
 
 export const guestCountryFormSchema = z.object({
@@ -132,6 +138,7 @@ export const guestCountryFormSchema = z.object({
   contact: nonEmpty,
   email,
   message: optionalText,
+  consent,
 });
 
 export const mediaFormSchema = z.object({
@@ -141,6 +148,7 @@ export const mediaFormSchema = z.object({
   email,
   role: nonEmpty,
   note: optionalText,
+  consent,
 });
 
 export const contactFormSchema = z.object({
@@ -149,11 +157,13 @@ export const contactFormSchema = z.object({
   email,
   topic: nonEmpty,
   message: longText,
+  consent,
 });
 
 export const newsletterFormSchema = z.object({
   company: honeypot,
   email,
+  consent,
 });
 
 export const formSchemaByType = {

@@ -173,12 +173,7 @@ export function RegisterForm({ priceLabel }: { priceLabel: string }) {
       <div className="for-delegate grid gap-4">
         <Field label={t("fieldPromo")} error={errors.promo?.message} id="promo">
           <input id="promo" className={inputClass} placeholder={t("fieldPromoHint")} {...register("promo")} />
-        </Field>
-        <details className="border border-line bg-white">
-          <summary className="cursor-pointer px-4 py-3 text-sm font-semibold text-deep">
-            {t("promoHow")}
-          </summary>
-          <p className="border-t border-line px-4 py-3 text-sm leading-relaxed text-ink-soft">
+          <p className="text-sm leading-relaxed text-ink-soft">
             {t.rich("promoHowBody", {
               email: (chunks) => (
                 <a className="underline" href="mailto:forum@esgpartners.kz">
@@ -187,7 +182,7 @@ export function RegisterForm({ priceLabel }: { priceLabel: string }) {
               ),
             })}
           </p>
-        </details>
+        </Field>
         <label className="flex items-start gap-3 text-sm text-ink">
           <input id="pay-legal" type="checkbox" className="mt-1" {...register("payAsLegal")} />
           <span>{t("payAsLegal")}</span>
@@ -217,7 +212,7 @@ export function RegisterForm({ priceLabel }: { priceLabel: string }) {
       </div>
 
       <label className="flex items-start gap-3 text-sm text-ink">
-        <input id="consent" type="checkbox" required className="mt-1" aria-invalid={Boolean(errors.consent)} {...register("consent")} />
+        <input id="consent" type="checkbox" required className="mt-0.5 h-5 w-5 shrink-0 accent-accent" aria-invalid={Boolean(errors.consent)} {...register("consent")} />
         <span>
           {t.rich("consentLabel", {
             link: (chunks) => (

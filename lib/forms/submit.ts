@@ -1,9 +1,8 @@
-import { mkdir, readFile, rename, writeFile } from "fs/promises";
-import path from "path";
 import type { FormType } from "@/schemas/forms";
 import { formSchemaByType } from "@/schemas/forms";
+import { withTransaction } from "@/lib/db";
 import { reserveStoreBytes } from "@/lib/forms/rate-limit";
-import { sealRecord } from "@/lib/forms/seal";
+import { hasStoreKey, sealRecord } from "@/lib/forms/seal";
 import {
   createInvoiceDraft,
   submitPaymentIntent,
@@ -35,43 +34,41 @@ function isHoneypotFilled(
   return typeof value === "string" && value.trim().length > 0;
 }
 
-const MAX_STORE_BYTES = 200_000;
 const MAX_RECORD_BYTES = 16_000;
 
-let storeChain: Promise<void> = Promise.resolve();
+function storeReady(): boolean {
+  return process.env.NODE_ENV !== "production" || hasStoreKey();
+}
 
 async function writeRecord(record: Record<string, unknown>) {
-  const dir = path.join(process.cwd(), "data", "submissions");
-  await mkdir(dir, { recursive: true });
-  const file = path.join(dir, `${String(record.type)}.jsonl`);
+  if (!storeReady()) {
+    throw new Error("Submission store is not configured");
+  }
   const stored = sealRecord(record);
-  const line = `${JSON.stringify(stored)}\n`;
-  if (Buffer.byteLength(line) > MAX_RECORD_BYTES) {
+  const box = typeof stored.box === "string" ? stored.box : null;
+  const bytes = Buffer.byteLength(
+    JSON.stringify({
+      id: stored.id,
+      type: stored.type,
+      createdAt: stored.createdAt,
+      stored: stored.stored,
+      box,
+    }),
+  );
+  if (bytes > MAX_RECORD_BYTES) {
     throw new Error("Submission is too large");
   }
-  const budget = await reserveStoreBytes(Buffer.byteLength(line));
+  const budget = await reserveStoreBytes(bytes);
   if (!budget.ok) {
     throw new Error("Submission store is over the daily budget");
   }
-  const existing = await readFile(file, "utf8").catch(() => "");
-  let next = existing + line;
-  while (Buffer.byteLength(next) > MAX_STORE_BYTES) {
-    const breakAt = next.indexOf("\n");
-    if (breakAt === -1) break;
-    next = next.slice(breakAt + 1);
-  }
-  const temp = `${file}.${process.pid}.tmp`;
-  await writeFile(temp, next, "utf8");
-  await rename(temp, file);
-}
-
-function persistSubmission(record: Record<string, unknown>) {
-  const run = storeChain.then(() => writeRecord(record));
-  storeChain = run.then(
-    () => undefined,
-    () => undefined,
-  );
-  return run;
+  await withTransaction(async (query) => {
+    await query(
+      `insert into form_submissions (id, form_type, created_at, stored, box)
+       values ($1, $2, $3, $4, $5)`,
+      [stored.id, stored.type, stored.createdAt, stored.stored, box],
+    );
+  });
 }
 
 async function deliverWebhook(notice: {
@@ -150,7 +147,7 @@ export async function processFormSubmission(
   };
 
   try {
-    await persistSubmission(record);
+    await writeRecord(record);
   } catch (error) {
     if (error instanceof Error && error.message.includes("daily budget")) {
       return { ok: false, error: "Too many requests", status: 429 };

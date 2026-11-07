@@ -127,7 +127,7 @@ export async function POST(
   const pageBack = formReturnPath(rawType, pageLocale);
   const result = await processFormSubmission(rawType, payload);
   if (!result.ok) {
-    const key = result.error === "Promo code is not valid" ? "promo" : result.status === 429 ? "limited" : result.status === 502 ? "failed" : "invalid";
+    const key = result.error === "Promo code is not valid" ? "promo" : result.status === 429 ? "limited" : result.status >= 500 ? "failed" : "invalid";
     return reply(html, pageLocale, result.status, key, pageBack);
   }
 

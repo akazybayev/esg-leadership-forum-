@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
-import { EmptyAnnounce } from "@/components/home/EmptyAnnounce";
 import { getAttendeesContent, tLocalized } from "@/lib/content";
 import { pageMetadata } from "@/lib/page-meta";
 
@@ -41,7 +40,40 @@ export default async function AttendeesPage({
         </p>
       </section>
 
-      <section className="border-y border-line bg-white/40 py-14">
+      <section className="border-y border-line bg-white/40">
+        <div className="container-shell grid gap-10 py-14 md:grid-cols-3">
+          <div>
+            <h2 className="text-2xl font-bold text-deep">
+              {tLocalized(content.visa.title, locale)}
+            </h2>
+            <p className="mt-3 text-ink-soft">
+              {tLocalized(content.visa.text, locale)}
+            </p>
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-deep">
+              {tLocalized(content.hotels.title, locale)}
+            </h2>
+            <p className="mt-3 text-ink-soft">
+              {tLocalized(content.hotels.text, locale)}
+            </p>
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-deep">
+              {tLocalized(content.transport.title, locale)}
+            </h2>
+            <ul className="mt-3 space-y-3">
+              {content.transport.items.map((item) => (
+                <li key={tLocalized(item, locale)} className="text-ink-soft">
+                  {tLocalized(item, locale)}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white/40 py-14">
         <div className="container-shell grid gap-10 md:grid-cols-2 md:items-center">
           <div className="relative aspect-[16/10] overflow-hidden bg-paper-2">
             <Image
@@ -146,48 +178,6 @@ export default async function AttendeesPage({
               ))}
             </ol>
           </div>
-        </div>
-      </section>
-
-      <section className="container-shell grid gap-12 py-14 md:grid-cols-2">
-        <div>
-          <h2 className="text-2xl font-bold text-deep">
-            {tLocalized(content.transport.title, locale)}
-          </h2>
-          <ul className="mt-4 space-y-3">
-            {content.transport.items.map((item) => (
-              <li
-                key={tLocalized(item, locale)}
-                className="border-t border-line pt-3 text-ink-soft"
-              >
-                {tLocalized(item, locale)}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h2 className="text-2xl font-bold text-deep">
-            {tLocalized(content.hotels.title, locale)}
-          </h2>
-          <p className="mt-3 text-ink-soft">
-            {tLocalized(content.hotels.text, locale)}
-          </p>
-          {content.hotels.items.length === 0 ? (
-            <div className="mt-4">
-              <EmptyAnnounce message={t("hotelsSoon")} />
-            </div>
-          ) : null}
-        </div>
-      </section>
-
-      <section className="border-y border-line bg-white/40 py-14">
-        <div className="container-shell max-w-3xl">
-          <h2 className="text-3xl font-bold text-deep">
-            {tLocalized(content.visa.title, locale)}
-          </h2>
-          <p className="mt-4 text-lg text-ink-soft">
-            {tLocalized(content.visa.text, locale)}
-          </p>
         </div>
       </section>
 

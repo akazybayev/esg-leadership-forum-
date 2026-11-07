@@ -57,12 +57,11 @@ All visitor-facing copy is localized. Kazakh strings need native-speaker review 
 - Validation: shared Zod schemas + React Hook Form
 - Spam: honeypot. Each client address may send `FORM_RATE_LIMIT_PER_HOUR` submissions per hour (default 3). The address is the last proxy hop, not the first forwarded value. The whole site also stops at 15 submissions an hour, 40 a day, and 80 KB of stored text a day. Those counters are kept in the site database, so every server shares one limit.
 - A browser submission must come from this site. A page on another site is refused.
-- Stored applications are encrypted with `FORM_STORE_KEY`. Until that key is set, the log keeps only the receipt id, form type and time.
-- Static pages post forms to `/api/forms/[type]`. A submit does not put the fields in the page address. When the saved log reaches its size cap, the oldest line is dropped so a later applicant can still be stored.
+- Stored applications are encrypted with `FORM_STORE_KEY` and kept in the site database, not in a file the site can serve. The published site refuses to save an application until that key is set. A local run without the key keeps only the receipt id, form type and time.
+- Static pages post forms to `/api/forms/[type]`. A submit does not put the fields in the page address.
 - Promo: a delegate invoice is complimentary only when the code matches `PROMO_CODES` on the server. Any other code is rejected. An empty field pays the published price.
-- Storage: `data/submissions/*.jsonl` (gitignored)
 - Static pages post forms to `/api/forms/[type]`. A browser form is checked, then the visitor is sent to `/{locale}/received`. Names and contact details are not placed in the page address and are not sent to an outside form service.
-- Optional notice: `FORM_WEBHOOK_URL` receives only the submission id, form type and time. Names, email, phone and invoice text stay in the local store.
+- Optional notice: `FORM_WEBHOOK_URL` receives only the submission id, form type and time. Names, email, phone and invoice text stay in the site database.
 - Delegates: invoice draft via `PAYMENT_PROVIDER=invoice` until a live gateway is connected. The KZT rate and card checkout (Visa/Mastercard, Kaspi) are not connected yet. This note stays in code and this README, not on the registration page.
 
 ## SEO & accessibility (Stage 7)
