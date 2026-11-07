@@ -62,6 +62,24 @@ export default async function ContactPage({
               >
                 {content.coordinator.phone}
               </a>
+              <div className="mt-4 flex gap-3">
+                <a
+                  href="https://wa.me/77015552576"
+                  className="text-sm font-semibold text-deep underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  WhatsApp
+                </a>
+                <a
+                  href="https://t.me/esg_school"
+                  className="text-sm font-semibold text-deep underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Telegram
+                </a>
+              </div>
             </div>
             {content.coordinator.emails.map((email) => (
               <div key={email}>

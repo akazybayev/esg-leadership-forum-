@@ -72,7 +72,7 @@ export async function Footer({
               ))}
               <div className="mt-3 flex gap-3">
                 <a
-                  href="https://wa.me/77776555860"
+                  href="https://wa.me/77015552576"
                   className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-white/20"
                   aria-label={t("whatsapp")}
                   target="_blank"
@@ -81,7 +81,7 @@ export async function Footer({
                   <WhatsAppIcon />
                 </a>
                 <a
-                  href="https://t.me/+77776555860"
+                  href="https://t.me/esg_school"
                   className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-white/20"
                   aria-label={t("telegram")}
                   target="_blank"

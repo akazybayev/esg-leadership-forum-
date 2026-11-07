@@ -104,23 +104,7 @@
         "en": "Opening welcome, keynote or main-panel seat, premier booth, gala-ceremony partner status.",
         "kk": "Ашылудағы құттықтау, кейноут немесе бас панельдегі орын, үздік стенд, гала-салтанат серіктесі мәртебесі."
       },
-      "includes": [
-        {
-          "ru": "Брендинг сцены и церемонии [TODO]",
-          "en": "Stage and ceremony branding [TODO]",
-          "kk": "Сахна мен салтанат брендингі [TODO]"
-        },
-        {
-          "ru": "Квота делегатов [TODO]",
-          "en": "Delegate quota [TODO]",
-          "kk": "Делегат квотасы [TODO]"
-        },
-        {
-          "ru": "Участие в программном комитете [TODO]",
-          "en": "Programme committee seat [TODO]",
-          "kk": "Бағдарлама комитетіндегі орын [TODO]"
-        }
-      ]
+      "includes": []
     },
     {
       "id": "strategic",
@@ -130,27 +114,11 @@
         "kk": "Стратегиялық серіктес"
       },
       "summary": {
-        "ru": "Видимость на тематических линиях и в деловой программе. Детали — TODO.",
-        "en": "Visibility across theme tracks and the business programme. Details TODO.",
-        "kk": "Тақырыптық бағыттар мен іскерлік бағдарламадағы көрініс. Детальдар TODO."
+        "ru": "Видимость на тематических линиях и в деловой программе.",
+        "en": "Visibility across theme tracks and the business programme.",
+        "kk": "Тақырыптық бағыттар мен іскерлік бағдарламадағы көрініс."
       },
-      "includes": [
-        {
-          "ru": "Спонсорство сессии/линии [TODO]",
-          "en": "Session/track sponsorship [TODO]",
-          "kk": "Сессия/бағыт демеушілігі [TODO]"
-        },
-        {
-          "ru": "Стенд на ESG Expo [TODO]",
-          "en": "ESG Expo booth [TODO]",
-          "kk": "ESG Expo стенді [TODO]"
-        },
-        {
-          "ru": "Квота делегатов [TODO]",
-          "en": "Delegate quota [TODO]",
-          "kk": "Делегат квотасы [TODO]"
-        }
-      ]
+      "includes": []
     },
     {
       "id": "session",
@@ -160,22 +128,11 @@
         "kk": "Сессия серіктесі"
       },
       "summary": {
-        "ru": "Поддержка одной сессии Hall B или мастер-класса. Детали — TODO.",
-        "en": "Support one Hall B session or masterclass. Details TODO.",
-        "kk": "Бір Hall B сессиясын немесе мастер-классты қолдау. Детальдар TODO."
+        "ru": "Поддержка одной сессии Hall B или мастер-класса.",
+        "en": "Support one Hall B session or masterclass.",
+        "kk": "Бір Hall B сессиясын немесе мастер-классты қолдау."
       },
-      "includes": [
-        {
-          "ru": "Логотип в материалах сессии [TODO]",
-          "en": "Logo in session materials [TODO]",
-          "kk": "Сессия материалдарындағы логотип [TODO]"
-        },
-        {
-          "ru": "Упоминание модератором [TODO]",
-          "en": "Moderator acknowledgement [TODO]",
-          "kk": "Модератордың атауы [TODO]"
-        }
-      ]
+      "includes": []
     },
     {
       "id": "media",
@@ -185,24 +142,13 @@
         "kk": "Медиа серіктес"
       },
       "summary": {
-        "ru": "Информационная поддержка и аккредитация команды. Детали — TODO.",
-        "en": "Media coverage and team accreditation. Details TODO.",
-        "kk": "Ақпараттық қолдау және команда аккредитациясы. Детальдар TODO."
+        "ru": "Информационная поддержка и аккредитация команды.",
+        "en": "Media coverage and team accreditation.",
+        "kk": "Ақпараттық қолдау және команда аккредитациясы."
       },
-      "includes": [
-        {
-          "ru": "Логотип в медиаблоке [TODO]",
-          "en": "Logo in media block [TODO]",
-          "kk": "Медиа блоктағы логотип [TODO]"
-        },
-        {
-          "ru": "Пресс-квоты [TODO]",
-          "en": "Press quotas [TODO]",
-          "kk": "Баспасөз квоталары [TODO]"
-        }
-      ]
+      "includes": []
     }
   ],
-  "deckUrl": "/docs/partner-deck-TODO.pdf",
+  "deckUrl": "/docs/partner-deck.pdf",
   "deckAvailable": false
 }

@@ -67,22 +67,21 @@ export default async function PartnersPage({
               <p className="mt-3 text-ink-soft">
                 {tLocalized(pack.summary, locale)}
               </p>
-              <ul className="mt-5 space-y-2 text-sm text-ink">
-                {pack.includes.map((item) => (
-                  <li key={tLocalized(item, locale)}>• {tLocalized(item, locale)}</li>
-                ))}
-              </ul>
+              {pack.includes.length > 0 ? (
+                <ul className="mt-5 space-y-2 text-sm text-ink">
+                  {pack.includes.map((item) => (
+                    <li key={tLocalized(item, locale)}>• {tLocalized(item, locale)}</li>
+                  ))}
+                </ul>
+              ) : null}
             </article>
           ))}
         </div>
-        <p className="mt-6 text-sm text-ink-soft">{t("deckNote")}</p>
         {content.deckAvailable ? (
           <a href={content.deckUrl} className="btn btn-deep mt-4 inline-flex">
             {t("downloadDeck")}
           </a>
-        ) : (
-          <p className="mt-4 text-sm font-medium text-accent">{t("deckMissing")}</p>
-        )}
+        ) : null}
       </section>
 
       <section id="request" className="border-t border-line bg-white/40 py-14">

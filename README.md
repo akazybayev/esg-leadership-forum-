@@ -82,4 +82,4 @@ Palette A — Horizon Deep (`#0B1F2A`) + accent (`#C45C26`), Manrope with Cyrill
 
 ## Coordinator
 
-Nadiya Dosmukhanova · +7 777 655 5860 · forum@esgpartners.kz · WhatsApp https://wa.me/77776555860 · Telegram https://t.me/+77776555860
+Nadiya Dosmukhanova · +7 701 555 25 76 · forum@esgpartners.kz · WhatsApp https://wa.me/77015552576 · Telegram https://t.me/esg_school

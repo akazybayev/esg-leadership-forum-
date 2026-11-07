@@ -33,19 +33,9 @@
     },
     "items": [
       {
-        "ru": "Аэропорт Нурсултан Назарбаев (NQZ) — такси/трансфер до EXPO ~30–40 минут [уточнить].",
-        "en": "Nursultan Nazarbayev Airport (NQZ) — taxi/transfer to EXPO ~30–40 minutes [confirm].",
-        "kk": "Нұрсұлтан Назарбаев әуежайы (NQZ) — EXPO-ға такси/трансфер ~30–40 минут [нақтылау]."
-      },
-      {
-        "ru": "Метро / автобус до EXPO — расписание TODO.",
-        "en": "Metro / bus to EXPO — timetable TODO.",
-        "kk": "EXPO-ға метро / автобус — кесте TODO."
-      },
-      {
-        "ru": "Парковка отеля — условия для делегатов TODO.",
-        "en": "Hotel parking — delegate terms TODO.",
-        "kk": "Қонақүй тұрағы — делегат шарттары TODO."
+        "ru": "Аэропорт Нурсултан Назарбаев (NQZ) — такси или трансфер до комплекса EXPO около 30–40 минут.",
+        "en": "Nursultan Nazarbayev Airport (NQZ) — taxi or transfer to the EXPO complex, about 30–40 minutes.",
+        "kk": "Нұрсұлтан Назарбаев әуежайы (NQZ) — EXPO кешеніне такси немесе трансфер, шамамен 30–40 минут."
       }
     ]
   },
@@ -56,9 +46,9 @@
       "kk": "Қонақүйлер"
     },
     "text": {
-      "ru": "Основная площадка — Hilton Astana. Список партнёрских отелей с промокодами появится после договоров [TODO].",
-      "en": "Primary venue — Hilton Astana. Partner hotel list with promo codes after contracts [TODO].",
-      "kk": "Негізгі алаң — Hilton Astana. Промокодты серіктес қонақүйлер тізімі шарттан кейін [TODO]."
+      "ru": "Основная площадка — Hilton Astana.",
+      "en": "The venue is Hilton Astana.",
+      "kk": "Негізгі алаң — Hilton Astana."
     },
     "items": []
   },
@@ -69,9 +59,9 @@
       "kk": "Виза"
     },
     "text": {
-      "ru": "Правила въезда зависят от гражданства. Организатор может предоставить письмо-приглашение делегатам после регистрации [TODO процесс]. Проверьте актуальные требования МВД РК / МИД.",
-      "en": "Entry rules depend on nationality. Organizer may issue invitation letters to registered delegates [TODO process]. Check current MoI / MFA requirements.",
-      "kk": "Кіру ережелері азаматтыққа байланысты. Ұйымдастырушы тіркелген делегаттарға шақыру хатын бере алады [TODO процесс]. ІІМ / СІМ талаптарын тексеріңіз."
+      "ru": "Правила въезда зависят от гражданства. Делегатам, которым нужна виза, по запросу направим приглашение. Проверьте актуальные требования МВД и МИД Казахстана.",
+      "en": "Entry rules depend on nationality. Delegates who need a visa can request an invitation. Check the current requirements of the Kazakh authorities.",
+      "kk": "Кіру ережелері азаматтыққа байланысты. Виза керек делегаттарға сұраныс бойынша шақыру жібереміз. Қазақстан ІІМ және СІМ талаптарын тексеріңіз."
     }
   },
   "faq": [

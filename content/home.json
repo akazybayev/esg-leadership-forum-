@@ -6,11 +6,11 @@
       "kk": "Орталық Азиядағы бизнес, мемлекет және жастар көшбасшыларына арналған халықаралық алаң."
     },
     "image": {
-      "src": "/images/hero-astana-placeholder.svg",
+      "src": "/images/hero/hilton-main-hall.jpg",
       "alt": {
-        "ru": "TODO: фото Астаны / EXPO / Hilton Astana",
-        "en": "TODO: Astana / EXPO / Hilton Astana photo",
-        "kk": "TODO: Астана / EXPO / Hilton Astana фотосы"
+        "ru": "Главный зал Hilton Astana",
+        "en": "Hilton Astana main hall",
+        "kk": "Hilton Astana негізгі залы"
       }
     }
   },
@@ -360,9 +360,9 @@
       "kk": "Жазылу"
     },
     "success": {
-      "ru": "Заявка принята. Это демо-подтверждение до подключения CRM.",
-      "en": "Request received. Demo confirmation until CRM is connected.",
-      "kk": "Өтінім қабылданды. CRM қосылғанға дейінгі демо-растау."
+      "ru": "Заявка принята. Мы напишем вам на email.",
+      "en": "Request received. We will write to you by email.",
+      "kk": "Өтінім қабылданды. Сізге email арқылы жазамыз."
     }
   },
   "guestCountry": {

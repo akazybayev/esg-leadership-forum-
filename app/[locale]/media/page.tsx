@@ -71,9 +71,7 @@ export default async function MediaPage({
           <a href={content.brandKitUrl} className="btn btn-deep mt-6 inline-flex">
             {t("downloadBrand")}
           </a>
-        ) : (
-          <p className="mt-4 text-sm font-medium text-accent">{t("brandMissing")}</p>
-        )}
+        ) : null}
       </section>
 
       <section id="accreditation" className="border-t border-line bg-white/40 py-14">
