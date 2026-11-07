@@ -24,7 +24,14 @@ export async function Footer({
     <footer className="mt-16 border-t border-line bg-deep text-[#f4f1ec]">
       <div className="container-shell grid gap-10 py-12 md:grid-cols-[1.3fr_1fr_1fr]">
         <div>
-          <p className="text-xl font-bold">{tLocalized(site.name, locale)}</p>
+          <img
+            src="/images/brand/forum-mark.png"
+            alt=""
+            width={56}
+            height={56}
+            className="h-14 w-14 bg-paper p-1"
+          />
+          <p className="mt-3 text-xl font-bold">{tLocalized(site.name, locale)}</p>
           <p className="mt-2 text-[#c9d2d8]">{tLocalized(site.slogan, locale)}</p>
           <p className="mt-4 text-sm text-[#9aadb8]">
             {site.dates.day1.slice(8)}–{site.dates.day2.slice(8)}.
@@ -39,11 +46,17 @@ export async function Footer({
           </p>
           <a
             href={site.organizer.url}
-            className="mt-3 inline-block font-medium hover:underline"
+            className="mt-3 inline-block bg-paper px-3 py-2"
             rel="noreferrer"
             target="_blank"
           >
-            {site.organizer.name}
+            <img
+              src="/images/brand/global-esg-partnership-logo.png"
+              alt={site.organizer.name}
+              width={180}
+              height={143}
+              className="h-auto w-[11rem]"
+            />
           </a>
           {site.contact.coordinator ? (
             <div className="mt-4">

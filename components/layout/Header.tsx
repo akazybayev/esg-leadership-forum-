@@ -19,24 +19,31 @@ export function Header({
   const tA11y = useTranslations("a11y");
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-[rgba(244,241,236,0.92)] backdrop-blur-md">
-      <div className="container-shell flex items-center justify-between gap-4 py-3">
-        <Link
-          href="/"
-          className="max-w-[14rem] text-sm font-bold leading-tight text-deep sm:max-w-none sm:text-base"
-        >
-          {siteName}
+    <header className="sticky top-0 z-40">
+      <div className="border-b border-line bg-[rgba(244,241,236,0.92)] backdrop-blur-md">
+        <div className="container-shell flex items-center justify-between gap-4 py-3">
+        <Link href="/" className="flex shrink-0 items-center gap-2.5">
+          <img
+            src="/images/brand/forum-mark.png"
+            alt=""
+            width={40}
+            height={40}
+            className="h-10 w-10 max-w-none shrink-0"
+          />
+          <span className="hidden max-w-[9.5rem] text-[13px] font-bold leading-tight text-deep xl:block">
+            {siteName}
+          </span>
         </Link>
 
         <nav
-          className="hidden items-center gap-4 lg:flex"
+          className="hidden items-center gap-x-2 xl:flex"
           aria-label={tA11y("primaryNav")}
         >
           {items.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-ink-soft transition hover:text-ink"
+              className="whitespace-nowrap text-[13px] font-medium text-ink-soft transition hover:text-ink"
             >
               {t(item.labelKey)}
             </Link>
@@ -45,39 +52,41 @@ export function Header({
 
         <div className="flex items-center gap-2">
           <LanguageSwitcher />
-          <Link href="/register" className="btn btn-primary hidden sm:inline-flex">
+          <Link href="/register" className="btn btn-primary header-register">
             {tCta("register")}
           </Link>
-          <details className="lg:hidden">
-            <summary className="inline-flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-full border border-line [&::-webkit-details-marker]:hidden">
-              <Menu size={18} />
-              <span className="sr-only">{t("menu")}</span>
-            </summary>
-            <div className="fixed inset-x-0 bottom-0 top-16 z-50 flex flex-col bg-paper">
-              <nav
-                id="mobile-nav"
-                className="flex-1 overflow-y-auto px-4 py-4"
-                aria-label={tA11y("mobileNav")}
-              >
-                {items.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="block rounded-lg px-3 py-3 text-base font-medium text-ink"
-                  >
-                    {t(item.labelKey)}
-                  </Link>
-                ))}
-              </nav>
-              <div className="sticky bottom-0 border-t border-line bg-paper p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
-                <Link href="/register" className="btn btn-primary w-full">
-                  {tCta("register")}
-                </Link>
-              </div>
-            </div>
-          </details>
+          <span className="inline-block h-10 w-10 xl:hidden" aria-hidden="true" />
         </div>
       </div>
+      </div>
+      <details className="xl:hidden">
+        <summary className="absolute right-4 top-3 inline-flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-full border border-line bg-paper [&::-webkit-details-marker]:hidden">
+          <Menu size={18} />
+          <span className="sr-only">{t("menu")}</span>
+        </summary>
+        <div className="fixed inset-x-0 bottom-0 top-16 z-50 flex flex-col bg-paper">
+          <nav
+            id="mobile-nav"
+            className="flex-1 overflow-y-auto px-4 py-4"
+            aria-label={tA11y("mobileNav")}
+          >
+            {items.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block rounded-lg px-3 py-3 text-base font-medium text-ink"
+              >
+                {t(item.labelKey)}
+              </Link>
+            ))}
+          </nav>
+          <div className="border-t border-line bg-paper p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+            <Link href="/register" className="btn btn-primary w-full">
+              {tCta("register")}
+            </Link>
+          </div>
+        </div>
+      </details>
     </header>
   );
 }
