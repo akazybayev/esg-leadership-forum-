@@ -1,4 +1,4 @@
-import { appendFile, mkdir, stat } from "fs/promises";
+import { mkdir, readFile, rename, writeFile } from "fs/promises";
 import path from "path";
 import type { FormType } from "@/schemas/forms";
 import { formSchemaByType } from "@/schemas/forms";
@@ -34,16 +34,37 @@ function isHoneypotFilled(
 }
 
 const MAX_STORE_BYTES = 1_000_000;
+const MAX_RECORD_BYTES = 24_000;
 
-async function persistSubmission(record: Record<string, unknown>) {
+let storeChain: Promise<void> = Promise.resolve();
+
+async function writeRecord(record: Record<string, unknown>) {
   const dir = path.join(process.cwd(), "data", "submissions");
   await mkdir(dir, { recursive: true });
   const file = path.join(dir, `${String(record.type)}.jsonl`);
-  const current = await stat(file).catch(() => null);
-  if (current && current.size >= MAX_STORE_BYTES) {
-    throw new Error("Submission store is full");
+  const line = `${JSON.stringify(record)}\n`;
+  if (Buffer.byteLength(line) > MAX_RECORD_BYTES) {
+    throw new Error("Submission is too large");
   }
-  await appendFile(file, `${JSON.stringify(record)}\n`, "utf8");
+  const existing = await readFile(file, "utf8").catch(() => "");
+  let next = existing + line;
+  while (Buffer.byteLength(next) > MAX_STORE_BYTES) {
+    const breakAt = next.indexOf("\n");
+    if (breakAt === -1) break;
+    next = next.slice(breakAt + 1);
+  }
+  const temp = `${file}.${process.pid}.tmp`;
+  await writeFile(temp, next, "utf8");
+  await rename(temp, file);
+}
+
+function persistSubmission(record: Record<string, unknown>) {
+  const run = storeChain.then(() => writeRecord(record));
+  storeChain = run.then(
+    () => undefined,
+    () => undefined,
+  );
+  return run;
 }
 
 async function deliverWebhook(notice: {

@@ -57,7 +57,8 @@ Client materials and open TODOs: [`docs/`](docs/), [`docs/MISSING.md`](docs/MISS
 `POST /api/forms/[type]` for register, award, youth-delegate, youth-pitch, expo, partners, guest-country, media, contact, newsletter.
 
 - Validation: shared Zod schemas + React Hook Form
-- Spam: honeypot. Each client address may send `FORM_RATE_LIMIT_PER_HOUR` submissions per hour (default 30). The address list is capped so it cannot grow without bound.
+- Spam: honeypot. Each client address may send `FORM_RATE_LIMIT_PER_HOUR` submissions per hour (default 8). The whole site also stops at 60 submissions an hour and 200 a day. Counters are saved on disk and only store a hash of the address.
+- Static pages post forms to `/api/forms/[type]`. A submit does not put the fields in the page address. When the saved log reaches its size cap, the oldest line is dropped so a later applicant can still be stored.
 - Promo: a delegate invoice is complimentary only when the code matches `PROMO_CODES` on the server. Any other code is rejected. An empty field pays the published price.
 - Storage: `data/submissions/*.jsonl` (gitignored)
 - Optional notice: `FORM_WEBHOOK_URL` receives only the submission id, form type and time. Names, email, phone and invoice text stay in the local store.

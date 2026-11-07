@@ -165,6 +165,8 @@ export function RegisterForm({ priceLabel }: { priceLabel: string }) {
   return (
     <form
       id="register-form"
+      method="post"
+      action="/api/forms/register"
       className="group mt-8 grid gap-4 border border-line bg-white/70 p-5 md:p-6 [&:not(:has(#consent:checked))_button[type=submit]]:pointer-events-none [&:not(:has(#consent:checked))_button[type=submit]]:opacity-60 [&:has(#status-delegate:checked):not(:has(#terms:checked))_button[type=submit]]:pointer-events-none [&:has(#status-delegate:checked):not(:has(#terms:checked))_button[type=submit]]:opacity-60 [&:has(#status-guest:checked)_.for-delegate]:hidden [&:has(#status-guest:checked)_.for-guest]:block [&:has(#status-delegate:checked)_.fields]:grid [&:has(#tell-more:checked)_.fields]:grid [&:has(#pay-legal:checked)_.invoice]:block [&:has(#status-delegate:checked)_.req]:inline"
       onSubmit={handleSubmit(onSubmit)}
       noValidate

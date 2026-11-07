@@ -18,12 +18,24 @@ async function htmlFiles(dir) {
   return files;
 }
 
+function postForms(html) {
+  return html.replace(/<form\b([^>]*)>/gi, (_, attrs) => {
+    let next = attrs;
+    if (/\bmethod\s*=/i.test(next)) {
+      next = next.replace(/\bmethod\s*=\s*(["'])get\1/gi, 'method="post"');
+    } else {
+      next += ' method="post"';
+    }
+    return `<form${next}>`;
+  });
+}
+
 function toStaticHtml(html) {
   const withoutScripts = html
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
     .replace(/<link rel="preload" as="script"[^>]*>/gi, "")
     .replace(/<link rel="preload" href="\/_next\/static\/chunks[^>]*>/gi, "");
-  return withoutScripts
+  return postForms(withoutScripts)
     .replaceAll("/_next/static/css/", "/static/css/")
     .replaceAll("/_next/static/media/", "/static/media/");
 }

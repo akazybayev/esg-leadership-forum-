@@ -20,7 +20,7 @@ export async function POST(
     return NextResponse.json({ error: "Unknown form type" }, { status: 404 });
   }
 
-  const limited = checkRateLimit(clientAddress(request));
+  const limited = await checkRateLimit(clientAddress(request));
   if (!limited.ok) {
     return NextResponse.json(
       { error: "Too many requests", retryAfterSec: limited.retryAfterSec },

@@ -49,6 +49,8 @@ export function NewsletterForm({
 
   return (
     <form
+      method="post"
+      action="/api/forms/newsletter"
       className="mt-6 flex flex-col gap-3 sm:flex-row"
       onSubmit={onSubmit}
       noValidate
