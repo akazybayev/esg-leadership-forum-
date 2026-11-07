@@ -1,6 +1,11 @@
 import { readFileSync } from "fs";
 import path from "path";
 import {
+  delegatePricing,
+  resolveDelegateTier,
+  type DelegateTierId,
+} from "@/lib/pricing";
+import {
   homeContentSchema,
   navigationSchema,
   programSchema,
@@ -124,12 +129,18 @@ export function getPartnersContent() {
   return loadJson("partners.json") as {
     intro: LocalizedString;
     audience: Array<{ value: string; label: LocalizedString }>;
+    priceNote: LocalizedString;
+    sharedTitle: LocalizedString;
+    shared: LocalizedString[];
     packages: Array<{
       id: string;
       title: LocalizedString;
+      price: LocalizedString;
       summary: LocalizedString;
       includes: LocalizedString[];
     }>;
+    institutional: { title: LocalizedString; text: LocalizedString };
+    howTo: { title: LocalizedString; text: LocalizedString };
     deckUrl: string;
     deckAvailable: boolean;
   };
@@ -240,7 +251,7 @@ export function getNearestDeadline(now = new Date()): {
       id: "youthPitch",
       date: site.dates.youthPitchClose,
       label: {
-        ru: "Приём заявок Youth Impact Pitch",
+        ru: "Прием заявок Youth Impact Pitch",
         en: "Youth Impact Pitch applications close",
         kk: "Youth Impact Pitch өтінімдері аяқталады",
       },
@@ -249,7 +260,7 @@ export function getNearestDeadline(now = new Date()): {
       id: "award",
       date: site.dates.awardClose,
       label: {
-        ru: "Приём заявок ESG Award",
+        ru: "Прием заявок ESG Award",
         en: "ESG Award applications close",
         kk: "ESG Award өтінімдері аяқталады",
       },
@@ -301,16 +312,18 @@ export function getHeadlineSessions() {
 export function getDelegatePriceUsd(now = new Date()): {
   amount: number;
   isEarly: boolean;
+  tier: DelegateTierId;
   earlyEnds: string;
+  standardEnds: string;
+  lateStarts: string;
 } {
-  const site = getSiteConfig();
-  const earlyEnds = new Date(`${site.dates.earlyBirdEnds}T23:59:59+05:00`);
-  const isEarly = now.getTime() <= earlyEnds.getTime();
+  const tier = resolveDelegateTier(now);
   return {
-    amount: isEarly
-      ? site.pricing.delegateEarlyUsd
-      : site.pricing.delegateStandardUsd,
-    isEarly,
-    earlyEnds: site.dates.earlyBirdEnds,
+    amount: delegatePricing[tier].amountUsd,
+    isEarly: tier === "early",
+    tier,
+    earlyEnds: delegatePricing.early.ends,
+    standardEnds: delegatePricing.standard.ends,
+    lateStarts: delegatePricing.late.starts,
   };
 }

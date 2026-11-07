@@ -36,5 +36,5 @@ next-env.d.ts
 # vercel
 .vercel
 
-# form submissions (local/demo)
-/data/submissions/
+# form submissions and quota counters (local/demo)
+/data/

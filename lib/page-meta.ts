@@ -45,6 +45,7 @@ const pathByKey: Record<PageKey, string> = {
 
 const customDescriptionKeys = new Set<PageKey>([
   "home",
+  "about",
   "program",
   "register",
   "guestCountry",

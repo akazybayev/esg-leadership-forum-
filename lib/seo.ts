@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getSiteConfig, tLocalized } from "@/lib/content";
+import { delegatePricing } from "@/lib/pricing";
 import { routing, type Locale } from "@/i18n/routing";
 
 export const SITE_PATHS = [
@@ -25,7 +26,7 @@ export const SITE_PATHS = [
 export function getSiteUrl(): string {
   return (
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "http://localhost:3000"
+    "https://esg-leadership-forum.apps.grok.bot"
   );
 }
 
@@ -151,7 +152,7 @@ export function buildEventJsonLd(locale: Locale) {
       {
         "@type": "Offer",
         name: "Delegate early-bird",
-        price: String(site.pricing.delegateEarlyUsd),
+        price: String(delegatePricing.early.amountUsd),
         priceCurrency: "USD",
         url: absoluteUrl(locale, "/register"),
         availability: "https://schema.org/InStock",
@@ -160,11 +161,21 @@ export function buildEventJsonLd(locale: Locale) {
       {
         "@type": "Offer",
         name: "Delegate standard",
-        price: String(site.pricing.delegateStandardUsd),
+        price: String(delegatePricing.standard.amountUsd),
         priceCurrency: "USD",
         url: absoluteUrl(locale, "/register"),
         availability: "https://schema.org/InStock",
-        validFrom: site.dates.earlyBirdEnds,
+        validFrom: delegatePricing.early.ends,
+        validThrough: delegatePricing.standard.ends,
+      },
+      {
+        "@type": "Offer",
+        name: "Delegate late",
+        price: String(delegatePricing.late.amountUsd),
+        priceCurrency: "USD",
+        url: absoluteUrl(locale, "/register"),
+        availability: "https://schema.org/InStock",
+        validFrom: delegatePricing.late.starts,
       },
     ],
     image: [`${getSiteUrl()}/images/venue/main-hall.png`],

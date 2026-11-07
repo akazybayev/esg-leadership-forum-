@@ -6,9 +6,9 @@
       "kk": "Құпиялылық саясаты"
     },
     "body": {
-      "ru": "TODO (юрист): политика обработки персональных данных участников, заявителей ESG Award / Youth Impact Pitch и подписчиков. До утверждения текста формы собирают демо-данные локально.",
-      "en": "TODO (legal counsel): privacy policy for participants, ESG Award / Youth Impact Pitch applicants and subscribers. Until approved, forms store demo data locally.",
-      "kk": "TODO (заңгер): қатысушылар, ESG Award / Youth Impact Pitch өтініш берушілері және жазылушылар үшін дербес деректер саясаты. Бекітілгенше формалар демо-деректерді жергілікті сақтайды."
+      "ru": "Global ESG Partnership обрабатывает персональные данные участников, заявителей ESG Award и Youth Impact Pitch и подписчиков рассылки, чтобы зарегистрировать их и связаться по вопросам форума.",
+      "en": "Global ESG Partnership processes personal data of participants, ESG Award and Youth Impact Pitch applicants and newsletter subscribers in order to register them and contact them about the forum.",
+      "kk": "Global ESG Partnership қатысушылардың, ESG Award және Youth Impact Pitch өтініш берушілерінің және жазылушылардың дербес деректерін тіркеу және форум бойынша байланысу үшін өңдейді."
     }
   },
   "consent": {
@@ -18,9 +18,9 @@
       "kk": "Деректерді өңдеуге келісім"
     },
     "body": {
-      "ru": "TODO (юрист): текст согласия на обработку персональных данных и использование материалов форума.",
-      "en": "TODO (legal counsel): consent text for personal data processing and use of forum materials.",
-      "kk": "TODO (заңгер): дербес деректерді өңдеуге және форум материалдарын пайдалануға келісім мәтіні."
+      "ru": "Отправляя форму, вы соглашаетесь на обработку персональных данных для регистрации, участия в программе и связи по вопросам форума.",
+      "en": "By submitting a form you agree to the processing of your personal data for registration, participation in the programme and contact about the forum.",
+      "kk": "Форманы жіберу арқылы тіркеу, бағдарламаға қатысу және форум бойынша байланыс үшін дербес деректерді өңдеуге келісесіз."
     }
   },
   "terms": {
@@ -30,9 +30,9 @@
       "kk": "Төлем және қайтару шарттары"
     },
     "body": {
-      "ru": "TODO (юрист + финансы): оплата делегата в USD/KZT, счета для юрлиц, промокоды, возвраты и отмена. До подключения платёжного провайдера — выставление счёта по заявке.",
-      "en": "TODO (legal + finance): delegate payment in USD/KZT, corporate invoices, promo codes, refunds and cancellation. Until a payment provider is connected, applications generate invoices.",
-      "kk": "TODO (заңгер + қаржы): делегат төлемі USD/KZT, заңды тұлға шоттары, промокодтар, қайтару және болдыру. Төлем провайдері қосылғанға дейін — өтінім бойынша шот."
+      "ru": "Делегат оплачивает участие по счету. После оплаты организатор направляет электронный билет. Вопросы по возврату: forum@esgpartners.kz.",
+      "en": "Delegates pay by invoice. After payment the organiser sends an e-ticket. Refund questions: forum@esgpartners.kz.",
+      "kk": "Делегат қатысуды шот бойынша төлейді. Төлемнен кейін ұйымдастырушы электрондық билет жібереді. Қайтару туралы: forum@esgpartners.kz."
     }
   }
 }

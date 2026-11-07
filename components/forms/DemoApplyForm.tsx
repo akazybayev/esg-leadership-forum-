@@ -139,6 +139,8 @@ export function DemoApplyForm({
   return (
     <form
       id={id}
+      method="post"
+      action={`/api/forms/${formType}`}
       className="mt-6 grid gap-4 border border-line bg-white/70 p-5 md:p-6"
       onSubmit={onSubmit}
       noValidate

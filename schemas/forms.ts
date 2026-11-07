@@ -28,20 +28,46 @@ export const formTypes = [
 
 export type FormType = (typeof formTypes)[number];
 
-export const registerFormSchema = z.object({
-  company_website: honeypot,
-  status: z.enum(["guest", "delegate"]),
-  name: nonEmpty,
-  organization: nonEmpty,
-  title: nonEmpty,
-  country: nonEmpty,
-  email,
-  phone,
-  category: nonEmpty,
-  lines: z.string().trim().max(100).optional().or(z.literal("")),
-  promo: z.string().trim().max(80).optional().or(z.literal("")),
-  invoice: optionalText,
-});
+const optionalShort = z.string().trim().max(200).optional().or(z.literal(""));
+
+export const registerFormSchema = z
+  .object({
+    company_website: honeypot,
+    status: z.enum(["guest", "delegate"]),
+    name: nonEmpty,
+    organization: optionalShort,
+    title: optionalShort,
+    country: nonEmpty,
+    email,
+    phone,
+    category: z.string().trim().max(100).optional().or(z.literal("")),
+    lines: z.string().trim().max(100).optional().or(z.literal("")),
+    promo: z.string().trim().max(80).optional().or(z.literal("")),
+    invoice: optionalText,
+    payAsLegal: z.boolean().optional(),
+    consent: z.literal(true),
+    terms: z.boolean().optional(),
+  })
+  .superRefine((value, ctx) => {
+    if (value.status !== "delegate") return;
+    for (const key of ["organization", "title", "category"] as const) {
+      const field = value[key];
+      if (typeof field !== "string" || field.trim().length === 0) {
+        ctx.addIssue({
+          code: "custom",
+          path: [key],
+          message: "Required",
+        });
+      }
+    }
+    if (!value.terms) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["terms"],
+        message: "Required",
+      });
+    }
+  });
 
 export const awardFormSchema = z.object({
   company_website: honeypot,
