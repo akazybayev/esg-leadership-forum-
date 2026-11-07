@@ -12,7 +12,6 @@ import {
   getHeadlineSessions,
   getHomeContent,
   getSiteConfig,
-  getSpeakers,
   getSponsors,
   tLocalized,
 } from "@/lib/content";
@@ -46,7 +45,6 @@ export default async function HomePage({
   const site = getSiteConfig();
   const home = getHomeContent();
   const award = getAward();
-  const speakers = getSpeakers();
   const sponsors = getSponsors();
   const headlines = getHeadlineSessions();
   const pricing = getDelegatePriceUsd();
@@ -140,6 +138,30 @@ export default async function HomePage({
         </div>
       </section>
 
+      <section className="container-shell grid gap-8 py-16 md:grid-cols-[minmax(0,240px)_1fr] md:items-center md:py-20">
+        <div className="relative aspect-[4/5] overflow-hidden bg-deep">
+          <Image
+            src="/images/people/aidar-kazybayev.jpg"
+            alt={tHome("initiatorAlt")}
+            fill
+            className="object-cover object-top"
+            sizes="(min-width: 768px) 240px, 100vw"
+          />
+        </div>
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
+            {tHome("initiatorEyebrow")}
+          </p>
+          <blockquote className="mt-4 text-2xl font-semibold leading-snug text-deep md:text-3xl">
+            {tHome("initiatorQuote")}
+          </blockquote>
+          <p className="mt-4 text-sm text-ink-soft">{tHome("initiatorName")}</p>
+          <Link href="/about#address" className="btn btn-secondary mt-6">
+            {tHome("initiatorCta")}
+          </Link>
+        </div>
+      </section>
+
       <section className="container-shell py-16 md:py-20">
         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
           {tLocalized(home.whyAttend.eyebrow, locale)}
@@ -212,33 +234,6 @@ export default async function HomePage({
             </li>
           ))}
         </ul>
-      </section>
-
-      <section className="border-y border-line bg-white/40 py-16 md:py-20">
-        <div className="container-shell">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-                {tHome("speakersEyebrow")}
-              </p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-deep md:text-5xl">
-                {tHome("speakersTitle")}
-              </h2>
-            </div>
-            <Link href="/speakers" className="btn btn-secondary">
-              {t("allSpeakers")}
-            </Link>
-          </div>
-          <div className="mt-8">
-            {speakers.items.length === 0 ? (
-              <EmptyAnnounce
-                message={tStatus("comingSoon", {
-                  date: formatForumDate(speakers.announceDate, locale),
-                })}
-              />
-            ) : null}
-          </div>
-        </div>
       </section>
 
       <section className="container-shell py-16 md:py-20">

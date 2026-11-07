@@ -7,11 +7,11 @@
   "news": [],
   "newsAnnounceDate": "2027-03-01",
   "pressReleases": [],
-  "brandKitUrl": "/brand/esg-forum-kit-TODO.zip",
+  "brandKitUrl": "/brand/esg-forum-kit.zip",
   "brandKitAvailable": false,
   "accreditationNote": {
-    "ru": "Аккредитованные СМИ получают статус делегата по промокоду. Демо-форма до CRM.",
-    "en": "Accredited media receive delegate status via promo code. Demo form until CRM.",
-    "kk": "Аккредиттелген БАҚ промокодпен делегат мәртебесін алады. CRM-ге дейін демо-форма."
+    "ru": "Аккредитованные СМИ получают статус делегата по промокоду.",
+    "en": "Accredited media receive delegate status via a promo code.",
+    "kk": "Аккредиттелген БАҚ промокод бойынша делегат мәртебесін алады."
   }
 }

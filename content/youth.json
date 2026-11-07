@@ -1,17 +1,17 @@
 {
   "intro": {
-    "ru": "100 молодёжных делегатов и Youth Impact Pitch — сцена, гранты и наставники для проектов с измеримым эффектом.",
+    "ru": "100 молодежных делегатов и Youth Impact Pitch — сцена, гранты и наставники для проектов с измеримым эффектом.",
     "en": "100 youth delegates and Youth Impact Pitch — a stage, grants and mentors for projects with measurable impact.",
     "kk": "100 жас делегат және Youth Impact Pitch — өлшенетін әсері бар жобаларға сахна, гранттар және тәлімгерлер."
   },
   "delegate": {
     "title": {
-      "ru": "Молодёжный делегат",
+      "ru": "Молодежный делегат",
       "en": "Youth delegate",
       "kk": "Жас делегат"
     },
     "text": {
-      "ru": "Возраст 18–30 лет. Участие в установочной сессии Дня 0, открытых сессиях и молодёжной программе форума.",
+      "ru": "Возраст 18–30 лет. Участие в установочной сессии Дня 0, открытых сессиях и молодежной программе форума.",
       "en": "Age 18–30. Orientation on Day 0, open sessions and the youth programme.",
       "kk": "Жасы 18–30. 0-күнгі кіріспе сессия, ашық сессиялар және жастар бағдарламасы."
     },
@@ -79,7 +79,7 @@
           "kk": "Digital & Governance"
         },
         "examples": {
-          "ru": "ИИ для ESG, прозрачность данных, ответственное потребление, зелёные финансы",
+          "ru": "ИИ для ESG, прозрачность данных, ответственное потребление, зеленые финансы",
           "en": "AI for ESG, data transparency, responsible consumption, green finance",
           "kk": "ESG үшін ЖИ, дерек ашықтығы, жауапты тұтыну, жасыл қаржы"
         }
@@ -164,7 +164,7 @@
       {
         "score": 20,
         "title": {
-          "ru": "Проблема и её значимость",
+          "ru": "Проблема и ее значимость",
           "en": "Problem and relevance",
           "kk": "Мәселе және оның маңыздылығы"
         }
@@ -196,19 +196,14 @@
     ],
     "prizes": [
       {
-        "ru": "1–3 место: целевой грант [сумма TODO] и наставник на 12 месяцев",
-        "en": "1–3 place: earmarked grant [amount TODO] and a 12-month mentor",
-        "kk": "1–3 орын: мақсатты грант [сома TODO] және 12 айлық тәлімгер"
+        "ru": "1–3 место: наставник на 12 месяцев",
+        "en": "1st–3rd place: a mentor for 12 months",
+        "kk": "1–3 орын: 12 айлық тәлімгер"
       },
       {
-        "ru": "Приз зрительских симпатий [приз от партнёра TODO]",
-        "en": "Audience award [partner prize TODO]",
-        "kk": "Көрермендер жүлдесі [серіктес жүлдесі TODO]"
-      },
-      {
-        "ru": "Все финалисты: статус ESG Youth Ambassador и стажировки у партнёров [TODO]",
-        "en": "All finalists: ESG Youth Ambassador status and partner internships [TODO]",
-        "kk": "Барлық финалистер: ESG Youth Ambassador мәртебесі және серіктес тәжірибелері [TODO]"
+        "ru": "Все финалисты получают статус ESG Youth Ambassador",
+        "en": "All finalists receive ESG Youth Ambassador status",
+        "kk": "Барлық финалистер ESG Youth Ambassador мәртебесін алады"
       }
     ],
     "rulesSource": "docs/PITCH_RULES.md"

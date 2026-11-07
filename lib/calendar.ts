@@ -54,6 +54,39 @@ export function buildSessionIcs(session: Session, locale: Locale): string {
   ].join("\r\n");
 }
 
+export function buildForumIcs(): string {
+  return [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//ESG Leadership Forum//Register//EN",
+    "CALSCALE:GREGORIAN",
+    "METHOD:PUBLISH",
+    "BEGIN:VEVENT",
+    "UID:forum@esg-leadership-forum",
+    "DTSTAMP:20271013T040000Z",
+    "DTSTART:20271013T040000Z",
+    "DTEND:20271014T160000Z",
+    "SUMMARY:ESG Leadership Forum 2027",
+    "DESCRIPTION:13–14 October 2027\\, 09:00–21:00 Asia/Almaty (UTC+5)",
+    "LOCATION:Hilton Astana\\, Astana",
+    "END:VEVENT",
+    "END:VCALENDAR",
+    "",
+  ].join("\r\n");
+}
+
+export function downloadForumIcs() {
+  const blob = new Blob([buildForumIcs()], {
+    type: "text/calendar;charset=utf-8",
+  });
+  const url = URL.createObjectURL(blob);
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.download = "esg-leadership-forum-astana-2027.ics";
+  anchor.click();
+  URL.revokeObjectURL(url);
+}
+
 export function downloadSessionIcs(session: Session, locale: Locale) {
   const ics = buildSessionIcs(session, locale);
   const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });

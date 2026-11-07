@@ -1,6 +1,6 @@
-# ESG Leadership Forum Astana 2027
+# ESG Leadership Forum 2027
 
-Official multi-language event site for **ESG Leadership Forum Astana 2027**  
+Official multi-language event site for **ESG Leadership Forum 2027**  
 *(Leadership for Generations / Лидерство ради поколений / Ұрпақтар үшін көшбасшылық)*  
 13–14 October 2027 · Hilton Astana · Organizer: Global ESG Partnership
 
@@ -38,7 +38,8 @@ npm run lint
 
 | Change | File |
 | --- | --- |
-| Dates, prices, coordinator, scale | `content/site.json` |
+| Dates, coordinator, scale | `content/site.json` |
+| Delegate prices (early / standard / late) | `lib/pricing.ts` |
 | Programme sessions | `content/program.json` |
 | Speakers | `content/speakers.json` |
 | Award nominations | `content/award.json` |
@@ -47,19 +48,21 @@ npm run lint
 | Partners packages | `content/partners.json` |
 | UI chrome | `messages/{ru,en,kk}.json` |
 
-All visitor-facing copy is localized. Kazakh strings need native review.
-
-Client materials and open TODOs: [`docs/`](docs/), [`docs/MISSING.md`](docs/MISSING.md).
+All visitor-facing copy is localized. Kazakh strings need native-speaker review (`messages/kk.json`, key `_nativeSpeakerReview`: «требует проверки носителем языка»). The note is kept out of the public footer.
 
 ## Forms & payment (Stage 6)
 
 `POST /api/forms/[type]` for register, award, youth-delegate, youth-pitch, expo, partners, guest-country, media, contact, newsletter.
 
 - Validation: shared Zod schemas + React Hook Form
-- Spam: honeypot + per-IP hourly rate limit
+- Spam: honeypot. Each client address may send `FORM_RATE_LIMIT_PER_HOUR` submissions per hour (default 3). The address is the last proxy hop, not the first forwarded value. The whole site also stops at 15 submissions an hour, 40 a day, and 80 KB of stored text a day.
+- A browser submission must come from this site. A page on another site is refused.
+- Stored applications are encrypted with `FORM_STORE_KEY`. Until that key is set, the log keeps only the receipt id, form type and time.
+- Static pages post forms to `/api/forms/[type]`. A submit does not put the fields in the page address. When the saved log reaches its size cap, the oldest line is dropped so a later applicant can still be stored.
+- Promo: a delegate invoice is complimentary only when the code matches `PROMO_CODES` on the server. Any other code is rejected. An empty field pays the published price.
 - Storage: `data/submissions/*.jsonl` (gitignored)
-- Optional CRM: `FORM_WEBHOOK_URL`
-- Delegates: invoice draft via `PAYMENT_PROVIDER=invoice` until a live gateway is connected
+- Optional notice: `FORM_WEBHOOK_URL` receives only the submission id, form type and time. Names, email, phone and invoice text stay in the local store.
+- Delegates: invoice draft via `PAYMENT_PROVIDER=invoice` until a live gateway is connected. The KZT rate and card checkout (Visa/Mastercard, Kaspi) are not connected yet. This note stays in code and this README, not on the registration page.
 
 ## SEO & accessibility (Stage 7)
 
@@ -81,4 +84,4 @@ Palette A — Horizon Deep (`#0B1F2A`) + accent (`#C45C26`), Manrope with Cyrill
 
 ## Coordinator
 
-Nadiya Dosmukhanova · +7 777 655 5860 · esg@inbox.eu · forum@esgpartners.kz
+Nadiya Dosmukhanova · +7 701 555 25 76 · forum@esgpartners.kz · WhatsApp https://wa.me/77015552576 · Telegram https://t.me/esg_school

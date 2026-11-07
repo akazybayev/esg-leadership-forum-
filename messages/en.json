@@ -1,6 +1,6 @@
 {
   "meta": {
-    "siteName": "ESG Leadership Forum Astana 2027",
+    "siteName": "ESG Leadership Forum 2027",
     "defaultDescription": "International ESG forum in Astana: leadership for generations.",
     "pages": {
       "home": "Home",
@@ -22,12 +22,13 @@
       "terms": "Payment terms"
     },
     "pageDescriptions": {
-      "home": "ESG Leadership Forum Astana 2027 — leadership for generations. 13–14 October, Hilton Astana.",
+      "home": "ESG Leadership Forum 2027 — leadership for generations. 13–14 October, Hilton Astana.",
       "program": "Forum programme: keynotes, panels, masterclasses, guest country and ESG Award.",
-      "register": "Guest and delegate registration. Delegate early-bird 250 USD until 31 July 2027.",
+      "register": "Guest and delegate registration for ESG Leadership Forum 2027. Early price 250 USD until 31 July 2027, standard 300 USD, late 350 USD.",
       "guestCountry": "Guest country of the forum package: Main Stage session, 5-section pavilion, national evening.",
       "award": "ESG Award 2027: 14 categories and Grand Prix. Applications March–June 2027.",
-      "contact": "Contact forum coordinator Nadiya Dosmukhanova."
+      "contact": "Contact forum coordinator Nadiya Dosmukhanova.",
+      "about": "ESG Leadership Forum 2027 is a meeting place for business, investors, government and youth. 13–14 October 2027, Hilton Astana. An address by forum initiator Aidar Kazybayev."
     }
   },
   "nav": {
@@ -66,7 +67,13 @@
     "terms": "Payment and refund terms",
     "languages": "Languages",
     "rights": "All rights reserved.",
-    "kkReviewNote": "Kazakh copy requires native-speaker review."
+    "kkReviewNote": "Kazakh copy requires native-speaker review.",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "newsletter": "Subscribe to forum news",
+    "newsletterPlaceholder": "Email",
+    "newsletterButton": "Subscribe",
+    "newsletterSuccess": "Thank you, you are subscribed to forum news."
   },
   "access": {
     "open": "Open to all",
@@ -97,7 +104,12 @@
     "statsCountries": "countries",
     "statsYouth": "youth delegates",
     "statsNominations": "ESG Award categories",
-    "guestCountryCta": "Learn about the status"
+    "guestCountryCta": "Learn about the status",
+    "initiatorEyebrow": "From the initiator",
+    "initiatorQuote": "ESG Leadership Forum 2027 is a place for people who connect sustainability with investment, management and business growth. Come with a case, a question or a project — and leave with partners.",
+    "initiatorName": "Aidar Kazybayev, forum initiator, founder of Global ESG Partnership",
+    "initiatorCta": "Read the address",
+    "initiatorAlt": "Aidar Kazybayev"
   },
   "stage": {
     "stub": "Page under construction — stage {stage}."
@@ -154,10 +166,10 @@
     "timeline": "Timeline",
     "criteria": "Criteria and scores",
     "jury": "Jury",
-    "rulesNote": "Full text: docs/AWARD_RULES.md. Draft rules; bracketed items await organizer decisions.",
+    "rulesNote": "",
     "applyTitle": "Apply for ESG Award",
-    "applyText": "Max three applications per organisation and one per category. Up to 1,500 words. Demo form until CRM (stage 6).",
-    "applySuccess": "Application saved locally. Demo until the server handler ships.",
+    "applyText": "Up to three applications per organisation and one per category. Description up to 1,500 words.",
+    "applySuccess": "Application received. We will write to you by email.",
     "fieldOrg": "Organisation",
     "fieldNomination": "Category",
     "fieldProject": "Project description",
@@ -175,8 +187,8 @@
     "stages": "Stages",
     "criteria": "Evaluation criteria",
     "prizes": "Prizes",
-    "rulesNote": "Full text: docs/PITCH_RULES.md. Grant amounts and geography — organizer TODO.",
-    "success": "Application saved locally. Demo until stage 6.",
+    "rulesNote": "",
+    "success": "Application received. We will write to you by email.",
     "fieldName": "Full name",
     "fieldAge": "Age",
     "fieldOrg": "University or organisation",
@@ -193,9 +205,9 @@
     "zones": "Zones",
     "conditions": "Exhibitor conditions",
     "applyTitle": "Exhibitor application",
-    "applyText": "Demo form. Booth packages and pricing — TODO in partner materials.",
+    "applyText": "An equipped section is 5,000 USD excluding VAT for both days. Two or more sections can be taken. Send a stand request.",
     "submit": "Submit application",
-    "success": "Application saved locally. Demo until stage 6.",
+    "success": "Application received. We will write to you by email.",
     "fieldOrg": "Organisation",
     "fieldZone": "Preferred zone",
     "fieldContact": "Contact person",
@@ -222,7 +234,7 @@
     "formTitle": "Registration form",
     "status": "Status",
     "submit": "Submit application",
-    "success": "Application accepted. An invoice draft was created for delegates.",
+    "success": "Thank you, your application has been received. Within two business days we will confirm registration by email. Delegates will receive an invoice; after payment you will get an e-ticket and a QR code for your badge.",
     "fieldName": "Full name",
     "fieldOrg": "Organisation",
     "fieldTitle": "Job title",
@@ -240,19 +252,74 @@
     "catUniversity": "University",
     "catNgo": "NGO",
     "catMedia": "Media",
-    "paymentNote": "Payment via invoice stub (PAYMENT_PROVIDER=invoice). Live gateway and KZT FX come later.",
-    "successGuest": "Guest application accepted. We will email a confirmation."
+    "paymentNote": "",
+    "successGuest": "Guest application accepted. We will email a confirmation.",
+    "whenWhere": "13–14 October 2027 · Hilton Astana, Astana · Leadership for Generations",
+    "guestFree": "Guest · free",
+    "delegatePaid": "Delegate",
+    "tellMore": "Tell us more about you",
+    "phoneHint": "+7 …",
+    "payAsLegal": "Payment by a legal entity",
+    "promoHow": "How do I get a promo code?",
+    "promoHowBody": "Free delegate places by promo code go to speakers, moderators and the jury, youth delegates, NGOs on the social-projects alley, ESG Award finalists (two places), accredited media and sponsors within package quotas. Request a code: <email>forum@esgpartners.kz</email>.",
+    "consentLabel": "I agree to the <link>processing of personal data</link>",
+    "termsLabel": "I accept the <link>payment and refund terms</link>",
+    "addToCalendar": "Add to calendar",
+    "backHome": "Back to the home page",
+    "errorRequired": "Please fill in this field",
+    "errorEmail": "Enter an email in the form name@example.com",
+    "errorPhone": "Enter a phone number in international format, for example +7 …",
+    "errorConsent": "Consent to personal-data processing is required",
+    "errorTerms": "Please accept the payment and refund terms",
+    "errorSubmit": "The application could not be sent. Please try again.",
+    "priceCurrent": "{tier} — {amount} USD",
+    "tier": {
+      "early": "Early",
+      "standard": "Standard",
+      "late": "Late"
+    },
+    "tierUntil": "until {date}",
+    "tierFrom": "from {date}",
+    "countdown": "{days} days left",
+    "faqTitle": "Frequently asked questions",
+    "faq": {
+      "visa": {
+        "q": "Do I need a visa?",
+        "a": "Citizens of a number of countries can enter Kazakhstan visa-free for up to 30 days. Delegates who need a visa can request an invitation. Write to <email>forum@esgpartners.kz</email>."
+      },
+      "card": {
+        "q": "Can I pay by card?",
+        "a": "Payment is currently by invoice. Online card payment (Visa/Mastercard, Kaspi) will be added later — registered participants will be notified."
+      },
+      "refund": {
+        "q": "Refund terms",
+        "a": "To be confirmed.",
+        "link": "Payment and refund terms"
+      },
+      "groups": {
+        "q": "Are there group discounts?",
+        "a": "Organisations registering three or more delegates can ask for individual terms: <email>forum@esgpartners.kz</email>."
+      },
+      "dress": {
+        "q": "Dress code",
+        "a": "Business; the gala dinner is evening business attire."
+      }
+    },
+    "wayTitle": "How to get there",
+    "wayAddress": "Hilton Astana, EXPO complex, Astana",
+    "wayTransfer": "Transfers and partner hotels — details will be published closer to the date.",
+    "wayOpen": "Open the map"
   },
   "partnersPage": {
     "eyebrow": "For partners",
-    "title": "Become a forum partner",
+    "title": "Become a partner of ESG Leadership Forum 2027",
     "packages": "Packages",
-    "deckNote": "Partner deck will appear after CONCEPT.md / PDF upload.",
+    "deckNote": "",
     "downloadDeck": "Download PDF deck",
-    "deckMissing": "TODO: partner deck file not uploaded yet",
+    "deckMissing": "",
     "requestTitle": "Partnership package request",
     "submit": "Send request",
-    "success": "Request saved locally. Demo until stage 6.",
+    "success": "Request received. We will write to you by email.",
     "fieldCompany": "Company",
     "fieldLevel": "Preferred tier",
     "fieldContact": "Contact person",
@@ -280,10 +347,10 @@
     "brand": "Brand materials",
     "brandText": "Logos, guidelines and press photos for accredited media.",
     "downloadBrand": "Download brand kit",
-    "brandMissing": "TODO: brand kit not uploaded yet",
+    "brandMissing": "",
     "accreditation": "Media accreditation",
     "submit": "Apply",
-    "success": "Application saved locally. Demo until stage 6.",
+    "success": "Application received. We will write to you by email.",
     "fieldOutlet": "Outlet",
     "fieldName": "Reporter name",
     "fieldRole": "Role",
@@ -294,7 +361,7 @@
     "title": "Contact the organizer",
     "formTitle": "Write to us",
     "submit": "Send",
-    "success": "Message saved locally. Demo until stage 6.",
+    "success": "Message received. We will write to you by email.",
     "fieldName": "Name",
     "fieldTopic": "Topic",
     "fieldMessage": "Message",
@@ -302,13 +369,13 @@
   },
   "guestCountryPage": {
     "eyebrow": "Guest country of the forum",
-    "title": "A package above the general partner",
+    "title": "A separate format of international partnership",
     "includes": "What’s included",
     "seeProgram": "See in the programme",
     "requestTitle": "Guest-country status request",
-    "requestText": "For embassies, trade and investment agencies and line ministries. Demo form until stage 6.",
+    "requestText": "For embassies, trade and investment agencies and line ministries.",
     "submit": "Send request",
-    "success": "Request saved locally.",
+    "success": "Request received. We will write to you by email.",
     "fieldCountry": "Country",
     "fieldOrg": "Organisation",
     "fieldContact": "Contact person",
@@ -319,5 +386,92 @@
     "mobileRegister": "Quick registration",
     "primaryNav": "Primary navigation",
     "mobileNav": "Mobile navigation"
+  },
+  "share": {
+    "label": "Share",
+    "linkedin": "LinkedIn",
+    "telegram": "Telegram",
+    "whatsapp": "WhatsApp",
+    "copy": "Copy link",
+    "copied": "Link copied"
+  },
+  "lines": {
+    "Lead": {
+      "text": "corporate governance, ESG ratings, data and AI"
+    },
+    "Finance": {
+      "text": "sustainable finance and carbon markets"
+    },
+    "Planet": {
+      "text": "energy transition, water, climate and the circular economy"
+    },
+    "People": {
+      "text": "human capital and business partnerships with NGOs"
+    },
+    "Region": {
+      "text": "joint projects of Central Asia and partner countries"
+    }
+  },
+  "aboutPage": {
+    "eyebrow": "About",
+    "title": "About the forum",
+    "subtitle": "Leadership for Generations",
+    "whenWhere": "13–14 October 2027 · Hilton Astana, Astana",
+    "addressTitle": "Address by the forum initiator",
+    "photoAlt": "Aidar Kazybayev",
+    "photoCaption": "Aidar Kazybayev — initiator of the ESG Leadership Forum, founder of Global ESG Partnership and ESG Management School, author of the EMBA programme “ESG and Sustainable Development”",
+    "greeting": "Dear colleagues, partners and friends,",
+    "p1": "I invite you to ESG Leadership Forum 2027 — a forum we designed as a place for people who connect sustainable development with investment, management and business growth. The theme is “Leadership for Generations”. It is not a slogan. It is a commitment: the decisions we take today decide the country and the planet our children will live in.",
+    "p2": "In recent years ESG in Kazakhstan and Central Asia has moved from a fashionable term to a working tool. Banks issue green bonds, companies publish non-financial reports, the state is building a carbon-regulation system, and universities are opening sustainability programmes. I have seen this path from the inside — creating the National ESG Club, developing green finance at the AIFC, and training managers at ESG Management School and on the EMBA. What is missing is not ideas, but a place where ideas become agreements and projects.",
+    "p3": "That is why the forum is built around decisions, not speeches. Five tracks — Lead, Finance, Planet, People, Region — cover corporate governance and ESG ratings, sustainable finance and carbon markets, the energy transition and the circular economy, human capital and business partnerships with NGOs, and joint projects of Central Asia and partner countries. Each track ends not with a resolution, but with commitments we will check a year later.",
+    "p4": "The forum brings together four formats: a business programme with company leaders, investors and representatives of public and international organisations; ESG Expo, where technology meets buyers; the independent ESG Award with 14 nominations and a grand prix; and a youth programme — 100 delegates and the Youth Impact Pitch final. Leadership for generations means young leaders sit in the same room as the people who decide today.",
+    "p5": "On 13–14 October 2027 we expect 500 participants from more than 20 countries in Astana. Come with a case, a question or a project — and leave with partners.",
+    "p6": "See you in Astana.",
+    "signName": "Aidar Kazybayev",
+    "signRole1": "Initiator of the ESG Leadership Forum",
+    "signRole2": "Founder of Global ESG Partnership and ESG Management School",
+    "signatureAlt": "Facsimile signature of Aidar Kazybayev",
+    "statsTitle": "The forum in numbers",
+    "statsNote": "Targets from the concept. The programme and speaker line-up are still being formed.",
+    "stat": {
+      "participants": "participants",
+      "countries": "countries",
+      "speakers": "speakers",
+      "exhibitors": "exhibitors"
+    },
+    "linesTitle": "Thematic tracks",
+    "daysTitle": "Two days of programme",
+    "day1": {
+      "date": "13 October",
+      "title": "Leadership and capital",
+      "item": {
+        "a": "opening and regional dialogue",
+        "b": "sustainable finance",
+        "c": "guest-country session",
+        "d": "ESG cases and business meetings",
+        "e": "evening reception"
+      }
+    },
+    "day2": {
+      "date": "14 October",
+      "title": "People and generations",
+      "item": {
+        "a": "social partnership",
+        "b": "youth plenary",
+        "c": "Youth Impact Pitch final",
+        "d": "participant commitments",
+        "e": "ESG Award gala"
+      }
+    },
+    "fullProgram": "Full programme",
+    "organizerTitle": "Organiser",
+    "orgName": "Global ESG Partnership",
+    "orgText": "Global ESG Partnership is the single organiser of the forum. It brings the business programme, the exhibition, the independent award and youth initiatives around the shared theme “Leadership for Generations”. Partners choose a substantive role; the organiser records the scope of participation and the commitments in an agreement and, after the forum, provides a report on the agreed indicators.",
+    "personName": "Aidar Kazybayev",
+    "personText": "Aidar Kazybayev is the initiator of the forum, founder and CEO of Global ESG Partnership, founder of ESG Management School and author of the EMBA programme “ESG and Sustainable Development”. He was previously CEO of the AIFC Green Finance Centre and chair of the National ESG Club. He is managing partner of the National Academy of Corporate Governance.",
+    "schoolName": "ESG Management School",
+    "schoolText": "ESG Management School is an international school of ESG management. Together with L. N. Gumilyov Eurasian National University it delivers the EMBA “ESG and Sustainable Development” — the first programme of this format in Kazakhstan for leaders and sustainability specialists.",
+    "ctaText": "Come with a case, a question or a project — and leave with partners",
+    "becomePartner": "Become a partner"
   }
 }

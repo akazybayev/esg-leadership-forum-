@@ -15,8 +15,8 @@
       "en": "Forum Coordinator",
       "kk": "Форум үйлестірушісі"
     },
-    "phone": "+7 777 655 5860",
-    "emails": ["esg@inbox.eu", "forum@esgpartners.kz"]
+    "phone": "+7 701 555 25 76",
+    "emails": ["forum@esgpartners.kz"]
   },
   "channels": [
     {
@@ -27,15 +27,6 @@
         "kk": "Форум"
       },
       "value": "forum@esgpartners.kz"
-    },
-    {
-      "id": "esg",
-      "label": {
-        "ru": "ESG / общие вопросы",
-        "en": "ESG / general",
-        "kk": "ESG / жалпы сұрақтар"
-      },
-      "value": "esg@inbox.eu"
     }
   ],
   "address": {

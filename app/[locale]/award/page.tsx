@@ -173,7 +173,6 @@ export default async function AwardPage({
             })}
           />
         </div>
-        <p className="mt-4 text-sm text-ink-soft">{t("rulesNote")}</p>
       </section>
 
       <section id="apply" className="border-t border-line bg-white/40 py-14">

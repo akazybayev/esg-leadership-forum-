@@ -1,112 +1,373 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ReactNode } from "react";
+import { useForm, type FieldErrors, type UseFormRegister } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
-import { DemoApplyForm, type DemoField } from "@/components/forms/DemoApplyForm";
+import { z } from "zod";
+import { Link } from "@/i18n/navigation";
+import { downloadForumIcs } from "@/lib/calendar";
+import { forumLineIds } from "@/lib/pricing";
 
-export function RegisterForm({
-  earlyPrice,
-  standardPrice,
-  isEarly,
-  earlyDaysLeft,
-  lines,
-}: {
-  earlyPrice: number;
-  standardPrice: number;
-  isEarly: boolean;
-  earlyDaysLeft: number;
-  lines: string[];
-}) {
+type Status = "guest" | "delegate";
+
+type FormValues = {
+  status: Status;
+  name: string;
+  email: string;
+  country: string;
+  organization: string;
+  title: string;
+  phone: string;
+  category: string;
+  lines: string;
+  promo: string;
+  payAsLegal: boolean;
+  invoice: string;
+  consent: boolean;
+  terms: boolean;
+  company_website: string;
+};
+
+function buildSchema(t: (key: string) => string) {
+  const required = z.string().trim().min(1, t("errorRequired"));
+  return z
+    .object({
+      status: z.enum(["guest", "delegate"]),
+      name: required,
+      email: z
+        .string()
+        .trim()
+        .min(1, t("errorRequired"))
+        .refine((value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value), {
+          message: t("errorEmail"),
+        }),
+      country: required,
+      organization: z.string(),
+      title: z.string(),
+      phone: z.string().refine((value) => !value.trim() || /^\+?[0-9()\-\s]{6,}$/.test(value.trim()), {
+        message: t("errorPhone"),
+      }),
+      category: z.string(),
+      lines: z.string(),
+      promo: z.string().max(80),
+      payAsLegal: z.boolean(),
+      invoice: z.string().max(2000),
+      consent: z.boolean().refine((value) => value, { message: t("errorConsent") }),
+      terms: z.boolean(),
+      company_website: z.string(),
+    })
+    .superRefine((value, ctx) => {
+      if (value.status !== "delegate") return;
+      for (const key of ["organization", "title", "category"] as const) {
+        if (!value[key]?.trim()) {
+          ctx.addIssue({
+            code: "custom",
+            path: [key],
+            message: t("errorRequired"),
+          });
+        }
+      }
+      if (!value.terms) {
+        ctx.addIssue({
+          code: "custom",
+          path: ["terms"],
+          message: t("errorTerms"),
+        });
+      }
+    });
+}
+
+const inputClass = "min-h-11 w-full rounded-lg border border-line bg-white px-3";
+
+export function RegisterForm({ priceLabel }: { priceLabel: string }) {
   const t = useTranslations("registerPage");
-  const [status, setStatus] = useState<"guest" | "delegate">("delegate");
+  const tLines = useTranslations("lines");
+  const [done, setDone] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
+  const schema = useMemo(() => buildSchema((key) => t(key)), [t]);
 
-  const priceLabel = useMemo(() => {
-    if (status === "guest") return t("priceFree");
-    return isEarly
-      ? t("priceEarly", { amount: earlyPrice, days: earlyDaysLeft })
-      : t("priceStandard", { amount: standardPrice });
-  }, [status, isEarly, earlyPrice, standardPrice, earlyDaysLeft, t]);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<FormValues>({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      status: "delegate",
+      name: "",
+      email: "",
+      country: "",
+      organization: "",
+      title: "",
+      phone: "",
+      category: "",
+      lines: "",
+      promo: "",
+      payAsLegal: false,
+      invoice: "",
+      consent: false,
+      terms: false,
+      company_website: "",
+    },
+  });
 
-  const fields: DemoField[] = useMemo(() => {
-    const base: DemoField[] = [
-      { name: "name", label: t("fieldName"), required: true },
-      { name: "organization", label: t("fieldOrg"), required: true },
-      { name: "title", label: t("fieldTitle"), required: true },
-      { name: "country", label: t("fieldCountry"), required: true },
-      { name: "email", label: "Email", type: "email", required: true },
-      { name: "phone", label: t("fieldPhone"), type: "tel" },
-      {
-        name: "category",
-        label: t("fieldCategory"),
-        type: "select",
-        required: true,
-        options: [
-          { value: "business", label: t("catBusiness") },
-          { value: "government", label: t("catGovernment") },
-          { value: "international", label: t("catInternational") },
-          { value: "university", label: t("catUniversity") },
-          { value: "ngo", label: t("catNgo") },
-          { value: "media", label: t("catMedia") },
-        ],
-      },
-      {
-        name: "lines",
-        label: t("fieldLines"),
-        type: "select",
-        options: lines.map((line) => ({ value: line, label: line })),
-      },
-    ];
-
-    if (status === "delegate") {
-      base.push(
-        {
-          name: "promo",
-          label: t("fieldPromo"),
-          placeholder: t("fieldPromoHint"),
-        },
-        {
-          name: "invoice",
-          label: t("fieldInvoice"),
-          type: "textarea",
-          placeholder: t("fieldInvoiceHint"),
-        },
-      );
+  async function onSubmit(values: FormValues) {
+    setServerError(null);
+    // PAYMENT_PROVIDER=invoice. Card checkout and the KZT rate are connected later.
+    const response = await fetch("/api/forms/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ...values,
+        organization: values.organization || undefined,
+        title: values.title || undefined,
+        phone: values.phone || undefined,
+        category: values.category || undefined,
+        lines: values.lines || undefined,
+        promo: values.promo || undefined,
+        invoice: values.payAsLegal ? values.invoice || undefined : undefined,
+        company_website: values.company_website || "",
+      }),
+    });
+    if (!response.ok) {
+      setServerError(t("errorSubmit"));
+      return;
     }
+    setDone(true);
+  }
 
-    return base;
-  }, [status, lines, t]);
+  if (done) {
+    return (
+      <div className="mt-8 border border-line bg-white/70 p-6" role="status">
+        <p className="text-lg leading-relaxed text-ink">{t("success")}</p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <button type="button" className="btn btn-primary" onClick={downloadForumIcs}>
+            {t("addToCalendar")}
+          </button>
+          <Link href="/" className="btn btn-secondary">
+            {t("backHome")}
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const categories = [
+    ["business", t("catBusiness")],
+    ["government", t("catGovernment")],
+    ["international", t("catInternational")],
+    ["university", t("catUniversity")],
+    ["ngo", t("catNgo")],
+    ["media", t("catMedia")],
+  ] as const;
 
   return (
-    <div className="mt-8">
-      <div className="flex flex-wrap gap-2" role="group" aria-label={t("status")}>
-        {(["guest", "delegate"] as const).map((value) => (
-          <button
-            key={value}
-            type="button"
-            className={`rounded-full px-4 py-2 text-sm font-semibold ${
-              status === value
-                ? "bg-deep text-white"
-                : "border border-line bg-white text-ink-soft"
-            }`}
-            onClick={() => setStatus(value)}
-          >
-            {t(value)}
-          </button>
-        ))}
+    <form
+      id="register-form"
+      method="post"
+      action="/api/forms/register"
+      className="group mt-8 grid gap-4 border border-line bg-white/70 p-5 md:p-6 [&:not(:has(#consent:checked))_button[type=submit]]:pointer-events-none [&:not(:has(#consent:checked))_button[type=submit]]:opacity-60 [&:has(#status-delegate:checked):not(:has(#terms:checked))_button[type=submit]]:pointer-events-none [&:has(#status-delegate:checked):not(:has(#terms:checked))_button[type=submit]]:opacity-60 [&:has(#status-guest:checked)_.for-delegate]:hidden [&:has(#status-guest:checked)_.for-guest]:block [&:has(#status-delegate:checked)_.fields]:grid [&:has(#tell-more:checked)_.fields]:grid [&:has(#pay-legal:checked)_.invoice]:block [&:has(#status-delegate:checked)_.req]:inline"
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+    >
+      <div className="flex flex-wrap gap-2" role="radiogroup" aria-label={t("status")}>
+        <label className="cursor-pointer rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink-soft has-[:checked]:border-deep has-[:checked]:bg-deep has-[:checked]:text-white">
+          <input id="status-guest" type="radio" value="guest" className="sr-only" {...register("status")} />
+          {t("guestFree")}
+        </label>
+        <label className="cursor-pointer rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink-soft has-[:checked]:border-deep has-[:checked]:bg-deep has-[:checked]:text-white">
+          <input id="status-delegate" type="radio" value="delegate" className="sr-only" {...register("status")} />
+          {t("delegatePaid")}
+        </label>
       </div>
-      <p className="mt-4 text-lg font-semibold text-accent">{priceLabel}</p>
-      <DemoApplyForm
-        key={status}
-        id="register-form"
-        formType="register"
-        submitLabel={t("submit")}
-        successMessage={
-          status === "delegate" ? t("success") : t("successGuest")
-        }
-        hiddenFields={{ status }}
-        fields={fields}
-      />
-      <p className="mt-3 text-sm text-ink-soft">{t("paymentNote")}</p>
+      <p className="text-lg font-semibold text-accent">{priceLabel}</p>
+
+      <Field label={t("fieldName")} required error={errors.name?.message} id="name">
+        <input id="name" className={inputClass} autoComplete="name" aria-invalid={Boolean(errors.name)} {...register("name")} />
+      </Field>
+      <Field label="Email" required error={errors.email?.message} id="email">
+        <input id="email" type="email" autoComplete="email" className={inputClass} aria-invalid={Boolean(errors.email)} {...register("email")} />
+      </Field>
+      <Field label={t("fieldCountry")} required error={errors.country?.message} id="country">
+        <input id="country" className={inputClass} autoComplete="country-name" aria-invalid={Boolean(errors.country)} {...register("country")} />
+      </Field>
+
+      <label className="for-guest hidden cursor-pointer text-sm font-semibold text-deep">
+        <input id="tell-more" type="checkbox" className="mr-2" />
+        {t("tellMore")}
+      </label>
+      <div className="fields hidden gap-4">
+        <SharedFields
+          register={register}
+          errors={errors}
+          categories={categories}
+          t={(key) => t(key)}
+          tLines={(key) => tLines(key as "Lead.text")}
+        />
+      </div>
+
+      <div className="for-delegate grid gap-4">
+        <Field label={t("fieldPromo")} error={errors.promo?.message} id="promo">
+          <input id="promo" className={inputClass} placeholder={t("fieldPromoHint")} {...register("promo")} />
+        </Field>
+        <details className="border border-line bg-white">
+          <summary className="cursor-pointer px-4 py-3 text-sm font-semibold text-deep">
+            {t("promoHow")}
+          </summary>
+          <p className="border-t border-line px-4 py-3 text-sm leading-relaxed text-ink-soft">
+            {t.rich("promoHowBody", {
+              email: (chunks) => (
+                <a className="underline" href="mailto:forum@esgpartners.kz">
+                  {chunks}
+                </a>
+              ),
+            })}
+          </p>
+        </details>
+        <label className="flex items-start gap-3 text-sm text-ink">
+          <input id="pay-legal" type="checkbox" className="mt-1" {...register("payAsLegal")} />
+          <span>{t("payAsLegal")}</span>
+        </label>
+        <div className="invoice hidden">
+          <Field label={t("fieldInvoice")} error={errors.invoice?.message} id="invoice">
+            <textarea id="invoice" rows={4} className="w-full rounded-lg border border-line bg-white px-3 py-2" placeholder={t("fieldInvoiceHint")} {...register("invoice")} />
+          </Field>
+        </div>
+        <label className="flex items-start gap-3 text-sm text-ink">
+          <input id="terms" type="checkbox" className="mt-1" aria-invalid={Boolean(errors.terms)} {...register("terms")} />
+          <span>
+            {t.rich("termsLabel", {
+              link: (chunks) => (
+                <Link href="/terms" className="underline">
+                  {chunks}
+                </Link>
+              ),
+            })}
+          </span>
+        </label>
+        {errors.terms?.message ? (
+          <span className="text-xs text-accent" role="alert">
+            {errors.terms.message}
+          </span>
+        ) : null}
+      </div>
+
+      <label className="flex items-start gap-3 text-sm text-ink">
+        <input id="consent" type="checkbox" required className="mt-1" aria-invalid={Boolean(errors.consent)} {...register("consent")} />
+        <span>
+          {t.rich("consentLabel", {
+            link: (chunks) => (
+              <Link href="/consent" className="underline">
+                {chunks}
+              </Link>
+            ),
+          })}
+        </span>
+      </label>
+      {errors.consent?.message ? (
+        <span className="text-xs text-accent" role="alert">
+          {errors.consent.message}
+        </span>
+      ) : null}
+
+      <input type="text" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" {...register("company_website")} />
+
+      <button type="submit" className="btn btn-primary justify-self-start" disabled={isSubmitting}>
+        {isSubmitting ? "…" : t("submit")}
+      </button>
+      {serverError ? (
+        <p className="text-sm text-accent" role="alert">
+          {serverError}
+        </p>
+      ) : null}
+    </form>
+  );
+}
+
+function SharedFields({
+  register,
+  errors,
+  categories,
+  t,
+  tLines,
+}: {
+  register: UseFormRegister<FormValues>;
+  errors: FieldErrors<FormValues>;
+  categories: ReadonlyArray<readonly [string, string]>;
+  t: (key: string) => string;
+  tLines: (key: string) => string;
+}) {
+  return (
+    <>
+      <Field label={t("fieldOrg")} mark error={errors.organization?.message} id="organization">
+        <input id="organization" className={inputClass} aria-invalid={Boolean(errors.organization)} {...register("organization")} />
+      </Field>
+      <Field label={t("fieldTitle")} mark error={errors.title?.message} id="job-title">
+        <input id="job-title" className={inputClass} aria-invalid={Boolean(errors.title)} {...register("title")} />
+      </Field>
+      <Field label={t("fieldPhone")} hint={t("phoneHint")} error={errors.phone?.message} id="phone">
+        <input id="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="+7 …" className={inputClass} aria-invalid={Boolean(errors.phone)} {...register("phone")} />
+      </Field>
+      <Field label={t("fieldCategory")} mark error={errors.category?.message} id="category">
+        <select id="category" className={inputClass} defaultValue="" aria-invalid={Boolean(errors.category)} {...register("category")}>
+          <option value="">—</option>
+          {categories.map(([value, label]) => (
+            <option key={value} value={value}>
+              {label}
+            </option>
+          ))}
+        </select>
+      </Field>
+      <fieldset>
+        <legend className="text-sm font-medium text-ink">{t("fieldLines")}</legend>
+        <div className="mt-2 grid gap-2">
+          {forumLineIds.map((line) => (
+            <label key={line} className="grid cursor-pointer gap-0.5 rounded-lg border border-line bg-white px-3 py-2 text-sm has-[:checked]:border-deep">
+              <span className="flex items-center gap-2 font-semibold text-deep">
+                <input type="radio" value={line} {...register("lines")} />
+                {line}
+              </span>
+              <span className="pl-6 text-ink-soft">{tLines(`${line}.text`)}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+    </>
+  );
+}
+
+function Field({
+  label,
+  required,
+  error,
+  hint,
+  id,
+  mark,
+  children,
+}: {
+  label: string;
+  required?: boolean;
+  error?: string;
+  hint?: string;
+  id: string;
+  mark?: boolean;
+  children: ReactNode;
+}) {
+  return (
+    <div className="grid gap-1.5 text-sm">
+      <label htmlFor={id} className="font-medium text-ink">
+        {label}
+        {required ? " *" : null}
+        {mark ? <span className="req hidden"> *</span> : null}
+      </label>
+      {children}
+      {hint ? <span className="text-xs text-ink-soft">{hint}</span> : null}
+      {error ? (
+        <span className="text-xs text-accent" role="alert">
+          {error}
+        </span>
+      ) : null}
     </div>
   );
 }

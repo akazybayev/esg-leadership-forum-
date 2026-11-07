@@ -1,6 +1,7 @@
 import { randomUUID } from "crypto";
 import type { RegisterFormValues } from "@/schemas/forms";
 import { getDelegatePriceUsd, getSiteConfig } from "@/lib/content";
+import { acceptedPromo } from "@/lib/payment/promo";
 
 export type InvoiceDraft = {
   id: string;
@@ -24,49 +25,60 @@ export type InvoiceDraft = {
  * Stage 6 payment adapter stub.
  * Until PAYMENT_PROVIDER is a real gateway, delegate applications produce an invoice draft.
  */
+export type InvoiceDraftResult =
+  | { ok: true; invoice: InvoiceDraft | null }
+  | { ok: false; error: "invalid_promo" };
+
 export function createInvoiceDraft(
   values: RegisterFormValues,
   now = new Date(),
-): InvoiceDraft | null {
-  if (values.status !== "delegate") return null;
+): InvoiceDraftResult {
+  if (values.status !== "delegate") return { ok: true, invoice: null };
 
   const site = getSiteConfig();
   const pricing = getDelegatePriceUsd(now);
-  const promo = values.promo?.trim();
+  const submitted = values.promo?.trim();
+  const promo = submitted ? acceptedPromo(submitted) : null;
+  if (submitted && !promo) return { ok: false, error: "invalid_promo" };
   const amountUsd = promo ? 0 : pricing.amount;
 
   return {
-    id: `INV-${now.getFullYear()}-${randomUUID().slice(0, 8).toUpperCase()}`,
-    provider: "invoice",
-    status: "pending",
-    currency: "USD",
-    amountUsd,
-    createdAt: now.toISOString(),
-    billTo: {
-      name: values.name,
-      organization: values.organization,
-      email: values.email,
-      country: values.country,
-      invoiceDetails: values.invoice?.trim() || undefined,
-    },
-    lineItems: [
-      {
-        description: promo
-          ? `Delegate pass (promo ${promo}) — complimentary`
-          : pricing.isEarly
-            ? "Delegate pass — early-bird"
-            : "Delegate pass — standard",
-        quantity: 1,
-        unitUsd: amountUsd,
+    ok: true,
+    invoice: {
+      id: `INV-${now.getFullYear()}-${randomUUID().slice(0, 8).toUpperCase()}`,
+      provider: "invoice",
+      status: "pending",
+      currency: "USD",
+      amountUsd,
+      createdAt: now.toISOString(),
+      billTo: {
+        name: values.name,
+        organization: values.organization?.trim() || values.name,
+        email: values.email,
+        country: values.country,
+        invoiceDetails: values.invoice?.trim() || undefined,
       },
-    ],
-    notes: [
-      `Forum: ${site.name.ru}`,
-      `Dates: ${site.dates.day1} – ${site.dates.day2}`,
-      `Payment provider: ${process.env.PAYMENT_PROVIDER || "invoice"} (stub)`,
-      "KZT equivalent is calculated at payment-stage FX when a gateway is connected.",
-      `Send invoice to: ${process.env.FORM_TO_EMAIL || site.contact.email}`,
-    ],
+      lineItems: [
+        {
+          description: promo
+            ? "Delegate pass — complimentary"
+            : pricing.tier === "early"
+              ? "Delegate pass — early"
+              : pricing.tier === "late"
+                ? "Delegate pass — late"
+                : "Delegate pass — standard",
+          quantity: 1,
+          unitUsd: amountUsd,
+        },
+      ],
+      notes: [
+        `Forum: ${site.name.ru}`,
+        `Dates: ${site.dates.day1} – ${site.dates.day2}`,
+        `Payment provider: ${process.env.PAYMENT_PROVIDER || "invoice"} (stub)`,
+        "KZT equivalent is calculated at payment-stage FX when a gateway is connected.",
+        `Send invoice to: ${process.env.FORM_TO_EMAIL || site.contact.email}`,
+      ],
+    },
   };
 }
 

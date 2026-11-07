@@ -24,7 +24,6 @@ type Props = {
 export function ProgramExplorer({
   note,
   sessions,
-  initialDay = "1",
   initialLine = "",
   initialRoom = "",
   initialFormat = "",
@@ -35,7 +34,6 @@ export function ProgramExplorer({
   const t = useTranslations("program");
   const tAccess = useTranslations("access");
 
-  const [day, setDay] = useState(initialDay || "1");
   const [line, setLine] = useState(initialLine);
   const [room, setRoom] = useState(initialRoom);
   const [format, setFormat] = useState(initialFormat);
@@ -55,43 +53,36 @@ export function ProgramExplorer({
   const filtered = useMemo(
     () =>
       filterSessions(sessions, {
-        day,
         line: line || undefined,
         room: room || undefined,
         format: format || undefined,
         access: access || undefined,
         q: query,
       }),
-    [sessions, day, line, room, format, access, query],
+    [sessions, line, room, format, access, query],
   );
+
+  const byDay = (["0", "1", "2"] as const).map((value) => ({
+    value,
+    items: filtered.filter((session) => session.day === value),
+  }));
 
   return (
     <div>
       <p className="max-w-3xl text-ink-soft">{tLocalized(note, locale)}</p>
       <p className="mt-2 text-sm text-ink-soft">{t("timezone")}</p>
 
-      <div
-        className="mt-8 flex flex-wrap gap-2"
-        role="tablist"
-        aria-label={t("days")}
-      >
-        {(["0", "1", "2"] as const).map((value) => (
-          <button
+      <nav className="mt-8 flex flex-wrap gap-2" aria-label={t("days")}>
+        {byDay.map(({ value }) => (
+          <a
             key={value}
-            type="button"
-            role="tab"
-            aria-selected={day === value}
-            className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
-              day === value
-                ? "bg-deep text-white"
-                : "border border-line bg-white text-ink-soft hover:text-ink"
-            }`}
-            onClick={() => setDay(value)}
+            href={`#program-day-${value}`}
+            className="rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink-soft hover:text-ink"
           >
             {t(`day${value}`)}
-          </button>
+          </a>
         ))}
-      </div>
+      </nav>
 
       <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
         <label className="grid gap-1 text-sm">
@@ -172,24 +163,29 @@ export function ProgramExplorer({
         {t("results", { count: filtered.length })}
       </p>
 
-      <ul className="mt-6 divide-y divide-line border-y border-line">
-        {filtered.map((session) => {
+      <div className="mt-6 space-y-10">
+        {byDay.map(({ value, items }) => (
+          <section
+            key={value}
+            id={`program-day-${value}`}
+            className="scroll-mt-24"
+          >
+            <h2 className="text-2xl font-bold text-deep">{t(`day${value}`)}</h2>
+            <ul className="mt-4 divide-y divide-line border-y border-line">
+              {items.map((session) => {
           const open = openId === session.id;
           return (
             <li key={session.id} className="py-4">
-              <button
-                type="button"
-                className="flex w-full items-start justify-between gap-4 text-left"
-                aria-expanded={open}
-                onClick={() => setOpenId(open ? null : session.id)}
-              >
+              <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-sm font-semibold text-accent">
                     {session.start}–{session.end} · {session.room}
                     {session.line ? ` · ${session.line}` : ""}
                   </p>
                   <h3 className="mt-1 text-lg font-bold text-deep md:text-xl">
-                    {tLocalized(session.title, locale)}
+                    <Link href={`/program/${session.id}`} className="hover:underline">
+                      {tLocalized(session.title, locale)}
+                    </Link>
                   </h3>
                   <div className="mt-2 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.08em]">
                     <span className="rounded-full bg-paper-2 px-2.5 py-1 text-ink-soft">
@@ -207,11 +203,19 @@ export function ProgramExplorer({
                     ) : null}
                   </div>
                 </div>
-                <ChevronDown
-                  className={`mt-1 shrink-0 transition ${open ? "rotate-180" : ""}`}
-                  size={20}
-                />
-              </button>
+                <button
+                  type="button"
+                  className="mt-1 inline-flex min-h-11 min-w-11 items-center justify-center"
+                  aria-expanded={open}
+                  aria-label={t("openSession")}
+                  onClick={() => setOpenId(open ? null : session.id)}
+                >
+                  <ChevronDown
+                    className={`shrink-0 transition ${open ? "rotate-180" : ""}`}
+                    size={20}
+                  />
+                </button>
+              </div>
 
               {open ? (
                 <div className="mt-4 space-y-3 border-l-2 border-accent/40 pl-4 text-ink-soft">
@@ -248,8 +252,11 @@ export function ProgramExplorer({
               ) : null}
             </li>
           );
-        })}
-      </ul>
+              })}
+            </ul>
+          </section>
+        ))}
+      </div>
     </div>
   );
 }

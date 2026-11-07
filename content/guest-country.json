@@ -3,9 +3,9 @@
   "countryConfirmed": false,
   "country": null,
   "intro": {
-    "ru": "Одна страна получает статус гостя форума: собственную сессию на Main Stage, национальный павильон, B2B-офис и место в главных событиях программы. В протоколе и брендинге страна-гость стоит выше генерального партнёра.",
-    "en": "One country receives guest-of-the-forum status: its own Main Stage session, a national pavilion, a B2B office and a place in the main programme moments. In protocol and branding the guest country ranks above the general partner.",
-    "kk": "Бір ел форум қонағы мәртебесін алады: Main Stage-тағы өз сессиясы, ұлттық павильон, B2B-кеңсе және бағдарламаның басты оқиғаларындағы орын. Хаттама мен брендингте қонақ ел бас серіктестен жоғары тұрады."
+    "ru": "Статус для одной страны: страновая сессия на главной сцене, национальный павильон из 5 секций, B2B-офис на площадке, приветствие главы делегации на открытии, национальный вечер. Условия обсуждаются индивидуально с посольством или уполномоченным агентством.",
+    "en": "A status for one country: a country session on the main stage, a national pavilion of 5 sections, an on-site B2B office, a welcome by the head of delegation at the opening, and a national evening. Terms are discussed individually with an embassy or an authorised agency.",
+    "kk": "Бір елге арналған мәртебе: бас сахнадағы ел сессиясы, 5 секциялы ұлттық павильон, алаңдағы B2B-кеңсе, ашылуда делегация басшысының құттықтауы және ұлттық кеш. Шарттар елшілікпен немесе уәкілетті агенттікпен жеке талқыланады."
   },
   "buyerNote": {
     "ru": "Покупателем обычно выступает посольство, агентство по продвижению торговли и инвестиций или профильное министерство.",
@@ -14,69 +14,29 @@
   },
   "includes": [
     {
-      "ru": "Страновая сессия 70 минут на Main Stage (13 октября, 14:40–15:50) с синхронным переводом на язык страны",
-      "en": "70-minute country session on Main Stage (13 October, 14:40–15:50) with interpretation into the country’s language",
-      "kk": "Main Stage-та 70 минуттық ел сессиясы (13 қазан, 14:40–15:50) ел тіліне синхронды аудармамен"
+      "ru": "Страновая сессия на главной сцене",
+      "en": "A country session on the main stage",
+      "kk": "Бас сахнадағы ел сессиясы"
     },
     {
-      "ru": "Национальный павильон: 5 выставочных секций у входа в ESG Expo (дополнительно к 20 стендам экспонентов)",
-      "en": "National pavilion: 5 exhibition sections at the ESG Expo entrance (in addition to 20 exhibitor stands)",
-      "kk": "Ұлттық павильон: ESG Expo кіреберісіндегі 5 көрме секциясы (20 экспонент стендіне қосымша)"
+      "ru": "Национальный павильон из 5 секций",
+      "en": "A national pavilion of 5 sections",
+      "kk": "5 секциялы ұлттық павильон"
     },
     {
-      "ru": "B2B-офис на площадке Hilton Astana на оба дня",
-      "en": "On-site B2B office at Hilton Astana for both days",
-      "kk": "Hilton Astana алаңында екі күнге B2B-кеңсе"
+      "ru": "B2B-офис на площадке",
+      "en": "An on-site B2B office",
+      "kk": "Алаңдағы B2B-кеңсе"
     },
     {
-      "ru": "Приветствие главы делегации на открытии и место в пленарной панели о региональном партнёрстве",
-      "en": "Delegation head welcome at the opening and a seat on the regional partnership plenary",
-      "kk": "Делегация басшысының ашылудағы құттықтауы және өңірлік серіктестік пленарлық панеліндегі орын"
+      "ru": "Приветствие главы делегации на открытии",
+      "en": "A welcome by the head of delegation at the opening",
+      "kk": "Ашылуда делегация басшысының құттықтауы"
     },
     {
-      "ru": "До трёх спикеров страны в тематических сессиях",
-      "en": "Up to three country speakers in theme sessions",
-      "kk": "Тақырыптық сессияларда елдің үш спикеріне дейін"
-    },
-    {
-      "ru": "20 делегатских мест и два стола на гала-ужине",
-      "en": "20 delegate seats and two tables at the gala dinner",
-      "kk": "20 делегат орны және гала-кешкі аста екі үстел"
-    },
-    {
-      "ru": "Деловая программа Дня 0: двусторонний круглый стол и визиты",
-      "en": "Day 0 business programme: bilateral roundtable and visits",
-      "kk": "0-күн іскерлік бағдарламасы: екіжақты дөңгелек үстел және сапарлар"
-    },
-    {
-      "ru": "Национальный вечер первого дня: кухня, музыка, приветственное слово",
-      "en": "Day-one national evening: cuisine, music, welcome remarks",
-      "kk": "Бірінші күннің ұлттық кеші: ас, музыка, құттықтау сөзі"
-    },
-    {
-      "ru": "Подписание меморандумов на главной сцене в итогах первого дня",
-      "en": "Memorandum signing on the main stage at the end of day one",
-      "kk": "Бірінші күн қорытындысында бас сахнада меморандумдарға қол қою"
-    },
-    {
-      "ru": "5 мест для молодёжных делегатов и участие университета страны в круглом столе ректоров",
-      "en": "5 youth-delegate seats and a university seat at the rectors’ roundtable",
-      "kk": "5 жас делегат орны және ректорлар дөңгелек үстелінде ел университетінің қатысуы"
-    },
-    {
-      "ru": "Специальный приз страны-гостя на гала-церемонии вне конкурса ESG Award",
-      "en": "Guest-country special prize at the gala, outside the ESG Award contest",
-      "kk": "ESG Award конкурсынан тыс гала-салтанатта қонақ елдің арнайы жүлдесі"
-    },
-    {
-      "ru": "Статус «Страна — гость» и флаг во всех материалах, страница на сайте, пресс-конференция",
-      "en": "“Guest country” status and flag across materials, website page, press conference",
-      "kk": "Барлық материалдардағы «Қонақ ел» мәртебесі мен ту, сайт беті, баспасөз конференциясы"
-    },
-    {
-      "ru": "Право первого выбора на продление статуса или другой пакет на форуме 2028 года",
-      "en": "First right of refusal to renew the status or another package for the 2028 forum",
-      "kk": "2028 жылғы форумда мәртебені немесе басқа пакетті ұзартуға бірінші таңдау құқығы"
+      "ru": "Национальный вечер",
+      "en": "A national evening",
+      "kk": "Ұлттық кеш"
     }
   ]
 }

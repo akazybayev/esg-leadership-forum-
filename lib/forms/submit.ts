@@ -1,7 +1,9 @@
-import { appendFile, mkdir } from "fs/promises";
+import { mkdir, readFile, rename, writeFile } from "fs/promises";
 import path from "path";
 import type { FormType } from "@/schemas/forms";
 import { formSchemaByType } from "@/schemas/forms";
+import { reserveStoreBytes } from "@/lib/forms/rate-limit";
+import { sealRecord } from "@/lib/forms/seal";
 import {
   createInvoiceDraft,
   submitPaymentIntent,
@@ -21,29 +23,73 @@ export type FormSubmitResult =
       status: number;
     };
 
-function isHoneypotFilled(payload: Record<string, unknown>): boolean {
-  const traps = ["company_website", "company"];
-  return traps.some((key) => {
-    const value = payload[key];
-    return typeof value === "string" && value.trim().length > 0;
-  });
+function honeypotKey(type: FormType): "company" | "company_website" {
+  return type === "newsletter" ? "company" : "company_website";
 }
 
-async function persistSubmission(record: Record<string, unknown>) {
+function isHoneypotFilled(
+  type: FormType,
+  payload: Record<string, unknown>,
+): boolean {
+  const value = payload[honeypotKey(type)];
+  return typeof value === "string" && value.trim().length > 0;
+}
+
+const MAX_STORE_BYTES = 200_000;
+const MAX_RECORD_BYTES = 16_000;
+
+let storeChain: Promise<void> = Promise.resolve();
+
+async function writeRecord(record: Record<string, unknown>) {
   const dir = path.join(process.cwd(), "data", "submissions");
   await mkdir(dir, { recursive: true });
   const file = path.join(dir, `${String(record.type)}.jsonl`);
-  await appendFile(file, `${JSON.stringify(record)}\n`, "utf8");
+  const stored = sealRecord(record);
+  const line = `${JSON.stringify(stored)}\n`;
+  if (Buffer.byteLength(line) > MAX_RECORD_BYTES) {
+    throw new Error("Submission is too large");
+  }
+  const budget = await reserveStoreBytes(Buffer.byteLength(line));
+  if (!budget.ok) {
+    throw new Error("Submission store is over the daily budget");
+  }
+  const existing = await readFile(file, "utf8").catch(() => "");
+  let next = existing + line;
+  while (Buffer.byteLength(next) > MAX_STORE_BYTES) {
+    const breakAt = next.indexOf("\n");
+    if (breakAt === -1) break;
+    next = next.slice(breakAt + 1);
+  }
+  const temp = `${file}.${process.pid}.tmp`;
+  await writeFile(temp, next, "utf8");
+  await rename(temp, file);
 }
 
-async function deliverWebhook(record: Record<string, unknown>) {
+function persistSubmission(record: Record<string, unknown>) {
+  const run = storeChain.then(() => writeRecord(record));
+  storeChain = run.then(
+    () => undefined,
+    () => undefined,
+  );
+  return run;
+}
+
+async function deliverWebhook(notice: {
+  id: string;
+  type: string;
+  createdAt: string;
+}) {
   const url = process.env.FORM_WEBHOOK_URL?.trim();
   if (!url) return { delivered: false as const };
 
   const response = await fetch(url, {
     method: "POST",
     headers: { "content-type": "application/json" },
-    body: JSON.stringify(record),
+    body: JSON.stringify({
+      id: notice.id,
+      type: notice.type,
+      createdAt: notice.createdAt,
+    }),
   });
 
   if (!response.ok) {
@@ -61,7 +107,7 @@ export async function processFormSubmission(
   }
 
   const data = payload as Record<string, unknown>;
-  if (isHoneypotFilled(data)) {
+  if (isHoneypotFilled(type, data)) {
     // Pretend success to bots.
     return { ok: true, id: "ignored" };
   }
@@ -82,8 +128,11 @@ export async function processFormSubmission(
 
   if (type === "register") {
     const draft = createInvoiceDraft(parsed.data as never);
-    if (draft) {
-      const paid = await submitPaymentIntent(draft);
+    if (!draft.ok) {
+      return { ok: false, error: "Promo code is not valid", status: 422 };
+    }
+    if (draft.invoice) {
+      const paid = await submitPaymentIntent(draft.invoice);
       if (!paid.ok) {
         return { ok: false, error: paid.error, status: 502 };
       }
@@ -102,9 +151,12 @@ export async function processFormSubmission(
 
   try {
     await persistSubmission(record);
-    await deliverWebhook(record);
+    await deliverWebhook({ id, type, createdAt: record.createdAt });
   } catch (error) {
-    console.error("[forms] delivery failed", error);
+    if (error instanceof Error && error.message.includes("daily budget")) {
+      return { ok: false, error: "Too many requests", status: 429 };
+    }
+    console.error("[forms] delivery failed");
     return {
       ok: false,
       error: "Could not store or deliver submission",

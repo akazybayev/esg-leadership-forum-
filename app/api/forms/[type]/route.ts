@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import { formTypes, type FormType } from "@/schemas/forms";
 import { processFormSubmission } from "@/lib/forms/submit";
-import { checkRateLimit, getClientIp } from "@/lib/forms/rate-limit";
+import { requestIsSameOrigin } from "@/lib/forms/origin";
+import { checkRateLimit, clientAddress } from "@/lib/forms/rate-limit";
+
+const MAX_BODY_CHARS = 12_000;
 
 export const runtime = "nodejs";
 
@@ -18,8 +21,11 @@ export async function POST(
     return NextResponse.json({ error: "Unknown form type" }, { status: 404 });
   }
 
-  const ip = getClientIp(request);
-  const limited = checkRateLimit(`${rawType}:${ip}`);
+  if (!requestIsSameOrigin(request)) {
+    return NextResponse.json({ error: "Cross-site submission refused" }, { status: 403 });
+  }
+
+  const limited = await checkRateLimit(clientAddress(request));
   if (!limited.ok) {
     return NextResponse.json(
       { error: "Too many requests", retryAfterSec: limited.retryAfterSec },
@@ -32,7 +38,11 @@ export async function POST(
 
   let payload: unknown;
   try {
-    payload = await request.json();
+    const raw = await request.text();
+    if (raw.length > MAX_BODY_CHARS) {
+      return NextResponse.json({ error: "Payload too large" }, { status: 413 });
+    }
+    payload = JSON.parse(raw);
   } catch {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
