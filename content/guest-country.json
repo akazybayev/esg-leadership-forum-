@@ -3,9 +3,9 @@
   "countryConfirmed": false,
   "country": null,
   "intro": {
-    "ru": "Одна страна получает отдельный формат международного партнёрства: 70-минутную страновую сессию, приветствие главы делегации, 20 делегатских мест, деловые встречи, национальный вечер и павильон из 5 секций. Стоимость по договорённости.",
-    "en": "One country receives a separate international-partnership format: a 70-minute country session, a welcome by the head of delegation, 20 delegate seats, business meetings, a national evening and a pavilion of 5 sections. Price by agreement.",
-    "kk": "Бір ел халықаралық серіктестіктің жеке форматын алады: 70 минуттық ел сессиясы, делегация басшысының құттықтауы, 20 делегат орны, іскерлік кездесулер, ұлттық кеш және 5 секциялы павильон. Құны келісім бойынша."
+    "ru": "Статус для одной страны: страновая сессия на главной сцене, национальный павильон из 5 секций, B2B-офис на площадке, приветствие главы делегации на открытии, национальный вечер. Условия обсуждаются индивидуально с посольством или уполномоченным агентством.",
+    "en": "A status for one country: a country session on the main stage, a national pavilion of 5 sections, an on-site B2B office, a welcome by the head of delegation at the opening, and a national evening. Terms are discussed individually with an embassy or an authorised agency.",
+    "kk": "Бір елге арналған мәртебе: бас сахнадағы ел сессиясы, 5 секциялы ұлттық павильон, алаңдағы B2B-кеңсе, ашылуда делегация басшысының құттықтауы және ұлттық кеш. Шарттар елшілікпен немесе уәкілетті агенттікпен жеке талқыланады."
   },
   "buyerNote": {
     "ru": "Покупателем обычно выступает посольство, агентство по продвижению торговли и инвестиций или профильное министерство.",
@@ -14,34 +14,29 @@
   },
   "includes": [
     {
-      "ru": "70-минутная страновая сессия",
-      "en": "70-minute country session",
-      "kk": "70 минуттық ел сессиясы"
+      "ru": "Страновая сессия на главной сцене",
+      "en": "A country session on the main stage",
+      "kk": "Бас сахнадағы ел сессиясы"
     },
     {
-      "ru": "Приветствие главы делегации",
-      "en": "Welcome by the head of the delegation",
-      "kk": "Делегация басшысының құттықтауы"
+      "ru": "Национальный павильон из 5 секций",
+      "en": "A national pavilion of 5 sections",
+      "kk": "5 секциялы ұлттық павильон"
     },
     {
-      "ru": "20 делегатских мест",
-      "en": "20 delegate seats",
-      "kk": "20 делегат орны"
+      "ru": "B2B-офис на площадке",
+      "en": "An on-site B2B office",
+      "kk": "Алаңдағы B2B-кеңсе"
     },
     {
-      "ru": "Деловые встречи и национальный вечер",
-      "en": "Business meetings and a national evening",
-      "kk": "Іскерлік кездесулер және ұлттық кеш"
+      "ru": "Приветствие главы делегации на открытии",
+      "en": "A welcome by the head of delegation at the opening",
+      "kk": "Ашылуда делегация басшысының құттықтауы"
     },
     {
-      "ru": "Национальный павильон из 5 секций — дополнительно к 20 экспонентам",
-      "en": "National pavilion of 5 sections, in addition to 20 exhibitors",
-      "kk": "5 секциялы ұлттық павильон — 20 экспонентке қосымша"
-    },
-    {
-      "ru": "Размещение павильона и переговорной согласуется с отелем",
-      "en": "Pavilion and meeting-room placement is agreed with the hotel",
-      "kk": "Павильон мен келіссөз бөлмесінің орналасуы қонақүймен келісіледі"
+      "ru": "Национальный вечер",
+      "en": "A national evening",
+      "kk": "Ұлттық кеш"
     }
   ]
 }

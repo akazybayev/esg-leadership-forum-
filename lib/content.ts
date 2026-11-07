@@ -129,12 +129,18 @@ export function getPartnersContent() {
   return loadJson("partners.json") as {
     intro: LocalizedString;
     audience: Array<{ value: string; label: LocalizedString }>;
+    priceNote: LocalizedString;
+    sharedTitle: LocalizedString;
+    shared: LocalizedString[];
     packages: Array<{
       id: string;
       title: LocalizedString;
+      price: LocalizedString;
       summary: LocalizedString;
       includes: LocalizedString[];
     }>;
+    institutional: { title: LocalizedString; text: LocalizedString };
+    howTo: { title: LocalizedString; text: LocalizedString };
     deckUrl: string;
     deckAvailable: boolean;
   };

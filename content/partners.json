@@ -1,9 +1,46 @@
 {
   "intro": {
-    "ru": "Партнёрство вокруг решений: доступ к 500 участникам из 20+ стран, деловой программе, выставке и молодёжным проектам. Состав и стоимость каждого пакета согласуются индивидуально. Выступления утверждает программный комитет.",
-    "en": "Partnership around decisions: access to 500 participants from 20+ countries, the business programme, the exhibition and youth projects. The scope and price of each package are agreed individually. The programme committee approves speaking roles.",
-    "kk": "Шешімдер төңірегіндегі серіктестік: 20+ елден 500 қатысушы, іскерлік бағдарлама, көрме және жастар жобалары. Әр пакеттің құрамы мен құны жеке келісіледі. Сөз сөйлеуді бағдарламалық комитет бекітеді."
+    "ru": "13–14 октября 2027 года Астана соберёт 500 руководителей компаний, банков, государственных и международных организаций, университетов и НПО из 20+ стран. Партнёрство с форумом — это не логотип на баннере, а своя роль в программе: сессия, которую вы ведёте, награда, которую вы вручаете, люди, с которыми вы встречаетесь.",
+    "en": "On 13–14 October 2027 Astana brings together 500 leaders of companies, banks, public and international organisations, universities and NGOs from 20+ countries. Partnership is not a logo on a banner. It is a role in the programme: a session you lead, an award you present, and the people you meet.",
+    "kk": "2027 жылғы 13–14 қазанда Астана 20+ елден компания, банк, мемлекеттік және халықаралық ұйым, университет пен ҮЕҰ басшыларының 500-ін жинайды. Форуммен серіктестік — баннердегі логотип емес, бағдарламадағы өз рөліңіз: өзіңіз жүргізетін сессия, өзіңіз табыстайтын жүлде және кездесетін адамдар."
   },
+  "priceNote": {
+    "ru": "Цены указаны в долларах США, без НДС.",
+    "en": "Prices are in US dollars, excluding VAT.",
+    "kk": "Бағалар АҚШ долларымен, ҚҚС-сыз көрсетілген."
+  },
+  "sharedTitle": {
+    "ru": "Что получает каждый партнёр",
+    "en": "What every partner receives",
+    "kk": "Әр серіктес не алады"
+  },
+  "shared": [
+    {
+      "ru": "Логотип на сайте, в программе, на сцене и в материалах форума с указанием статуса",
+      "en": "Logo on the website, in the programme, on stage and in forum materials, with the partnership status",
+      "kk": "Мәртебесі көрсетілген логотип сайтта, бағдарламада, сахнада және форум материалдарында"
+    },
+    {
+      "ru": "Делегатские места с доступом ко всем сессиям, обедам, приёму и гала-ужину",
+      "en": "Delegate seats with access to every session, lunches, the reception and the gala dinner",
+      "kk": "Барлық сессияға, түскі асқа, қабылдауға және гала-кешкі асқа кіретін делегат орындары"
+    },
+    {
+      "ru": "Доступ к B2B Lounge и назначенным встречам 1:1",
+      "en": "Access to the B2B Lounge and scheduled one-to-one meetings",
+      "kk": "B2B Lounge-қа және тағайындалған 1:1 кездесулерге қолжетімділік"
+    },
+    {
+      "ru": "Упоминание в пресс-релизах и итоговом документе форума",
+      "en": "A mention in press releases and the forum’s final document",
+      "kk": "Баспасөз хабарламалары мен форумның қорытынды құжатында аталу"
+    },
+    {
+      "ru": "Список участников после форума (с их согласия)",
+      "en": "The participant list after the forum, with their consent",
+      "kk": "Форумнан кейін қатысушылар тізімі (олардың келісімімен)"
+    }
+  ],
   "audience": [
     {
       "value": "500",
@@ -54,41 +91,41 @@
         "en": "Guest country of the forum",
         "kk": "Форумның қонақ елі"
       },
+      "price": {
+        "ru": "по договорённости",
+        "en": "by agreement",
+        "kk": "келісім бойынша"
+      },
       "summary": {
-        "ru": "1 страна. Отдельный формат международного партнёрства. Стоимость по договорённости.",
-        "en": "1 country. A separate format of international partnership. Price by agreement.",
-        "kk": "1 ел. Халықаралық серіктестіктің жеке форматы. Құны келісім бойынша."
+        "ru": "1 страна. Статус для одной страны. Условия обсуждаются индивидуально с посольством или уполномоченным агентством.",
+        "en": "1 country. Terms are discussed individually with an embassy or an authorised agency.",
+        "kk": "1 ел. Шарттар елшілікпен немесе уәкілетті агенттікпен жеке талқыланады."
       },
       "includes": [
         {
-          "ru": "70-минутная страновая сессия",
-          "en": "70-minute country session",
-          "kk": "70 минуттық ел сессиясы"
+          "ru": "Страновая сессия на главной сцене",
+          "en": "A country session on the main stage",
+          "kk": "Бас сахнадағы ел сессиясы"
         },
         {
-          "ru": "Приветствие главы делегации",
-          "en": "Welcome by the head of the delegation",
-          "kk": "Делегация басшысының құттықтауы"
+          "ru": "Национальный павильон из 5 секций",
+          "en": "A national pavilion of 5 sections",
+          "kk": "5 секциялы ұлттық павильон"
         },
         {
-          "ru": "20 делегатских мест",
-          "en": "20 delegate seats",
-          "kk": "20 делегат орны"
+          "ru": "B2B-офис на площадке",
+          "en": "An on-site B2B office",
+          "kk": "Алаңдағы B2B-кеңсе"
         },
         {
-          "ru": "Деловые встречи и национальный вечер",
-          "en": "Business meetings and a national evening",
-          "kk": "Іскерлік кездесулер және ұлттық кеш"
+          "ru": "Приветствие главы делегации на открытии",
+          "en": "A welcome by the head of delegation at the opening",
+          "kk": "Ашылуда делегация басшысының құттықтауы"
         },
         {
-          "ru": "Национальный павильон из 5 секций — дополнительно к 20 экспонентам",
-          "en": "National pavilion of 5 sections, in addition to 20 exhibitors",
-          "kk": "5 секциялы ұлттық павильон — 20 экспонентке қосымша"
-        },
-        {
-          "ru": "Размещение павильона и переговорной согласуется с отелем",
-          "en": "Pavilion and meeting-room placement is agreed with the hotel",
-          "kk": "Павильон мен келіссөз бөлмесінің орналасуы қонақүймен келісіледі"
+          "ru": "Национальный вечер",
+          "en": "A national evening",
+          "kk": "Ұлттық кеш"
         }
       ]
     },
@@ -99,31 +136,66 @@
         "en": "General partner",
         "kk": "Бас серіктес"
       },
+      "price": {
+        "ru": "75 000 USD",
+        "en": "75,000 USD",
+        "kk": "75 000 USD"
+      },
       "summary": {
-        "ru": "1 компания. Открытие, главная сцена и приоритетное место на выставке.",
-        "en": "1 company. The opening, the main stage and a priority place at the exhibition.",
-        "kk": "1 компания. Ашылу, бас сахна және көрмедегі басым орын."
+        "ru": "1 компания, чьё имя стоит рядом с названием форума.",
+        "en": "1 company, whose name stands next to the name of the forum.",
+        "kk": "1 компания. Оның аты форум атауының қасында тұрады."
       },
       "includes": [
         {
-          "ru": "Приветствие на открытии",
-          "en": "Welcome at the opening",
-          "kk": "Ашылудағы құттықтау"
+          "ru": "Статус «Генеральный партнёр» во всех материалах, логотип первого уровня",
+          "en": "“General partner” status in all materials, and a first-level logo",
+          "kk": "Барлық материалдағы «Бас серіктес» мәртебесі, бірінші деңгейлі логотип"
         },
         {
-          "ru": "Главная панель или кейноут",
-          "en": "Main panel or keynote",
-          "kk": "Бас панель немесе кейноут"
+          "ru": "Приветственное слово на торжественном открытии",
+          "en": "Welcome remarks at the opening ceremony",
+          "kk": "Салтанатты ашылудағы құттықтау сөз"
         },
         {
-          "ru": "Приоритетный стенд",
-          "en": "Priority stand",
-          "kk": "Басым стенд"
+          "ru": "Кейноут или место в главной пленарной панели",
+          "en": "A keynote or a seat on the main plenary panel",
+          "kk": "Кейноут немесе бас пленарлық панельдегі орын"
         },
         {
-          "ru": "Участие в гала-церемонии",
-          "en": "Role at the gala ceremony",
-          "kk": "Гала-салтанатқа қатысу"
+          "ru": "Партнёр гала-церемонии ESG Award: вручение гран-при «ESG-лидер года» совместно с председателем жюри",
+          "en": "ESG Award gala partner: presenting the “ESG Leader of the Year” grand prize with the jury chair",
+          "kk": "ESG Award гала-салтанатының серіктесі: «Жылдың ESG-көшбасшысы» гран-приін қазылар алқасының төрағасымен бірге табыстау"
+        },
+        {
+          "ru": "Лучший стенд на ESG Expo — 4 секции у входа",
+          "en": "The premier ESG Expo stand — 4 sections at the entrance",
+          "kk": "ESG Expo-дағы үздік стенд — кіреберістегі 4 секция"
+        },
+        {
+          "ru": "20 делегатских мест, два стола на гала-ужине",
+          "en": "20 delegate seats and two tables at the gala dinner",
+          "kk": "20 делегат орны, гала-кешкі аста екі үстел"
+        },
+        {
+          "ru": "Закрытая встреча руководства компании со спикерами и международными гостями",
+          "en": "A closed meeting of the company’s leadership with speakers and international guests",
+          "kk": "Компания басшылығының спикерлермен және халықаралық қонақтармен жабық кездесуі"
+        },
+        {
+          "ru": "Брендирование Main Stage и бейджей участников",
+          "en": "Branding of the Main Stage and participant badges",
+          "kk": "Main Stage пен қатысушы бейдждерін брендингтеу"
+        },
+        {
+          "ru": "Интервью в студии форума, отдельный пресс-релиз о партнёрстве",
+          "en": "A studio interview and a dedicated press release on the partnership",
+          "kk": "Форум студиясындағы сұхбат, серіктестік туралы жеке баспасөз хабарламасы"
+        },
+        {
+          "ru": "Право первого выбора пакета на форум 2028 года",
+          "en": "First choice of a package for the 2028 forum",
+          "kk": "2028 жылғы форум пакетін бірінші таңдау құқығы"
         }
       ]
     },
@@ -134,31 +206,51 @@
         "en": "Strategic partner",
         "kk": "Стратегиялық серіктес"
       },
+      "price": {
+        "ru": "30 000 USD",
+        "en": "30,000 USD",
+        "kk": "30 000 USD"
+      },
       "summary": {
-        "ru": "3–4 компании. Пленарная панель, стенд и делегация на площадке.",
-        "en": "3–4 companies. A plenary panel, a stand and a delegation on site.",
-        "kk": "3–4 компания. Пленарлық панель, стенд және алаңдағы делегация."
+        "ru": "3–4 компании, которые формируют повестку форума вместе с организатором.",
+        "en": "3–4 companies that shape the forum agenda with the organiser.",
+        "kk": "3–4 компания. Олар форум күн тәртібін ұйымдастырушымен бірге қалыптастырады."
       },
       "includes": [
         {
-          "ru": "Пленарная панель",
-          "en": "Plenary panel",
-          "kk": "Пленарлық панель"
+          "ru": "Статус «Стратегический партнёр», логотип второго уровня",
+          "en": "“Strategic partner” status and a second-level logo",
+          "kk": "«Стратегиялық серіктес» мәртебесі, екінші деңгейлі логотип"
         },
         {
-          "ru": "Стенд на выставке",
-          "en": "Exhibition stand",
-          "kk": "Көрмедегі стенд"
+          "ru": "Место спикера в пленарной панели или кейноут по согласованию с программным комитетом",
+          "en": "A speaking seat on a plenary panel or a keynote, agreed with the programme committee",
+          "kk": "Пленарлық панельдегі спикер орны немесе кейноут — бағдарламалық комитетпен келісіледі"
         },
         {
-          "ru": "10 делегатских мест",
-          "en": "10 delegate seats",
-          "kk": "10 делегат орны"
+          "ru": "Стенд на ESG Expo — 2 секции",
+          "en": "An ESG Expo stand — 2 sections",
+          "kk": "ESG Expo стенді — 2 секция"
         },
         {
-          "ru": "Встречи 1:1",
-          "en": "One-to-one meetings",
-          "kk": "1:1 кездесулер"
+          "ru": "10 делегатских мест, стол на гала-ужине",
+          "en": "10 delegate seats and a table at the gala dinner",
+          "kk": "10 делегат орны, гала-кешкі аста үстел"
+        },
+        {
+          "ru": "Приоритетный график встреч 1:1 в B2B Lounge",
+          "en": "Priority scheduling of one-to-one meetings in the B2B Lounge",
+          "kk": "B2B Lounge-тағы 1:1 кездесулердің басым кестесі"
+        },
+        {
+          "ru": "Брендирование одной из зон: Hall B, B2B Lounge или зоны кофе-брейков",
+          "en": "Branding of one zone: Hall B, the B2B Lounge or the coffee-break area",
+          "kk": "Бір аймақты брендингтеу: Hall B, B2B Lounge немесе кофе-брейк аймағы"
+        },
+        {
+          "ru": "Участие представителя в программном комитете форума",
+          "en": "A seat for a representative on the forum’s programme committee",
+          "kk": "Өкілдің форумның бағдарламалық комитетіне қатысуы"
         }
       ]
     },
@@ -169,51 +261,91 @@
         "en": "Theme-track partner",
         "kk": "Тақырыптық бағыт серіктесі"
       },
+      "price": {
+        "ru": "10 000 USD",
+        "en": "10,000 USD",
+        "kk": "10 000 USD"
+      },
       "summary": {
-        "ru": "5 компаний. Участие в программе одной линии: Lead, Finance, Planet, People или Region.",
-        "en": "5 companies. A role in one track: Lead, Finance, Planet, People or Region.",
-        "kk": "5 компания. Бір бағыт бағдарламасына қатысу: Lead, Finance, Planet, People немесе Region."
+        "ru": "5 компаний. Пять линий — Lead, Finance, Planet, People, Region — и у каждой свой партнёр.",
+        "en": "5 companies. Five tracks — Lead, Finance, Planet, People, Region — each with its own partner.",
+        "kk": "5 компания. Бес бағыт — Lead, Finance, Planet, People, Region — және әрқайсысының өз серіктесі."
       },
       "includes": [
         {
-          "ru": "Участие в программе выбранной темы",
-          "en": "A place in the chosen theme programme",
-          "kk": "Таңдалған тақырып бағдарламасына қатысу"
+          "ru": "Соорганизация линии: согласование тем и спикеров сессий линии вместе с программным комитетом",
+          "en": "Co-organising the track: agreeing session topics and speakers with the programme committee",
+          "kk": "Бағытты бірге ұйымдастыру: сессия тақырыптары мен спикерлерін бағдарламалық комитетпен келісу"
         },
         {
-          "ru": "Роль спикера или модератора",
-          "en": "Speaker or moderator role",
-          "kk": "Спикер немесе модератор рөлі"
+          "ru": "Модератор или спикер в сессии линии",
+          "en": "Moderator or speaker in a track session",
+          "kk": "Бағыт сессиясындағы модератор немесе спикер"
         },
         {
-          "ru": "Брендинг зала",
-          "en": "Hall branding",
-          "kk": "Залды брендингтеу"
+          "ru": "Брендирование зала во время сессий линии",
+          "en": "Hall branding during the track sessions",
+          "kk": "Бағыт сессиялары кезінде залды брендингтеу"
+        },
+        {
+          "ru": "Стенд на ESG Expo — 1 секция",
+          "en": "An ESG Expo stand — 1 section",
+          "kk": "ESG Expo стенді — 1 секция"
+        },
+        {
+          "ru": "5 делегатских мест",
+          "en": "5 delegate seats",
+          "kk": "5 делегат орны"
+        },
+        {
+          "ru": "Логотип на странице линии на сайте и в программе",
+          "en": "Logo on the track page and in the programme",
+          "kk": "Сайттағы бағыт бетінде және бағдарламадағы логотип"
         }
       ]
     },
     {
       "id": "award",
       "title": {
-        "ru": "Партнёр ESG Award",
-        "en": "ESG Award partner",
-        "kk": "ESG Award серіктесі"
+        "ru": "Партнёр номинации ESG Award",
+        "en": "ESG Award category partner",
+        "kk": "ESG Award номинациясының серіктесі"
+      },
+      "price": {
+        "ru": "10 000 USD",
+        "en": "10,000 USD",
+        "kk": "10 000 USD"
       },
       "summary": {
-        "ru": "До 14 партнёров. Спонсорство не влияет на оценку жюри, и спонсор номинации в ней не участвует.",
-        "en": "Up to 14 partners. Sponsorship does not affect the jury, and a category sponsor does not enter that category.",
-        "kk": "14 серіктеске дейін. Демеушілік қазылар алқасының бағасына әсер етпейді, номинация демеушісі сол номинацияға қатыспайды."
+        "ru": "До 14 номинаций в блоках Environment, Social, Governance и Next Generation.",
+        "en": "Up to 14 categories across Environment, Social, Governance and Next Generation.",
+        "kk": "Environment, Social, Governance және Next Generation блоктарында 14 номинацияға дейін."
       },
       "includes": [
         {
-          "ru": "Поддержка номинации",
-          "en": "Support for a category",
-          "kk": "Номинацияны қолдау"
+          "ru": "Вручение награды на гала-церемонии представителем партнёра",
+          "en": "The partner’s representative presents the award at the gala",
+          "kk": "Жүлдені гала-салтанатта серіктес өкілі табыстайды"
         },
         {
-          "ru": "Вручение награды на гала-церемонии 14 октября",
-          "en": "Presenting the award at the gala on 14 October",
-          "kk": "14 қазандағы гала-салтанатта жүлдені табыстау"
+          "ru": "Логотип в названии номинации на сайте, в церемонии и на дипломах",
+          "en": "Logo in the category name on the website, at the ceremony and on the certificates",
+          "kk": "Сайттағы, салтанаттағы және дипломдардағы номинация атауындағы логотип"
+        },
+        {
+          "ru": "5 делегатских мест, места на гала-ужине",
+          "en": "5 delegate seats and places at the gala dinner",
+          "kk": "5 делегат орны, гала-кешкі астағы орындар"
+        },
+        {
+          "ru": "Упоминание в пресс-релизе о победителях",
+          "en": "A mention in the winners’ press release",
+          "kk": "Жеңімпаздар туралы баспасөз хабарламасында аталу"
+        },
+        {
+          "ru": "Партнёр номинации не участвует в ней как претендент; на оценку жюри партнёрство не влияет",
+          "en": "A category partner does not enter that category, and the partnership does not affect the jury",
+          "kk": "Номинация серіктесі оған үміткер болып қатыспайды; серіктестік қазылар алқасының бағасына әсер етпейді"
         }
       ]
     },
@@ -224,26 +356,46 @@
         "en": "Youth programme patron",
         "kk": "Жастар бағдарламасының қамқоршысы"
       },
+      "price": {
+        "ru": "10 000 USD",
+        "en": "10,000 USD",
+        "kk": "10 000 USD"
+      },
       "summary": {
-        "ru": "1–2 патрона. Стипендии, гранты и наставничество. Размер поддержки определяется соглашением.",
-        "en": "1–2 patrons. Scholarships, grants and mentoring. The size of support is set in the agreement.",
-        "kk": "1–2 қамқоршы. Стипендия, грант және тәлімгерлік. Қолдау көлемі келісімде белгіленеді."
+        "ru": "1–2 партнёра, которые оплачивают участие молодых лидеров.",
+        "en": "1–2 partners who fund the participation of young leaders.",
+        "kk": "1–2 серіктес. Олар жас көшбасшылардың қатысуын төлейді."
       },
       "includes": [
         {
-          "ru": "Делегатские стипендии",
-          "en": "Delegate scholarships",
-          "kk": "Делегаттық стипендиялар"
+          "ru": "Именные стипендии для молодёжных делегатов 18–30 лет с указанием имени партнёра",
+          "en": "Named scholarships for youth delegates aged 18–30, carrying the partner’s name",
+          "kk": "18–30 жастағы жас делегаттарға серіктестің атымен атаулы стипендия"
         },
         {
-          "ru": "Целевые гранты",
-          "en": "Targeted grants",
-          "kk": "Мақсатты гранттар"
+          "ru": "Место в жюри финала Youth Impact Pitch",
+          "en": "A seat on the Youth Impact Pitch final jury",
+          "kk": "Youth Impact Pitch финалының қазылар алқасындағы орын"
         },
         {
-          "ru": "Наставничество",
-          "en": "Mentoring",
-          "kk": "Тәлімгерлік"
+          "ru": "Вручение гранта победителю на закрытии форума",
+          "en": "Presenting the grant to the winner at the forum close",
+          "kk": "Форум жабылуында жеңімпазға грантты табыстау"
+        },
+        {
+          "ru": "Представитель партнёра — наставник одной из команд-финалистов",
+          "en": "The partner’s representative mentors one finalist team",
+          "kk": "Серіктес өкілі — финалист командалардың бірінің тәлімгері"
+        },
+        {
+          "ru": "5 делегатских мест",
+          "en": "5 delegate seats",
+          "kk": "5 делегат орны"
+        },
+        {
+          "ru": "Логотип на всех материалах молодёжной программы и в сети ESG Youth Ambassadors",
+          "en": "Logo on all youth-programme materials and in the ESG Youth Ambassadors network",
+          "kk": "Жастар бағдарламасының барлық материалындағы және ESG Youth Ambassadors желісіндегі логотип"
         }
       ]
     },
@@ -254,50 +406,114 @@
         "en": "NGO alley partner",
         "kk": "ҮЕҰ аллеясының серіктесі"
       },
+      "price": {
+        "ru": "25 000 USD",
+        "en": "25,000 USD",
+        "kk": "25 000 USD"
+      },
       "summary": {
-        "ru": "1 партнёр. Поддержка бесплатного участия социальных проектов.",
-        "en": "1 partner. Support for free participation of social projects.",
-        "kk": "1 серіктес. Әлеуметтік жобалардың тегін қатысуын қолдау."
+        "ru": "1 партнёр, благодаря которому НПО и социальные центры участвуют в выставке бесплатно.",
+        "en": "1 partner, thanks to whom NGOs and social centres exhibit free of charge.",
+        "kk": "1 серіктес. Соның арқасында ҮЕҰ мен әлеуметтік орталықтар көрмеге тегін қатысады."
       },
       "includes": [
         {
-          "ru": "Бесплатное участие социальных проектов",
-          "en": "Free participation for social projects",
-          "kk": "Әлеуметтік жобалардың тегін қатысуы"
+          "ru": "Аллея НПО имени партнёра: 10–15 мини-стендов, которые НПО и социальные центры получают бесплатно",
+          "en": "An NGO alley in the partner’s name: 10–15 mini-stands that NGOs and social centres receive free of charge",
+          "kk": "Серіктес атындағы ҮЕҰ аллеясы: ҮЕҰ мен әлеуметтік орталықтар тегін алатын 10–15 шағын стенд"
+        },
+        {
+          "ru": "Открытие ярмарки партнёрств бизнеса и НПО",
+          "en": "Opening the business-and-NGO partnership fair",
+          "kk": "Бизнес пен ҮЕҰ серіктестік жәрмеңкесін ашу"
+        },
+        {
+          "ru": "Место в пленарной панели второго дня о партнёрстве бизнеса и НПО",
+          "en": "A seat on the day-two plenary about business and NGO partnership",
+          "kk": "Екінші күнгі бизнес пен ҮЕҰ серіктестігі туралы пленарлық панельдегі орын"
+        },
+        {
+          "ru": "15 делегатских мест — для партнёра и представителей НПО аллеи",
+          "en": "15 delegate seats for the partner and NGO representatives from the alley",
+          "kk": "15 делегат орны — серіктес пен аллеядағы ҮЕҰ өкілдері үшін"
+        },
+        {
+          "ru": "Логотип на аллее и в каталоге социальных проектов",
+          "en": "Logo on the alley and in the catalogue of social projects",
+          "kk": "Аллеядағы және әлеуметтік жобалар каталогындағы логотип"
         }
       ]
     },
     {
       "id": "expo",
       "title": {
-        "ru": "ESG Expo",
-        "en": "ESG Expo",
-        "kk": "ESG Expo"
+        "ru": "Экспонент ESG Expo",
+        "en": "ESG Expo exhibitor",
+        "kk": "ESG Expo экспоненті"
+      },
+      "price": {
+        "ru": "5 000 USD за секцию",
+        "en": "5,000 USD per section",
+        "kk": "секциясына 5 000 USD"
       },
       "summary": {
-        "ru": "20 экспонентов. Расположение и площадь стенда закрепляются в индивидуальном предложении.",
-        "en": "20 exhibitors. Stand location and size are set in an individual proposal.",
-        "kk": "20 экспонент. Стендтің орны мен ауданы жеке ұсыныста бекітіледі."
+        "ru": "20 стендов для компаний, решений и технологий.",
+        "en": "20 stands for companies, solutions and technologies.",
+        "kk": "Компаниялар, шешімдер мен технологияларға арналған 20 стенд."
       },
       "includes": [
         {
-          "ru": "Выставочный стенд",
-          "en": "Exhibition stand",
-          "kk": "Көрме стенді"
+          "ru": "Оборудованная выставочная секция на оба дня; можно взять две и более секции",
+          "en": "An equipped exhibition section for both days; two or more sections can be taken",
+          "kk": "Екі күнге жабдықталған көрме секциясы; екі және одан көп секция алуға болады"
         },
         {
-          "ru": "Два делегатских пропуска",
-          "en": "Two delegate passes",
-          "kk": "Екі делегаттық рұқсат"
+          "ru": "2 делегатских места",
+          "en": "2 delegate seats",
+          "kk": "2 делегат орны"
         },
         {
-          "ru": "Демонстрация продукта, технологии или корпоративного кейса",
-          "en": "A product, technology or corporate case on show",
-          "kk": "Өнімді, технологияны немесе корпоративтік кейсті көрсету"
+          "ru": "Карточка экспонента на сайте и в каталоге выставки",
+          "en": "An exhibitor card on the website and in the exhibition catalogue",
+          "kk": "Сайттағы және көрме каталогындағы экспонент карточкасы"
+        },
+        {
+          "ru": "Кофе-брейки проходят в зоне выставки — поток участников к стенду гарантирован",
+          "en": "Coffee breaks are held in the exhibition zone, so the flow of participants to the stand is guaranteed",
+          "kk": "Кофе-брейктер көрме аймағында өтеді — қатысушылар ағыны стендке кепілдендірілген"
+        },
+        {
+          "ru": "Возможность презентации на Impact Stage (15 минут, по согласованию)",
+          "en": "A chance to present on the Impact Stage (15 minutes, by agreement)",
+          "kk": "Impact Stage-та презентация мүмкіндігі (15 минут, келісім бойынша)"
         }
       ]
     }
   ],
+  "institutional": {
+    "title": {
+      "ru": "Партнёры без взноса",
+      "en": "Partners without a fee",
+      "kk": "Жарнасыз серіктестер"
+    },
+    "text": {
+      "ru": "Международные организации, посольства, профильные министерства, деловые ассоциации и медиа участвуют как институциональные и информационные партнёры: они дают форуму спикеров, статус и охват.",
+      "en": "International organisations, embassies, line ministries, business associations and media take part as institutional and information partners: they bring the forum speakers, status and reach.",
+      "kk": "Халықаралық ұйымдар, елшіліктер, бейінді министрліктер, іскерлік қауымдастықтар және медиа институционалдық және ақпараттық серіктес ретінде қатысады: олар форумға спикер, мәртебе және қамту береді."
+    }
+  },
+  "howTo": {
+    "title": {
+      "ru": "Как стать партнёром",
+      "en": "How to become a partner",
+      "kk": "Серіктес болу"
+    },
+    "text": {
+      "ru": "Оставьте заявку в форме ниже или напишите на forum@esgpartners.kz. Мы пришлём презентацию для партнёров и предложим встречу. Количество пакетов ограничено; корпоративные бюджеты на 2027 год формируются сейчас, поэтому лучшее время для разговора — ближайшие недели.",
+      "en": "Send the form below or write to forum@esgpartners.kz. We will send the partner presentation and suggest a meeting. The number of packages is limited, and 2027 corporate budgets are being set now, so the best time to talk is the coming weeks.",
+      "kk": "Төмендегі форманы толтырыңыз немесе forum@esgpartners.kz мекенжайына жазыңыз. Серіктестерге арналған презентацияны жіберіп, кездесу ұсынамыз. Пакет саны шектеулі; 2027 жылғы корпоративтік бюджеттер қазір қалыптасып жатыр, сондықтан сөйлесудің ең қолайлы уақыты — алдағы апталар."
+    }
+  },
   "deckUrl": "/docs/partner-deck.pdf",
   "deckAvailable": true
 }
