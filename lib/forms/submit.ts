@@ -3,7 +3,6 @@ import path from "path";
 import type { FormType } from "@/schemas/forms";
 import { formSchemaByType } from "@/schemas/forms";
 import { reserveStoreBytes } from "@/lib/forms/rate-limit";
-import { deliverToInbox, INBOX_EMAIL } from "@/lib/forms/inbox";
 import { sealRecord } from "@/lib/forms/seal";
 import {
   createInvoiceDraft,
@@ -145,49 +144,29 @@ export async function processFormSubmission(
     id,
     type,
     createdAt: new Date().toISOString(),
-    to: INBOX_EMAIL,
+    to: null,
     payload: parsed.data,
     invoice: invoice ?? null,
   };
 
-  const extra: Record<string, string> = {};
-  if (invoice) {
-    extra.invoice_id = invoice.id;
-    extra.amount_usd = String(invoice.amountUsd);
-    extra.payment_status = invoice.status;
-    const line = invoice.lineItems[0];
-    if (line) extra.ticket = `${line.description} · ${line.unitUsd} USD`;
-  }
-
-  const mailed = await deliverToInbox({
-    type,
-    fields: parsed.data as Record<string, unknown>,
-    extra,
-  });
-
-  let stored = false;
   try {
     await persistSubmission(record);
-    stored = true;
   } catch (error) {
     if (error instanceof Error && error.message.includes("daily budget")) {
       return { ok: false, error: "Too many requests", status: 429 };
     }
     console.error("[forms] store failed");
+    return {
+      ok: false,
+      error: "Could not store submission",
+      status: 502,
+    };
   }
 
   try {
     await deliverWebhook({ id, type, createdAt: record.createdAt });
   } catch {
     console.error("[forms] notice failed");
-  }
-
-  if (!mailed.ok && !stored) {
-    return {
-      ok: false,
-      error: "Could not deliver submission",
-      status: 502,
-    };
   }
 
   if (process.env.NODE_ENV !== "production") {

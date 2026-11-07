@@ -1,10 +1,9 @@
 "use client";
 
 import { useRef } from "react";
+import { useLocale } from "next-intl";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { InboxFields } from "@/components/forms/InboxFields";
-import { INBOX_FORM_ACTION } from "@/lib/forms/inbox";
 import { newsletterFormSchema } from "@/schemas/forms";
 import type { z } from "zod";
 
@@ -20,6 +19,7 @@ export function NewsletterForm({
   success?: string;
   id?: string;
 }) {
+  const locale = useLocale();
   const formRef = useRef<HTMLFormElement>(null);
   const {
     register,
@@ -38,11 +38,11 @@ export function NewsletterForm({
     <form
       ref={formRef}
       method="post"
-      action={INBOX_FORM_ACTION}
+      action="/api/forms/newsletter"
       className="mt-6 flex flex-col gap-3 sm:flex-row"
       onSubmit={onSubmit}
     >
-      <InboxFields formType="newsletter" />
+      <input type="hidden" name="locale" value={locale} />
       <label className="sr-only" htmlFor={id}>
         Email
       </label>

@@ -1,11 +1,10 @@
 "use client";
 
 import { useEffect, useMemo, useRef } from "react";
+import { useLocale } from "next-intl";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { z } from "zod";
-import { InboxFields } from "@/components/forms/InboxFields";
-import { INBOX_FORM_ACTION } from "@/lib/forms/inbox";
 import { formSchemaByType, type FormType } from "@/schemas/forms";
 
 export type DemoField = {
@@ -41,6 +40,7 @@ export function DemoApplyForm({
   errorMessage?: string;
   rateLimitMessage?: string;
 }) {
+  const locale = useLocale();
   const schema = formSchemaByType[formType];
   type Values = z.infer<typeof schema>;
 
@@ -86,11 +86,11 @@ export function DemoApplyForm({
       ref={formRef}
       id={id}
       method="post"
-      action={INBOX_FORM_ACTION}
+      action={`/api/forms/${formType}`}
       className="mt-6 grid gap-4 border border-line bg-white/70 p-5 md:p-6"
       onSubmit={onSubmit}
     >
-      <InboxFields formType={formType} />
+      <input type="hidden" name="locale" value={locale} />
       {hiddenFields
         ? Object.entries(hiddenFields).map(([name]) => (
             <input key={name} type="hidden" {...register(name as never)} />

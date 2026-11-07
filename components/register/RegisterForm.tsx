@@ -3,11 +3,9 @@
 import { useMemo, useRef, type ReactNode } from "react";
 import { useForm, type FieldErrors, type UseFormRegister } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { z } from "zod";
-import { InboxFields } from "@/components/forms/InboxFields";
 import { Link } from "@/i18n/navigation";
-import { INBOX_FORM_ACTION } from "@/lib/forms/inbox";
 import { forumLineIds } from "@/lib/pricing";
 
 type Status = "guest" | "delegate";
@@ -82,6 +80,7 @@ function buildSchema(t: (key: string) => string) {
 const inputClass = "min-h-11 w-full rounded-lg border border-line bg-white px-3";
 
 export function RegisterForm({ priceLabel }: { priceLabel: string }) {
+  const locale = useLocale();
   const t = useTranslations("registerPage");
   const tLines = useTranslations("lines");
   const formRef = useRef<HTMLFormElement>(null);
@@ -130,12 +129,11 @@ export function RegisterForm({ priceLabel }: { priceLabel: string }) {
       ref={formRef}
       id="register-form"
       method="post"
-      action={INBOX_FORM_ACTION}
+      action="/api/forms/register"
       className="group mt-8 grid gap-4 border border-line bg-white/70 p-5 md:p-6 [&:not(:has(#consent:checked))_button[type=submit]]:pointer-events-none [&:not(:has(#consent:checked))_button[type=submit]]:opacity-60 [&:has(#status-delegate:checked):not(:has(#terms:checked))_button[type=submit]]:pointer-events-none [&:has(#status-delegate:checked):not(:has(#terms:checked))_button[type=submit]]:opacity-60 [&:has(#status-guest:checked)_.for-delegate]:hidden [&:has(#status-guest:checked)_.for-guest]:block [&:has(#status-delegate:checked)_.fields]:grid [&:has(#tell-more:checked)_.fields]:grid [&:has(#pay-legal:checked)_.invoice]:block [&:has(#status-delegate:checked)_.req]:inline"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <InboxFields formType="register" />
-      <input type="hidden" name="price" value={priceLabel} />
+      <input type="hidden" name="locale" value={locale} />
       <div className="flex flex-wrap gap-2" role="radiogroup" aria-label={t("status")}>
         <label className="cursor-pointer rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink-soft has-[:checked]:border-deep has-[:checked]:bg-deep has-[:checked]:text-white">
           <input id="status-guest" type="radio" value="guest" className="sr-only" {...register("status")} />
