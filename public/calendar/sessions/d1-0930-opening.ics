@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d1-0930-opening@esg-leadership-forum
+DTSTAMP:20271013T043000Z
+DTSTART:20271013T043000Z
+DTEND:20271013T050000Z
+SUMMARY:Торжественное открытие: организатор\, Правительство РК\, глава делегации страны-гостя\, международный партнер
+DESCRIPTION:Торжественное открытие: организатор\, Правительство РК\, глава делегации страны-гостя\, международный партнер\nAstana time (UTC+5)
+LOCATION:Main Stage\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

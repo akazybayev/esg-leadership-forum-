@@ -7,16 +7,17 @@ import { DeadlineBanner } from "@/components/home/DeadlineBanner";
 import { EmptyAnnounce } from "@/components/home/EmptyAnnounce";
 import { NewsletterForm } from "@/components/home/NewsletterForm";
 import { TopicAgenda } from "@/components/home/TopicAgenda";
+import { ForumArchitecture } from "@/components/program/ForumArchitecture";
 import {
   getAward,
   getDelegatePriceUsd,
-  getHeadlineSessions,
   getHomeContent,
   getSiteConfig,
   getSponsors,
   getTopics,
   tLocalized,
 } from "@/lib/content";
+import { fullProgramFile, fullProgramHref } from "@/lib/program-downloads";
 import { daysUntil, formatForumDate } from "@/lib/dates";
 import { pageMetadata } from "@/lib/page-meta";
 
@@ -49,7 +50,6 @@ export default async function HomePage({
   const topics = getTopics();
   const award = getAward();
   const sponsors = getSponsors();
-  const headlines = getHeadlineSessions();
   const pricing = getDelegatePriceUsd();
   const earlyDays = daysUntil(site.dates.earlyBirdEnds);
 
@@ -106,9 +106,16 @@ export default async function HomePage({
               <Link href="/register" className="btn btn-primary">
                 {t("register")}
               </Link>
+              <a
+                href={fullProgramHref}
+                download={fullProgramFile}
+                className="btn btn-on-dark"
+              >
+                {t("fullProgram")}
+              </a>
               <Link
                 href="/partners"
-                className="btn border border-white/35 bg-white/10 text-white hover:bg-white/20"
+                className="btn btn-on-dark"
               >
                 {t("becomePartner")}
               </Link>
@@ -231,29 +238,8 @@ export default async function HomePage({
             {t("viewProgram")}
           </Link>
         </div>
-        <div className="mt-10 grid gap-10 md:grid-cols-2">
-          {(
-            [
-              ["day1", headlines.day1],
-              ["day2", headlines.day2],
-            ] as const
-          ).map(([key, sessions]) => (
-            <div key={key}>
-              <h3 className="text-lg font-bold text-deep">{tHome(key)}</h3>
-              <ul className="mt-4 space-y-4">
-                {sessions.map((session) => (
-                  <li key={session.id} className="border-t border-line pt-4">
-                    <p className="text-sm font-semibold text-accent">
-                      {session.start}–{session.end} · {session.room}
-                    </p>
-                    <p className="mt-1 font-medium text-ink">
-                      {tLocalized(session.title, locale)}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="mt-10">
+          <ForumArchitecture />
         </div>
         <p className="mt-6 text-sm text-ink-soft">{tStatus("timezone")}</p>
       </section>

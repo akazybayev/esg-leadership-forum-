@@ -3,9 +3,9 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { AddToCalendarButton } from "@/components/program/AddToCalendarButton";
+import { CalendarPlus } from "lucide-react";
 import { getSiteConfig, tLocalized } from "@/lib/content";
-import { getAllSessionIds, getSessionById } from "@/lib/program";
+import { getAllSessionIds, getSessionById, splitSessionTitle } from "@/lib/program";
 import { buildPageMetadata } from "@/lib/seo";
 import { routing } from "@/i18n/routing";
 
@@ -50,12 +50,15 @@ export default async function SessionPage({
   const tAccess = await getTranslations("access");
   const site = getSiteConfig();
 
-  const dayLabel =
-    session.day === "0"
-      ? t("day0")
-      : session.day === "1"
-        ? t("day1")
-        : t("day2");
+  const dayLabel = session.day === "1" ? t("day1") : t("day2");
+  const title = tLocalized(session.title, locale);
+  const parts = splitSessionTitle(title);
+  const accessLabel =
+    session.access === "open"
+      ? tAccess("open")
+      : session.byRegistration
+        ? tAccess("delegatesBooked")
+        : tAccess("delegates");
 
   return (
     <article className="container-shell py-12 md:py-16">
@@ -63,13 +66,16 @@ export default async function SessionPage({
         {dayLabel} · {session.start}–{session.end}
       </p>
       <h1 className="mt-3 max-w-4xl text-3xl font-bold tracking-tight text-deep md:text-5xl">
-        {tLocalized(session.title, locale)}
+        {parts.name}
       </h1>
+      {parts.subtitle ? (
+        <p className="mt-3 max-w-3xl text-xl leading-snug text-ink-soft">{parts.subtitle}</p>
+      ) : null}
       <p className="mt-4 text-ink-soft">
         {session.room} · {site.venue.name} · {t("timezone")}
       </p>
 
-      <div className="mt-5 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.08em]">
+      <div className="mt-5 flex flex-wrap gap-2 text-xs font-semibold">
         <span className="rounded-full bg-paper-2 px-2.5 py-1 text-ink-soft">
           {t(`format.${session.format}`)}
         </span>
@@ -79,13 +85,8 @@ export default async function SessionPage({
           </span>
         ) : null}
         <span className="rounded-full bg-paper-2 px-2.5 py-1 text-ink-soft">
-          {session.access === "open" ? tAccess("open") : tAccess("delegates")}
+          {accessLabel}
         </span>
-        {session.byRegistration ? (
-          <span className="rounded-full bg-[#f3e2d6] px-2.5 py-1 text-accent">
-            {tAccess("byRegistration")}
-          </span>
-        ) : null}
       </div>
 
       <div className="mt-8 max-w-3xl space-y-4 text-lg text-ink-soft">
@@ -108,7 +109,14 @@ export default async function SessionPage({
       </div>
 
       <div className="mt-8 flex flex-wrap gap-3">
-        <AddToCalendarButton session={session} />
+        <a
+          className="btn btn-deep"
+          href={`/calendar/sessions/${session.id}.ics`}
+          download={`${session.id}.ics`}
+        >
+          <CalendarPlus aria-hidden="true" size={16} />
+          {t("addToCalendar")}
+        </a>
         <Link href="/program" className="btn btn-secondary">
           {t("backToProgram")}
         </Link>

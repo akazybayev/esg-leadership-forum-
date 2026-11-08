@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d1-1000-keynote-1@esg-leadership-forum
+DTSTAMP:20271013T050000Z
+DTSTART:20271013T050000Z
+DTEND:20271013T052500Z
+SUMMARY:Конец эпохи обещаний: что инвесторы\, регуляторы и ваши дети спросят с лидеров в 2027 году
+DESCRIPTION:Международный эксперт.\nAstana time (UTC+5)
+LOCATION:Main Stage\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

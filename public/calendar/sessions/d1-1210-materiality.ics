@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d1-1210-materiality@esg-leadership-forum
+DTSTAMP:20271013T071000Z
+DTSTART:20271013T071000Z
+DTEND:20271013T082000Z
+SUMMARY:Двойная существенность за 70 минут: как выбрать 8 тем\, которые спросит инвестор\, и отбросить остальные 40
+DESCRIPTION:Двойная существенность за 70 минут: как выбрать 8 тем\, которые спросит инвестор\, и отбросить остальные 40\nAstana time (UTC+5)
+LOCATION:Master Class 1\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

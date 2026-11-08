@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d1-1210-regulators@esg-leadership-forum
+DTSTAMP:20271013T071000Z
+DTSTART:20271013T071000Z
+DTEND:20271013T082000Z
+SUMMARY:Диалог регуляторов: к единым требованиям ESG-раскрытия в Центральной Азии
+DESCRIPTION:Диалог регуляторов: к единым требованиям ESG-раскрытия в Центральной Азии\nAstana time (UTC+5)
+LOCATION:Закрытый зал\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

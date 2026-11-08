@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d2-1130-ratings@esg-leadership-forum
+DTSTAMP:20271014T063000Z
+DTSTART:20271014T063000Z
+DTEND:20271014T074500Z
+SUMMARY:Что видит рейтинг: как совет директоров влияет на ESG-оценку и стоимость капитала
+DESCRIPTION:Что видит рейтинг: как совет директоров влияет на ESG-оценку и стоимость капитала\nAstana time (UTC+5)
+LOCATION:Hall B\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

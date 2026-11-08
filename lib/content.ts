@@ -9,6 +9,7 @@ import {
   homeContentSchema,
   navigationSchema,
   topicsContentSchema,
+  architectureSchema,
   programSchema,
   siteConfigSchema,
   speakersSchema,
@@ -40,6 +41,10 @@ export function getTopics() {
 
 export function getProgram() {
   return programSchema.parse(loadJson("program.json"));
+}
+
+export function getArchitecture() {
+  return architectureSchema.parse(loadJson("architecture.json"));
 }
 
 export function getSpeakers() {

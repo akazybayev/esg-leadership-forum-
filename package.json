@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/export-static-pages.mjs && node scripts/migrate.mjs",
+    "build": "node scripts/build-program.mjs && next build && node scripts/export-static-pages.mjs && node scripts/migrate.mjs",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"

@@ -4,10 +4,8 @@ import type { ProgramSession } from "@/lib/program-types";
 
 type Session = ProgramSession;
 
-function sessionDate(day: "0" | "1" | "2"): string {
-  if (day === "0") return "2027-10-12";
-  if (day === "1") return "2027-10-13";
-  return "2027-10-14";
+function sessionDate(day: "1" | "2"): string {
+  return day === "1" ? "2027-10-13" : "2027-10-14";
 }
 
 function toIcsStamp(date: string, time: string): string {
@@ -63,11 +61,11 @@ export function buildForumIcs(): string {
     "METHOD:PUBLISH",
     "BEGIN:VEVENT",
     "UID:forum@esg-leadership-forum",
-    "DTSTAMP:20271013T040000Z",
-    "DTSTART:20271013T040000Z",
-    "DTEND:20271014T160000Z",
+    "DTSTAMP:20271013T030000Z",
+    "DTSTART:20271013T030000Z",
+    "DTEND:20271014T170000Z",
     "SUMMARY:ESG Leadership Forum 2027",
-    "DESCRIPTION:13–14 October 2027\\, 09:00–21:00 Asia/Almaty (UTC+5)",
+    "DESCRIPTION:13–14 October 2027\\, 08:00–22:00 Asia/Almaty (UTC+5)",
     "LOCATION:Hilton Astana\\, Astana",
     "END:VEVENT",
     "END:VCALENDAR",

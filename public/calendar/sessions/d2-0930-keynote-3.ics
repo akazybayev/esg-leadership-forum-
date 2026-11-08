@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d2-0930-keynote-3@esg-leadership-forum
+DTSTAMP:20271014T043000Z
+DTSTART:20271014T043000Z
+DTEND:20271014T045000Z
+SUMMARY:Буква\, которую все пропускают: как S приносит деньги\, людей и лицензию на работу
+DESCRIPTION:Буква\, которую все пропускают: как S приносит деньги\, людей и лицензию на работу\nAstana time (UTC+5)
+LOCATION:Main Stage\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d1-1620-shortlist@esg-leadership-forum
+DTSTAMP:20271013T112000Z
+DTSTART:20271013T112000Z
+DTEND:20271013T123000Z
+SUMMARY:Шорт-лист ESG Award: финалисты публично защищают проекты перед залом и жюри
+DESCRIPTION:Шорт-лист ESG Award: финалисты публично защищают проекты перед залом и жюри\nAstana time (UTC+5)
+LOCATION:Main Stage\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

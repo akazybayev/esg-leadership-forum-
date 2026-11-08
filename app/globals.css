@@ -142,6 +142,123 @@ a {
   background: #143141;
 }
 
+.btn-on-dark {
+  color: #fff;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.btn-on-dark:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.session-details > summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+.session-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.session-chevron {
+  transition: transform 280ms ease;
+}
+
+.session-details[open] .session-chevron {
+  transform: rotate(180deg);
+}
+
+.program-day-link {
+  font: inherit;
+  cursor: pointer;
+}
+
+.program-day-link[aria-pressed="true"] {
+  background: var(--color-deep);
+  color: #fff;
+  border-color: var(--color-deep);
+}
+
+.meta-accent {
+  color: #a74c1d;
+}
+
+.forum-arch {
+  position: relative;
+}
+
+.arch-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.arch-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+
+.arch-switch-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-ink-soft);
+  cursor: pointer;
+}
+
+.arch-radio:focus-visible + .arch-switch-label {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.forum-arch:has(#arch-day-1:checked) label[for="arch-day-1"],
+.forum-arch:has(#arch-day-2:checked) label[for="arch-day-2"] {
+  background: var(--color-deep);
+  color: #fff;
+  border-color: var(--color-deep);
+}
+
+.forum-arch:has(#arch-day-1:checked) .arch-day-2,
+.forum-arch:has(#arch-day-2:checked) .arch-day-1 {
+  display: none;
+}
+
+.arch-climax {
+  border-color: var(--color-accent);
+  background: #f8efe6;
+}
+
+@media (min-width: 768px) {
+  .arch-switch {
+    display: none;
+  }
+
+  .arch-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .forum-arch:has(#arch-day-1:checked) .arch-day-2,
+  .forum-arch:has(#arch-day-2:checked) .arch-day-1 {
+    display: block;
+  }
+}
+
 .topic-details > summary {
   list-style: none;
   cursor: pointer;

@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d1-1420-keynote-2@esg-leadership-forum
+DTSTAMP:20271013T092000Z
+DTSTART:20271013T092000Z
+DTEND:20271013T094000Z
+SUMMARY:Декарбонизация предприятия на треть: цена\, ошибки и что сделать иначе
+DESCRIPTION:CEO промышленной компании.\nAstana time (UTC+5)
+LOCATION:Main Stage\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

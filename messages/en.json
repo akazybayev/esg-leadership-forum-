@@ -53,6 +53,7 @@
     "becomePartner": "Become a partner",
     "applyAward": "Apply",
     "viewProgram": "View programme",
+    "fullProgram": "Full programme",
     "allSpeakers": "All speakers",
     "applyYouth": "Youth delegate application",
     "applyPitch": "Youth Impact Pitch",
@@ -78,6 +79,7 @@
   "access": {
     "open": "Open to all",
     "delegates": "Delegates only",
+    "delegatesBooked": "Delegates, by registration",
     "byRegistration": "By registration"
   },
   "status": {
@@ -118,10 +120,18 @@
     "inProgram": "In the programme:"
   },
   "program": {
-    "intro": "Arrival day and two forum days. Filter by track, room, format and access.",
+    "intro": "Two forum days: 13 and 14 October 2027. Filter by day, hall, track and access.",
     "days": "Days",
-    "day0": "Day 0 · 12 October",
     "day1": "Day 1 · 13 October",
+    "downloadsTitle": "Download the programme",
+    "downloads": {
+      "full": "Full programme, two days",
+      "panels": "Plenary, country and thematic sessions",
+      "master": "Masterclasses",
+      "keynotes": "Keynotes",
+      "youth": "Youth programme and Youth Impact Pitch",
+      "award": "ESG Award"
+    },
     "day2": "Day 2 · 14 October",
     "timezone": "Astana time (UTC+5)",
     "filterLine": "Track",

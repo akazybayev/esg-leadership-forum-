@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d2-1130-ngo@esg-leadership-forum
+DTSTAMP:20271014T063000Z
+DTSTART:20271014T063000Z
+DTEND:20271014T074500Z
+SUMMARY:Социальный эффект в цифрах: как НПО измерить результат и подготовить заявку корпоративному донору
+DESCRIPTION:Социальный эффект в цифрах: как НПО измерить результат и подготовить заявку корпоративному донору\nAstana time (UTC+5)
+LOCATION:Master Class 1\, Hilton Astana
+END:VEVENT
+END:VCALENDAR
