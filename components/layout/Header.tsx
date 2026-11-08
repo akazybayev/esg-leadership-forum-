@@ -19,35 +19,26 @@ export function Header({
   const tA11y = useTranslations("a11y");
 
   return (
-    <header className="sticky top-0 z-40">
-      <div className="border-b border-line bg-[rgba(244,241,236,0.92)] backdrop-blur-md">
-        <div className="container-shell flex items-center justify-between gap-4 py-2">
-        <Link href="/" className="shrink-0">
+    <header className="site-header">
+      <div className="container-shell flex h-[72px] items-center justify-between gap-4">
+        <Link href="/" className="logo-plate shrink-0" aria-label={siteName}>
           <img
             src="/images/brand/forum-logo.png"
-            alt={siteName}
+            alt=""
             width={551}
             height={542}
-            className="h-20 w-auto max-w-none"
           />
         </Link>
 
-        <nav
-          className="hidden items-center gap-x-2 xl:flex"
-          aria-label={tA11y("primaryNav")}
-        >
+        <nav className="hidden items-center gap-6 xl:flex" aria-label={tA11y("primaryNav")}>
           {items.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="whitespace-nowrap text-[13px] font-medium text-ink-soft transition hover:text-ink"
-            >
+            <Link key={item.href} href={item.href} className="nav-link whitespace-nowrap">
               {t(item.labelKey)}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <LanguageSwitcher />
           <Link href="/register" className="btn btn-primary header-register">
             {tCta("register")}
@@ -55,13 +46,12 @@ export function Header({
           <span className="inline-block h-10 w-10 xl:hidden" aria-hidden="true" />
         </div>
       </div>
-      </div>
       <details className="xl:hidden">
-        <summary className="absolute right-4 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 cursor-pointer list-none items-center justify-center rounded-full border border-line bg-paper [&::-webkit-details-marker]:hidden">
+        <summary className="absolute right-4 top-[16px] inline-flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-full border border-white/25 text-[var(--color-sand)] [&::-webkit-details-marker]:hidden">
           <Menu size={18} />
           <span className="sr-only">{t("menu")}</span>
         </summary>
-        <div className="fixed inset-x-0 bottom-0 top-24 z-50 flex flex-col bg-paper">
+        <div className="fixed inset-x-0 bottom-0 top-[72px] z-50 flex flex-col bg-[var(--color-deep)] text-[var(--color-sand)]">
           <nav
             id="mobile-nav"
             className="flex-1 overflow-y-auto px-4 py-4"
@@ -71,13 +61,13 @@ export function Header({
               <Link
                 key={item.href}
                 href={item.href}
-                className="block rounded-lg px-3 py-3 text-base font-medium text-ink"
+                className="block rounded-lg px-3 py-3 text-base font-semibold"
               >
                 {t(item.labelKey)}
               </Link>
             ))}
           </nav>
-          <div className="border-t border-line bg-paper p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+          <div className="border-t border-white/10 p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
             <Link href="/register" className="btn btn-primary w-full">
               {tCta("register")}
             </Link>

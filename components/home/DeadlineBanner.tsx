@@ -14,16 +14,14 @@ export function DeadlineBanner({
   if (!deadline) return null;
 
   return (
-    <div className="border-b border-line bg-deep text-[#f4f1ec]">
-      <div className="container-shell flex flex-col gap-2 py-2.5 text-sm sm:flex-row sm:items-center sm:justify-between">
+    <div className="bg-[var(--color-gold)] text-[var(--color-deep)]">
+      <div className="container-shell flex flex-col gap-1 py-2 text-center text-sm font-extrabold sm:flex-row sm:items-center sm:justify-between sm:text-left">
         <p>
-          <span className="font-semibold text-accent">
-            {formatForumDate(deadline.date, locale)}
-          </span>
-          <span className="mx-2 text-white/40">·</span>
+          {formatForumDate(deadline.date, locale)}
+          {" · "}
           {tLocalized(deadline.label, locale)}
         </p>
-        <Link href="/register" className="font-semibold text-white underline-offset-4 hover:underline">
+        <Link href="/register" className="underline-offset-4 hover:underline">
           {ctaLabel}
         </Link>
       </div>

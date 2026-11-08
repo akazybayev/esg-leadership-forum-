@@ -1,9 +1,9 @@
 {
   "hero": {
     "supporting": {
-      "ru": "Международная площадка для лидеров бизнеса, государства и молодежи Центральной Азии.",
-      "en": "An international stage for business, government and youth leaders across Central Asia.",
-      "kk": "Орталық Азиядағы бизнес, мемлекет және жастар көшбасшыларына арналған халықаралық алаң."
+      "ru": "Международный форум бизнеса, государства и молодежи Центральной Азии. 500 участников, 20+ стран, 14 номинаций ESG Award и одна премия, за которой приедут.",
+      "en": "An international forum for business, government and youth across Central Asia. 500 participants, 20+ countries, 14 ESG Award categories and one prize people travel for.",
+      "kk": "Орталық Азия бизнесі, мемлекеті және жастарының халықаралық форумы. 500 қатысушы, 20+ ел, ESG Award-тың 14 номинациясы."
     },
     "image": {
       "src": "/images/hero/astana.jpg",
@@ -72,14 +72,14 @@
   },
   "lines": {
     "eyebrow": {
-      "ru": "Пять линий",
-      "en": "Five tracks",
-      "kk": "Бес бағыт"
+      "ru": "Пять линий программы",
+      "en": "Five programme tracks",
+      "kk": "Бағдарламаның бес бағыты"
     },
     "title": {
-      "ru": "Lead · Finance · Planet · People · Region",
-      "en": "Lead · Finance · Planet · People · Region",
-      "kk": "Lead · Finance · Planet · People · Region"
+      "ru": "Каждая сессия отвечает на один из пяти вопросов",
+      "en": "Each session answers one of five questions",
+      "kk": "Әр сессия бес сұрақтың біріне жауап береді"
     },
     "items": [
       {
@@ -90,9 +90,9 @@
           "kk": "Lead"
         },
         "text": {
-          "ru": "Лидерство после эпохи обещаний: стратегия, совет директоров, ответственность.",
-          "en": "Leadership after the age of pledges: strategy, boards, accountability.",
-          "kk": "Уәделер дәуірінен кейінгі көшбасшылық: стратегия, кеңес, жауапкершілік."
+          "ru": "Стандарты, рейтинги, совет директоров, ИИ в отчетности",
+          "en": "Standards, ratings, the board and AI in reporting",
+          "kk": "Стандарттар, рейтингтер, директорлар кеңесі, есептегі ЖИ"
         }
       },
       {
@@ -103,9 +103,9 @@
           "kk": "Finance"
         },
         "text": {
-          "ru": "Кто платит за переход: зеленые, социальные и переходные инструменты.",
-          "en": "Who pays for transition: green, social and transition instruments.",
-          "kk": "Кім төлейді: жасыл, әлеуметтік және өтпелі құралдар."
+          "ru": "Кто платит за переход: капитал, CORSIA, углеродные рынки",
+          "en": "Who pays for the transition: capital, CORSIA, carbon markets",
+          "kk": "Өтуді кім төлейді: капитал, CORSIA, көміртек нарықтары"
         }
       },
       {
@@ -116,9 +116,9 @@
           "kk": "Planet"
         },
         "text": {
-          "ru": "Климат, вода, циркулярная экономика и природа с измеримым эффектом.",
-          "en": "Climate, water, circular economy and nature with measurable impact.",
-          "kk": "Климат, су, циркулярлық экономика және өлшенетін табиғат әсері."
+          "ru": "Ресурсы, вода, отходы как сырье",
+          "en": "Resources, water, waste as feedstock",
+          "kk": "Ресурстар, су, шикізат ретіндегі қалдық"
         }
       },
       {
@@ -129,9 +129,9 @@
           "kk": "People"
         },
         "text": {
-          "ru": "Человеческий капитал, инклюзия и социальные партнерства.",
-          "en": "Human capital, inclusion and social partnerships.",
-          "kk": "Адами капитал, инклюзия және әлеуметтік серіктестік."
+          "ru": "Четыре поколения, НПО, социальный контракт бизнеса",
+          "en": "Four generations, NGOs, the social contract of business",
+          "kk": "Төрт ұрпақ, ҮЕҰ, бизнестің әлеуметтік келісімі"
         }
       },
       {
@@ -142,9 +142,9 @@
           "kk": "Region"
         },
         "text": {
-          "ru": "Общая ESG-повестка Центральной Азии и соседних рынков.",
-          "en": "A shared ESG agenda for Central Asia and neighbouring markets.",
-          "kk": "Орталық Азия мен көрші нарықтардың ортақ ESG күн тәртібі."
+          "ru": "Центральная Азия как единый ESG-рынок, страна-гость",
+          "en": "Central Asia as one ESG market, and the guest country",
+          "kk": "Орталық Азия біртұтас ESG-нарық ретінде, қонақ ел"
         }
       }
     ]
@@ -156,9 +156,9 @@
       "kk": "Бағдарлама"
     },
     "title": {
-      "ru": "Два дня – как устроен форум",
-      "en": "Two days – how the forum is built",
-      "kk": "Екі күн – форум қалай құрылған"
+      "ru": "Два дня по одной схеме: общий зал, потоки, финал на сцене",
+      "en": "Two days, one pattern: the main hall, parallel tracks, a finale on stage",
+      "kk": "Екі күн, бір сызба: ортақ зал, ағындар, сахнадағы финал"
     }
   },
   "tickets": {
@@ -209,7 +209,7 @@
       "kk": "ESG Award"
     },
     "title": {
-      "ru": "Барс — хранитель будущего",
+      "ru": "Барс – хранитель будущего",
       "en": "Bars — Guardian of the Future",
       "kk": "Барыс — болашақтың қорғаушысы"
     },
@@ -231,9 +231,9 @@
       "kk": "Делегаттар және Youth Impact Pitch"
     },
     "text": {
-      "ru": "100 молодежных делегатов и 8 команд-финалистов на главной сцене 14 октября.",
-      "en": "100 youth delegates and 8 finalist teams on the main stage on 14 October.",
-      "kk": "100 жас делегат және 14 қазанда бас сахнадағы 8 финалист команда."
+      "ru": "100 молодежных делегатов 18–30 лет участвуют во всех панелях форума. Восемь команд выходят на Main Stage в финале Youth Impact Pitch за гранты партнеров.",
+      "en": "100 youth delegates aged 18–30 take part in every panel. Eight teams reach Main Stage in the Youth Impact Pitch final for partner grants.",
+      "kk": "18–30 жастағы 100 жас делегат форумның барлық панеліне қатысады. Сегіз команда серіктес гранты үшін Youth Impact Pitch финалында Main Stage-ке шығады."
     }
   },
   "venue": {
@@ -299,14 +299,14 @@
   },
   "guestCountry": {
     "eyebrow": {
-      "ru": "Страна — гость",
+      "ru": "Страна – гость",
       "en": "Guest country",
       "kk": "Қонақ ел"
     },
     "title": {
-      "ru": "Отдельный формат международного партнерства",
-      "en": "A separate format of international partnership",
-      "kk": "Халықаралық серіктестіктің жеке форматы"
+      "ru": "Страна – гость форума",
+      "en": "Guest country of the forum",
+      "kk": "Форумның қонақ елі"
     },
     "text": {
       "ru": "Страновая сессия на главной сцене, павильон из 5 секций, B2B-офис и национальный вечер. Условия — с посольством или уполномоченным агентством.",

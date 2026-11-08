@@ -91,8 +91,8 @@
   "countdown": {
     "days": "days",
     "hours": "hours",
-    "minutes": "min",
-    "seconds": "sec"
+    "minutes": "minutes",
+    "seconds": "seconds"
   },
   "home": {
     "day1": "Day 1 · 13 October",
@@ -100,18 +100,48 @@
     "speakersEyebrow": "Speakers",
     "speakersTitle": "Key voices of the forum",
     "partnersEyebrow": "Partners",
-    "partnersTitle": "Logos by tier",
-    "statsDays": "forum days",
+    "partnersTitle": "Places that will be taken in 2027",
+    "statsDays": "days on one venue",
     "statsParticipants": "participants",
     "statsCountries": "countries",
     "statsYouth": "youth delegates",
     "statsNominations": "ESG Award categories",
     "guestCountryCta": "Learn about the status",
     "initiatorEyebrow": "From the initiator",
-    "initiatorQuote": "ESG Leadership Forum 2027 is a place for people who connect sustainability with investment, management and business growth. Come with a case, a question or a project — and leave with partners.",
+    "initiatorQuote": "ESG Leadership Forum 2027 is a place for people who connect sustainability with investment, management and business growth. Come with a case, a question or a project – and leave with partners.",
     "initiatorName": "Aidar Kazybayev, forum initiator, founder of Global ESG Partnership",
     "initiatorCta": "Read the address",
-    "initiatorAlt": "Aidar Kazybayev"
+    "initiatorAlt": "Aidar Kazybayev",
+    "guestPerks": [
+      "Opening, keynotes and plenary panels",
+      "ESG Expo and Impact Stage",
+      "Youth Impact Pitch final and the closing"
+    ],
+    "delegatePerks": [
+      "Hall B sessions and masterclasses with a certificate",
+      "Closed sessions: regulators, investors, rating agencies",
+      "B2B Lounge, 1:1 meetings, lunches and the evening reception",
+      "Gala dinner and the ESG Award ceremony",
+      "Case book, session recordings and the participant list"
+    ],
+    "ticketLead": "Open sessions on Main Stage and Impact Stage are free. A delegate gets the closed formats, meetings and the gala.",
+    "guestCta": "Register as a guest",
+    "delegateCta": "Become a delegate",
+    "priceLadder": "until {earlyDate} · then {standardAmount} USD until {standardDate} · {lateAmount} USD from {lateDate}",
+    "untilRaise": "Until the price rises",
+    "dayShort": "d",
+    "earlyRibbon": "EARLY PRICE UNTIL 31 JULY",
+    "standardRibbon": "STANDARD PRICE UNTIL 30 SEPTEMBER",
+    "lateRibbon": "LATE PRICE",
+    "awardUntil": "until {date}",
+    "awardRules": "Award rules",
+    "youthQuote": "The ESG generation <em>asks the questions</em> – company leaders answer from the stage",
+    "youthFactDelegates": "delegates with a voice on every panel",
+    "youthFactFinalists": "pitch finalists on the main stage",
+    "youthFactTracks": "tracks: Planet, People, Digital & Governance",
+    "youthFactDeadline": "last day to apply",
+    "flagLabel": "FLAG",
+    "logoSlot": "Logo"
   },
   "stage": {
     "stub": "Page under construction — stage {stage}."

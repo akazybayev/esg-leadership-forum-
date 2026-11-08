@@ -90,9 +90,9 @@
   },
   "countdown": {
     "days": "күн",
-    "hours": "сағ",
-    "minutes": "мин",
-    "seconds": "сек"
+    "hours": "сағат",
+    "minutes": "минут",
+    "seconds": "секунд"
   },
   "home": {
     "day1": "1-күн · 13 қазан",
@@ -100,18 +100,48 @@
     "speakersEyebrow": "Спикерлер",
     "speakersTitle": "Форумның негізгі дауыстары",
     "partnersEyebrow": "Серіктестер",
-    "partnersTitle": "Деңгей бойынша логотиптер",
-    "statsDays": "форум күні",
+    "partnersTitle": "2027 жылы алынатын орындар",
+    "statsDays": "бір алаңдағы күн",
     "statsParticipants": "қатысушы",
     "statsCountries": "ел",
     "statsYouth": "жас делегат",
     "statsNominations": "ESG Award номинациясы",
     "guestCountryCta": "Мәртебе туралы толығырақ",
     "initiatorEyebrow": "Бастамашы сөзі",
-    "initiatorQuote": "ESG Leadership Forum 2027 — тұрақты дамуды инвестициямен, басқарумен және бизнестің өсуімен байланыстыратындарға арналған алаң. Кейспен, сұрақпен немесе жобамен келіп, серіктестермен қайтыңыз.",
+    "initiatorQuote": "ESG Leadership Forum 2027 – тұрақты дамуды инвестициямен, басқарумен және бизнестің өсуімен байланыстыратындарға арналған алаң. Кейспен, сұрақпен немесе жобамен келіп, серіктестермен қайтыңыз.",
     "initiatorName": "Айдар Қазыбаев, форум бастамашысы, Global ESG Partnership негізін қалаушы",
     "initiatorCta": "Үндеуді оқу",
-    "initiatorAlt": "Айдар Қазыбаев"
+    "initiatorAlt": "Айдар Қазыбаев",
+    "guestPerks": [
+      "Ашылу, кейноуттар, пленарлық панельдер",
+      "ESG Expo көрмесі және Impact Stage",
+      "Youth Impact Pitch финалы және жабылу"
+    ],
+    "delegatePerks": [
+      "Hall B сессиялары және сертификатты мастер-класстар",
+      "Жабық сессиялар: реттеушілер, инвесторлар, рейтинг агенттіктері",
+      "B2B Lounge, 1:1 кездесулер, түскі ас және кешкі қабылдау",
+      "Гала-кеш және ESG Award рәсімі",
+      "Кейстер жинағы, сессия жазбалары, қатысушылар тізімі"
+    ],
+    "ticketLead": "Main Stage және Impact Stage ашық сессиялары тегін. Делегат жабық форматтарды, кездесулерді және гала-рәсімді алады.",
+    "guestCta": "Қонақ ретінде тіркелу",
+    "delegateCta": "Делегат болу",
+    "priceLadder": "{earlyDate} дейін · кейін {standardDate} дейін {standardAmount} USD · {lateDate} бастап {lateAmount} USD",
+    "untilRaise": "Баға өскенге дейін",
+    "dayShort": "күн",
+    "earlyRibbon": "ЕРТЕ БАҒА 31 ШІЛДЕГЕ ДЕЙІН",
+    "standardRibbon": "СТАНДАРТ БАҒА 30 ҚЫРКҮЙЕККЕ ДЕЙІН",
+    "lateRibbon": "КЕШ БАҒА",
+    "awardUntil": "{date} дейін",
+    "awardRules": "Марапат ережесі",
+    "youthQuote": "ESG ұрпағы <em>сұрақ қояды</em> – компания басшылары сахнадан жауап береді",
+    "youthFactDelegates": "әр панельде дауысы бар делегат",
+    "youthFactFinalists": "бас сахнадағы питч финалисі",
+    "youthFactTracks": "бағыт: Planet, People, Digital & Governance",
+    "youthFactDeadline": "өтінім қабылдаудың соңғы күні",
+    "flagLabel": "ТУ",
+    "logoSlot": "Логотип"
   },
   "stage": {
     "stub": "Бет әзірленуде — {stage}-кезең."

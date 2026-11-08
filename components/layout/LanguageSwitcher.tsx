@@ -24,11 +24,7 @@ export function LanguageSwitcher() {
             href={pathname}
             locale={code}
             hrefLang={code}
-            className={`inline-flex min-h-9 min-w-9 items-center justify-center rounded-full px-2 text-sm font-semibold transition ${
-              active
-                ? "bg-deep text-white"
-                : "text-ink-soft hover:bg-white/70 hover:text-ink"
-            }`}
+            className="lang-link inline-flex min-h-9 min-w-9 items-center justify-center px-1"
             aria-current={active ? "true" : undefined}
           >
             {labels[code]}

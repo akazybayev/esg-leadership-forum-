@@ -82,30 +82,38 @@ export function TopicAgenda({
   topics,
   locale,
   variant,
+  surface = "paper",
 }: {
   topics: TopicsContent;
   locale: Locale;
   variant: "accordion" | "open";
+  surface?: "paper" | "night";
 }) {
   const t = useTranslations("topics");
   const headingId = "topic-agenda-heading";
+  const night = surface === "night";
 
   return (
-    <section className="container-shell py-16 md:py-20" aria-labelledby={headingId}>
-      <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
+    <section
+      className={night ? "band band-night" : "container-shell py-16 md:py-20"}
+      aria-labelledby={headingId}
+      id="agenda"
+    >
+      <div className={night ? "container-shell" : undefined}>
+      <p className={night ? "eyebrow" : "text-sm font-semibold uppercase tracking-[0.16em] text-accent"}>
         {tLocalized(topics.eyebrow, locale)}
       </p>
       <h2
         id={headingId}
-        className="mt-3 max-w-4xl text-3xl font-bold tracking-tight text-deep md:text-5xl"
+        className={night ? "h-display" : "mt-3 max-w-4xl text-3xl font-bold tracking-tight text-deep md:text-5xl"}
       >
         {tLocalized(topics.title, locale)}
       </h2>
-      <p className="mt-4 max-w-4xl text-lg text-ink-soft">
+      <p className={night ? "lead" : "mt-4 max-w-4xl text-lg text-ink-soft"}>
         {tLocalized(topics.subtitle, locale)}
       </p>
-      <div className="mt-10 flex flex-col gap-3">
-        {topics.items.map((item) => {
+      <div className={night ? "topic-night mt-12 border-t border-white/10" : "mt-10 flex flex-col gap-3"}>
+        {topics.items.map((item, index) => {
           const titleId = `topic-${item.id}-title`;
           const panelId = `topic-${item.id}-panel`;
           const title = tLocalized(item.title, locale);
@@ -136,26 +144,37 @@ export function TopicAgenda({
               key={item.id}
               id={topicHash(item.id)}
               name="topics"
-              className="topic-details scroll-mt-28 border border-line bg-white"
+              className={night ? "topic-details scroll-mt-28" : "topic-details scroll-mt-28 border border-line bg-white"}
             >
               <summary
-                className="flex items-start gap-4 px-4 py-5 md:px-6 md:py-6"
+                className={night ? undefined : "flex items-start gap-4 px-4 py-5 md:px-6 md:py-6"}
                 aria-controls={panelId}
               >
+                {night ? <span className="topic-index">{String(index + 1).padStart(2, "0")}</span> : null}
                 <span className="min-w-0 flex-1">
-                  <h3 id={titleId} className="text-[22px] font-bold leading-snug text-deep md:text-[2rem]">
+                  <h3 id={titleId} className={night ? undefined : "text-[22px] font-bold leading-snug text-deep md:text-[2rem]"}>
                     <TopicTitle text={title} />
                   </h3>
-                  <span className="mt-2 block text-base leading-snug text-ink-soft md:text-lg">
+                  <span className={night ? "topic-sub" : "mt-2 block text-base leading-snug text-ink-soft md:text-lg"}>
                     {subtitle}
                   </span>
                 </span>
-                <ChevronDown aria-hidden="true" className="topic-chevron mt-1 shrink-0 text-deep" size={22} />
+                {night ? (
+                  <span className="topic-chev" aria-hidden="true">
+                    <ChevronDown size={16} />
+                  </span>
+                ) : (
+                  <ChevronDown aria-hidden="true" className="topic-chevron mt-1 shrink-0 text-deep" size={22} />
+                )}
               </summary>
-              <div className="px-4 pb-5 md:px-6 md:pb-6">{body}</div>
+              <div className={night ? "topic-body" : "px-4 pb-5 md:px-6 md:pb-6"}>
+                {night ? <span /> : null}
+                <div className={night ? "topic-body-copy" : undefined}>{body}</div>
+              </div>
             </details>
           );
         })}
+      </div>
       </div>
     </section>
   );
