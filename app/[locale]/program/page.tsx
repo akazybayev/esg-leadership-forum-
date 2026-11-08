@@ -1,6 +1,8 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
+import { ProgramDownloads } from "@/components/program/ProgramDownloads";
 import { ProgramExplorer } from "@/components/program/ProgramExplorer";
+import { ProgramExplorerBoot } from "@/components/program/ProgramExplorerBoot";
 import { getProgram } from "@/lib/content";
 import { pageMetadata } from "@/lib/page-meta";
 
@@ -38,13 +40,12 @@ export default async function ProgramPage({
       <p className="mt-3 max-w-2xl text-lg text-ink-soft">
         {tProgram("intro")}
       </p>
+      <ProgramExplorerBoot />
+      <ProgramDownloads />
       <div className="mt-10">
-        <ProgramExplorer
-          note={program.note}
-          sessions={program.sessions}
-          initialDay="1"
-        />
+        <ProgramExplorer note={program.note} sessions={program.sessions} />
       </div>
+      <script src="/scripts/program-explorer.js" defer />
     </section>
   );
 }

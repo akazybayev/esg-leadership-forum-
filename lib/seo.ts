@@ -114,7 +114,7 @@ export function buildEventJsonLd(locale: Locale) {
     description: tLocalized(site.slogan, locale),
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",
-    startDate: `${site.dates.day1}T09:00:00+05:00`,
+    startDate: `${site.dates.day1}T08:00:00+05:00`,
     endDate: `${site.dates.day2}T22:00:00+05:00`,
     eventSchedule: {
       "@type": "Schedule",

@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d1-1730-signing@esg-leadership-forum
+DTSTAMP:20271013T123000Z
+DTSTART:20271013T123000Z
+DTEND:20271013T130000Z
+SUMMARY:Церемония подписания: соглашения первого дня
+DESCRIPTION:Церемония подписания: соглашения первого дня\nAstana time (UTC+5)
+LOCATION:Main Stage\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

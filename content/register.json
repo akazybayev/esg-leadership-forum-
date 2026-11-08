@@ -76,16 +76,6 @@
       "delegate": true
     },
     {
-      "id": "day0",
-      "label": {
-        "ru": "Визиты Дня 0 и встречи со спикерами",
-        "en": "Day 0 visits and speaker roundtables",
-        "kk": "0-күн сапарлары және спикер кездесулері"
-      },
-      "guest": false,
-      "delegate": true
-    },
-    {
       "id": "materials",
       "label": {
         "ru": "Сборник кейсов, записи, список участников, бейдж",

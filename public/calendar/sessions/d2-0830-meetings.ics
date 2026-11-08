@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d2-0830-meetings@esg-leadership-forum
+DTSTAMP:20271014T033000Z
+DTSTART:20271014T033000Z
+DTEND:20271014T043000Z
+SUMMARY:Утренний кофе\, назначенные встречи 1:1
+DESCRIPTION:Утренний кофе\, назначенные встречи 1:1\nAstana time (UTC+5)
+LOCATION:Expo\, B2B Lounge\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

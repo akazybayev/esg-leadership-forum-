@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { TopicAgenda } from "@/components/home/TopicAgenda";
+import { ForumArchitecture } from "@/components/program/ForumArchitecture";
 import { ShareButtons } from "@/components/share/ShareButtons";
 import { getTopics } from "@/lib/content";
 import { absoluteUrl } from "@/lib/seo";
@@ -33,8 +34,6 @@ export default async function AboutPage({
   const topics = getTopics();
 
   const paragraphs = ["p1", "p2", "p3", "p4", "p5", "p6"] as const;
-  const day1 = ["a", "b", "c", "d", "e"] as const;
-  const day2 = ["a", "b", "c", "d", "e"] as const;
   const stats = [
     ["participants", "500"],
     ["countries", "20+"],
@@ -151,22 +150,8 @@ export default async function AboutPage({
 
       <section className="container-shell py-14 md:py-20">
         <h2 className="text-3xl font-bold text-deep">{t("daysTitle")}</h2>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          {(["day1", "day2"] as const).map((day) => (
-            <article key={day} className="border border-line bg-white/70 p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-accent">
-                {t(`${day}.date`)}
-              </p>
-              <h3 className="mt-2 text-2xl font-bold text-deep">{t(`${day}.title`)}</h3>
-              <ul className="mt-4 space-y-2 text-ink-soft">
-                {(day === "day1" ? day1 : day2).map((item) => (
-                  <li key={item} className="border-t border-line pt-2">
-                    {t(`${day}.item.${item}`)}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
+        <div className="mt-8">
+          <ForumArchitecture />
         </div>
         <Link href="/program" className="btn btn-secondary mt-6">
           {t("fullProgram")}

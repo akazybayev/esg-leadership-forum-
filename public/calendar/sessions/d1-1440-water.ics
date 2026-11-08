@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d1-1440-water@esg-leadership-forum
+DTSTAMP:20271013T094000Z
+DTSTART:20271013T094000Z
+DTEND:20271013T105000Z
+SUMMARY:Вода как стратегический риск: адаптация бизнеса и городов Центральной Азии к новому климату
+DESCRIPTION:Вода как стратегический риск: адаптация бизнеса и городов Центральной Азии к новому климату\nAstana time (UTC+5)
+LOCATION:Hall B\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

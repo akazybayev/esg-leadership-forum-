@@ -26,7 +26,6 @@ export const siteConfigSchema = z.object({
   timezone: z.literal("Asia/Almaty"),
   stage: forumStageSchema,
   dates: z.object({
-    arrival: z.string(),
     day1: z.string(),
     day2: z.string(),
     youthPitchOpen: z.string(),
@@ -90,10 +89,12 @@ export const venueRoomSchema = z.enum([
   "Impact Stage",
   "Master Class 1",
   "Master Class 2",
-  "Closed Hall",
-  "B2B Lounge",
-  "Foyer",
+  "Закрытый зал",
   "Expo",
+  "Фойе, Expo",
+  "Ресторан",
+  "Площадка отеля",
+  "Expo, B2B Lounge",
 ]);
 
 export const accessLevelSchema = z.enum(["open", "delegates"]);
@@ -114,7 +115,7 @@ export const sessionFormatSchema = z.enum([
 
 export const programSessionSchema = z.object({
   id: z.string(),
-  day: z.enum(["0", "1", "2"]),
+  day: z.enum(["1", "2"]),
   start: z.string(),
   end: z.string(),
   room: venueRoomSchema,
@@ -133,6 +134,36 @@ export const programSchema = z.object({
   note: localizedStringSchema,
   sessions: z.array(programSessionSchema),
 });
+
+export const architectureSchema = z.object({
+  zonesTitle: localizedStringSchema,
+  zones: z.array(localizedStringSchema),
+  days: z.array(
+    z.object({
+      id: z.enum(["1", "2"]),
+      kicker: localizedStringSchema,
+      title: localizedStringSchema,
+      blocks: z.array(
+        z.object({
+          id: z.string(),
+          label: localizedStringSchema,
+          time: z.string(),
+          note: localizedStringSchema.optional(),
+          climax: z.boolean().optional(),
+          climaxLabel: localizedStringSchema.optional(),
+          sessions: z.array(
+            z.object({
+              name: z.string(),
+              linkName: z.string().optional(),
+            }),
+          ),
+        }),
+      ),
+    }),
+  ),
+});
+
+export type ForumArchitecture = z.infer<typeof architectureSchema>;
 
 export const speakerSchema = z.object({
   id: z.string(),

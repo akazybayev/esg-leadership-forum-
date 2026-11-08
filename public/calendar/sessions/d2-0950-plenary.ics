@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d2-0950-plenary@esg-leadership-forum
+DTSTAMP:20271014T045000Z
+DTSTART:20271014T045000Z
+DTEND:20271014T060000Z
+SUMMARY:Социальный контракт бизнеса: партнерства с НПО\, которые дают измеримый результат
+DESCRIPTION:Три пары «компания + НПО» рассказывают один проект с двух сторон.\nAstana time (UTC+5)
+LOCATION:Main Stage\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

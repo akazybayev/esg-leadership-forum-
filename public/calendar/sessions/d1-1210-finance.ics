@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d1-1210-finance@esg-leadership-forum
+DTSTAMP:20271013T071000Z
+DTSTART:20271013T071000Z
+DTEND:20271013T082000Z
+SUMMARY:Кто платит за переход: как привлечь капитал под зеленые\, социальные и переходные проекты в 2027–2030 годах
+DESCRIPTION:Кто платит за переход: как привлечь капитал под зеленые\, социальные и переходные проекты в 2027–2030 годах\nAstana time (UTC+5)
+LOCATION:Main Stage\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d2-1345-circular@esg-leadership-forum
+DTSTAMP:20271014T084500Z
+DTSTART:20271014T084500Z
+DTEND:20271014T101500Z
+SUMMARY:Отходы как сырье: циркулярные модели\, которые окупились – кейсы городов и компаний
+DESCRIPTION:Отходы как сырье: циркулярные модели\, которые окупились – кейсы городов и компаний\nAstana time (UTC+5)
+LOCATION:Hall B\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

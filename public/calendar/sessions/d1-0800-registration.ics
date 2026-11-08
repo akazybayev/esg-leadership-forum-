@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d1-0800-registration@esg-leadership-forum
+DTSTAMP:20271013T030000Z
+DTSTART:20271013T030000Z
+DTEND:20271013T043000Z
+SUMMARY:Регистрация\, приветственный кофе\, открытие выставки
+DESCRIPTION:Регистрация\, приветственный кофе\, открытие выставки\nAstana time (UTC+5)
+LOCATION:Фойе\, Expo\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

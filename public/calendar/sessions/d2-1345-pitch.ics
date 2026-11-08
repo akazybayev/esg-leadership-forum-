@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d2-1345-pitch@esg-leadership-forum
+DTSTAMP:20271014T084500Z
+DTSTART:20271014T084500Z
+DTEND:20271014T101500Z
+SUMMARY:Финал Youth Impact Pitch: 8 проектов студентов и НПО\, жюри из партнеров\, гранты победителям
+DESCRIPTION:Финал Youth Impact Pitch: 8 проектов студентов и НПО\, жюри из партнеров\, гранты победителям\nAstana time (UTC+5)
+LOCATION:Main Stage\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

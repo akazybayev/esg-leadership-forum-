@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d2-1545-closing@esg-leadership-forum
+DTSTAMP:20271014T104500Z
+DTSTART:20271014T104500Z
+DTEND:20271014T113000Z
+SUMMARY:Семь поколений вперед: что Астана обещает в 2027 году и за что отчитается в 2028-м
+DESCRIPTION:Оглашение Astana ESG Leadership Commitments\, победители Youth Impact Pitch\, анонс форума 2028.\nAstana time (UTC+5)
+LOCATION:Main Stage\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

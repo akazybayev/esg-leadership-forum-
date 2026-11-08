@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d2-1630-expo@esg-leadership-forum
+DTSTAMP:20271014T113000Z
+DTSTART:20271014T113000Z
+DTEND:20271014T140000Z
+SUMMARY:Перестройка бального зала\, выставка до 18:00\, встречи 1:1
+DESCRIPTION:Выставка работает до 18:00 и открыта всем. Встречи 1:1 – для делегатов.\nAstana time (UTC+5)
+LOCATION:Expo\, B2B Lounge\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

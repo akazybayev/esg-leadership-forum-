@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d1-1025-plenary@esg-leadership-forum
+DTSTAMP:20271013T052500Z
+DTSTART:20271013T052500Z
+DTEND:20271013T064000Z
+SUMMARY:Центральная Азия как единый ESG-рынок: общие стандарты\, трансграничные проекты\, капитал региона
+DESCRIPTION:Министры стран региона\, международный финансовый институт\, банк развития\, CEO\, молодежный делегат.\nAstana time (UTC+5)
+LOCATION:Main Stage\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

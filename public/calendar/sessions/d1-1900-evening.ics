@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d1-1900-evening@esg-leadership-forum
+DTSTAMP:20271013T140000Z
+DTSTART:20271013T140000Z
+DTEND:20271013T160000Z
+SUMMARY:Вечерний прием: национальный вечер страны-гостя
+DESCRIPTION:Вечерний прием: национальный вечер страны-гостя\nAstana time (UTC+5)
+LOCATION:Площадка отеля\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

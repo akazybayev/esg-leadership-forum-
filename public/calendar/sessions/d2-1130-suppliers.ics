@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d2-1130-suppliers@esg-leadership-forum
+DTSTAMP:20271014T063000Z
+DTSTART:20271014T063000Z
+DTEND:20271014T074500Z
+SUMMARY:Поставщик спросит завтра: ESG-требования в закупках\, анкета поставщика и что делать\, если вы ее не пройдете
+DESCRIPTION:Поставщик спросит завтра: ESG-требования в закупках\, анкета поставщика и что делать\, если вы ее не пройдете\nAstana time (UTC+5)
+LOCATION:Master Class 2\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

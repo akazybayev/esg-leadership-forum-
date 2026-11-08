@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ESG Leadership Forum//Programme//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d1-1210-reporting@esg-leadership-forum
+DTSTAMP:20271013T071000Z
+DTSTART:20271013T071000Z
+DTEND:20271013T082000Z
+SUMMARY:Один отчет для всех рынков: как совместить ISSB (МСФО S1/S2)\, GRI и ESRS и не утроить расходы
+DESCRIPTION:Один отчет для всех рынков: как совместить ISSB (МСФО S1/S2)\, GRI и ESRS и не утроить расходы\nAstana time (UTC+5)
+LOCATION:Hall B\, Hilton Astana
+END:VEVENT
+END:VCALENDAR

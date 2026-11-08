@@ -32,17 +32,21 @@ function postForms(html) {
 
 function toStaticHtml(html) {
   const withoutScripts = html
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
+    .replace(/<script\b(?![^>]*type=["']application\/ld\+json["'])[^>]*>[\s\S]*?<\/script>/gi, "")
     .replace(/<link rel="preload" as="script"[^>]*>/gi, "")
     .replace(/<link rel="preload" href="\/_next\/static\/chunks[^>]*>/gi, "");
   let page = postForms(withoutScripts)
     .replaceAll("/_next/static/css/", "/static/css/")
     .replaceAll("/_next/static/media/", "/static/media/");
+  const scripts = [];
   if (page.includes("topic-details") && !page.includes("/scripts/topic-agenda.js")) {
-    page = page.replace(
-      "</body>",
-      '<script src="/scripts/topic-agenda.js" defer></script></body>',
-    );
+    scripts.push('<script src="/scripts/topic-agenda.js" defer></script>');
+  }
+  if (page.includes("data-program-explorer") && !page.includes("/scripts/program-explorer.js")) {
+    scripts.push('<script src="/scripts/program-explorer.js" defer></script>');
+  }
+  if (scripts.length) {
+    page = page.replace("</body>", `${scripts.join("")}</body>`);
   }
   return page;
 }
