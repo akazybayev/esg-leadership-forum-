@@ -80,6 +80,7 @@ export default async function AttendeesPage({
               src={content.venue.image.src}
               alt={tLocalized(content.venue.image.alt, locale)}
               fill
+              data-zoom=""
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
@@ -114,6 +115,7 @@ export default async function AttendeesPage({
                   src={hall.image.src}
                   alt={tLocalized(hall.image.alt, locale)}
                   fill
+                  data-zoom=""
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
@@ -144,6 +146,7 @@ export default async function AttendeesPage({
                 src={content.floorPlan.image.src}
                 alt={tLocalized(content.floorPlan.image.alt, locale)}
                 fill
+                data-zoom=""
                 className="object-contain object-top p-2 md:p-4"
                 sizes="100vw"
               />
@@ -157,6 +160,7 @@ export default async function AttendeesPage({
                   src={content.floorPlan.diagram.src}
                   alt={tLocalized(content.floorPlan.diagram.alt, locale)}
                   fill
+                  data-zoom=""
                   className="object-contain p-3"
                   sizes="(max-width: 1024px) 100vw, 60vw"
                 />

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
@@ -115,6 +116,15 @@ export default async function LocaleLayout({
           </main>
           <Footer site={site} locale={locale} />
           <MobileRegisterBar label={tA11y("mobileRegister")} />
+          <dialog className="zoom-dialog" data-zoom-dialog="">
+            <div className="zoom-dialog-bar">
+              <button type="button" data-zoom-close="">
+                {locale === "en" ? "Close" : locale === "kk" ? "Жабу" : "Закрыть"}
+              </button>
+            </div>
+            <img data-zoom-frame="" alt="" />
+          </dialog>
+          <Script src="/scripts/zoom.js" strategy="afterInteractive" />
           <JsonLd data={buildEventJsonLd(locale)} />
         </NextIntlClientProvider>
       </body>

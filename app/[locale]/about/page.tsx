@@ -73,25 +73,11 @@ export default async function AboutPage({
       </section>
 
       <section id="address" className="border-y border-line bg-white/40 py-14 md:py-20">
-        <div className="container-shell grid gap-8 md:grid-cols-[minmax(0,280px)_1fr] md:items-start">
-          <figure>
-            <div className="relative aspect-[4/5] overflow-hidden bg-deep">
-              <Image
-                src="/images/people/aidar-kazybayev.jpg"
-                alt={t("photoAlt")}
-                fill
-                className="object-cover object-top"
-                sizes="(min-width: 768px) 280px, 100vw"
-              />
-            </div>
-          </figure>
+        <div className="container-shell">
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-deep md:text-4xl">
               {t("addressTitle")}
             </h2>
-            <p className="mt-4 text-sm font-medium leading-relaxed text-deep">
-              {t("photoCaption")}
-            </p>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-ink-soft">
               <p className="font-medium text-ink">{t("greeting")}</p>
               {paragraphs.map((key) => (

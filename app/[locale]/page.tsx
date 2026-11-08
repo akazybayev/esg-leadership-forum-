@@ -208,6 +208,7 @@ export default async function HomePage({
             src="/images/people/aidar-kazybayev.jpg"
             alt={tHome("initiatorAlt")}
             fill
+            data-zoom=""
             className="object-cover object-top"
             sizes="(min-width: 768px) 240px, 100vw"
           />
@@ -353,6 +354,7 @@ export default async function HomePage({
               src={award.statueImage}
               alt={tLocalized(award.statueCaption, locale)}
               fill
+              data-zoom=""
               sizes="(max-width: 900px) 100vw, 40vw"
             />
             <figcaption className="absolute inset-x-6 bottom-5 text-sm text-[var(--color-mist)]">
@@ -499,6 +501,7 @@ export default async function HomePage({
               src={home.venue.image.src}
               alt={tLocalized(home.venue.image.alt, locale)}
               fill
+              data-zoom=""
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
@@ -528,6 +531,7 @@ export default async function HomePage({
                   src={home.venue.planImage.src}
                   alt={tLocalized(home.venue.planImage.alt, locale)}
                   fill
+                  data-zoom=""
                   className="object-contain p-3"
                   sizes="100vw"
                 />

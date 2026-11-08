@@ -31,6 +31,7 @@ export function OrganizerSection({ locale }: { locale: Locale }) {
                       width={block.portrait.width}
                       height={block.portrait.height}
                       alt={name}
+                      data-zoom=""
                     />
                   ) : null}
                   <div>
