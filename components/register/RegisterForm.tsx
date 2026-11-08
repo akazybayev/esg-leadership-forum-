@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useLocale, useTranslations } from "next-intl";
 import { z } from "zod";
 import { Link } from "@/i18n/navigation";
+import { TurnstileField } from "@/components/forms/TurnstileField";
 import { forumLineIds } from "@/lib/pricing";
 
 type Status = "guest" | "delegate";
@@ -230,6 +231,8 @@ export function RegisterForm({ priceLabel }: { priceLabel: string }) {
       ) : null}
 
       <input type="text" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" {...register("company_website")} />
+
+      <TurnstileField />
 
       <button type="submit" className="btn btn-primary justify-self-start" disabled={isSubmitting}>
         {isSubmitting ? "…" : t("submit")}

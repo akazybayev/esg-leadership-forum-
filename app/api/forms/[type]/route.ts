@@ -3,6 +3,7 @@ import { formTypes, type FormType } from "@/schemas/forms";
 import { processFormSubmission } from "@/lib/forms/submit";
 import { requestIsSameOrigin } from "@/lib/forms/origin";
 import { checkRateLimit, clientAddress } from "@/lib/forms/rate-limit";
+import { turnstilePasses } from "@/lib/forms/turnstile";
 import {
   formLocale,
   formReturnPath,
@@ -69,6 +70,7 @@ function htmlPage(locale: string, title: string, message: string, backHref: stri
 const COPY = {
   ru: {
     refused: ["Отправка отклонена", "Заявку можно отправить только с этого сайта."],
+    robot: ["Проверка не пройдена", "Подтвердите, что вы человек, и отправьте форму еще раз."],
     limited: ["Слишком много заявок", "Попробуйте позже."],
     large: ["Заявка слишком большая", "Сократите текст и отправьте еще раз."],
     invalid: ["Проверьте форму", "Заполните обязательные поля и отправьте еще раз."],
@@ -77,6 +79,7 @@ const COPY = {
   },
   en: {
     refused: ["Submission refused", "An application can be sent only from this site."],
+    robot: ["Check was not completed", "Confirm that you are human and send the form again."],
     limited: ["Too many applications", "Please try again later."],
     large: ["Application is too large", "Shorten the text and send it again."],
     invalid: ["Check the form", "Fill in the required fields and send it again."],
@@ -85,6 +88,7 @@ const COPY = {
   },
   kk: {
     refused: ["Жіберу қабылданбады", "Өтінімді тек осы сайттан жіберуге болады."],
+    robot: ["Тексеру өтпеді", "Адам екеніңізді растап, форманы қайта жіберіңіз."],
     limited: ["Өтінім тым көп", "Кейінірек қайталап көріңіз."],
     large: ["Өтінім тым үлкен", "Мәтінді қысқартып, қайта жіберіңіз."],
     invalid: ["Форманы тексеріңіз", "Міндетті өрістерді толтырып, қайта жіберіңіз."],
@@ -143,15 +147,9 @@ export async function POST(
     return reply(html, locale, 413, "large", backHref);
   }
 
-  const limited = await checkRateLimit(clientAddress(request));
-  if (!limited.ok) {
-    return reply(html, locale, 429, "limited", backHref, {
-      "Retry-After": String(limited.retryAfterSec),
-    });
-  }
-
   let payload: unknown;
   let fields: Record<string, string> = {};
+  let token = "";
   try {
     const raw = await readLimited(request, MAX_BODY_CHARS);
     if (raw === null) {
@@ -159,9 +157,20 @@ export async function POST(
     }
     if (html) {
       fields = parseUrlEncoded(raw);
+      token = fields["cf-turnstile-response"] || "";
+      delete fields["cf-turnstile-response"];
       payload = normalizeFormFields(fields);
     } else {
-      payload = JSON.parse(raw);
+      const parsed = JSON.parse(raw) as unknown;
+      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+        const record = { ...(parsed as Record<string, unknown>) };
+        const rawToken = record["cf-turnstile-response"];
+        token = typeof rawToken === "string" ? rawToken : "";
+        delete record["cf-turnstile-response"];
+        payload = record;
+      } else {
+        payload = parsed;
+      }
     }
   } catch {
     return reply(html, locale, 400, "invalid", backHref);
@@ -169,6 +178,18 @@ export async function POST(
 
   const pageLocale = formLocale(fields, request.headers.get("referer"));
   const pageBack = formReturnPath(rawType, pageLocale);
+
+  if (!(await turnstilePasses(token))) {
+    return reply(html, pageLocale, 403, "robot", pageBack);
+  }
+
+  const limited = await checkRateLimit(clientAddress(request));
+  if (!limited.ok) {
+    return reply(html, pageLocale, 429, "limited", pageBack, {
+      "Retry-After": String(limited.retryAfterSec),
+    });
+  }
+
   const result = await processFormSubmission(rawType, payload);
   if (!result.ok) {
     const key = result.error === "Promo code is not valid" ? "promo" : result.status === 429 ? "limited" : result.status >= 500 ? "failed" : "invalid";

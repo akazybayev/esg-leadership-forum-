@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import type { z } from "zod";
 import { formSchemaByType, type FormType } from "@/schemas/forms";
 import { ConsentCheckbox } from "@/components/forms/ConsentCheckbox";
+import { TurnstileField } from "@/components/forms/TurnstileField";
 
 export type DemoField = {
   name: string;
@@ -170,6 +171,8 @@ export function DemoApplyForm({
         )}
         inputProps={register("consent" as never)}
       />
+
+      <TurnstileField />
 
       <button
         type="submit"
