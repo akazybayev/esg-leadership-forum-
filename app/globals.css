@@ -42,6 +42,9 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  scroll-padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+  overflow-x: clip;
 }
 
 body {
@@ -267,7 +270,7 @@ a {
   background: linear-gradient(90deg, rgba(232, 176, 75, 0.22), transparent);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 960px) {
   .arch-switch {
     display: none;
   }
@@ -800,9 +803,23 @@ a {
   font-size: 16px;
 }
 
-.slot small {
-  display: block;
-  margin-top: 2px;
+.slot-sessions {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-ink-soft);
+  font-size: 15px;
+}
+
+.slot-sessions a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.slot-note {
+  margin-top: 6px;
   color: var(--color-ink-soft);
   font-size: 14px;
 }
@@ -1177,6 +1194,82 @@ body:has(header details[open]) .mobile-register {
 @media (max-width: 760px) {
   .guest-card,
   .partner-row { grid-template-columns: 1fr; }
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+  font-size: 16px;
+}
+
+select {
+  width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: calc(7.5rem + env(safe-area-inset-bottom));
+  }
+
+  .hero-count {
+    order: 4;
+  }
+
+  .hero-cta {
+    order: 5;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-cta .btn,
+  .tier .btn,
+  .chip {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-date {
+    letter-spacing: 0.04em;
+    line-height: 1.45;
+  }
+
+  .count-row {
+    justify-content: space-between;
+  }
+
+  .download-row {
+    flex-direction: column;
+  }
+
+  .day-card {
+    padding: 20px 16px;
+  }
+
+  .slot-sessions a {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  form label {
+    min-width: 0;
+  }
+
+  .guest-card .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-horizon .hero-cta .btn-primary,
+  .deadline-cta {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {

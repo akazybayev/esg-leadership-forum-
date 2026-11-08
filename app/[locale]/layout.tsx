@@ -103,7 +103,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${manrope.variable} ${unbounded.variable}`}>
-      <body className="pb-20 font-sans antialiased md:pb-0">
+      <body className="pb-[calc(5.75rem+env(safe-area-inset-bottom))] font-sans antialiased md:pb-0">
         <NextIntlClientProvider messages={messages}>
           <SkipLink />
           <Header

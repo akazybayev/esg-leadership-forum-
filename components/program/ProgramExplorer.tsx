@@ -42,7 +42,7 @@ export async function ProgramExplorer({ note, sessions }: Props) {
             type="button"
             data-day-filter={value}
             aria-pressed="false"
-            className="program-day-link rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink-soft"
+            className="program-day-link inline-flex min-h-11 items-center rounded-full border border-line bg-white px-4 text-sm font-semibold text-ink-soft"
           >
             {t(`day${value}`)}
           </button>
@@ -50,9 +50,9 @@ export async function ProgramExplorer({ note, sessions }: Props) {
       </nav>
 
       <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
-        <label className="grid gap-1 text-sm">
+        <label className="grid min-w-0 gap-1 text-sm">
           <span className="font-medium text-ink-soft">{t("filterLine")}</span>
-          <select className="min-h-11 rounded-lg border border-line bg-white px-3" data-filter="line" defaultValue="">
+          <select className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-white px-3 text-base" data-filter="line" defaultValue="">
             <option value="">{t("any")}</option>
             {lines.map((value) => (
               <option key={value} value={value}>
@@ -61,9 +61,9 @@ export async function ProgramExplorer({ note, sessions }: Props) {
             ))}
           </select>
         </label>
-        <label className="grid gap-1 text-sm">
+        <label className="grid min-w-0 gap-1 text-sm">
           <span className="font-medium text-ink-soft">{t("filterRoom")}</span>
-          <select className="min-h-11 rounded-lg border border-line bg-white px-3" data-filter="room" defaultValue="">
+          <select className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-white px-3 text-base" data-filter="room" defaultValue="">
             <option value="">{t("any")}</option>
             {rooms.map((value) => (
               <option key={value} value={value}>
@@ -72,9 +72,9 @@ export async function ProgramExplorer({ note, sessions }: Props) {
             ))}
           </select>
         </label>
-        <label className="grid gap-1 text-sm">
+        <label className="grid min-w-0 gap-1 text-sm">
           <span className="font-medium text-ink-soft">{t("filterFormat")}</span>
-          <select className="min-h-11 rounded-lg border border-line bg-white px-3" data-filter="format" defaultValue="">
+          <select className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-white px-3 text-base" data-filter="format" defaultValue="">
             <option value="">{t("any")}</option>
             {formats.map((value) => (
               <option key={value} value={value}>
@@ -83,18 +83,18 @@ export async function ProgramExplorer({ note, sessions }: Props) {
             ))}
           </select>
         </label>
-        <label className="grid gap-1 text-sm">
+        <label className="grid min-w-0 gap-1 text-sm">
           <span className="font-medium text-ink-soft">{t("filterAccess")}</span>
-          <select className="min-h-11 rounded-lg border border-line bg-white px-3" data-filter="access" defaultValue="">
+          <select className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-white px-3 text-base" data-filter="access" defaultValue="">
             <option value="">{t("any")}</option>
             <option value="open">{tAccess("open")}</option>
             <option value="delegates">{tAccess("delegates")}</option>
           </select>
         </label>
-        <label className="grid gap-1 text-sm">
+        <label className="grid min-w-0 gap-1 text-sm">
           <span className="font-medium text-ink-soft">{t("search")}</span>
           <input
-            className="min-h-11 rounded-lg border border-line bg-white px-3"
+            className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-white px-3 text-base"
             data-filter="q"
             defaultValue=""
             placeholder={t("searchPlaceholder")}

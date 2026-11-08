@@ -47,26 +47,22 @@ export async function ForumArchitecture() {
                   <div key={block.id} className={peak ? "slot slot-peak" : "slot"}>
                     <time>{block.time}</time>
                     <b>{tLocalized(block.label, locale)}</b>
-                    <small>
-                      {block.sessions.map((item, index) => {
+                    <ul className="slot-sessions">
+                      {block.sessions.map((item) => {
                         const sessionId = byName.get(item.linkName ?? item.name);
-                        const node = sessionId ? (
-                          <Link key={item.name} href={`/program/${sessionId}`} className="hover:underline">
-                            {item.name}
-                          </Link>
-                        ) : (
-                          <span key={item.name}>{item.name}</span>
-                        );
                         return (
-                          <span key={item.name}>
-                            {index > 0 ? " · " : null}
-                            {node}
-                          </span>
+                          <li key={item.name}>
+                            {sessionId ? (
+                              <Link href={`/program/${sessionId}`}>{item.name}</Link>
+                            ) : (
+                              item.name
+                            )}
+                          </li>
                         );
                       })}
-                      {block.climaxLabel ? ` · ${tLocalized(block.climaxLabel, locale)}` : ""}
-                      {block.note ? ` · ${tLocalized(block.note, locale)}` : ""}
-                    </small>
+                    </ul>
+                    {block.climaxLabel ? <p className="slot-note">{tLocalized(block.climaxLabel, locale)}</p> : null}
+                    {block.note ? <p className="slot-note">{tLocalized(block.note, locale)}</p> : null}
                   </div>
                 );
               })}

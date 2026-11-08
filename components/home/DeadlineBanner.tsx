@@ -21,7 +21,7 @@ export function DeadlineBanner({
           {" · "}
           {tLocalized(deadline.label, locale)}
         </p>
-        <Link href="/register" className="underline-offset-4 hover:underline">
+        <Link href="/register" className="deadline-cta inline-flex min-h-11 items-center justify-center underline-offset-4 hover:underline">
           {ctaLabel}
         </Link>
       </div>

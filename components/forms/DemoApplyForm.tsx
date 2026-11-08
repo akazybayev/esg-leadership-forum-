@@ -89,7 +89,7 @@ export function DemoApplyForm({
       id={id}
       method="post"
       action={`/api/forms/${formType}`}
-      className="mt-6 grid gap-4 border border-line bg-white/70 p-5 md:p-6"
+      className="mt-6 grid min-w-0 gap-4 border border-line bg-white/70 p-4 md:p-6"
       onSubmit={onSubmit}
     >
       <input type="hidden" name="locale" value={locale} />
@@ -104,7 +104,7 @@ export function DemoApplyForm({
           errors as Record<string, { message?: string } | undefined>
         )[field.name];
         return (
-          <label key={field.name} className="grid gap-1.5 text-sm">
+          <label key={field.name} className="grid min-w-0 gap-1.5 text-sm">
             <span className="font-medium text-ink">
               {field.label}
               {field.required ? " *" : ""}
@@ -115,13 +115,13 @@ export function DemoApplyForm({
                 rows={5}
                 required={field.required}
                 placeholder={field.placeholder}
-                className="rounded-lg border border-line bg-white px-3 py-2"
+                className="w-full min-w-0 rounded-lg border border-line bg-white px-3 py-2 text-base"
                 aria-invalid={Boolean(fieldError)}
               />
             ) : field.type === "select" ? (
               <select
                 {...register(field.name as never)}
-                className="min-h-11 rounded-lg border border-line bg-white px-3"
+                className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-white px-3 text-base"
                 defaultValue=""
                 required={field.required}
                 aria-invalid={Boolean(fieldError)}
@@ -141,7 +141,7 @@ export function DemoApplyForm({
                 type={field.type || "text"}
                 required={field.required}
                 placeholder={field.placeholder}
-                className="min-h-11 rounded-lg border border-line bg-white px-3"
+                className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-white px-3 text-base"
                 aria-invalid={Boolean(fieldError)}
               />
             )}
