@@ -2,7 +2,9 @@ import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
+import { TopicAgenda } from "@/components/home/TopicAgenda";
 import { ShareButtons } from "@/components/share/ShareButtons";
+import { getTopics } from "@/lib/content";
 import { absoluteUrl } from "@/lib/seo";
 import { forumLineIds } from "@/lib/pricing";
 import { pageMetadata } from "@/lib/page-meta";
@@ -28,6 +30,7 @@ export default async function AboutPage({
   const tLines = await getTranslations("lines");
   const tCta = await getTranslations("cta");
   const tShare = await getTranslations("share");
+  const topics = getTopics();
 
   const paragraphs = ["p1", "p2", "p3", "p4", "p5", "p6"] as const;
   const day1 = ["a", "b", "c", "d", "e"] as const;
@@ -143,6 +146,8 @@ export default async function AboutPage({
           </div>
         </div>
       </section>
+
+      <TopicAgenda topics={topics} locale={locale} variant="open" />
 
       <section className="container-shell py-14 md:py-20">
         <h2 className="text-3xl font-bold text-deep">{t("daysTitle")}</h2>

@@ -6,6 +6,7 @@ import { Countdown } from "@/components/home/Countdown";
 import { DeadlineBanner } from "@/components/home/DeadlineBanner";
 import { EmptyAnnounce } from "@/components/home/EmptyAnnounce";
 import { NewsletterForm } from "@/components/home/NewsletterForm";
+import { TopicAgenda } from "@/components/home/TopicAgenda";
 import {
   getAward,
   getDelegatePriceUsd,
@@ -13,6 +14,7 @@ import {
   getHomeContent,
   getSiteConfig,
   getSponsors,
+  getTopics,
   tLocalized,
 } from "@/lib/content";
 import { daysUntil, formatForumDate } from "@/lib/dates";
@@ -44,6 +46,7 @@ export default async function HomePage({
 
   const site = getSiteConfig();
   const home = getHomeContent();
+  const topics = getTopics();
   const award = getAward();
   const sponsors = getSponsors();
   const headlines = getHeadlineSessions();
@@ -214,27 +217,7 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="container-shell py-16 md:py-20">
-        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-          {tLocalized(home.agenda.eyebrow, locale)}
-        </p>
-        <h2 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-deep md:text-5xl">
-          {tLocalized(home.agenda.title, locale)}
-        </h2>
-        <ul className="mt-10 divide-y divide-line border-y border-line">
-          {home.agenda.items.map((item) => (
-            <li key={item.id}>
-              <Link
-                href={`/program?${item.query}`}
-                className="flex items-center justify-between gap-4 py-4 text-lg font-medium text-deep transition hover:text-accent md:text-xl"
-              >
-                <span>{tLocalized(item.title, locale)}</span>
-                <span aria-hidden="true">→</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <TopicAgenda topics={topics} locale={locale} variant="accordion" />
 
       <section className="container-shell py-16 md:py-20">
         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">

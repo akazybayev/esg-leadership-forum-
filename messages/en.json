@@ -114,6 +114,9 @@
   "stage": {
     "stub": "Page under construction — stage {stage}."
   },
+  "topics": {
+    "inProgram": "In the programme:"
+  },
   "program": {
     "intro": "Arrival day and two forum days. Filter by track, room, format and access.",
     "days": "Days",

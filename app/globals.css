@@ -142,6 +142,29 @@ a {
   background: #143141;
 }
 
+.topic-disclosure {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 280ms ease;
+}
+
+.topic-disclosure[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.topic-disclosure-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.topic-chevron {
+  transition: transform 280ms ease;
+}
+
+.topic-chevron[data-open="true"] {
+  transform: rotate(180deg);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
