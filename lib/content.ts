@@ -319,6 +319,38 @@ export function getHeadlineSessions() {
   };
 }
 
+export type OrganizerContent = {
+  title: LocalizedString;
+  recognition: LocalizedString;
+  close: LocalizedString;
+  previous: LocalizedString;
+  next: LocalizedString;
+  blocks: {
+    id: string;
+    name: LocalizedString;
+    subtitle: LocalizedString;
+    paragraphs: LocalizedString[];
+    logo?: { src: string; width: number; height: number };
+    portrait?: { src: string; width: number; height: number };
+    stats?: { value: string; label: LocalizedString }[];
+    membersLabel?: LocalizedString;
+    members?: string[];
+    awardsLabel?: LocalizedString;
+    awards?: LocalizedString[];
+    link?: { href: string; label: string };
+    recognition: {
+      src: string;
+      width: number;
+      height: number;
+      caption: LocalizedString;
+    }[];
+  }[];
+};
+
+export function getOrganizers(): OrganizerContent {
+  return loadJson("organizers.json") as OrganizerContent;
+}
+
 export function getDelegatePriceUsd(now = new Date()): {
   amount: number;
   isEarly: boolean;

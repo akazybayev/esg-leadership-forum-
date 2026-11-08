@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
+import { OrganizerSection } from "@/components/about/OrganizerSection";
 import { TopicAgenda } from "@/components/home/TopicAgenda";
 import { ForumArchitecture } from "@/components/program/ForumArchitecture";
 import { ShareButtons } from "@/components/share/ShareButtons";
@@ -158,38 +159,7 @@ export default async function AboutPage({
         </Link>
       </section>
 
-      <section className="border-y border-line bg-white/40 py-14 md:py-20">
-        <div className="container-shell grid gap-6">
-          <h2 className="text-3xl font-bold text-deep">{t("organizerTitle")}</h2>
-          <article className="border border-line bg-paper p-6">
-            <img
-              src="/images/brand/global-esg-partnership-logo.png"
-              alt={t("orgName")}
-              width={220}
-              height={175}
-              className="h-auto w-52"
-            />
-            <h3 className="mt-4 text-xl font-bold text-deep">{t("orgName")}</h3>
-            <p className="mt-3 leading-relaxed text-ink-soft">{t("orgText")}</p>
-          </article>
-          <article className="border border-line bg-paper p-6">
-            <h3 className="text-xl font-bold text-deep">{t("personName")}</h3>
-            <p className="mt-3 leading-relaxed text-ink-soft">{t("personText")}</p>
-          </article>
-          <article className="border border-line bg-paper p-6">
-            <h3 className="text-xl font-bold text-deep">{t("schoolName")}</h3>
-            <p className="mt-3 leading-relaxed text-ink-soft">{t("schoolText")}</p>
-            <a
-              href="https://www.esgschool.kz"
-              className="mt-4 inline-block text-sm font-semibold text-deep underline"
-              target="_blank"
-              rel="noreferrer"
-            >
-              www.esgschool.kz
-            </a>
-          </article>
-        </div>
-      </section>
+      <OrganizerSection locale={locale} />
 
       <section className="container-shell py-16 text-center md:py-20">
         <p className="mx-auto max-w-2xl text-2xl font-semibold leading-snug text-deep md:text-3xl">
