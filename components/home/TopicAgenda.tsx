@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useId, useState, type KeyboardEvent } from "react";
 import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -11,19 +10,8 @@ import type { TopicsContent } from "@/schemas/content";
 type Item = TopicsContent["items"][number];
 type SessionLink = Item["sessions"][number];
 
-function prefersReducedMotion() {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
-
 function topicHash(id: string) {
   return `topic-${id}`;
-}
-
-function idFromHash(hash: string, items: Item[]) {
-  const id = hash.replace(/^#/, "");
-  if (!id.startsWith("topic-")) return null;
-  const topicId = id.slice("topic-".length);
-  return items.some((item) => item.id === topicId) ? topicId : null;
 }
 
 function TopicTitle({ text }: { text: string }) {
@@ -100,57 +88,15 @@ export function TopicAgenda({
   variant: "accordion" | "open";
 }) {
   const t = useTranslations("topics");
-  const baseId = useId();
-  const [openId, setOpenId] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (variant !== "accordion") return;
-    const apply = (scroll: boolean) => {
-      const next = idFromHash(window.location.hash, topics.items);
-      setOpenId(next);
-      if (!next || !scroll) return;
-      const node = document.getElementById(topicHash(next));
-      node?.scrollIntoView({
-        behavior: prefersReducedMotion() ? "auto" : "smooth",
-        block: "start",
-      });
-    };
-    apply(true);
-    const onHash = () => apply(true);
-    window.addEventListener("hashchange", onHash);
-    return () => window.removeEventListener("hashchange", onHash);
-  }, [topics.items, variant]);
-
-  function toggle(id: string) {
-    const next = openId === id ? null : id;
-    setOpenId(next);
-    const url = new URL(window.location.href);
-    url.hash = next ? topicHash(next) : "";
-    window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
-  }
-
-  function onKeyDown(event: KeyboardEvent<HTMLDivElement>) {
-    if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return;
-    const triggers = [
-      ...event.currentTarget.querySelectorAll<HTMLButtonElement>("[data-topic-trigger]"),
-    ];
-    const index = triggers.findIndex((node) => node === document.activeElement);
-    if (index < 0) return;
-    event.preventDefault();
-    const next =
-      event.key === "ArrowDown"
-        ? (index + 1) % triggers.length
-        : (index - 1 + triggers.length) % triggers.length;
-    triggers[next]?.focus();
-  }
+  const headingId = "topic-agenda-heading";
 
   return (
-    <section className="container-shell py-16 md:py-20" aria-labelledby={`${baseId}-heading`}>
+    <section className="container-shell py-16 md:py-20" aria-labelledby={headingId}>
       <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
         {tLocalized(topics.eyebrow, locale)}
       </p>
       <h2
-        id={`${baseId}-heading`}
+        id={headingId}
         className="mt-3 max-w-4xl text-3xl font-bold tracking-tight text-deep md:text-5xl"
       >
         {tLocalized(topics.title, locale)}
@@ -158,75 +104,56 @@ export function TopicAgenda({
       <p className="mt-4 max-w-4xl text-lg text-ink-soft">
         {tLocalized(topics.subtitle, locale)}
       </p>
-      <div className="mt-10 flex flex-col gap-3" onKeyDown={variant === "accordion" ? onKeyDown : undefined}>
+      <div className="mt-10 flex flex-col gap-3">
         {topics.items.map((item) => {
-          const open = variant === "open" || openId === item.id;
-          const titleId = `${baseId}-${item.id}-title`;
-          const panelId = `${baseId}-${item.id}-panel`;
+          const titleId = `topic-${item.id}-title`;
+          const panelId = `topic-${item.id}-panel`;
           const title = tLocalized(item.title, locale);
           const subtitle = tLocalized(item.subtitle, locale);
+          const body = (
+            <div id={panelId} role="region" aria-labelledby={titleId}>
+              <TopicCopy item={item} locale={locale} />
+              <SessionLinks item={item} locale={locale} label={t("inProgram")} />
+            </div>
+          );
+          if (variant === "open") {
+            return (
+              <article
+                key={item.id}
+                id={topicHash(item.id)}
+                className="scroll-mt-28 border border-line bg-white px-4 py-5 md:px-6 md:py-6"
+              >
+                <h3 id={titleId} className="text-[22px] font-bold leading-snug text-deep md:text-[2rem]">
+                  <TopicTitle text={title} />
+                </h3>
+                <p className="mt-2 text-base leading-snug text-ink-soft md:text-lg">{subtitle}</p>
+                {body}
+              </article>
+            );
+          }
           return (
-            <article
+            <details
               key={item.id}
               id={topicHash(item.id)}
-              className="scroll-mt-28 border border-line bg-white"
+              name="topics"
+              className="topic-details scroll-mt-28 border border-line bg-white"
             >
-              {variant === "accordion" ? (
-                <h3>
-                  <button
-                    type="button"
-                    data-topic-trigger=""
-                    className="flex w-full items-start gap-4 px-4 py-5 text-left md:px-6 md:py-6"
-                    aria-expanded={open}
-                    aria-controls={panelId}
-                    onClick={() => toggle(item.id)}
-                  >
-                    <span className="min-w-0 flex-1">
-                      <span
-                        id={titleId}
-                        className="block text-[22px] font-bold leading-snug text-deep md:text-[2rem]"
-                      >
-                        <TopicTitle text={title} />
-                      </span>
-                      <span className="mt-2 block text-base leading-snug text-ink-soft md:text-lg">
-                        {subtitle}
-                      </span>
-                    </span>
-                    <ChevronDown
-                      aria-hidden="true"
-                      className="topic-chevron mt-1 shrink-0 text-deep"
-                      data-open={open ? "true" : "false"}
-                      size={22}
-                    />
-                  </button>
-                </h3>
-              ) : (
-                <div className="px-4 pt-5 md:px-6 md:pt-6">
-                  <h3
-                    id={titleId}
-                    className="text-[22px] font-bold leading-snug text-deep md:text-[2rem]"
-                  >
+              <summary
+                className="flex items-start gap-4 px-4 py-5 md:px-6 md:py-6"
+                aria-controls={panelId}
+              >
+                <span className="min-w-0 flex-1">
+                  <h3 id={titleId} className="text-[22px] font-bold leading-snug text-deep md:text-[2rem]">
                     <TopicTitle text={title} />
                   </h3>
-                  <p className="mt-2 text-base leading-snug text-ink-soft md:text-lg">{subtitle}</p>
-                </div>
-              )}
-              <div
-                id={panelId}
-                className={variant === "accordion" ? "topic-disclosure" : undefined}
-                data-open={open ? "true" : "false"}
-                role="region"
-                aria-labelledby={titleId}
-                inert={variant === "accordion" && !open ? true : undefined}
-              >
-                <div className={variant === "accordion" ? "topic-disclosure-inner" : undefined}>
-                  <div className="px-4 pb-5 md:px-6 md:pb-6">
-                    <TopicCopy item={item} locale={locale} />
-                    <SessionLinks item={item} locale={locale} label={t("inProgram")} />
-                  </div>
-                </div>
-              </div>
-            </article>
+                  <span className="mt-2 block text-base leading-snug text-ink-soft md:text-lg">
+                    {subtitle}
+                  </span>
+                </span>
+                <ChevronDown aria-hidden="true" className="topic-chevron mt-1 shrink-0 text-deep" size={22} />
+              </summary>
+              <div className="px-4 pb-5 md:px-6 md:pb-6">{body}</div>
+            </details>
           );
         })}
       </div>
