@@ -7,7 +7,7 @@ import {
   getTranslations,
   setRequestLocale,
 } from "next-intl/server";
-import { Manrope } from "next/font/google";
+import { Manrope, Unbounded } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileRegisterBar } from "@/components/layout/MobileRegisterBar";
@@ -25,6 +25,13 @@ import { routing, type Locale } from "@/i18n/routing";
 const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
   variable: "--font-manrope",
+  display: "swap",
+});
+
+const unbounded = Unbounded({
+  subsets: ["latin", "cyrillic"],
+  weight: ["300", "500", "700", "900"],
+  variable: "--font-unbounded",
   display: "swap",
 });
 
@@ -95,7 +102,7 @@ export default async function LocaleLayout({
   const tA11y = await getTranslations("a11y");
 
   return (
-    <html lang={locale} className={manrope.variable}>
+    <html lang={locale} className={`${manrope.variable} ${unbounded.variable}`}>
       <body className="pb-20 font-sans antialiased md:pb-0">
         <NextIntlClientProvider messages={messages}>
           <SkipLink />

@@ -35,51 +35,41 @@ export async function ForumArchitecture() {
         ))}
       </div>
 
-      <div className="arch-grid mt-4">
+      <div className="arch-grid mt-8 gap-7">
         {architecture.days.map((day) => (
-          <article key={day.id} className={`arch-day arch-day-${day.id} border border-line bg-white`}>
-            <header className="bg-deep px-5 py-5 text-white">
-              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#e2b79a]">
-                {tLocalized(day.kicker, locale)}
-              </p>
-              <h3 className="mt-2 text-2xl font-bold">{tLocalized(day.title, locale)}</h3>
-            </header>
-            <div className="space-y-3 p-3">
-              {day.blocks.map((block) => (
-                <section
-                  key={block.id}
-                  className={`border px-4 py-4 ${block.climax ? "arch-climax" : "border-line bg-paper"}`}
-                >
-                  <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <h4 className="font-bold text-deep">{tLocalized(block.label, locale)}</h4>
-                    <p className="meta-accent text-sm font-semibold">{block.time}</p>
+          <article key={day.id} className={`arch-day arch-day-${day.id} day-card`}>
+            <h3>{tLocalized(day.kicker, locale)}</h3>
+            <p className="day-theme">{tLocalized(day.title, locale)}</p>
+            <div className="slots">
+              {day.blocks.map((block) => {
+                const peak = Boolean(block.climax) || block.id === "finale";
+                return (
+                  <div key={block.id} className={peak ? "slot slot-peak" : "slot"}>
+                    <time>{block.time}</time>
+                    <b>{tLocalized(block.label, locale)}</b>
+                    <small>
+                      {block.sessions.map((item, index) => {
+                        const sessionId = byName.get(item.linkName ?? item.name);
+                        const node = sessionId ? (
+                          <Link key={item.name} href={`/program/${sessionId}`} className="hover:underline">
+                            {item.name}
+                          </Link>
+                        ) : (
+                          <span key={item.name}>{item.name}</span>
+                        );
+                        return (
+                          <span key={item.name}>
+                            {index > 0 ? " · " : null}
+                            {node}
+                          </span>
+                        );
+                      })}
+                      {block.climaxLabel ? ` · ${tLocalized(block.climaxLabel, locale)}` : ""}
+                      {block.note ? ` · ${tLocalized(block.note, locale)}` : ""}
+                    </small>
                   </div>
-                  {block.climax && block.climaxLabel ? (
-                    <p className="meta-accent mt-2 text-xs font-semibold uppercase tracking-[0.12em]">
-                      {tLocalized(block.climaxLabel, locale)}
-                    </p>
-                  ) : null}
-                  {block.note ? (
-                    <p className="mt-2 text-sm text-ink-soft">{tLocalized(block.note, locale)}</p>
-                  ) : null}
-                  <ul className="mt-3 space-y-2">
-                    {block.sessions.map((item) => {
-                      const sessionId = byName.get(item.linkName ?? item.name);
-                      return (
-                        <li key={item.name} className="border-t border-line pt-2 text-sm leading-snug">
-                          {sessionId ? (
-                            <Link href={`/program/${sessionId}`} className="font-medium text-ink hover:underline">
-                              {item.name}
-                            </Link>
-                          ) : (
-                            <span className="font-medium text-ink">{item.name}</span>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </section>
-              ))}
+                );
+              })}
             </div>
           </article>
         ))}

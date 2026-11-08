@@ -45,6 +45,9 @@ function toStaticHtml(html) {
   if (page.includes("data-program-explorer") && !page.includes("/scripts/program-explorer.js")) {
     scripts.push('<script src="/scripts/program-explorer.js" defer></script>');
   }
+  if (page.includes("data-countdown") && !page.includes("/scripts/horizon.js")) {
+    scripts.push('<script src="/scripts/horizon.js" defer></script>');
+  }
   if (scripts.length) {
     page = page.replace("</body>", `${scripts.join("")}</body>`);
   }

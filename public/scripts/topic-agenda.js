@@ -31,6 +31,10 @@
         }
       });
     });
+    if (!location.hash) {
+      var first = document.querySelector(".topic-night details.topic-details");
+      if (first) first.open = true;
+    }
     openFromHash();
   }
 

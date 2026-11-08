@@ -89,10 +89,10 @@
     "earlyBirdEnded": "Действует стандартная цена делегата"
   },
   "countdown": {
-    "days": "дни",
-    "hours": "часы",
-    "minutes": "мин",
-    "seconds": "сек"
+    "days": "дней",
+    "hours": "часов",
+    "minutes": "минут",
+    "seconds": "секунд"
   },
   "home": {
     "day1": "День 1 · 13 октября",
@@ -100,18 +100,48 @@
     "speakersEyebrow": "Спикеры",
     "speakersTitle": "Ключевые голоса форума",
     "partnersEyebrow": "Партнеры",
-    "partnersTitle": "Логотипы по уровням",
-    "statsDays": "дня форума",
+    "partnersTitle": "Места, которые займут в 2027 году",
+    "statsDays": "дня на одной площадке",
     "statsParticipants": "участников",
     "statsCountries": "стран",
     "statsYouth": "молодежных делегатов",
     "statsNominations": "номинаций ESG Award",
     "guestCountryCta": "Подробнее о статусе",
     "initiatorEyebrow": "Слово инициатора",
-    "initiatorQuote": "ESG Leadership Forum 2027 — площадка для тех, кто связывает устойчивое развитие с инвестициями, управлением и ростом бизнеса. Приезжайте с кейсом, вопросом или проектом — и уезжайте с партнерами.",
+    "initiatorQuote": "ESG Leadership Forum 2027 – площадка для тех, кто связывает устойчивое развитие с инвестициями, управлением и ростом бизнеса. Приезжайте с кейсом, вопросом или проектом – и уезжайте с партнерами.",
     "initiatorName": "Айдар Казыбаев, инициатор форума, основатель Global ESG Partnership",
     "initiatorCta": "Читать обращение",
-    "initiatorAlt": "Айдар Казыбаев"
+    "initiatorAlt": "Айдар Казыбаев",
+    "guestPerks": [
+      "Открытие, кейноуты, пленарные панели",
+      "Выставка ESG Expo и Impact Stage",
+      "Финал Youth Impact Pitch и закрытие"
+    ],
+    "delegatePerks": [
+      "Сессии в Hall B и мастер-классы с сертификатом",
+      "Закрытые сессии: регуляторы, инвесторы, рейтинговые агентства",
+      "B2B Lounge, встречи 1:1, обеды и вечерний прием",
+      "Гала-ужин и церемония ESG Award",
+      "Сборник кейсов, записи сессий, список участников"
+    ],
+    "ticketLead": "Открытые сессии на Main Stage и Impact Stage бесплатны. Делегат получает закрытые форматы, встречи и гала-церемонию.",
+    "guestCta": "Зарегистрироваться как гость",
+    "delegateCta": "Стать делегатом",
+    "priceLadder": "до {earlyDate} · далее {standardAmount} USD до {standardDate} · {lateAmount} USD с {lateDate}",
+    "untilRaise": "До повышения цены",
+    "dayShort": "дн.",
+    "earlyRibbon": "РАННЯЯ ЦЕНА ДО 31 ИЮЛЯ",
+    "standardRibbon": "СТАНДАРТНАЯ ЦЕНА ДО 30 СЕНТЯБРЯ",
+    "lateRibbon": "ПОЗДНЯЯ ЦЕНА",
+    "awardUntil": "до {date}",
+    "awardRules": "Правила премии",
+    "youthQuote": "Поколение ESG <em>задает вопросы</em> – руководители компаний отвечают со сцены",
+    "youthFactDelegates": "делегатов с голосом в каждой панели",
+    "youthFactFinalists": "финалистов питча на главной сцене",
+    "youthFactTracks": "направления: Planet, People, Digital & Governance",
+    "youthFactDeadline": "последний день приема заявок",
+    "flagLabel": "ФЛАГ",
+    "logoSlot": "Логотип"
   },
   "stage": {
     "stub": "Страница в разработке — этап {stage}."

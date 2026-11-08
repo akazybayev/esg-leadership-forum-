@@ -2,25 +2,40 @@ import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { Countdown } from "@/components/home/Countdown";
+import { Countdown, PriceClock } from "@/components/home/Countdown";
 import { DeadlineBanner } from "@/components/home/DeadlineBanner";
-import { EmptyAnnounce } from "@/components/home/EmptyAnnounce";
-import { NewsletterForm } from "@/components/home/NewsletterForm";
 import { TopicAgenda } from "@/components/home/TopicAgenda";
 import { ForumArchitecture } from "@/components/program/ForumArchitecture";
+import { programDownloads } from "@/lib/program-downloads";
 import {
   getAward,
   getDelegatePriceUsd,
   getHomeContent,
+  getPartnersContent,
   getSiteConfig,
   getSponsors,
   getTopics,
+  getYouth,
   tLocalized,
 } from "@/lib/content";
-import { fullProgramFile, fullProgramHref } from "@/lib/program-downloads";
-import { daysUntil, formatForumDate } from "@/lib/dates";
+import { delegatePricing } from "@/lib/pricing";
+import { formatForumDate } from "@/lib/dates";
 import { pageMetadata } from "@/lib/page-meta";
 
+const trackClass: Record<string, string> = {
+  Lead: "track-lead",
+  Finance: "track-finance",
+  Planet: "track-planet",
+  People: "track-people",
+  Region: "track-region",
+};
+
+function nomClass(block: string) {
+  if (block === "Environment") return "nom nom-e";
+  if (block === "Social") return "nom nom-s";
+  if (block === "Governance") return "nom nom-g";
+  return "nom nom-n";
+}
 
 export async function generateMetadata({
   params,
@@ -44,112 +59,151 @@ export default async function HomePage({
   const tHome = await getTranslations("home");
   const tStatus = await getTranslations("status");
   const tCountdown = await getTranslations("countdown");
+  const tProgram = await getTranslations("program");
 
   const site = getSiteConfig();
   const home = getHomeContent();
   const topics = getTopics();
   const award = getAward();
   const sponsors = getSponsors();
+  const partners = getPartnersContent();
+  const youth = getYouth();
   const pricing = getDelegatePriceUsd();
-  const earlyDays = daysUntil(site.dates.earlyBirdEnds);
+
+  const slogan = tLocalized(site.slogan, locale);
+  const splitAt = slogan.indexOf(" ");
+  const sloganThin = splitAt > 0 ? slogan.slice(0, splitAt) : slogan;
+  const sloganBold = splitAt > 0 ? slogan.slice(splitAt + 1) : "";
+  const guestPerks = tHome.raw("guestPerks") as string[];
+  const delegatePerks = tHome.raw("delegatePerks") as string[];
+  const dateOptions = { day: "numeric", month: "long" } as const;
+  const earlyDate = formatForumDate(pricing.earlyEnds, locale, dateOptions);
+  const standardDate = formatForumDate(pricing.standardEnds, locale, dateOptions);
+  const lateDate = formatForumDate(pricing.lateStarts, locale, dateOptions);
+  const ribbon =
+    pricing.tier === "early"
+      ? tHome("earlyRibbon")
+      : pricing.tier === "standard"
+        ? tHome("standardRibbon")
+        : tHome("lateRibbon");
+  const packageById = new Map(partners.packages.map((item) => [item.id, item]));
+  const general = packageById.get("general");
+  const strategic = packageById.get("strategic");
+  const theme = packageById.get("theme");
+  const announce = tStatus("comingSoon", {
+    date: formatForumDate(sponsors.announceDate, locale, dateOptions),
+  });
 
   const stats = [
     { value: String(site.scale.days), label: tHome("statsDays") },
     { value: String(site.scale.participants), label: tHome("statsParticipants") },
     { value: site.scale.countries, label: tHome("statsCountries") },
     { value: String(site.scale.youthDelegates), label: tHome("statsYouth") },
-    {
-      value: String(site.scale.awardNominations),
-      label: tHome("statsNominations"),
-    },
+    { value: String(site.scale.awardNominations), label: tHome("statsNominations") },
   ];
 
   return (
     <div>
       <DeadlineBanner locale={locale} ctaLabel={t("register")} />
 
-      <section className="relative min-h-[100svh] overflow-hidden">
-        <Image
-          src={home.hero.image.src}
-          alt={tLocalized(home.hero.image.alt, locale)}
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,31,42,0.88)_0%,rgba(11,31,42,0.62)_48%,rgba(11,31,42,0.28)_100%)]" />
-        <div className="container-shell relative flex min-h-[100svh] flex-col justify-end gap-8 pb-14 pt-28">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#e2b79a]">
-              {formatForumDate(site.dates.day1, locale, {
-                day: "numeric",
-                month: "short",
-              })}
-              –
-              {formatForumDate(site.dates.day2, locale, {
-                day: "numeric",
-                month: "short",
-                year: "numeric",
-              })}{" "}
-              · {site.venue.name}
-            </p>
-            <h1 className="mt-4 text-4xl font-bold leading-[1.02] tracking-tight text-white md:text-6xl lg:text-7xl">
-              {tLocalized(site.name, locale)}
-            </h1>
-            <p className="mt-4 text-2xl font-medium text-[#f0d2bc] md:text-3xl">
-              {tLocalized(site.slogan, locale)}
-            </p>
-            <p className="mt-5 max-w-xl text-base text-white/80 md:text-lg">
-              {tLocalized(home.hero.supporting, locale)}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/register" className="btn btn-primary">
-                {t("register")}
-              </Link>
-              <a
-                href={fullProgramHref}
-                download={fullProgramFile}
-                className="btn btn-on-dark"
-              >
-                {t("fullProgram")}
-              </a>
-              <Link
-                href="/partners"
-                className="btn btn-on-dark"
-              >
-                {t("becomePartner")}
-              </Link>
-            </div>
+      <section className="hero-horizon" id="top">
+        <div className="hero-layers" aria-hidden="true">
+          <svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMax slice">
+            <defs>
+              <linearGradient id="horizon-a" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stopColor="#0F5C5A" stopOpacity="0.55" />
+                <stop offset="1" stopColor="#0F5C5A" stopOpacity="0" />
+              </linearGradient>
+              <linearGradient id="horizon-b" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stopColor="#1DB380" stopOpacity="0.35" />
+                <stop offset="1" stopColor="#1DB380" stopOpacity="0" />
+              </linearGradient>
+              <linearGradient id="horizon-c" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stopColor="#E8B04B" stopOpacity="0.22" />
+                <stop offset="1" stopColor="#E8B04B" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+            <path d="M0 560 C 300 500, 600 620, 900 540 S 1300 500, 1440 560 V800 H0Z" fill="url(#horizon-a)" />
+            <path d="M0 640 C 260 600, 520 690, 820 630 S 1240 600, 1440 650 V800 H0Z" fill="url(#horizon-b)" />
+            <path d="M0 710 C 320 690, 560 740, 900 710 S 1250 690, 1440 720 V800 H0Z" fill="url(#horizon-c)" />
+            <g stroke="#F6F1E8" strokeOpacity="0.08" fill="none">
+              <path d="M0 500 Q 720 440 1440 500" />
+              <path d="M0 470 Q 720 400 1440 470" />
+              <path d="M0 440 Q 720 360 1440 440" />
+            </g>
+          </svg>
+        </div>
+        <div className="hero-sun" aria-hidden="true" />
+        <div className="container-shell hero-copy">
+          <p className="hero-date">
+            {formatForumDate(site.dates.day1, locale, { day: "numeric" })}
+            –
+            {formatForumDate(site.dates.day2, locale, {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            }).replace(/\s*г\.$/u, "")}
+            {" · "}
+            {site.venue.name}
+            {", "}
+            {tLocalized(site.venue.complex, locale)}
+            {" · "}
+            {tLocalized(site.venue.city, locale)}
+          </p>
+          <h1 className="hero-title">
+            <span className="thin">{sloganThin}</span>
+            <span className="bold">{sloganBold}</span>
+          </h1>
+          <p className="hero-sub">{tLocalized(home.hero.supporting, locale)}</p>
+          <div className="hero-cta">
+            <Link href="/register" className="btn btn-primary">
+              {t("register")}
+            </Link>
+            <a href="#program" className="btn btn-on-dark">
+              {t("fullProgram")}
+            </a>
+            <Link href="/partners" className="btn btn-on-dark">
+              {t("becomePartner")}
+            </Link>
           </div>
-          <div className="max-w-xl">
-            <Countdown
-              targetDate={site.dates.day1}
-              labels={{
-                days: tCountdown("days"),
-                hours: tCountdown("hours"),
-                minutes: tCountdown("minutes"),
-                seconds: tCountdown("seconds"),
-              }}
-            />
+          <Countdown
+            targetIso={`${site.dates.day1}T09:30:00+05:00`}
+            earlyIso="2027-08-01T00:00:00+05:00"
+            earlyLabel={tHome("dayShort")}
+            labels={{
+              days: tCountdown("days"),
+              hours: tCountdown("hours"),
+              minutes: tCountdown("minutes"),
+              seconds: tCountdown("seconds"),
+            }}
+          />
+        </div>
+        <div className="marquee" aria-hidden="true">
+          <div className="marquee-track">
+            {[0, 1].map((copy) =>
+              topics.items.map((item) => (
+                <span key={`${copy}-${item.id}`}>{tLocalized(item.title, locale)}</span>
+              )),
+            )}
           </div>
         </div>
       </section>
 
-      <section className="border-b border-line bg-deep text-white">
-        <div className="container-shell grid grid-cols-2 gap-6 py-8 md:grid-cols-5">
-          {stats.map((item) => (
-            <div key={item.label}>
-              <p className="text-3xl font-bold tracking-tight md:text-4xl">
-                {item.value}
-              </p>
-              <p className="mt-1 text-sm text-white/65">{item.label}</p>
-            </div>
-          ))}
+      <section className="light-copy" style={{ background: "var(--color-paper)" }}>
+        <div className="container-shell">
+          <div className="stat-row">
+            {stats.map((item) => (
+              <div key={item.label}>
+                <b>{item.value}</b>
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="container-shell grid gap-8 py-16 md:grid-cols-[minmax(0,240px)_1fr] md:items-center md:py-20">
-        <div className="relative aspect-[4/5] overflow-hidden bg-deep">
+      <section className="container-shell grid gap-8 py-16 md:grid-cols-[minmax(0,240px)_1fr] md:items-center">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-[20px] bg-deep">
           <Image
             src="/images/people/aidar-kazybayev.jpg"
             alt={tHome("initiatorAlt")}
@@ -158,13 +212,9 @@ export default async function HomePage({
             sizes="(min-width: 768px) 240px, 100vw"
           />
         </div>
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-            {tHome("initiatorEyebrow")}
-          </p>
-          <blockquote className="mt-4 text-2xl font-semibold leading-snug text-deep md:text-3xl">
-            {tHome("initiatorQuote")}
-          </blockquote>
+        <div className="light-copy">
+          <p className="eyebrow">{tHome("initiatorEyebrow")}</p>
+          <blockquote className="youth-quote">{tHome("initiatorQuote")}</blockquote>
           <p className="mt-4 text-sm text-ink-soft">{tHome("initiatorName")}</p>
           <Link href="/about#address" className="btn btn-secondary mt-6">
             {tHome("initiatorCta")}
@@ -172,231 +222,279 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="container-shell py-16 md:py-20">
-        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-          {tLocalized(home.whyAttend.eyebrow, locale)}
-        </p>
-        <h2 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-deep md:text-5xl">
-          {tLocalized(home.whyAttend.title, locale)}
-        </h2>
-        <div className="mt-10 grid gap-8 md:grid-cols-3">
-          {home.whyAttend.items.map((item) => (
-            <Link
-              key={item.id}
-              href={item.href}
-              className="group border-t border-line pt-5 transition hover:border-accent"
-            >
-              <h3 className="text-xl font-bold text-deep group-hover:text-accent">
-                {tLocalized(item.title, locale)}
-              </h3>
-              <p className="mt-3 text-ink-soft">
-                {tLocalized(item.text, locale)}
-              </p>
-            </Link>
-          ))}
-        </div>
-      </section>
+      <TopicAgenda topics={topics} locale={locale} variant="accordion" surface="night" />
 
-      <section className="border-y border-line bg-white/40 py-16 md:py-20">
+      <section className="band light-copy" style={{ background: "var(--color-paper)" }}>
         <div className="container-shell">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-            {tLocalized(home.lines.eyebrow, locale)}
-          </p>
-          <h2 className="mt-3 max-w-4xl text-3xl font-bold tracking-tight text-deep md:text-5xl">
-            {tLocalized(home.lines.title, locale)}
-          </h2>
-          <div className="mt-10 grid gap-4 md:grid-cols-5">
+          <p className="eyebrow">{tLocalized(home.lines.eyebrow, locale)}</p>
+          <h2 className="h-display">{tLocalized(home.lines.title, locale)}</h2>
+          <div className="tracks">
             {home.lines.items.map((item) => (
               <Link
                 key={item.id}
                 href={`/program?line=${item.id}`}
-                className="border border-line bg-paper px-4 py-5 transition hover:border-deep"
+                className={`track-card ${trackClass[item.id] ?? "track-lead"}`}
               >
-                <p className="text-sm font-semibold uppercase tracking-[0.14em] text-accent">
-                  {tLocalized(item.title, locale)}
-                </p>
-                <p className="mt-3 text-sm text-ink-soft">
-                  {tLocalized(item.text, locale)}
-                </p>
+                <span className="track-k">{tLocalized(item.title, locale)}</span>
+                <div>
+                  <h3>{tLocalized(item.title, locale)}</h3>
+                  <p>{tLocalized(item.text, locale)}</p>
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <TopicAgenda topics={topics} locale={locale} variant="accordion" />
-
-      <section className="container-shell py-16 md:py-20">
-        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-          {tLocalized(home.programPreview.eyebrow, locale)}
-        </p>
-        <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
-          <h2 className="max-w-3xl text-3xl font-bold tracking-tight text-deep md:text-5xl">
-            {tLocalized(home.programPreview.title, locale)}
-          </h2>
-          <Link href="/program" className="btn btn-deep">
-            {t("viewProgram")}
-          </Link>
-        </div>
-        <div className="mt-10">
+      <section className="band band-sand" id="program">
+        <div className="container-shell">
+          <p className="eyebrow">{tLocalized(home.programPreview.eyebrow, locale)}</p>
+          <h2 className="h-display">{tLocalized(home.programPreview.title, locale)}</h2>
           <ForumArchitecture />
+          <div className="download-row">
+            {programDownloads.map((item) => (
+              <a
+                key={item.file}
+                className="chip"
+                href={`/downloads/program/${item.file}`}
+                download={item.file}
+              >
+                <i>PDF</i>
+                {tProgram(`downloads.${item.labelKey}`)}
+              </a>
+            ))}
+          </div>
+          <p className="mt-4 text-sm text-ink-soft">{tStatus("timezone")}</p>
         </div>
-        <p className="mt-6 text-sm text-ink-soft">{tStatus("timezone")}</p>
+      </section>
+
+      <section className="band band-night-2" id="tiers">
+        <div className="container-shell">
+          <p className="eyebrow">{tLocalized(home.tickets.eyebrow, locale)}</p>
+          <h2 className="h-display">{tLocalized(home.tickets.title, locale)}</h2>
+          <p className="lead">{tHome("ticketLead")}</p>
+          <div className="tiers">
+            <article className="tier tier-guest">
+              <h3>{tLocalized(home.tickets.guest.title, locale)}</h3>
+              <p className="price">
+                {site.pricing.guestUsd}
+                <small>USD</small>
+              </p>
+              <ul>
+                {guestPerks.map((perk) => (
+                  <li key={perk}>{perk}</li>
+                ))}
+              </ul>
+              <Link href="/register" className="btn btn-on-dark mt-auto self-start">
+                {tHome("guestCta")}
+              </Link>
+            </article>
+            <article className="tier tier-delegate">
+              <p className="tier-ribbon">{ribbon}</p>
+              <h3>{tLocalized(home.tickets.delegate.title, locale)}</h3>
+              <p className="price price-gold">
+                {pricing.amount}
+                <small>USD</small>
+              </p>
+              <p className="text-sm text-[var(--color-mist)]">
+                {tHome("priceLadder", {
+                  earlyDate,
+                  standardAmount: delegatePricing.standard.amountUsd,
+                  standardDate,
+                  lateAmount: delegatePricing.late.amountUsd,
+                  lateDate,
+                })}
+              </p>
+              <ul>
+                {delegatePerks.map((perk) => (
+                  <li key={perk}>{perk}</li>
+                ))}
+              </ul>
+              <p className="text-sm text-[var(--color-mist)]">
+                {tHome("untilRaise")}{" "}
+                <PriceClock earlyIso="2027-08-01T00:00:00+05:00" dayLabel={tHome("dayShort")} />
+              </p>
+              <Link href="/register" className="btn btn-gold mt-auto self-start">
+                {tHome("delegateCta")}
+              </Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="band band-night" id="award">
+        <div className="container-shell award-grid">
+          <div>
+            <p className="eyebrow">{tLocalized(home.awardTeaser.eyebrow, locale)}</p>
+            <h2 className="h-display award-title">{tLocalized(home.awardTeaser.title, locale)}</h2>
+            <p className="lead">{tLocalized(award.intro, locale)}</p>
+            <div className="noms">
+              {award.nominations.map((item) => (
+                <span key={item.id} className={nomClass(item.block)}>
+                  {tLocalized(item.title, locale)}
+                </span>
+              ))}
+            </div>
+            <div className="hero-cta">
+              <Link href="/award" className="btn btn-gold">
+                {t("applyAward")}
+                {" · "}
+                {tHome("awardUntil", {
+                  date: formatForumDate(site.dates.awardClose, locale, dateOptions),
+                })}
+              </Link>
+              <Link href="/award" className="btn btn-on-dark">
+                {tHome("awardRules")}
+              </Link>
+            </div>
+          </div>
+          <figure className="statue">
+            <Image
+              src={award.statueImage}
+              alt={tLocalized(award.statueCaption, locale)}
+              fill
+              sizes="(max-width: 900px) 100vw, 40vw"
+            />
+            <figcaption className="absolute inset-x-6 bottom-5 text-sm text-[var(--color-mist)]">
+              <b className="mb-1 block font-[family-name:var(--font-display)] text-[var(--color-sand)]">
+                {tLocalized(award.statueCaption, locale)}
+              </b>
+              {tLocalized(award.grandPrix, locale)}
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="band light-copy" id="youth" style={{ background: "var(--color-paper)" }}>
+        <div className="container-shell grid items-end gap-12 md:grid-cols-[1.2fr_0.8fr]">
+          <div>
+            <p className="eyebrow">{tLocalized(home.youthTeaser.eyebrow, locale)}</p>
+            <p className="youth-quote">
+              {tHome.rich("youthQuote", {
+                em: (chunks) => <em>{chunks}</em>,
+              })}
+            </p>
+            <p className="lead">{tLocalized(home.youthTeaser.text, locale)}</p>
+            <div className="hero-cta">
+              <Link href="/youth" className="btn btn-primary">
+                {t("applyYouth")}
+              </Link>
+              <Link href="/youth" className="btn btn-secondary">
+                {t("applyPitch")}
+              </Link>
+            </div>
+          </div>
+          <div className="facts">
+            <div className="fact">
+              <b>{site.scale.youthDelegates}</b>
+              <span>{tHome("youthFactDelegates")}</span>
+            </div>
+            <div className="fact">
+              <b>8</b>
+              <span>{tHome("youthFactFinalists")}</span>
+            </div>
+            <div className="fact">
+              <b>{youth.pitch.tracks.length}</b>
+              <span>{tHome("youthFactTracks")}</span>
+            </div>
+            <div className="fact">
+              <b>
+                {formatForumDate(site.dates.youthPitchClose, locale, {
+                  day: "2-digit",
+                  month: "2-digit",
+                })}
+              </b>
+              <span>{tHome("youthFactDeadline")}</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       {home.guestCountry ? (
-        <section className="container-shell py-16 md:py-20">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-            {tLocalized(home.guestCountry.eyebrow, locale)}
-          </p>
-          <h2 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-deep md:text-5xl">
-            {tLocalized(home.guestCountry.title, locale)}
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg text-ink-soft">
-            {tLocalized(home.guestCountry.text, locale)}
-          </p>
-          <Link
-            href={home.guestCountry.href}
-            className="btn btn-deep mt-8 inline-flex"
-          >
-            {tHome("guestCountryCta")}
-          </Link>
-        </section>
+      <section className="band band-night" id="partners">
+        <div className="container-shell">
+          <article className="guest-card">
+            <div className="flag-slot">{tHome("flagLabel")}</div>
+            <div>
+              <h3 className="display text-[22px] font-bold">
+                {tLocalized(home.guestCountry.title, locale)}
+              </h3>
+              <p className="mt-2 text-[15px] text-[var(--color-mist)]">
+                {tLocalized(home.guestCountry.text, locale)}
+              </p>
+            </div>
+            <Link href={home.guestCountry.href} className="btn btn-on-dark">
+              {tHome("guestCountryCta")}
+            </Link>
+          </article>
+        </div>
+      </section>
       ) : null}
 
-      <section className="border-y border-line bg-deep py-16 text-white md:py-20">
-        <div className="container-shell">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#e2b79a]">
-            {tLocalized(home.tickets.eyebrow, locale)}
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-5xl">
-            {tLocalized(home.tickets.title, locale)}
-          </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <div className="border border-white/15 bg-white/5 p-6">
-              <h3 className="text-2xl font-bold">
-                {tLocalized(home.tickets.guest.title, locale)}
-              </h3>
-              <p className="mt-3 text-3xl font-bold text-[#e2b79a]">
-                {tLocalized(home.tickets.guest.priceLabel, locale)}
-              </p>
-              <p className="mt-4 text-white/75">
-                {tLocalized(home.tickets.guest.perks, locale)}
-              </p>
-              <Link href="/register" className="btn btn-primary mt-6">
-                {t("register")}
-              </Link>
-            </div>
-            <div className="border border-white/15 bg-white/5 p-6">
-              <h3 className="text-2xl font-bold">
-                {tLocalized(home.tickets.delegate.title, locale)}
-              </h3>
-              <p className="mt-3 text-3xl font-bold text-[#e2b79a]">
-                {pricing.amount} USD
-              </p>
-              <p className="mt-2 text-sm text-white/65">
-                {pricing.isEarly
-                  ? tStatus("earlyBirdLeft", { days: earlyDays })
-                  : tStatus("earlyBirdEnded")}
-              </p>
-              <p className="mt-4 text-white/75">
-                {tLocalized(home.tickets.delegate.perks, locale)}
-              </p>
-              <Link href="/register" className="btn btn-primary mt-6">
-                {t("register")}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="container-shell grid gap-10 py-16 md:grid-cols-[0.9fr_1.1fr] md:items-center md:py-20">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-            {tLocalized(home.awardTeaser.eyebrow, locale)}
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-deep md:text-5xl">
-            {tLocalized(home.awardTeaser.title, locale)}
-          </h2>
-          <p className="mt-4 max-w-xl text-lg text-ink-soft">
-            {tLocalized(home.awardTeaser.text, locale)}
-          </p>
-          <p className="mt-3 text-sm font-medium text-deep">
-            {formatForumDate(site.dates.awardOpen, locale)} —{" "}
-            {formatForumDate(site.dates.awardClose, locale)}
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/award" className="btn btn-primary">
-              {t("applyAward")}
-            </Link>
-            <p className="self-center text-sm text-ink-soft">
-              {award.nominations.length} · {tLocalized(award.grandPrix, locale)}
-            </p>
-          </div>
-        </div>
-        <div className="relative aspect-[5/6] overflow-hidden bg-paper-2">
-          <Image
-            src={award.statueImage}
-            alt={tLocalized(award.statueCaption, locale)}
-            fill
-            className="object-contain p-4"
-            sizes="(max-width: 768px) 100vw, 45vw"
-          />
-        </div>
-      </section>
-
-      <section className="border-y border-line bg-white/40 py-16 md:py-20">
-        <div className="container-shell">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-            {tLocalized(home.youthTeaser.eyebrow, locale)}
-          </p>
-          <h2 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-deep md:text-5xl">
-            {tLocalized(home.youthTeaser.title, locale)}
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg text-ink-soft">
-            {tLocalized(home.youthTeaser.text, locale)}
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/youth" className="btn btn-deep">
-              {t("applyYouth")}
-            </Link>
-            <Link href="/youth" className="btn btn-secondary">
-              {t("applyPitch")}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="container-shell py-16 md:py-20">
-        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-          {tHome("partnersEyebrow")}
-        </p>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-deep md:text-5xl">
-          {tHome("partnersTitle")}
-        </h2>
-        <div className="mt-8 space-y-6">
-          {sponsors.levels.map((level) => (
-            <div key={level.id}>
-              <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-ink-soft">
-                {tLocalized(level.title, locale)}
-              </h3>
-              {level.logos.length === 0 ? (
-                <div className="mt-3">
-                  <EmptyAnnounce
-                    message={tStatus("comingSoon", {
-                      date: formatForumDate(sponsors.announceDate, locale),
-                    })}
-                  />
+      <section className="band light-copy" style={{ paddingTop: 0, background: "var(--color-paper)" }}>
+        <div className="container-shell pt-16">
+          <p className="eyebrow">{tHome("partnersEyebrow")}</p>
+          <h2 className="h-display">{tHome("partnersTitle")}</h2>
+          <div className="mt-10 grid gap-7">
+            {general ? (
+              <div className="partner-row">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
+                    {tLocalized(general.title, locale)}
+                  </p>
+                  <b className="mt-1 block">{tLocalized(general.price, locale)}</b>
                 </div>
-              ) : null}
-            </div>
-          ))}
+                <div className="partner-slots">
+                  <div className="logo-slot logo-slot-big">{announce}</div>
+                </div>
+              </div>
+            ) : null}
+            {strategic ? (
+              <div className="partner-row">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
+                    {tLocalized(strategic.title, locale)}
+                  </p>
+                  <b className="mt-1 block">{tLocalized(strategic.price, locale)}</b>
+                </div>
+                <div className="partner-slots">
+                  {Array.from({ length: 3 }, (_, index) => (
+                    <div key={index} className="logo-slot min-w-[150px]">
+                      {tHome("logoSlot")}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+            {theme ? (
+              <div className="partner-row">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
+                    {tLocalized(theme.title, locale)}
+                  </p>
+                  <b className="mt-1 block">{tLocalized(theme.price, locale)}</b>
+                </div>
+                <div className="partner-slots">
+                  {home.lines.items.map((item) => (
+                    <div key={item.id} className="logo-slot min-w-[120px]">
+                      {tLocalized(item.title, locale)}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+          </div>
+          <div className="mt-9">
+            <Link href="/partners" className="btn btn-primary">
+              {t("becomePartner")}
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="border-y border-line bg-white/40 py-16 md:py-20">
-        <div className="container-shell grid gap-10 md:grid-cols-2 md:items-center">
-          <div className="relative aspect-[16/10] overflow-hidden bg-paper-2">
+      <section className="band band-night-2">
+        <div className="container-shell grid items-center gap-8 md:grid-cols-2">
+          <div className="venue-photo">
             <Image
               src={home.venue.image.src}
               alt={tLocalized(home.venue.image.alt, locale)}
@@ -406,28 +504,17 @@ export default async function HomePage({
             />
           </div>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-              {tLocalized(home.venue.eyebrow, locale)}
-            </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-deep md:text-5xl">
-              {tLocalized(home.venue.title, locale)}
-            </h2>
-            <p className="mt-4 text-lg text-ink-soft">
-              {tLocalized(home.venue.text, locale)}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/attendees" className="btn btn-deep">
+            <p className="eyebrow">{tLocalized(home.venue.eyebrow, locale)}</p>
+            <h2 className="h-display">{tLocalized(home.venue.title, locale)}</h2>
+            <p className="lead">{tLocalized(home.venue.text, locale)}</p>
+            <div className="hero-cta">
+              <Link href="/attendees" className="btn btn-on-dark">
                 {t("venueDetails")}
               </Link>
-              <Link href="/expo" className="btn btn-secondary">
+              <Link href="/expo" className="btn btn-on-dark">
                 ESG Expo
               </Link>
-              <a
-                href={home.venue.mapUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-secondary"
-              >
+              <a href={home.venue.mapUrl} className="btn btn-on-dark" target="_blank" rel="noreferrer">
                 {t("openMap")}
               </a>
             </div>
@@ -435,33 +522,19 @@ export default async function HomePage({
         </div>
         {home.venue.planImage ? (
           <div className="container-shell mt-10">
-            <div className="overflow-hidden border border-line bg-white">
-              <div className="relative aspect-[16/9] w-full bg-paper-2">
+            <div className="overflow-hidden rounded-[20px] bg-white">
+              <div className="relative aspect-[16/9]">
                 <Image
                   src={home.venue.planImage.src}
                   alt={tLocalized(home.venue.planImage.alt, locale)}
                   fill
-                  className="object-contain object-top p-2 md:p-4"
+                  className="object-contain p-3"
                   sizes="100vw"
                 />
               </div>
             </div>
           </div>
         ) : null}
-      </section>
-
-      <section className="container-shell py-16 md:py-20">
-        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-          {tLocalized(home.newsletter.eyebrow, locale)}
-        </p>
-        <h2 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-deep md:text-5xl">
-          {tLocalized(home.newsletter.title, locale)}
-        </h2>
-        <NewsletterForm
-          placeholder={tLocalized(home.newsletter.placeholder, locale)}
-          button={tLocalized(home.newsletter.button, locale)}
-          success={tLocalized(home.newsletter.success, locale)}
-        />
       </section>
     </div>
   );
