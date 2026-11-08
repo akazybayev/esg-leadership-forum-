@@ -8,6 +8,7 @@ import {
 import {
   homeContentSchema,
   navigationSchema,
+  topicsContentSchema,
   programSchema,
   siteConfigSchema,
   speakersSchema,
@@ -31,6 +32,10 @@ export function getNavigation() {
 
 export function getHomeContent() {
   return homeContentSchema.parse(loadJson("home.json"));
+}
+
+export function getTopics() {
+  return topicsContentSchema.parse(loadJson("topics.json"));
 }
 
 export function getProgram() {

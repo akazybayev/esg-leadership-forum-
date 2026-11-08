@@ -46,7 +46,10 @@ export function Countdown({
           key={label}
           className="border border-white/20 bg-white/10 px-2 py-3 text-center backdrop-blur-sm"
         >
-          <div className="text-2xl font-bold tabular-nums text-white sm:text-3xl">
+          <div
+            className="text-2xl font-bold tabular-nums text-white sm:text-3xl"
+            suppressHydrationWarning
+          >
             {String(value).padStart(2, "0")}
           </div>
           <div className="mt-1 text-[0.7rem] uppercase tracking-[0.12em] text-white/75">

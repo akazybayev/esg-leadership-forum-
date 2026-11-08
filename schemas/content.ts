@@ -208,17 +208,6 @@ export const homeContentSchema = z.object({
       }),
     ),
   }),
-  agenda: z.object({
-    eyebrow: localizedStringSchema,
-    title: localizedStringSchema,
-    items: z.array(
-      z.object({
-        id: z.string(),
-        title: localizedStringSchema,
-        query: z.string(),
-      }),
-    ),
-  }),
   programPreview: z.object({
     eyebrow: localizedStringSchema,
     title: localizedStringSchema,
@@ -280,3 +269,30 @@ export const homeContentSchema = z.object({
 });
 
 export type HomeContent = z.infer<typeof homeContentSchema>;
+
+export const topicsContentSchema = z.object({
+  eyebrow: localizedStringSchema,
+  title: localizedStringSchema,
+  subtitle: localizedStringSchema,
+  items: z.array(
+    z.object({
+      id: z.enum(["standards", "carbon", "ratings", "circular", "region", "ai"]),
+      title: localizedStringSchema,
+      subtitle: localizedStringSchema,
+      paragraphs: z.tuple([localizedStringSchema, localizedStringSchema]),
+      sessions: z.array(
+        z.object({
+          day: z.string(),
+          dayLabel: localizedStringSchema,
+          time: z.string(),
+          hall: localizedStringSchema,
+          roomId: z.string(),
+          sessionTitle: localizedStringSchema,
+          sessionSlug: z.string().nullable(),
+        }),
+      ),
+    }),
+  ),
+});
+
+export type TopicsContent = z.infer<typeof topicsContentSchema>;

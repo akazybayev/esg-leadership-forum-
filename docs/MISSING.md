@@ -1,0 +1,124 @@
+# Не переведено
+
+Английский и казахский тексты повестки пустые. На сайте пока показывается русская строка.
+
+- topics.title.en TODO
+- topics.title.kk TODO
+- topics.subtitle.en TODO
+- topics.subtitle.kk TODO
+
+# Сессии без карточки в программе
+
+Названия из повестки не совпадают с названиями сессий в content/program.json. Ссылка ведет на программу с фильтром по дню и залу.
+
+- topics.standards.title.en TODO
+- topics.standards.title.kk TODO
+- topics.standards.subtitle.en TODO
+- topics.standards.subtitle.kk TODO
+- topics.standards.paragraphs[1].en TODO
+- topics.standards.paragraphs[1].kk TODO
+- topics.standards.paragraphs[2].en TODO
+- topics.standards.paragraphs[2].kk TODO
+- topics.standards / День 1, 12:10, Hall B: нет сессии с названием «Один отчет для всех рынков». Фильтр: /program?day=1&room=Hall+B#program-day-1
+- topics.standards.session ««Один отчет для всех рынков»».dayLabel.en TODO
+- topics.standards.session ««Один отчет для всех рынков»».dayLabel.kk TODO
+- topics.standards.session ««Один отчет для всех рынков»».hall.en TODO
+- topics.standards.session ««Один отчет для всех рынков»».hall.kk TODO
+- topics.standards.session ««Один отчет для всех рынков»».sessionTitle.en TODO
+- topics.standards.session ««Один отчет для всех рынков»».sessionTitle.kk TODO
+- topics.standards / День 1, 12:10, Master Class 1: нет сессии с названием «Двойная существенность за 70 минут». Фильтр: /program?day=1&room=Master+Class+1#program-day-1
+- topics.standards.session ««Двойная существенность за 70 минут»».dayLabel.en TODO
+- topics.standards.session ««Двойная существенность за 70 минут»».dayLabel.kk TODO
+- topics.standards.session ««Двойная существенность за 70 минут»».hall.en TODO
+- topics.standards.session ««Двойная существенность за 70 минут»».hall.kk TODO
+- topics.standards.session ««Двойная существенность за 70 минут»».sessionTitle.en TODO
+- topics.standards.session ««Двойная существенность за 70 минут»».sessionTitle.kk TODO
+- topics.carbon.title.en TODO
+- topics.carbon.title.kk TODO
+- topics.carbon.subtitle.en TODO
+- topics.carbon.subtitle.kk TODO
+- topics.carbon.paragraphs[1].en TODO
+- topics.carbon.paragraphs[1].kk TODO
+- topics.carbon.paragraphs[2].en TODO
+- topics.carbon.paragraphs[2].kk TODO
+- topics.carbon / День 1, 16:20, Hall B: нет сессии с названием «CORSIA и углеродные рынки». Фильтр: /program?day=1&room=Hall+B#program-day-1
+- topics.carbon.session ««CORSIA и углеродные рынки»».dayLabel.en TODO
+- topics.carbon.session ««CORSIA и углеродные рынки»».dayLabel.kk TODO
+- topics.carbon.session ««CORSIA и углеродные рынки»».hall.en TODO
+- topics.carbon.session ««CORSIA и углеродные рынки»».hall.kk TODO
+- topics.carbon.session ««CORSIA и углеродные рынки»».sessionTitle.en TODO
+- topics.carbon.session ««CORSIA и углеродные рынки»».sessionTitle.kk TODO
+- topics.ratings.title.en TODO
+- topics.ratings.title.kk TODO
+- topics.ratings.subtitle.en TODO
+- topics.ratings.subtitle.kk TODO
+- topics.ratings.paragraphs[1].en TODO
+- topics.ratings.paragraphs[1].kk TODO
+- topics.ratings.paragraphs[2].en TODO
+- topics.ratings.paragraphs[2].kk TODO
+- topics.ratings / День 2, 08:30, Закрытый зал: нет сессии с названием «Завтрак с рейтинговыми агентствами». Фильтр: /program?day=2&room=Closed+Hall#program-day-2
+- topics.ratings.session ««Завтрак с рейтинговыми агентствами»».dayLabel.en TODO
+- topics.ratings.session ««Завтрак с рейтинговыми агентствами»».dayLabel.kk TODO
+- topics.ratings.session ««Завтрак с рейтинговыми агентствами»».hall.en TODO
+- topics.ratings.session ««Завтрак с рейтинговыми агентствами»».hall.kk TODO
+- topics.ratings.session ««Завтрак с рейтинговыми агентствами»».sessionTitle.en TODO
+- topics.ratings.session ««Завтрак с рейтинговыми агентствами»».sessionTitle.kk TODO
+- topics.ratings / День 2, 11:30, Hall B: нет сессии с названием «Что видит рейтинг». Фильтр: /program?day=2&room=Hall+B#program-day-2
+- topics.ratings.session ««Что видит рейтинг»».dayLabel.en TODO
+- topics.ratings.session ««Что видит рейтинг»».dayLabel.kk TODO
+- topics.ratings.session ««Что видит рейтинг»».hall.en TODO
+- topics.ratings.session ««Что видит рейтинг»».hall.kk TODO
+- topics.ratings.session ««Что видит рейтинг»».sessionTitle.en TODO
+- topics.ratings.session ««Что видит рейтинг»».sessionTitle.kk TODO
+- topics.circular.title.en TODO
+- topics.circular.title.kk TODO
+- topics.circular.subtitle.en TODO
+- topics.circular.subtitle.kk TODO
+- topics.circular.paragraphs[1].en TODO
+- topics.circular.paragraphs[1].kk TODO
+- topics.circular.paragraphs[2].en TODO
+- topics.circular.paragraphs[2].kk TODO
+- topics.circular / День 2, 13:45, Hall B: нет сессии с названием «Отходы как сырье». Фильтр: /program?day=2&room=Hall+B#program-day-2
+- topics.circular.session ««Отходы как сырье»».dayLabel.en TODO
+- topics.circular.session ««Отходы как сырье»».dayLabel.kk TODO
+- topics.circular.session ««Отходы как сырье»».hall.en TODO
+- topics.circular.session ««Отходы как сырье»».hall.kk TODO
+- topics.circular.session ««Отходы как сырье»».sessionTitle.en TODO
+- topics.circular.session ««Отходы как сырье»».sessionTitle.kk TODO
+- topics.region.title.en TODO
+- topics.region.title.kk TODO
+- topics.region.subtitle.en TODO
+- topics.region.subtitle.kk TODO
+- topics.region.paragraphs[1].en TODO
+- topics.region.paragraphs[1].kk TODO
+- topics.region.paragraphs[2].en TODO
+- topics.region.paragraphs[2].kk TODO
+- topics.region / День 1, 10:25, Main Stage: нет сессии с названием Пленарная панель «Центральная Азия как единый ESG-рынок». Фильтр: /program?day=1&room=Main+Stage#program-day-1
+- topics.region.session «Пленарная панель «Центральная Азия как единый ESG-рынок»».dayLabel.en TODO
+- topics.region.session «Пленарная панель «Центральная Азия как единый ESG-рынок»».dayLabel.kk TODO
+- topics.region.session «Пленарная панель «Центральная Азия как единый ESG-рынок»».hall.en TODO
+- topics.region.session «Пленарная панель «Центральная Азия как единый ESG-рынок»».hall.kk TODO
+- topics.region.session «Пленарная панель «Центральная Азия как единый ESG-рынок»».sessionTitle.en TODO
+- topics.region.session «Пленарная панель «Центральная Азия как единый ESG-рынок»».sessionTitle.kk TODO
+- topics.region / День 1, 12:10, Закрытый зал: нет сессии с названием «Диалог регуляторов». Фильтр: /program?day=1&room=Closed+Hall#program-day-1
+- topics.region.session ««Диалог регуляторов»».dayLabel.en TODO
+- topics.region.session ««Диалог регуляторов»».dayLabel.kk TODO
+- topics.region.session ««Диалог регуляторов»».hall.en TODO
+- topics.region.session ««Диалог регуляторов»».hall.kk TODO
+- topics.region.session ««Диалог регуляторов»».sessionTitle.en TODO
+- topics.region.session ««Диалог регуляторов»».sessionTitle.kk TODO
+- topics.ai.title.en TODO
+- topics.ai.title.kk TODO
+- topics.ai.subtitle.en TODO
+- topics.ai.subtitle.kk TODO
+- topics.ai.paragraphs[1].en TODO
+- topics.ai.paragraphs[1].kk TODO
+- topics.ai.paragraphs[2].en TODO
+- topics.ai.paragraphs[2].kk TODO
+- topics.ai / День 2, 13:45, Impact Stage: нет сессии с названием «ИИ для ESG: от сбора данных до заверенного отчета». Фильтр: /program?day=2&room=Impact+Stage#program-day-2
+- topics.ai.session ««ИИ для ESG: от сбора данных до заверенного отчета»».dayLabel.en TODO
+- topics.ai.session ««ИИ для ESG: от сбора данных до заверенного отчета»».dayLabel.kk TODO
+- topics.ai.session ««ИИ для ESG: от сбора данных до заверенного отчета»».hall.en TODO
+- topics.ai.session ««ИИ для ESG: от сбора данных до заверенного отчета»».hall.kk TODO
+- topics.ai.session ««ИИ для ESG: от сбора данных до заверенного отчета»».sessionTitle.en TODO
+- topics.ai.session ««ИИ для ESG: от сбора данных до заверенного отчета»».sessionTitle.kk TODO

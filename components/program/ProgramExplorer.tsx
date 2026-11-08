@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { CalendarPlus, ChevronDown, Search } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -34,6 +34,7 @@ export function ProgramExplorer({
   const t = useTranslations("program");
   const tAccess = useTranslations("access");
 
+  const [day, setDay] = useState("");
   const [line, setLine] = useState(initialLine);
   const [room, setRoom] = useState(initialRoom);
   const [format, setFormat] = useState(initialFormat);
@@ -50,16 +51,43 @@ export function ProgramExplorer({
     [sessions],
   );
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const nextDay = params.get("day") ?? "";
+    const nextLine = params.get("line") ?? "";
+    const nextRoom = params.get("room") ?? "";
+    const nextFormat = params.get("format") ?? "";
+    const nextAccess = params.get("access") ?? "";
+    const nextQuery = params.get("q") ?? "";
+    if (nextDay) setDay(nextDay);
+    if (nextLine) setLine(nextLine);
+    if (nextRoom) setRoom(nextRoom);
+    if (nextFormat) setFormat(nextFormat);
+    if (nextAccess) setAccess(nextAccess);
+    if (nextQuery) setQuery(nextQuery);
+    if (!nextDay) return;
+    const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? "auto"
+      : "smooth";
+    requestAnimationFrame(() => {
+      document.getElementById(`program-day-${nextDay}`)?.scrollIntoView({
+        behavior,
+        block: "start",
+      });
+    });
+  }, []);
+
   const filtered = useMemo(
     () =>
       filterSessions(sessions, {
+        day: day || undefined,
         line: line || undefined,
         room: room || undefined,
         format: format || undefined,
         access: access || undefined,
         q: query,
       }),
-    [sessions, line, room, format, access, query],
+    [sessions, day, line, room, format, access, query],
   );
 
   const byDay = (["0", "1", "2"] as const).map((value) => ({
@@ -164,7 +192,7 @@ export function ProgramExplorer({
       </p>
 
       <div className="mt-6 space-y-10">
-        {byDay.map(({ value, items }) => (
+        {byDay.filter(({ items }) => items.length > 0 || !day).map(({ value, items }) => (
           <section
             key={value}
             id={`program-day-${value}`}
