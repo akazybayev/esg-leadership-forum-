@@ -142,26 +142,22 @@ a {
   background: #143141;
 }
 
-.topic-disclosure {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 280ms ease;
+.topic-details > summary {
+  list-style: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
 }
 
-.topic-disclosure[data-open="true"] {
-  grid-template-rows: 1fr;
-}
-
-.topic-disclosure-inner {
-  min-height: 0;
-  overflow: hidden;
+.topic-details > summary::-webkit-details-marker {
+  display: none;
 }
 
 .topic-chevron {
   transition: transform 280ms ease;
 }
 
-.topic-chevron[data-open="true"] {
+.topic-details[open] .topic-chevron {
   transform: rotate(180deg);
 }
 

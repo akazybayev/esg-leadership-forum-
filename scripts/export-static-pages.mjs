@@ -35,9 +35,16 @@ function toStaticHtml(html) {
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
     .replace(/<link rel="preload" as="script"[^>]*>/gi, "")
     .replace(/<link rel="preload" href="\/_next\/static\/chunks[^>]*>/gi, "");
-  return postForms(withoutScripts)
+  let page = postForms(withoutScripts)
     .replaceAll("/_next/static/css/", "/static/css/")
     .replaceAll("/_next/static/media/", "/static/media/");
+  if (page.includes("topic-details") && !page.includes("/scripts/topic-agenda.js")) {
+    page = page.replace(
+      "</body>",
+      '<script src="/scripts/topic-agenda.js" defer></script></body>',
+    );
+  }
+  return page;
 }
 
 await rm(assetDir, { recursive: true, force: true });
