@@ -43,11 +43,11 @@ export function Header({
           <Link href="/register" className="btn btn-primary header-register">
             {tCta("register")}
           </Link>
-          <span className="inline-block h-10 w-10 xl:hidden" aria-hidden="true" />
+          <span className="inline-block h-11 w-11 xl:hidden" aria-hidden="true" />
         </div>
       </div>
       <details className="xl:hidden">
-        <summary className="absolute right-4 top-[16px] inline-flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-full border border-white/25 text-[var(--color-sand)] [&::-webkit-details-marker]:hidden">
+        <summary className="absolute right-3 top-[14px] inline-flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-full border border-white/25 text-[var(--color-sand)] [&::-webkit-details-marker]:hidden">
           <Menu size={18} />
           <span className="sr-only">{t("menu")}</span>
         </summary>
@@ -61,7 +61,7 @@ export function Header({
               <Link
                 key={item.href}
                 href={item.href}
-                className="block rounded-lg px-3 py-3 text-base font-semibold"
+                className="block rounded-lg px-3 py-4 text-lg font-semibold"
               >
                 {t(item.labelKey)}
               </Link>

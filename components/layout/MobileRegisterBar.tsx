@@ -8,7 +8,7 @@ export function MobileRegisterBar({ label }: { label: string }) {
 
   return (
     <div
-      className="mobile-register fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[rgba(11,31,42,0.96)] p-3 md:hidden"
+      className="mobile-register fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[rgba(11,31,42,0.96)] px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden"
       role="region"
       aria-label={label}
     >

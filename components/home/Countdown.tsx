@@ -49,7 +49,7 @@ export function Countdown({
   ];
 
   return (
-    <div data-countdown={targetIso} data-early={earlyIso} data-day-short={earlyLabel}>
+    <div className="hero-count" data-countdown={targetIso} data-early={earlyIso} data-day-short={earlyLabel}>
       <div className="count-row" aria-live="polite">
         {cells.map(([value, label, unit]) => (
           <div key={unit}>

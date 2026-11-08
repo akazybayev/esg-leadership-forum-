@@ -77,7 +77,7 @@ function buildSchema(t: (key: string) => string) {
     });
 }
 
-const inputClass = "min-h-11 w-full rounded-lg border border-line bg-white px-3";
+const inputClass = "min-h-11 w-full min-w-0 rounded-lg border border-line bg-white px-3 text-base";
 
 export function RegisterForm({ priceLabel }: { priceLabel: string }) {
   const locale = useLocale();
@@ -135,11 +135,11 @@ export function RegisterForm({ priceLabel }: { priceLabel: string }) {
     >
       <input type="hidden" name="locale" value={locale} />
       <div className="flex flex-wrap gap-2" role="radiogroup" aria-label={t("status")}>
-        <label className="cursor-pointer rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink-soft has-[:checked]:border-deep has-[:checked]:bg-deep has-[:checked]:text-white">
+        <label className="inline-flex min-h-11 cursor-pointer items-center rounded-full border border-line bg-white px-4 text-sm font-semibold text-ink-soft has-[:checked]:border-deep has-[:checked]:bg-deep has-[:checked]:text-white">
           <input id="status-guest" type="radio" value="guest" className="sr-only" {...register("status")} />
           {t("guestFree")}
         </label>
-        <label className="cursor-pointer rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink-soft has-[:checked]:border-deep has-[:checked]:bg-deep has-[:checked]:text-white">
+        <label className="inline-flex min-h-11 cursor-pointer items-center rounded-full border border-line bg-white px-4 text-sm font-semibold text-ink-soft has-[:checked]:border-deep has-[:checked]:bg-deep has-[:checked]:text-white">
           <input id="status-delegate" type="radio" value="delegate" defaultChecked className="sr-only" {...register("status")} />
           {t("delegatePaid")}
         </label>

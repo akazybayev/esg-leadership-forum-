@@ -24,7 +24,7 @@ export function LanguageSwitcher() {
             href={pathname}
             locale={code}
             hrefLang={code}
-            className="lang-link inline-flex min-h-9 min-w-9 items-center justify-center px-1"
+            className="lang-link inline-flex min-h-11 min-w-11 items-center justify-center px-1"
             aria-current={active ? "true" : undefined}
           >
             {labels[code]}

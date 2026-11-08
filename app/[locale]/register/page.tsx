@@ -108,9 +108,36 @@ export default async function RegisterPage({
       </section>
 
       <section className="border-y border-line bg-white/40 py-14">
-        <div className="container-shell overflow-x-auto">
+        <div className="container-shell">
           <h2 className="text-3xl font-bold text-deep">{t("compareTitle")}</h2>
-          <table className="mt-6 w-full min-w-[640px] border-collapse text-left text-sm">
+          <ul className="mt-6 space-y-3 md:hidden">
+            {content.comparison.map((row) => (
+              <li key={row.id} className="rounded-2xl border border-line bg-white p-4">
+                <p className="font-bold text-deep">{tLocalized(row.label, locale)}</p>
+                <p className="mt-3 flex items-center justify-between gap-4 text-sm">
+                  <span>{t("guest")}</span>
+                  <span className="font-semibold">{row.guest ? "✓" : "–"}</span>
+                </p>
+                <p className="mt-2 flex items-center justify-between gap-4 text-sm">
+                  <span>{t("delegate")}</span>
+                  <span className="font-semibold">{row.delegate ? "✓" : "–"}</span>
+                </p>
+              </li>
+            ))}
+            <li className="rounded-2xl border border-line bg-white p-4">
+              <p className="font-bold text-deep">{t("price")}</p>
+              <p className="mt-3 flex items-center justify-between gap-4 text-sm">
+                <span>{t("guest")}</span>
+                <span className="font-semibold">{t("priceFree")}</span>
+              </p>
+              <p className="mt-2 flex items-center justify-between gap-4 text-sm">
+                <span>{t("delegate")}</span>
+                <span className="font-semibold">{pricing.amount} USD</span>
+              </p>
+            </li>
+          </ul>
+          <div className="mt-6 hidden overflow-x-auto md:block">
+          <table className="w-full border-collapse text-left text-sm">
             <thead>
               <tr className="border-b border-line">
                 <th className="py-3 pr-4 font-semibold text-ink-soft">
@@ -126,8 +153,8 @@ export default async function RegisterPage({
                   <td className="py-3 pr-4 text-ink">
                     {tLocalized(row.label, locale)}
                   </td>
-                  <td className="py-3 pr-4">{row.guest ? "✓" : "—"}</td>
-                  <td className="py-3">{row.delegate ? "✓" : "—"}</td>
+                  <td className="py-3 pr-4">{row.guest ? "✓" : "–"}</td>
+                  <td className="py-3">{row.delegate ? "✓" : "–"}</td>
                 </tr>
               ))}
               <tr className="border-b border-line">
@@ -139,6 +166,7 @@ export default async function RegisterPage({
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
       </section>
 
