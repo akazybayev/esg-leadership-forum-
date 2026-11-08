@@ -1,13 +1,12 @@
 /**
  * Delegate ticket prices. Change amounts and dates here only.
- * Early 250 USD through 31 Jul 2027, standard 300 USD through 30 Sep 2027,
- * late 350 USD from 1 Oct 2027.
- * TODO: confirm standard and late amounts with the client before invoicing.
+ * Early 250 USD through 31 Jul 2027, standard 350 USD through 30 Sep 2027,
+ * late 500 USD from 1 Oct 2027.
  */
 export const delegatePricing = {
   early: { amountUsd: 250, ends: "2027-07-31" },
-  standard: { amountUsd: 300, ends: "2027-09-30" },
-  late: { amountUsd: 350, starts: "2027-10-01" },
+  standard: { amountUsd: 350, ends: "2027-09-30" },
+  late: { amountUsd: 500, starts: "2027-10-01" },
 } as const;
 
 export type DelegateTierId = keyof typeof delegatePricing;

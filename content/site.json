@@ -49,8 +49,8 @@
   "pricing": {
     "guestUsd": 0,
     "delegateEarlyUsd": 250,
-    "delegateStandardUsd": 300,
-    "delegateLateUsd": 350,
+    "delegateStandardUsd": 350,
+    "delegateLateUsd": 500,
     "currencyDisplay": [
       "USD",
       "KZT"
