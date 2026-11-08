@@ -1,11 +1,9 @@
-import Script from "next/script";
 import type { Locale } from "@/i18n/routing";
 import { tLocalized } from "@/lib/i18n-content";
 import { getOrganizers } from "@/lib/content";
 
 export function OrganizerSection({ locale }: { locale: Locale }) {
   const content = getOrganizers();
-  const hasRecognition = content.blocks.some((block) => block.recognition.length > 0);
 
   return (
     <section id="organizer" className="band band-sand">
@@ -23,7 +21,7 @@ export function OrganizerSection({ locale }: { locale: Locale }) {
                       src={block.logo.src}
                       width={block.logo.width}
                       height={block.logo.height}
-                      alt={name}
+                      alt=""
                     />
                   ) : null}
                   {block.portrait ? (
@@ -60,7 +58,11 @@ export function OrganizerSection({ locale }: { locale: Locale }) {
                     <p>{tLocalized(block.membersLabel!, locale)}</p>
                     <ul>
                       {block.members.map((member) => (
-                        <li key={member}>{member}</li>
+                        <li key={member.href}>
+                          <a href={member.href} target="_blank" rel="noreferrer">
+                            {member.name}
+                          </a>
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -80,63 +82,11 @@ export function OrganizerSection({ locale }: { locale: Locale }) {
                     {block.link.label}
                   </a>
                 ) : null}
-                {block.recognition.length ? (
-                  <div className="recognition">
-                    <p className="eyebrow">{tLocalized(content.recognition, locale)}</p>
-                    <ul>
-                      {block.recognition.map((item, index) => {
-                        const caption = tLocalized(item.caption, locale);
-                        return (
-                          <li key={item.src}>
-                            <button
-                              type="button"
-                              data-recognition-open=""
-                              data-gallery={block.id}
-                              data-index={index}
-                              data-src={item.src}
-                              data-alt={caption}
-                              data-caption={caption}
-                              aria-haspopup="dialog"
-                            >
-                              <img
-                                src={item.src}
-                                width={item.width}
-                                height={item.height}
-                                alt=""
-                              />
-                              <span>{caption}</span>
-                            </button>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                ) : null}
               </article>
             );
           })}
         </div>
       </div>
-      {hasRecognition ? (
-        <>
-          <dialog className="recognition-dialog" data-recognition-dialog="">
-            <div className="recognition-dialog-bar">
-              <button type="button" data-recognition-prev="">
-                {tLocalized(content.previous, locale)}
-              </button>
-              <button type="button" data-recognition-next="">
-                {tLocalized(content.next, locale)}
-              </button>
-              <button type="button" data-recognition-close="">
-                {tLocalized(content.close, locale)}
-              </button>
-            </div>
-            <img data-recognition-frame="" src="" alt="" />
-            <p data-recognition-caption="" />
-          </dialog>
-          <Script src="/scripts/recognition.js" strategy="afterInteractive" />
-        </>
-      ) : null}
     </section>
   );
 }

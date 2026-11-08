@@ -4,14 +4,6 @@
     "en": "Organiser",
     "kk": "Ұйымдастырушы"
   },
-  "recognition": {
-    "ru": "Признание",
-    "en": "Recognition",
-    "kk": "Танылу"
-  },
-  "close": { "ru": "Закрыть", "en": "Close", "kk": "Жабу" },
-  "previous": { "ru": "Назад", "en": "Previous", "kk": "Алдыңғы" },
-  "next": { "ru": "Дальше", "en": "Next", "kk": "Келесі" },
   "blocks": [
     {
       "id": "partnership",
@@ -65,38 +57,16 @@
         "kk": "Құрамы"
       },
       "members": [
-        "ESG Management School",
-        "Central Asian Rating Agency",
-        "Art Ecology",
-        "Ashra Solutions",
-        "2Wings",
-        "Green Investment Group",
-        "Центр экологических компетенций",
-        "Международный институт управления и аудита"
+        { "name": "ESG Management School", "href": "https://www.esgschool.kz" },
+        { "name": "Central Asian Rating Agency", "href": "https://esgrating.kz" },
+        { "name": "Art Ecology", "href": "https://artecology.kz" },
+        { "name": "Ashra Solutions", "href": "https://ashra.kz" },
+        { "name": "2Wings", "href": "https://2wings.kz" },
+        { "name": "Green Investment Group", "href": "https://greeninvest.kz" },
+        { "name": "Центр экологических компетенций", "href": "https://cek.kz" },
+        { "name": "Международный институт управления и аудита", "href": "https://corpaudit.kz" }
       ],
-      "link": { "href": "https://esgpartners.kz", "label": "esgpartners.kz" },
-      "recognition": [
-        {
-          "src": "/images/organizers/aifc-awards-2026-ceremony.jpg",
-          "width": 1600,
-          "height": 2149,
-          "caption": {
-            "ru": "AIFC Awards 2026, Sustainable Finance & ESG Leadership. Победитель в категории «Некоммерческая организация» – за вклад в развитие устойчивого развития и зеленых финансов. Astana Finance Days, МФЦА, 2026.",
-            "en": "AIFC Awards 2026, Sustainable Finance & ESG Leadership. Winner in the Non-profit organisation category, for a contribution to sustainable development and green finance. Astana Finance Days, AIFC, 2026.",
-            "kk": "AIFC Awards 2026, Sustainable Finance & ESG Leadership. «Коммерциялық емес ұйым» санатының жеңімпазы – тұрақты даму мен жасыл қаржыны дамытуға қосқан үлесі үшін. Astana Finance Days, АХҚО, 2026."
-          }
-        },
-        {
-          "src": "/images/organizers/ungc-climate-ambition-accelerator-2026.png",
-          "width": 1800,
-          "height": 1273,
-          "caption": {
-            "ru": "Сертификат UN Global Compact: лидерство в научно обоснованных климатических целях, Climate Ambition Accelerator 2026, Global Compact Network Central Asia, № CAA-69.",
-            "en": "UN Global Compact certificate: leadership in science-based climate targets, Climate Ambition Accelerator 2026, Global Compact Network Central Asia, No. CAA-69.",
-            "kk": "UN Global Compact сертификаты: ғылыми негізделген климаттық мақсаттардағы көшбасшылық, Climate Ambition Accelerator 2026, Global Compact Network Central Asia, № CAA-69."
-          }
-        }
-      ]
+      "link": { "href": "https://esgpartners.kz", "label": "esgpartners.kz" }
     },
     {
       "id": "initiator",
@@ -164,8 +134,7 @@
           "kk": "ЕҚДБ нұсқасы бойынша 2026 жылдың үздік менторы"
         }
       ],
-      "link": { "href": "https://qazybayev.kz", "label": "qazybayev.kz" },
-      "recognition": []
+      "link": { "href": "https://qazybayev.kz", "label": "qazybayev.kz" }
     },
     {
       "id": "school",
@@ -191,8 +160,7 @@
           "kk": "Форумда мектеп «ESG-тегі мансап» студенттік шеберлік сыныбын, ректорлардың «Университеттер альянсы» дөңгелек үстелін өткізеді және шеберлік сыныбының сертификаттарын береді."
         }
       ],
-      "link": { "href": "https://www.esgschool.kz", "label": "esgschool.kz" },
-      "recognition": []
+      "link": { "href": "https://www.esgschool.kz", "label": "esgschool.kz" }
     }
   ]
 }

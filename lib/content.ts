@@ -321,10 +321,6 @@ export function getHeadlineSessions() {
 
 export type OrganizerContent = {
   title: LocalizedString;
-  recognition: LocalizedString;
-  close: LocalizedString;
-  previous: LocalizedString;
-  next: LocalizedString;
   blocks: {
     id: string;
     name: LocalizedString;
@@ -334,16 +330,10 @@ export type OrganizerContent = {
     portrait?: { src: string; width: number; height: number };
     stats?: { value: string; label: LocalizedString }[];
     membersLabel?: LocalizedString;
-    members?: string[];
+    members?: { name: string; href: string }[];
     awardsLabel?: LocalizedString;
     awards?: LocalizedString[];
     link?: { href: string; label: string };
-    recognition: {
-      src: string;
-      width: number;
-      height: number;
-      caption: LocalizedString;
-    }[];
   }[];
 };
 
