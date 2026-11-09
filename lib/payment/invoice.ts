@@ -61,12 +61,10 @@ export function createInvoiceDraft(
       lineItems: [
         {
           description: promo
-            ? "Delegate pass — complimentary"
+            ? "Delegate pass – complimentary"
             : pricing.tier === "early"
-              ? "Delegate pass — early"
-              : pricing.tier === "late"
-                ? "Delegate pass — late"
-                : "Delegate pass — standard",
+              ? "Delegate pass – early"
+              : "Delegate pass – from 1 August",
           quantity: 1,
           unitUsd: amountUsd,
         },

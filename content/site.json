@@ -49,7 +49,6 @@
   "pricing": {
     "guestUsd": 0,
     "delegateEarlyUsd": 250,
-    "delegateStandardUsd": 350,
     "delegateLateUsd": 500,
     "currencyDisplay": [
       "USD",

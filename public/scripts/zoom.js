@@ -2,13 +2,18 @@
   var dialog = document.querySelector("[data-zoom-dialog]");
   if (!dialog || dialog.dataset.bound) return;
   dialog.dataset.bound = "1";
-  var frame = dialog.querySelector("[data-zoom-frame]");
+  var frame = null;
 
   function open(img) {
     var src = img.currentSrc || img.getAttribute("src");
     if (!src) return;
-    frame.src = src;
+    if (!frame) {
+      frame = document.createElement("img");
+      frame.setAttribute("data-zoom-frame", "");
+      dialog.appendChild(frame);
+    }
     frame.alt = img.getAttribute("alt") || "";
+    frame.src = src;
     if (typeof dialog.showModal === "function") dialog.showModal();
     dialog.scrollTop = 0;
     dialog.scrollLeft = 0;
@@ -26,7 +31,9 @@
   });
 
   dialog.addEventListener("close", function () {
-    frame.removeAttribute("src");
-    frame.alt = "";
+    if (frame) {
+      frame.remove();
+      frame = null;
+    }
   });
 })();

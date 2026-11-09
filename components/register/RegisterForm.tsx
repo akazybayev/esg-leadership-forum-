@@ -267,7 +267,7 @@ function SharedFields({
       </Field>
       <Field label={t("fieldCategory")} mark error={errors.category?.message} id="category">
         <select id="category" className={inputClass} defaultValue="" aria-invalid={Boolean(errors.category)} {...register("category")}>
-          <option value="">—</option>
+          <option value="">–</option>
           {categories.map(([value, label]) => (
             <option key={value} value={value}>
               {label}

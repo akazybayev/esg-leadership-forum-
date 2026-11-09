@@ -1,8 +1,8 @@
 {
   "intro": {
-    "ru": "ESG Expo — 20 экспонентов и национальный павильон страны-гостя из 5 секций (всего 25 стендов) в фойе Hilton Astana.",
-    "en": "ESG Expo — 20 exhibitors plus a guest-country national pavilion of 5 sections (25 stands in total) in the Hilton Astana foyer.",
-    "kk": "ESG Expo — Hilton Astana фойесіндегі 20 экспонент және қонақ елдің 5 секциялы ұлттық павильоны (барлығы 25 стенд)."
+    "ru": "ESG Expo – 20 экспонентов и национальный павильон страны-гостя из 5 секций (всего 25 стендов) в фойе Hilton Astana.",
+    "en": "ESG Expo – 20 exhibitors plus a guest-country national pavilion of 5 sections (25 stands in total) in the Hilton Astana foyer.",
+    "kk": "ESG Expo – Hilton Astana фойесіндегі 20 экспонент және қонақ елдің 5 секциялы ұлттық павильоны (барлығы 25 стенд)."
   },
   "zones": [
     {
@@ -13,9 +13,9 @@
         "kk": "Қонақ ел павильоны (5 секция)"
       },
       "text": {
-        "ru": "Единый блок у входа в ESG Expo для компаний и организаций страны-гостя — дополнительно к 20 стендам экспонентов. Страна объявляется после подтверждения пакета.",
-        "en": "A single block at the ESG Expo entrance for guest-country companies and organisations — in addition to 20 exhibitor stands. Country announced after package confirmation.",
-        "kk": "ESG Expo кіреберісіндегі бірыңғай блок — қонақ ел компаниялары мен ұйымдары үшін, 20 экспонент стендіне қосымша. Ел пакет расталғаннан кейін жарияланады."
+        "ru": "Единый блок у входа в ESG Expo для компаний и организаций страны-гостя – дополнительно к 20 стендам экспонентов. Страна объявляется после подтверждения пакета.",
+        "en": "A single block at the ESG Expo entrance for guest-country companies and organisations – in addition to 20 exhibitor stands. Country announced after package confirmation.",
+        "kk": "ESG Expo кіреберісіндегі бірыңғай блок – қонақ ел компаниялары мен ұйымдары үшін, 20 экспонент стендіне қосымша. Ел пакет расталғаннан кейін жарияланады."
       }
     },
     {
@@ -166,9 +166,9 @@
     {
       "n": 6,
       "title": {
-        "ru": "ESG Expo — 20 экспонентов",
-        "en": "ESG Expo — 20 exhibitors",
-        "kk": "ESG Expo — 20 экспонент"
+        "ru": "ESG Expo – 20 экспонентов",
+        "en": "ESG Expo – 20 exhibitors",
+        "kk": "ESG Expo – 20 экспонент"
       }
     },
     {

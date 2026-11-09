@@ -122,3 +122,14 @@
 - topics.ai.session ««ИИ для ESG: от сбора данных до заверенного отчета»».hall.kk TODO
 - topics.ai.session ««ИИ для ESG: от сбора данных до заверенного отчета»».sessionTitle.en TODO
 - topics.ai.session ««ИИ для ESG: от сбора данных до заверенного отчета»».sessionTitle.kk TODO
+
+# Фото главной
+
+Проверка 9 ноября 2026: на главной нет картинок с пустым src. Файлы на месте, отдельного отсутствующего фото нет.
+
+- public/images/hero/astana.jpg
+- public/images/venue/main-hall.png
+- public/images/venue/floor-plan-labeled.png
+- public/images/award/esg-award-2027.jpg
+
+Если файл не откроется, блок показывает градиент горизонта, а не пустой прямоугольник.

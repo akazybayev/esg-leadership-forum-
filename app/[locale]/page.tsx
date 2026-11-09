@@ -1,9 +1,11 @@
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { Countdown, PriceClock } from "@/components/home/Countdown";
 import { DeadlineBanner } from "@/components/home/DeadlineBanner";
+import { FounderQuote } from "@/components/home/FounderQuote";
+import { InitiatorPortrait } from "@/components/home/InitiatorPortrait";
+import { HorizonImage } from "@/components/home/HorizonImage";
 import { TopicAgenda } from "@/components/home/TopicAgenda";
 import { ForumArchitecture } from "@/components/program/ForumArchitecture";
 import { programDownloads } from "@/lib/program-downloads";
@@ -18,7 +20,7 @@ import {
   getYouth,
   tLocalized,
 } from "@/lib/content";
-import { delegatePricing } from "@/lib/pricing";
+import { delegatePricing, priceRiseAt } from "@/lib/pricing";
 import { formatForumDate } from "@/lib/dates";
 import { pageMetadata } from "@/lib/page-meta";
 
@@ -30,11 +32,25 @@ const trackClass: Record<string, string> = {
   Region: "track-region",
 };
 
+const nominationGroups = [
+  "Environment",
+  "Social",
+  "Governance",
+  "Next Generation",
+] as const;
+
 function nomClass(block: string) {
   if (block === "Environment") return "nom nom-e";
   if (block === "Social") return "nom nom-s";
   if (block === "Governance") return "nom nom-g";
   return "nom nom-n";
+}
+
+function nomGroupClass(block: string) {
+  if (block === "Environment") return "nom-group nom-group-e";
+  if (block === "Social") return "nom-group nom-group-s";
+  if (block === "Governance") return "nom-group nom-group-g";
+  return "nom-group nom-group-n";
 }
 
 export async function generateMetadata({
@@ -77,15 +93,7 @@ export default async function HomePage({
   const guestPerks = tHome.raw("guestPerks") as string[];
   const delegatePerks = tHome.raw("delegatePerks") as string[];
   const dateOptions = { day: "numeric", month: "long" } as const;
-  const earlyDate = formatForumDate(pricing.earlyEnds, locale, dateOptions);
-  const standardDate = formatForumDate(pricing.standardEnds, locale, dateOptions);
-  const lateDate = formatForumDate(pricing.lateStarts, locale, dateOptions);
-  const ribbon =
-    pricing.tier === "early"
-      ? tHome("earlyRibbon")
-      : pricing.tier === "standard"
-        ? tHome("standardRibbon")
-        : tHome("lateRibbon");
+  const ribbon = pricing.tier === "early" ? tHome("earlyRibbon") : tHome("lateRibbon");
   const packageById = new Map(partners.packages.map((item) => [item.id, item]));
   const general = packageById.get("general");
   const strategic = packageById.get("strategic");
@@ -103,10 +111,15 @@ export default async function HomePage({
   ];
 
   return (
-    <div>
+    <div className="home-page">
       <DeadlineBanner locale={locale} ctaLabel={t("register")} />
 
       <section className="hero-horizon" id="top">
+        <HorizonImage
+          className="hero-photo"
+          src={home.hero.image.src}
+          alt={tLocalized(home.hero.image.alt, locale)}
+        />
         <div className="hero-layers" aria-hidden="true">
           <svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMax slice">
             <defs>
@@ -203,19 +216,10 @@ export default async function HomePage({
       </section>
 
       <section className="container-shell grid gap-8 py-16 md:grid-cols-[minmax(0,240px)_1fr] md:items-center">
-        <div className="relative hidden aspect-[4/5] overflow-hidden rounded-[20px] bg-deep md:block">
-          <Image
-            src="/images/people/aidar-kazybayev.jpg"
-            alt={tHome("initiatorAlt")}
-            fill
-            data-zoom=""
-            className="object-cover object-top"
-            sizes="240px"
-          />
-        </div>
+        <InitiatorPortrait alt={tHome("initiatorAlt")} />
         <div className="light-copy">
           <p className="eyebrow">{tHome("initiatorEyebrow")}</p>
-          <blockquote className="youth-quote">{tHome("initiatorQuote")}</blockquote>
+          <FounderQuote text={tHome("initiatorQuote")} />
           <p className="mt-4 text-sm text-ink-soft">{tHome("initiatorName")}</p>
           <Link href="/about#address" className="btn btn-secondary mt-6">
             {tHome("initiatorCta")}
@@ -250,7 +254,10 @@ export default async function HomePage({
       <section className="band band-sand" id="program">
         <div className="container-shell">
           <p className="eyebrow">{tLocalized(home.programPreview.eyebrow, locale)}</p>
-          <h2 className="h-display">{tLocalized(home.programPreview.title, locale)}</h2>
+          <h2 className="h-display">
+            <span className="title-wide">{tLocalized(home.programPreview.title, locale)}</span>
+            <span className="title-narrow">{tHome("programTitleShort")}</span>
+          </h2>
           <ForumArchitecture />
           <div className="download-row">
             {programDownloads.map((item) => (
@@ -299,11 +306,7 @@ export default async function HomePage({
               </p>
               <p className="text-sm text-[var(--color-mist)]">
                 {tHome("priceLadder", {
-                  earlyDate,
-                  standardAmount: delegatePricing.standard.amountUsd,
-                  standardDate,
                   lateAmount: delegatePricing.late.amountUsd,
-                  lateDate,
                 })}
               </p>
               <ul>
@@ -313,7 +316,7 @@ export default async function HomePage({
               </ul>
               <p className="text-sm text-[var(--color-mist)]">
                 {tHome("untilRaise")}{" "}
-                <PriceClock earlyIso="2027-08-01T00:00:00+05:00" dayLabel={tHome("dayShort")} />
+                <PriceClock earlyIso={priceRiseAt} dayLabel={tHome("dayShort")} />
               </p>
               <Link href="/register" className="btn btn-gold mt-auto self-start">
                 {tHome("delegateCta")}
@@ -329,11 +332,20 @@ export default async function HomePage({
             <p className="eyebrow">{tLocalized(home.awardTeaser.eyebrow, locale)}</p>
             <h2 className="h-display award-title">{tLocalized(home.awardTeaser.title, locale)}</h2>
             <p className="lead">{tLocalized(award.intro, locale)}</p>
-            <div className="noms">
-              {award.nominations.map((item) => (
-                <span key={item.id} className={nomClass(item.block)}>
-                  {tLocalized(item.title, locale)}
-                </span>
+            <div className="nom-groups">
+              {nominationGroups.map((group) => (
+                <div key={group} className={nomGroupClass(group)}>
+                  <p className="nom-group-title">{group}</p>
+                  <div className="noms">
+                    {award.nominations
+                      .filter((item) => item.block === group)
+                      .map((item) => (
+                        <span key={item.id} className={nomClass(item.block)}>
+                          {tLocalized(item.title, locale)}
+                        </span>
+                      ))}
+                  </div>
+                </div>
               ))}
             </div>
             <div className="hero-cta">
@@ -350,12 +362,10 @@ export default async function HomePage({
             </div>
           </div>
           <figure className="statue">
-            <Image
+            <HorizonImage
               src={award.statueImage}
               alt={tLocalized(award.statueCaption, locale)}
-              fill
-              data-zoom=""
-              sizes="(max-width: 900px) 100vw, 40vw"
+              zoom
             />
             <figcaption className="absolute inset-x-6 bottom-5 text-sm text-[var(--color-mist)]">
               <b className="mb-1 block font-[family-name:var(--font-display)] text-[var(--color-sand)]">
@@ -497,45 +507,43 @@ export default async function HomePage({
       <section className="band band-night-2">
         <div className="container-shell grid items-center gap-8 md:grid-cols-2">
           <div className="venue-photo">
-            <Image
+            <HorizonImage
               src={home.venue.image.src}
               alt={tLocalized(home.venue.image.alt, locale)}
-              fill
-              data-zoom=""
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              zoom
             />
           </div>
           <div>
             <p className="eyebrow">{tLocalized(home.venue.eyebrow, locale)}</p>
             <h2 className="h-display">{tLocalized(home.venue.title, locale)}</h2>
             <p className="lead">{tLocalized(home.venue.text, locale)}</p>
-            <div className="hero-cta">
+            <div className="venue-actions">
               <Link href="/attendees" className="btn btn-on-dark">
                 {t("venueDetails")}
               </Link>
-              <Link href="/expo" className="btn btn-on-dark">
-                ESG Expo
-              </Link>
-              <a href={home.venue.mapUrl} className="btn btn-on-dark" target="_blank" rel="noreferrer">
-                {t("openMap")}
-              </a>
+              <div className="venue-action">
+                <span className="venue-caption">{tHome("planCaption")}</span>
+                <Link href="/expo" className="btn btn-on-dark">
+                  ESG Expo
+                </Link>
+              </div>
+              <div className="venue-action">
+                <span className="venue-caption">{tHome("mapCaption")}</span>
+                <a href={home.venue.mapUrl} className="btn btn-on-dark" target="_blank" rel="noreferrer">
+                  {t("openMap")}
+                </a>
+              </div>
             </div>
           </div>
         </div>
         {home.venue.planImage ? (
           <div className="container-shell mt-10">
-            <div className="overflow-hidden rounded-[20px] bg-white">
-              <div className="relative aspect-[16/9]">
-                <Image
-                  src={home.venue.planImage.src}
-                  alt={tLocalized(home.venue.planImage.alt, locale)}
-                  fill
-                  data-zoom=""
-                  className="object-contain p-3"
-                  sizes="100vw"
-                />
-              </div>
+            <div className="plan-frame">
+              <HorizonImage
+                src={home.venue.planImage.src}
+                alt={tLocalized(home.venue.planImage.alt, locale)}
+                zoom
+              />
             </div>
           </div>
         ) : null}

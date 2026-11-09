@@ -346,7 +346,6 @@ export function getDelegatePriceUsd(now = new Date()): {
   isEarly: boolean;
   tier: DelegateTierId;
   earlyEnds: string;
-  standardEnds: string;
   lateStarts: string;
 } {
   const tier = resolveDelegateTier(now);
@@ -355,7 +354,6 @@ export function getDelegatePriceUsd(now = new Date()): {
     isEarly: tier === "early",
     tier,
     earlyEnds: delegatePricing.early.ends,
-    standardEnds: delegatePricing.standard.ends,
     lateStarts: delegatePricing.late.starts,
   };
 }

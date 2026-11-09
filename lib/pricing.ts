@@ -1,15 +1,16 @@
 /**
  * Delegate ticket prices. Change amounts and dates here only.
- * Early 250 USD through 31 Jul 2027, standard 350 USD through 30 Sep 2027,
- * late 500 USD from 1 Oct 2027.
+ * 250 USD through 31 Jul 2027, 500 USD from 1 Aug 2027 (Asia/Almaty).
  */
 export const delegatePricing = {
   early: { amountUsd: 250, ends: "2027-07-31" },
-  standard: { amountUsd: 350, ends: "2027-09-30" },
-  late: { amountUsd: 500, starts: "2027-10-01" },
+  late: { amountUsd: 500, starts: "2027-08-01" },
 } as const;
 
 export type DelegateTierId = keyof typeof delegatePricing;
+
+/** 01.08.2027 00:00 in Astana. The clock until the price rises. */
+export const priceRiseAt = `${delegatePricing.late.starts}T00:00:00+05:00`;
 
 export const forumLineIds = [
   "Lead",
@@ -33,12 +34,10 @@ function almatyDate(now: Date): string {
 export function resolveDelegateTier(now = new Date()): DelegateTierId {
   const today = almatyDate(now);
   if (today <= delegatePricing.early.ends) return "early";
-  if (today <= delegatePricing.standard.ends) return "standard";
   return "late";
 }
 
 export function tierDeadline(tier: DelegateTierId): string {
   if (tier === "early") return delegatePricing.early.ends;
-  if (tier === "standard") return delegatePricing.standard.ends;
   return "2027-10-13";
 }

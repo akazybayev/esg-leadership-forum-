@@ -14,10 +14,11 @@ import { Footer } from "@/components/layout/Footer";
 import { MobileRegisterBar } from "@/components/layout/MobileRegisterBar";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { getNavigation, getSiteConfig, tLocalized } from "@/lib/content";
+import { getHomeContent, getNavigation, getSiteConfig, tLocalized } from "@/lib/content";
 import {
   absoluteUrl,
   buildEventJsonLd,
+  FORUM_TITLE,
   getSiteUrl,
   hreflangAlternates,
 } from "@/lib/seo";
@@ -51,14 +52,14 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "meta" });
   const site = getSiteConfig();
   const siteName = tLocalized(site.name, locale);
-  const description = t("defaultDescription");
+  const description = tLocalized(getHomeContent().hero.supporting, locale);
   const ogImage = `${getSiteUrl()}/images/venue/main-hall.png`;
 
   return {
     metadataBase: new URL(getSiteUrl()),
     title: {
-      default: siteName,
-      template: `%s · ${siteName}`,
+      default: FORUM_TITLE,
+      template: "%s",
     },
     description,
     applicationName: t("siteName"),
@@ -68,13 +69,13 @@ export async function generateMetadata({
       locale,
       url: absoluteUrl(locale),
       siteName,
-      title: siteName,
+      title: FORUM_TITLE,
       description,
       images: [{ url: ogImage, width: 1200, height: 630, alt: siteName }],
     },
     twitter: {
       card: "summary_large_image",
-      title: siteName,
+      title: FORUM_TITLE,
       description,
       images: [ogImage],
     },
@@ -104,7 +105,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${manrope.variable} ${unbounded.variable}`}>
-      <body className="pb-[calc(5.75rem+env(safe-area-inset-bottom))] font-sans antialiased md:pb-0">
+      <body className="font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
           <SkipLink />
           <Header
@@ -122,7 +123,6 @@ export default async function LocaleLayout({
                 {locale === "en" ? "Close" : locale === "kk" ? "Жабу" : "Закрыть"}
               </button>
             </div>
-            <img data-zoom-frame="" alt="" />
           </dialog>
           <Script src="/scripts/zoom.js" strategy="afterInteractive" />
           <JsonLd data={buildEventJsonLd(locale)} />
