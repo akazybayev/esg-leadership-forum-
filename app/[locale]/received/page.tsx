@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
+import { forumTitle } from "@/lib/seo";
 
 const copy: Record<Locale, { title: string; body: string; home: string }> = {
   ru: {
@@ -29,7 +30,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const text = copy[locale as Locale] ?? copy.ru;
   return {
-    title: `${text.title} · ESG Leadership Forum 2027`,
+    title: { absolute: forumTitle(text.title) },
     robots: { index: false, follow: false },
   };
 }

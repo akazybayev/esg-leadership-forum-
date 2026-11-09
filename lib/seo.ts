@@ -3,6 +3,13 @@ import { getSiteConfig, tLocalized } from "@/lib/content";
 import { delegatePricing } from "@/lib/pricing";
 import { routing, type Locale } from "@/i18n/routing";
 
+export const FORUM_TITLE = "ESG Leadership Forum Astana 2027";
+
+export function forumTitle(section?: string): string {
+  if (!section) return FORUM_TITLE;
+  return `${FORUM_TITLE} – ${section}`;
+}
+
 export const SITE_PATHS = [
   "",
   "/about",
@@ -56,16 +63,19 @@ export function buildPageMetadata({
   path = "",
   title,
   description,
+  ogDescription,
   image,
 }: {
   locale: Locale;
   path?: string;
   title: string;
   description: string;
+  ogDescription?: string;
   image?: string;
 }): Metadata {
   const site = getSiteConfig();
   const siteName = tLocalized(site.name, locale);
+  const socialDescription = ogDescription ?? description;
   const ogImage = image
     ? image.startsWith("http")
       ? image
@@ -73,7 +83,7 @@ export function buildPageMetadata({
     : `${getSiteUrl()}/images/venue/main-hall.png`;
 
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: hreflangAlternates(path),
     openGraph: {
@@ -82,7 +92,7 @@ export function buildPageMetadata({
       url: absoluteUrl(locale, path),
       siteName,
       title,
-      description,
+      description: socialDescription,
       images: [
         {
           url: ogImage,
@@ -95,7 +105,7 @@ export function buildPageMetadata({
     twitter: {
       card: "summary_large_image",
       title,
-      description,
+      description: socialDescription,
       images: [ogImage],
     },
     robots: {
@@ -160,17 +170,7 @@ export function buildEventJsonLd(locale: Locale) {
       },
       {
         "@type": "Offer",
-        name: "Delegate standard",
-        price: String(delegatePricing.standard.amountUsd),
-        priceCurrency: "USD",
-        url: absoluteUrl(locale, "/register"),
-        availability: "https://schema.org/InStock",
-        validFrom: delegatePricing.early.ends,
-        validThrough: delegatePricing.standard.ends,
-      },
-      {
-        "@type": "Offer",
-        name: "Delegate late",
+        name: "Delegate",
         price: String(delegatePricing.late.amountUsd),
         priceCurrency: "USD",
         url: absoluteUrl(locale, "/register"),

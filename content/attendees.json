@@ -19,9 +19,9 @@
     "image": {
       "src": "/images/venue/main-hall.png",
       "alt": {
-        "ru": "Основной зал Hilton Astana — 400 мест",
-        "en": "Hilton Astana main hall — 400 seats",
-        "kk": "Hilton Astana негізгі залы — 400 орын"
+        "ru": "Основной зал Hilton Astana – 400 мест",
+        "en": "Hilton Astana main hall – 400 seats",
+        "kk": "Hilton Astana негізгі залы – 400 орын"
       }
     }
   },
@@ -33,9 +33,9 @@
     },
     "items": [
       {
-        "ru": "Аэропорт Нурсултан Назарбаев (NQZ) — такси или трансфер до комплекса EXPO около 30–40 минут.",
-        "en": "Nursultan Nazarbayev Airport (NQZ) — taxi or transfer to the EXPO complex, about 30–40 minutes.",
-        "kk": "Нұрсұлтан Назарбаев әуежайы (NQZ) — EXPO кешеніне такси немесе трансфер, шамамен 30–40 минут."
+        "ru": "Аэропорт Нурсултан Назарбаев (NQZ) – такси или трансфер до комплекса EXPO около 30–40 минут.",
+        "en": "Nursultan Nazarbayev Airport (NQZ) – taxi or transfer to the EXPO complex, about 30–40 minutes.",
+        "kk": "Нұрсұлтан Назарбаев әуежайы (NQZ) – EXPO кешеніне такси немесе трансфер, шамамен 30–40 минут."
       }
     ]
   },
@@ -72,7 +72,7 @@
         "kk": "Қонақ делегаттан несімен ерекшеленеді?"
       },
       "a": {
-        "ru": "Гость — бесплатный доступ к Main Stage, Expo и Impact Stage. Делегат получает Hall B, мастер-классы, B2B, питание и гала ESG Award.",
+        "ru": "Гость – бесплатный доступ к Main Stage, Expo и Impact Stage. Делегат получает Hall B, мастер-классы, B2B, питание и гала ESG Award.",
         "en": "Guests get free Main Stage, Expo and Impact Stage access. Delegates also get Hall B, masterclasses, B2B, meals and the ESG Award gala.",
         "kk": "Қонаққа Main Stage, Expo және Impact Stage тегін. Делегатқа Hall B, мастер-класстер, B2B, тамақ және ESG Award галасы қосылады."
       }
@@ -84,7 +84,7 @@
         "kk": "Мастер-класстерге жазылу керек пе?"
       },
       "a": {
-        "ru": "Да, мастер-классы и закрытые сессии — по записи для делегатов, места ограничены.",
+        "ru": "Да, мастер-классы и закрытые сессии – по записи для делегатов, места ограничены.",
         "en": "Yes, masterclasses and closed sessions require advance registration for delegates; seats are limited.",
         "kk": "Иә, мастер-класстер мен жабық сессиялар делегаттарға алдын ала жазылу бойынша, орын шектеулі."
       }
@@ -108,9 +108,9 @@
         "kk": "Спикерлер қашан жарияланады?"
       },
       "a": {
-        "ru": "После подтверждений; ориентир — 1 июня 2027.",
+        "ru": "После подтверждений; ориентир – 1 июня 2027.",
         "en": "After confirmations; target date 1 June 2027.",
-        "kk": "Растаудан кейін; бағдар — 2027 жылғы 1 маусым."
+        "kk": "Растаудан кейін; бағдар – 2027 жылғы 1 маусым."
       }
     }
   ],
@@ -118,9 +118,9 @@
     {
       "id": "main",
       "title": {
-        "ru": "Основной зал — 400 мест",
-        "en": "Main hall — 400 seats",
-        "kk": "Негізгі зал — 400 орын"
+        "ru": "Основной зал – 400 мест",
+        "en": "Main hall – 400 seats",
+        "kk": "Негізгі зал – 400 орын"
       },
       "text": {
         "ru": "Открытие, пленарные сессии, Youth Impact Pitch и гала-церемония ESG Award.",
@@ -144,9 +144,9 @@
         "kk": "Шағын залдар 1 және 2"
       },
       "text": {
-        "ru": "Тематические сессии, практикумы и закрытые встречи — последовательно по расписанию.",
-        "en": "Theme sessions, workshops and closed meetings — sequenced by schedule.",
-        "kk": "Тақырыптық сессиялар, практикумдар және жабық кездесулер — кесте бойынша."
+        "ru": "Тематические сессии, практикумы и закрытые встречи – последовательно по расписанию.",
+        "en": "Theme sessions, workshops and closed meetings – sequenced by schedule.",
+        "kk": "Тақырыптық сессиялар, практикумдар және жабық кездесулер – кесте бойынша."
       },
       "image": {
         "src": "/images/venue/small-hall.png",
@@ -229,9 +229,9 @@
       {
         "n": 6,
         "title": {
-          "ru": "ESG Expo — 20 экспонентов",
-          "en": "ESG Expo — 20 exhibitors",
-          "kk": "ESG Expo — 20 экспонент"
+          "ru": "ESG Expo – 20 экспонентов",
+          "en": "ESG Expo – 20 exhibitors",
+          "kk": "ESG Expo – 20 экспонент"
         }
       },
       {

@@ -41,7 +41,6 @@ export const siteConfigSchema = z.object({
   pricing: z.object({
     guestUsd: z.number(),
     delegateEarlyUsd: z.number(),
-    delegateStandardUsd: z.number(),
     delegateLateUsd: z.number(),
     currencyDisplay: z.array(z.enum(["USD", "KZT"])),
   }),
@@ -155,6 +154,7 @@ export const architectureSchema = z.object({
             z.object({
               name: z.string(),
               linkName: z.string().optional(),
+              peak: z.boolean().optional(),
             }),
           ),
         }),

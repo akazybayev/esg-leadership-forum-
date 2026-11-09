@@ -143,7 +143,7 @@ export async function Footer({
       <div className="border-t border-white/10">
         <div className="container-shell flex flex-col gap-2 py-4 text-sm text-[#9aadb8] md:flex-row md:items-center md:justify-between">
           <p>
-            © {new Date().getFullYear()} {site.organizer.name}. {t("rights")}
+            © {site.dates.day1.slice(0, 4)} {site.organizer.name}
           </p>
         </div>
       </div>

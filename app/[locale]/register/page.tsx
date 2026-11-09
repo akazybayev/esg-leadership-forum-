@@ -45,11 +45,6 @@ export default async function RegisterPage({
       until: formatForumDate(delegatePricing.early.ends, locale),
     },
     {
-      id: "standard" as const,
-      amount: delegatePricing.standard.amountUsd,
-      until: formatForumDate(delegatePricing.standard.ends, locale),
-    },
-    {
       id: "late" as const,
       amount: delegatePricing.late.amountUsd,
       until: formatForumDate(delegatePricing.late.starts, locale),
@@ -69,7 +64,7 @@ export default async function RegisterPage({
         <p className="mt-4 max-w-3xl text-lg text-ink-soft">
           {tLocalized(content.intro, locale)}
         </p>
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
           {tiers.map((tier) => {
             const current = tier.id === pricing.tier;
             return (
@@ -132,7 +127,12 @@ export default async function RegisterPage({
               </p>
               <p className="mt-2 flex items-center justify-between gap-4 text-sm">
                 <span>{t("delegate")}</span>
-                <span className="font-semibold">{pricing.amount} USD</span>
+                <span className="font-semibold">
+                  {t("delegatePrices", {
+                    early: delegatePricing.early.amountUsd,
+                    late: delegatePricing.late.amountUsd,
+                  })}
+                </span>
               </p>
             </li>
           </ul>
@@ -161,7 +161,10 @@ export default async function RegisterPage({
                 <td className="py-3 pr-4 font-semibold text-ink">{t("price")}</td>
                 <td className="py-3 pr-4 font-semibold">{t("priceFree")}</td>
                 <td className="py-3 font-semibold">
-                  {pricing.amount} USD
+                  {t("delegatePrices", {
+                    early: delegatePricing.early.amountUsd,
+                    late: delegatePricing.late.amountUsd,
+                  })}
                 </td>
               </tr>
             </tbody>

@@ -53,7 +53,7 @@ export default async function AwardPage({
             {tLocalized(award.intro, locale)}
           </p>
           <p className="mt-4 text-sm font-medium text-deep">
-            {formatForumDate(site.dates.awardOpen, locale)} —{" "}
+            {formatForumDate(site.dates.awardOpen, locale)} –{" "}
             {formatForumDate(site.dates.awardClose, locale)}
           </p>
           <a href="#apply" className="btn btn-primary mt-6 inline-flex">
@@ -94,7 +94,7 @@ export default async function AwardPage({
           {t("nominations")}
         </h2>
         <p className="mt-3 max-w-2xl text-ink-soft">
-          {tLocalized(award.grandPrix, locale)} —{" "}
+          {tLocalized(award.grandPrix, locale)} –{" "}
           {tLocalized(award.grandPrixNote, locale)}
         </p>
         <div className="mt-10 space-y-10">

@@ -22,9 +22,9 @@
       "terms": "Payment terms"
     },
     "pageDescriptions": {
-      "home": "ESG Leadership Forum 2027 — leadership for generations. 13–14 October, Hilton Astana.",
+      "home": "ESG Leadership Forum 2027 – leadership for generations. 13–14 October, Hilton Astana.",
       "program": "Forum programme: keynotes, panels, masterclasses, guest country and ESG Award.",
-      "register": "Guest and delegate registration for ESG Leadership Forum 2027. Early price 250 USD until 31 July 2027, standard 350 USD, late 500 USD.",
+      "register": "Guest and delegate registration for ESG Leadership Forum 2027. 250 USD until 31 July 2027, 500 USD from 1 August 2027.",
       "guestCountry": "Guest country of the forum package: Main Stage session, 5-section pavilion, national evening.",
       "award": "ESG Award 2027: 14 categories and Grand Prix. Applications March–June 2027.",
       "contact": "Contact forum coordinator Nadiya Dosmukhanova.",
@@ -86,7 +86,7 @@
     "comingSoon": "Line-up to be announced {date}",
     "timezone": "Astana time (UTC+5)",
     "earlyBirdLeft": "Early-bird price lasts {days} more days",
-    "earlyBirdEnded": "Standard delegate price applies"
+    "earlyBirdEnded": "From 1 August the delegate price is 500 USD"
   },
   "countdown": {
     "days": "days",
@@ -127,11 +127,14 @@
     "ticketLead": "Open sessions on Main Stage and Impact Stage are free. A delegate gets the closed formats, meetings and the gala.",
     "guestCta": "Register as a guest",
     "delegateCta": "Become a delegate",
-    "priceLadder": "until {earlyDate} · then {standardAmount} USD until {standardDate} · {lateAmount} USD from {lateDate}",
+    "priceLadder": "until 31 July · {lateAmount} USD from 1 August",
+    "programTitleShort": "Two days, one pattern",
+    "planCaption": "Exhibition plan",
+    "mapCaption": "Hilton Astana on the map",
     "untilRaise": "Until the price rises",
     "dayShort": "d",
     "earlyRibbon": "EARLY PRICE UNTIL 31 JULY",
-    "standardRibbon": "STANDARD PRICE UNTIL 30 SEPTEMBER",
+    "standardRibbon": "PRICE FROM 1 AUGUST",
     "lateRibbon": "LATE PRICE",
     "awardUntil": "until {date}",
     "awardRules": "Award rules",
@@ -144,7 +147,7 @@
     "logoSlot": "Logo"
   },
   "stage": {
-    "stub": "Page under construction — stage {stage}."
+    "stub": "Page under construction – stage {stage}."
   },
   "topics": {
     "inProgram": "In the programme:"
@@ -269,8 +272,9 @@
     "delegate": "Delegate",
     "price": "Price",
     "priceFree": "Free",
-    "priceEarly": "{amount} USD — early-bird, {days} days left",
-    "priceStandard": "{amount} USD — standard price",
+    "delegatePrices": "{early} USD until 31 July 2027 · {late} USD from 1 August 2027",
+    "priceEarly": "{amount} USD – early-bird, {days} days left",
+    "priceStandard": "{amount} USD – standard price",
     "earlyUntil": "Delegate early-bird {amount} USD until {date}",
     "standardFrom": "Standard delegate price {amount} USD",
     "freeTitle": "Complimentary delegate (promo code)",
@@ -315,7 +319,7 @@
     "errorConsent": "Consent to personal-data processing is required",
     "errorTerms": "Please accept the payment and refund terms",
     "errorSubmit": "The application could not be sent. Please try again.",
-    "priceCurrent": "{tier} — {amount} USD",
+    "priceCurrent": "{tier} – {amount} USD",
     "tier": {
       "early": "Early",
       "standard": "Standard",
@@ -332,7 +336,7 @@
       },
       "card": {
         "q": "Can I pay by card?",
-        "a": "Payment is currently by invoice. Online card payment (Visa/Mastercard, Kaspi) will be added later — registered participants will be notified."
+        "a": "Payment is currently by invoice. Online card payment (Visa/Mastercard, Kaspi) will be added later – registered participants will be notified."
       },
       "refund": {
         "q": "Refund terms",
@@ -350,7 +354,7 @@
     },
     "wayTitle": "How to get there",
     "wayAddress": "Hilton Astana, EXPO complex, Astana",
-    "wayTransfer": "Transfers and partner hotels — details will be published closer to the date.",
+    "wayTransfer": "Transfers and partner hotels – details will be published closer to the date.",
     "wayOpen": "Open the map"
   },
   "partnersPage": {
@@ -467,11 +471,11 @@
     "whenWhere": "13–14 October 2027 · Hilton Astana, Astana",
     "addressTitle": "Address by the forum initiator",
     "greeting": "Dear colleagues, partners and friends,",
-    "p1": "I invite you to ESG Leadership Forum 2027 — a forum we designed as a place for people who connect sustainable development with investment, management and business growth. The theme is “Leadership for Generations”. It is not a slogan. It is a commitment: the decisions we take today decide the country and the planet our children will live in.",
-    "p2": "In recent years ESG in Kazakhstan and Central Asia has moved from a fashionable term to a working tool. Banks issue green bonds, companies publish non-financial reports, the state is building a carbon-regulation system, and universities are opening sustainability programmes. I have seen this path from the inside — creating the National ESG Club, developing green finance at the AIFC, and training managers at ESG Management School and on the EMBA. What is missing is not ideas, but a place where ideas become agreements and projects.",
-    "p3": "That is why the forum is built around decisions, not speeches. Five tracks — Lead, Finance, Planet, People, Region — cover corporate governance and ESG ratings, sustainable finance and carbon markets, the energy transition and the circular economy, human capital and business partnerships with NGOs, and joint projects of Central Asia and partner countries. Each track ends not with a resolution, but with commitments we will check a year later.",
-    "p4": "The forum brings together four formats: a business programme with company leaders, investors and representatives of public and international organisations; ESG Expo, where technology meets buyers; the independent ESG Award with 14 nominations and a grand prix; and a youth programme — 100 delegates and the Youth Impact Pitch final. Leadership for generations means young leaders sit in the same room as the people who decide today.",
-    "p5": "On 13–14 October 2027 we expect 500 participants from more than 20 countries in Astana. Come with a case, a question or a project — and leave with partners.",
+    "p1": "I invite you to ESG Leadership Forum 2027 – a forum we designed as a place for people who connect sustainable development with investment, management and business growth. The theme is “Leadership for Generations”. It is not a slogan. It is a commitment: the decisions we take today decide the country and the planet our children will live in.",
+    "p2": "In recent years ESG in Kazakhstan and Central Asia has moved from a fashionable term to a working tool. Banks issue green bonds, companies publish non-financial reports, the state is building a carbon-regulation system, and universities are opening sustainability programmes. I have seen this path from the inside – creating the National ESG Club, developing green finance at the AIFC, and training managers at ESG Management School and on the EMBA. What is missing is not ideas, but a place where ideas become agreements and projects.",
+    "p3": "That is why the forum is built around decisions, not speeches. Five tracks – Lead, Finance, Planet, People, Region – cover corporate governance and ESG ratings, sustainable finance and carbon markets, the energy transition and the circular economy, human capital and business partnerships with NGOs, and joint projects of Central Asia and partner countries. Each track ends not with a resolution, but with commitments we will check a year later.",
+    "p4": "The forum brings together four formats: a business programme with company leaders, investors and representatives of public and international organisations; ESG Expo, where technology meets buyers; the independent ESG Award with 14 nominations and a grand prix; and a youth programme – 100 delegates and the Youth Impact Pitch final. Leadership for generations means young leaders sit in the same room as the people who decide today.",
+    "p5": "On 13–14 October 2027 we expect 500 participants from more than 20 countries in Astana. Come with a case, a question or a project – and leave with partners.",
     "p6": "See you in Astana.",
     "signName": "Aidar Kazybayev",
     "signRole1": "Initiator of the ESG Leadership Forum",
@@ -516,8 +520,8 @@
     "personName": "Aidar Kazybayev",
     "personText": "Aidar Kazybayev is the initiator of the forum, founder and CEO of Global ESG Partnership, founder of ESG Management School and author of the EMBA programme “ESG and Sustainable Development”. He was previously CEO of the AIFC Green Finance Centre and chair of the National ESG Club. He is managing partner of the National Academy of Corporate Governance.",
     "schoolName": "ESG Management School",
-    "schoolText": "ESG Management School is an international school of ESG management. Together with L. N. Gumilyov Eurasian National University it delivers the EMBA “ESG and Sustainable Development” — the first programme of this format in Kazakhstan for leaders and sustainability specialists.",
-    "ctaText": "Come with a case, a question or a project — and leave with partners",
+    "schoolText": "ESG Management School is an international school of ESG management. Together with L. N. Gumilyov Eurasian National University it delivers the EMBA “ESG and Sustainable Development” – the first programme of this format in Kazakhstan for leaders and sustainability specialists.",
+    "ctaText": "Come with a case, a question or a project – and leave with partners",
     "becomePartner": "Become a partner"
   }
 }

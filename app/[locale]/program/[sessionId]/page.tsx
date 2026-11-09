@@ -4,9 +4,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { CalendarPlus } from "lucide-react";
-import { getSiteConfig, tLocalized } from "@/lib/content";
+import { getHomeContent, getSiteConfig, tLocalized } from "@/lib/content";
 import { getAllSessionIds, getSessionById, splitSessionTitle } from "@/lib/program";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata, forumTitle } from "@/lib/seo";
 import { routing } from "@/i18n/routing";
 
 export function generateStaticParams() {
@@ -29,8 +29,9 @@ export async function generateMetadata({
   return buildPageMetadata({
     locale,
     path: `/program/${sessionId}`,
-    title,
+    title: forumTitle(title),
     description: title,
+    ogDescription: tLocalized(getHomeContent().hero.supporting, locale),
   });
 }
 

@@ -109,7 +109,7 @@ export default async function YouthPage({
           {tLocalized(youth.pitch.text, locale)}
         </p>
         <p className="mt-3 text-sm font-medium text-deep">
-          {formatForumDate(site.dates.youthPitchOpen, locale)} —{" "}
+          {formatForumDate(site.dates.youthPitchOpen, locale)} –{" "}
           {formatForumDate(site.dates.youthPitchClose, locale)}
         </p>
 

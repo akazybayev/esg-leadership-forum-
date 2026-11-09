@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { hasLocale } from "next-intl";
 import { routing, type Locale } from "@/i18n/routing";
-import { buildPageMetadata } from "@/lib/seo";
+import { getHomeContent, tLocalized } from "@/lib/content";
+import { buildPageMetadata, forumTitle } from "@/lib/seo";
 
 type PageKey =
   | "home"
@@ -61,16 +62,18 @@ export async function pageMetadata(
   if (!hasLocale(routing.locales, localeParam)) return {};
   const locale = localeParam as Locale;
   const t = await getTranslations({ locale, namespace: "meta" });
-  const title = t(`pages.${key}`);
+  const section = key === "home" ? undefined : t(`pages.${key}`);
   const description = customDescriptionKeys.has(key)
     ? t(`pageDescriptions.${key}`)
     : t("defaultDescription");
+  const ogDescription = tLocalized(getHomeContent().hero.supporting, locale);
 
   return buildPageMetadata({
     locale,
     path: pathByKey[key],
-    title,
+    title: forumTitle(section),
     description,
+    ogDescription,
     image,
   });
 }

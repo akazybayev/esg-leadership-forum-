@@ -128,7 +128,7 @@ export function DemoApplyForm({
                 aria-invalid={Boolean(fieldError)}
               >
                 <option value="" disabled>
-                  —
+                  –
                 </option>
                 {field.options?.map((option) => (
                   <option key={option.value} value={option.value}>

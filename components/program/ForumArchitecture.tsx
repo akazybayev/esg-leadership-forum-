@@ -42,7 +42,7 @@ export async function ForumArchitecture() {
             <p className="day-theme">{tLocalized(day.title, locale)}</p>
             <div className="slots">
               {day.blocks.map((block) => {
-                const peak = Boolean(block.climax) || block.id === "finale";
+                const peak = Boolean(block.climax);
                 return (
                   <div key={block.id} className={peak ? "slot slot-peak" : "slot"}>
                     <time>{block.time}</time>
@@ -51,7 +51,7 @@ export async function ForumArchitecture() {
                       {block.sessions.map((item) => {
                         const sessionId = byName.get(item.linkName ?? item.name);
                         return (
-                          <li key={item.name}>
+                          <li key={item.name} className={item.peak ? "session-peak" : undefined}>
                             {sessionId ? (
                               <Link href={`/program/${sessionId}`}>{item.name}</Link>
                             ) : (

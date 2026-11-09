@@ -95,7 +95,7 @@
           },
           "time": "16:20–18:00",
           "sessions": [
-            { "name": "Шорт-лист ESG Award" },
+            { "name": "Шорт-лист ESG Award", "peak": true },
             { "name": "Церемония подписания" }
           ]
         },
