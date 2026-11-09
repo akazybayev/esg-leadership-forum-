@@ -203,14 +203,14 @@ export default async function HomePage({
       </section>
 
       <section className="container-shell grid gap-8 py-16 md:grid-cols-[minmax(0,240px)_1fr] md:items-center">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-[20px] bg-deep">
+        <div className="relative hidden aspect-[4/5] overflow-hidden rounded-[20px] bg-deep md:block">
           <Image
             src="/images/people/aidar-kazybayev.jpg"
             alt={tHome("initiatorAlt")}
             fill
             data-zoom=""
             className="object-cover object-top"
-            sizes="(min-width: 768px) 240px, 100vw"
+            sizes="240px"
           />
         </div>
         <div className="light-copy">
