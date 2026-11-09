@@ -1,0 +1,166 @@
+{
+  "title": {
+    "ru": "Организатор",
+    "en": "Organiser",
+    "kk": "Ұйымдастырушы"
+  },
+  "blocks": [
+    {
+      "id": "partnership",
+      "name": {
+        "ru": "Global ESG Partnership",
+        "en": "Global ESG Partnership",
+        "kk": "Global ESG Partnership"
+      },
+      "subtitle": {
+        "ru": "Экспертный консорциум в сфере устойчивого развития, ESG и зеленых финансов. Астана, с 2023 года.",
+        "en": "An expert consortium in sustainable development, ESG and green finance. Astana, since 2023.",
+        "kk": "Тұрақты даму, ESG және жасыл қаржы саласындағы сарапшылық консорциум. Астана, 2023 жылдан."
+      },
+      "paragraphs": [
+        {
+          "ru": "Global ESG Partnership – организатор ESG Leadership Forum Astana 2027.",
+          "en": "Global ESG Partnership is the organiser of ESG Leadership Forum Astana 2027.",
+          "kk": "Global ESG Partnership – ESG Leadership Forum Astana 2027 ұйымдастырушысы."
+        },
+        {
+          "ru": "За три года партнерство провело более 50 консалтинговых проектов. В консорциуме 30+ консультантов, партнеров и аналитиков, клиенты в 10+ странах.",
+          "en": "In three years the partnership has delivered more than 50 consulting projects. The consortium brings together 30+ consultants, partners and analysts, with clients in 10+ countries.",
+          "kk": "Үш жылда серіктестік 50-ден астам консалтингтік жоба жүргізді. Консорциумда 30-дан астам консультант, серіктес және талдаушы бар, клиенттер 10-нан астам елде."
+        },
+        {
+          "ru": "В партнерство входят ESG Management School, Central Asian Rating Agency, Art Ecology, Ashra Solutions, 2Wings, Green Investment Group, Центр экологических компетенций (cek.kz) и Международный институт управления и аудита. Миссия партнерства – вдохновлять инновации и устойчивое развитие. На форуме партнерство ведет деловую программу, выставку, независимую премию ESG Award и молодежную программу. Партнер выбирает роль в содержании, участие фиксируется соглашением, по итогам форума выходит отчет с метриками.",
+          "en": "The partnership includes ESG Management School, Central Asian Rating Agency, Art Ecology, Ashra Solutions, 2Wings, Green Investment Group, the Centre for Environmental Competences (cek.kz) and the International Institute of Management and Audit. Its mission is to inspire innovation and sustainable development. At the forum the partnership runs the business programme, the exhibition, the independent ESG Award and the youth programme. A partner chooses a role in the content, participation is set by agreement, and a report with metrics follows the forum.",
+          "kk": "Серіктестікке ESG Management School, Central Asian Rating Agency, Art Ecology, Ashra Solutions, 2Wings, Green Investment Group, Экологиялық құзыреттер орталығы (cek.kz) және Халықаралық басқару және аудит институты кіреді. Серіктестіктің миссиясы – инновация мен тұрақты дамуға шабыт беру. Форумда серіктестік іскерлік бағдарламаны, көрмені, тәуелсіз ESG Award сыйлығын және жастар бағдарламасын жүргізеді. Серіктес мазмұндағы рөлін өзі таңдайды, қатысу келісіммен бекітіледі, форум қорытындысы бойынша метрикалары бар есеп шығады."
+        }
+      ],
+      "logo": {
+        "src": "/images/brand/global-esg-partnership-logo.png",
+        "width": 220,
+        "height": 175
+      },
+      "stats": [
+        { "value": "50+", "label": { "ru": "проектов", "en": "projects", "kk": "жоба" } },
+        {
+          "value": "30+",
+          "label": {
+            "ru": "консультантов, партнеров и аналитиков",
+            "en": "consultants, partners and analysts",
+            "kk": "консультант, серіктес және талдаушы"
+          }
+        },
+        { "value": "10+", "label": { "ru": "стран", "en": "countries", "kk": "ел" } }
+      ],
+      "membersLabel": {
+        "ru": "В партнерство входят",
+        "en": "Members",
+        "kk": "Құрамы"
+      },
+      "members": [
+        { "name": "ESG Management School", "href": "https://www.esgschool.kz" },
+        { "name": "Central Asian Rating Agency", "href": "https://esgrating.kz" },
+        { "name": "Art Ecology", "href": "https://artecology.kz" },
+        { "name": "Ashra Solutions", "href": "https://ashra.kz" },
+        { "name": "2Wings", "href": "https://2wings.kz" },
+        { "name": "Green Investment Group", "href": "https://greeninvest.kz" },
+        { "name": "Центр экологических компетенций", "href": "https://cek.kz" },
+        { "name": "Международный институт управления и аудита", "href": "https://corpaudit.kz" }
+      ],
+      "link": { "href": "https://esgpartners.kz", "label": "esgpartners.kz" }
+    },
+    {
+      "id": "initiator",
+      "name": {
+        "ru": "Айдар Казыбаев",
+        "en": "Aidar Kazybayev",
+        "kk": "Айдар Қазыбаев"
+      },
+      "subtitle": {
+        "ru": "Основатель и председатель совета Global ESG Partnership, инициатор форума. Кандидат экономических наук.",
+        "en": "Founder and chairman of the board of Global ESG Partnership, initiator of the forum. Candidate of Economic Sciences.",
+        "kk": "Global ESG Partnership негізін қалаушы және кеңес төрағасы, форумның бастамашысы. Экономика ғылымдарының кандидаты."
+      },
+      "paragraphs": [
+        {
+          "ru": "Более 25 лет в финансах, государственном управлении и устойчивом развитии. Сертифицированный независимый директор, аккредитованный экологический аудитор, эксперт по валидации и верификации парниковых газов (ISO 14066).",
+          "en": "More than 25 years in finance, public administration and sustainable development. A certified independent director, an accredited environmental auditor and an expert in greenhouse-gas validation and verification (ISO 14066).",
+          "kk": "Қаржы, мемлекеттік басқару және тұрақты даму саласында 25 жылдан астам тәжірибе. Сертификатталған тәуелсіз директор, аккредиттелген экологиялық аудитор, парниктік газдарды валидациялау және верификациялау жөніндегі сарапшы (ISO 14066)."
+        },
+        {
+          "ru": "Входил в заявочный комитет ЭКСПО-2017 и работал над темой «Энергия будущего». В 2020–2023 годах возглавлял Центр зеленых финансов МФЦА, в 2017–2020 годах был управляющим директором МФЦА. Ранее – директор департамента международных отношений Национального банка, председатель комитета по торговле, председатель комитета по малому бизнесу, руководитель аппарата министра индустрии и торговли.",
+          "en": "He served on the Expo 2017 bid committee and worked on the theme “Future Energy”. In 2020–2023 he headed the AIFC Green Finance Centre, and in 2017–2020 he was managing director of the AIFC. Earlier he was director of the international relations department of the National Bank, chair of the trade committee, chair of the small-business committee and chief of staff to the minister of industry and trade.",
+          "kk": "ЭКСПО-2017 өтінім комитетінің құрамында «Болашақ энергиясы» тақырыбымен айналысты. 2020–2023 жылдары АХҚО Жасыл қаржы орталығын басқарды, 2017–2020 жылдары АХҚО басқарушы директоры болды. Бұған дейін – Ұлттық банк халықаралық қатынастар департаментінің директоры, сауда комитетінің төрағасы, шағын бизнес комитетінің төрағасы, индустрия және сауда министрі аппаратының басшысы."
+        },
+        {
+          "ru": "Участвовал в выпусках первых зеленых, социальных и гендерных облигаций в Казахстане и Кыргызстане и первого зеленого токена в Центральной Азии. Среди проектов – газификация Алматинской ТЭЦ и инвестиционный проект ГЭС Куланак. Основатель Национального ESG-клуба и Казахстанского фонда биоразнообразия (совместно с ПРООН). Запустил первые в Казахстане программы EMBA по корпоративному управлению, цифровизации и ESG. С 2025 года – президент Международного института управления и аудита. Автор книги «Энергия будущего».",
+          "en": "He took part in the first green, social and gender bond issues in Kazakhstan and Kyrgyzstan and in the first green token in Central Asia. His projects include the gasification of the Almaty combined heat and power plant and the Kulanak hydropower investment. He founded the National ESG Club and the Kazakhstan Biodiversity Fund, together with UNDP. He launched Kazakhstan’s first EMBA programmes in corporate governance, digitalisation and ESG. Since 2025 he has been president of the International Institute of Management and Audit. He is the author of “Future Energy”.",
+          "kk": "Қазақстан мен Қырғызстандағы алғашқы жасыл, әлеуметтік және гендерлік облигациялардың және Орталық Азиядағы алғашқы жасыл токеннің шығарылымына қатысты. Жобаларының қатарында – Алматы ЖЭО-сын газдандыру және Құланақ СЭС инвестициялық жобасы. Ұлттық ESG клубының және Қазақстан биоалуантүрлілік қорының (БҰҰДБ-мен бірге) негізін қалаушы. Қазақстандағы корпоративтік басқару, цифрландыру және ESG бойынша алғашқы EMBA бағдарламаларын іске қосты. 2025 жылдан Халықаралық басқару және аудит институтының президенті. «Болашақ энергиясы» кітабының авторы."
+        }
+      ],
+      "portrait": {
+        "src": "/images/organizers/kazybayev-portrait.jpg",
+        "width": 1289,
+        "height": 2000
+      },
+      "awardsLabel": {
+        "ru": "Награды",
+        "en": "Awards",
+        "kk": "Марапаттар"
+      },
+      "awards": [
+        {
+          "ru": "Орден «Құрмет»",
+          "en": "Order of Kurmet",
+          "kk": "«Құрмет» ордені"
+        },
+        {
+          "ru": "Знак «Заслуженный финансист Казахстана»",
+          "en": "Badge “Honoured Financier of Kazakhstan”",
+          "kk": "«Қазақстанның еңбек сіңірген қаржыгері» белгісі"
+        },
+        {
+          "ru": "Медаль «Ерен еңбегі үшін»",
+          "en": "Medal “Eren enbegi ushin”",
+          "kk": "«Ерен еңбегі үшін» медалі"
+        },
+        {
+          "ru": "Лучший проектный менеджер Казахстана 2021 (система зеленых финансов)",
+          "en": "Best Project Manager of Kazakhstan 2021 (green finance system)",
+          "kk": "Қазақстанның үздік жоба менеджері 2021 (жасыл қаржы жүйесі)"
+        },
+        {
+          "ru": "Лучший ментор 2026 по версии ЕБРР",
+          "en": "Best Mentor 2026, EBRD",
+          "kk": "ЕҚДБ нұсқасы бойынша 2026 жылдың үздік менторы"
+        }
+      ],
+      "link": { "href": "https://qazybayev.kz", "label": "qazybayev.kz" }
+    },
+    {
+      "id": "school",
+      "name": {
+        "ru": "ESG Management School",
+        "en": "ESG Management School",
+        "kk": "ESG Management School"
+      },
+      "subtitle": {
+        "ru": "Международная школа управления ESG. Образовательный партнер форума и молодежной программы.",
+        "en": "An international school of ESG management. Education partner of the forum and the youth programme.",
+        "kk": "ESG басқарудың халықаралық мектебі. Форум мен жастар бағдарламасының білім беру серіктесі."
+      },
+      "paragraphs": [
+        {
+          "ru": "Школа готовит руководителей к управлению устойчивым развитием. Вместе с ЕНУ имени Л. Н. Гумилева ведет EMBA «ESG и устойчивое развитие» – первую такую программу в Казахстане, а также курсы для советов директоров и менеджмента по корпоративному управлению и ESG-отчетности.",
+          "en": "The school trains leaders to manage sustainable development. Together with L. N. Gumilyov Eurasian National University it runs the EMBA “ESG and Sustainable Development”, the first programme of its kind in Kazakhstan, and courses for boards and management on corporate governance and ESG reporting.",
+          "kk": "Мектеп басшыларды тұрақты дамуды басқаруға даярлайды. Л. Н. Гумилев атындағы ЕҰУ-мен бірге Қазақстандағы алғашқы осындай бағдарлама – «ESG және тұрақты даму» EMBA-сын, сондай-ақ директорлар кеңесі мен менеджментке арналған корпоративтік басқару және ESG-есептілік курстарын жүргізеді."
+        },
+        {
+          "ru": "На форуме школа проводит студенческий мастер-класс «Карьера в ESG», круглый стол ректоров «Университетский альянс» и выдает сертификаты мастер-классов.",
+          "en": "At the forum the school runs the student masterclass “A Career in ESG”, the rectors’ round table “University Alliance” and issues masterclass certificates.",
+          "kk": "Форумда мектеп «ESG-тегі мансап» студенттік шеберлік сыныбын, ректорлардың «Университеттер альянсы» дөңгелек үстелін өткізеді және шеберлік сыныбының сертификаттарын береді."
+        }
+      ],
+      "link": { "href": "https://www.esgschool.kz", "label": "esgschool.kz" }
+    }
+  ]
+}

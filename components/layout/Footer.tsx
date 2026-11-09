@@ -45,17 +45,11 @@ export async function Footer({
           </p>
           <a
             href={site.organizer.url}
-            className="mt-3 inline-block bg-paper px-3 py-2"
+            className="footer-org-name"
             rel="noreferrer"
             target="_blank"
           >
-            <img
-              src="/images/brand/global-esg-partnership-logo.png"
-              alt={site.organizer.name}
-              width={180}
-              height={143}
-              className="h-auto w-[11rem]"
-            />
+            {site.organizer.name}
           </a>
           {site.contact.coordinator ? (
             <div className="mt-4">

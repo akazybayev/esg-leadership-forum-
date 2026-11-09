@@ -4,9 +4,9 @@ import { withTransaction, type Query } from "@/lib/db";
 const HOUR_MS = 60 * 60 * 1000;
 const DAY_MS = 24 * HOUR_MS;
 const DEFAULT_PER_HOUR = 3;
-const GLOBAL_PER_HOUR = 15;
-const GLOBAL_PER_DAY = 40;
-const DAILY_BYTE_BUDGET = 80_000;
+const GLOBAL_PER_HOUR = 400;
+const GLOBAL_PER_DAY = 3000;
+const DAILY_BYTE_BUDGET = 8_000_000;
 
 type GlobalRow = {
   hour_start: number | string;
@@ -132,15 +132,16 @@ function closed(error: unknown): LimitResult {
 }
 
 export function clientAddress(request: Request): string {
-  // The host puts the visitor in the first forwarded hop. Anything after it
-  // can be added by the caller, so a later hop is not a separate visitor.
+  // A caller can prefix X-Forwarded-For. The connecting address is the hop
+  // a proxy appends, so earlier hops are not separate visitors.
   const forwarded = request.headers.get("x-forwarded-for");
-  const first = forwarded
-    ?.split(",")
+  const hops = (forwarded ?? "")
+    .split(",")
     .map((item) => item.trim().replace(/^\[|\]$/g, ""))
-    .find((item) => item.length > 0);
-  if (!first || !isIp(first)) return "unknown";
-  return first.slice(0, 64);
+    .filter((item) => item.length > 0);
+  const last = hops.length > 0 ? hops[hops.length - 1] : "";
+  if (!last || !isIp(last)) return "shared";
+  return last.slice(0, 64);
 }
 
 async function readQuota(

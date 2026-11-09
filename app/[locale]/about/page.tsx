@@ -2,10 +2,9 @@ import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { TopicAgenda } from "@/components/home/TopicAgenda";
+import { OrganizerSection } from "@/components/about/OrganizerSection";
 import { ForumArchitecture } from "@/components/program/ForumArchitecture";
 import { ShareButtons } from "@/components/share/ShareButtons";
-import { getTopics } from "@/lib/content";
 import { absoluteUrl } from "@/lib/seo";
 import { forumLineIds } from "@/lib/pricing";
 import { pageMetadata } from "@/lib/page-meta";
@@ -31,7 +30,6 @@ export default async function AboutPage({
   const tLines = await getTranslations("lines");
   const tCta = await getTranslations("cta");
   const tShare = await getTranslations("share");
-  const topics = getTopics();
 
   const paragraphs = ["p1", "p2", "p3", "p4", "p5", "p6"] as const;
   const stats = [
@@ -75,25 +73,11 @@ export default async function AboutPage({
       </section>
 
       <section id="address" className="border-y border-line bg-white/40 py-14 md:py-20">
-        <div className="container-shell grid gap-8 md:grid-cols-[minmax(0,280px)_1fr] md:items-start">
-          <figure>
-            <div className="relative aspect-[4/5] overflow-hidden bg-deep">
-              <Image
-                src="/images/people/aidar-kazybayev.jpg"
-                alt={t("photoAlt")}
-                fill
-                className="object-cover object-top"
-                sizes="(min-width: 768px) 280px, 100vw"
-              />
-            </div>
-          </figure>
+        <div className="container-shell">
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-deep md:text-4xl">
               {t("addressTitle")}
             </h2>
-            <p className="mt-4 text-sm font-medium leading-relaxed text-deep">
-              {t("photoCaption")}
-            </p>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-ink-soft">
               <p className="font-medium text-ink">{t("greeting")}</p>
               {paragraphs.map((key) => (
@@ -146,8 +130,6 @@ export default async function AboutPage({
         </div>
       </section>
 
-      <TopicAgenda topics={topics} locale={locale} variant="open" />
-
       <section className="container-shell py-14 md:py-20">
         <h2 className="text-3xl font-bold text-deep">{t("daysTitle")}</h2>
         <div className="mt-8">
@@ -158,38 +140,7 @@ export default async function AboutPage({
         </Link>
       </section>
 
-      <section className="border-y border-line bg-white/40 py-14 md:py-20">
-        <div className="container-shell grid gap-6">
-          <h2 className="text-3xl font-bold text-deep">{t("organizerTitle")}</h2>
-          <article className="border border-line bg-paper p-6">
-            <img
-              src="/images/brand/global-esg-partnership-logo.png"
-              alt={t("orgName")}
-              width={220}
-              height={175}
-              className="h-auto w-52"
-            />
-            <h3 className="mt-4 text-xl font-bold text-deep">{t("orgName")}</h3>
-            <p className="mt-3 leading-relaxed text-ink-soft">{t("orgText")}</p>
-          </article>
-          <article className="border border-line bg-paper p-6">
-            <h3 className="text-xl font-bold text-deep">{t("personName")}</h3>
-            <p className="mt-3 leading-relaxed text-ink-soft">{t("personText")}</p>
-          </article>
-          <article className="border border-line bg-paper p-6">
-            <h3 className="text-xl font-bold text-deep">{t("schoolName")}</h3>
-            <p className="mt-3 leading-relaxed text-ink-soft">{t("schoolText")}</p>
-            <a
-              href="https://www.esgschool.kz"
-              className="mt-4 inline-block text-sm font-semibold text-deep underline"
-              target="_blank"
-              rel="noreferrer"
-            >
-              www.esgschool.kz
-            </a>
-          </article>
-        </div>
-      </section>
+      <OrganizerSection locale={locale} />
 
       <section className="container-shell py-16 text-center md:py-20">
         <p className="mx-auto max-w-2xl text-2xl font-semibold leading-snug text-deep md:text-3xl">

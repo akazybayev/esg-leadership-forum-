@@ -65,6 +65,7 @@ export default async function AwardPage({
             src={award.statueImage}
             alt={tLocalized(award.statueCaption, locale)}
             fill
+            data-zoom=""
             className="object-contain p-4"
             sizes="(max-width: 768px) 100vw, 40vw"
             priority

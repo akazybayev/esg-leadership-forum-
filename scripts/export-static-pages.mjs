@@ -48,6 +48,9 @@ function toStaticHtml(html) {
   if (page.includes("data-countdown") && !page.includes("/scripts/horizon.js")) {
     scripts.push('<script src="/scripts/horizon.js" defer></script>');
   }
+  if (page.includes("data-zoom") && !page.includes("/scripts/zoom.js")) {
+    scripts.push('<script src="/scripts/zoom.js" defer></script>');
+  }
   if (scripts.length) {
     page = page.replace("</body>", `${scripts.join("")}</body>`);
   }

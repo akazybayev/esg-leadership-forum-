@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { newsletterFormSchema } from "@/schemas/forms";
 import type { z } from "zod";
 import { ConsentCheckbox } from "@/components/forms/ConsentCheckbox";
+import { TurnstileField } from "@/components/forms/TurnstileField";
 
 type Values = z.infer<typeof newsletterFormSchema>;
 
@@ -73,6 +74,7 @@ export function NewsletterForm({
         {isSubmitting ? "…" : button}
       </button>
       </div>
+      <TurnstileField theme="dark" />
       <ConsentCheckbox
         id={`${id}-consent`}
         invalid={Boolean(errors.consent)}

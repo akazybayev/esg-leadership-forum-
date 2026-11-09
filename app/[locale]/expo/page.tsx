@@ -52,6 +52,7 @@ export default async function ExpoPage({
                 src={expo.labeledPlanImage.src}
                 alt={tLocalized(expo.labeledPlanImage.alt, locale)}
                 fill
+                data-zoom=""
                 className="object-contain object-top p-2 md:p-4"
                 sizes="100vw"
                 priority
@@ -66,6 +67,7 @@ export default async function ExpoPage({
                   src={expo.planImage.src}
                   alt={tLocalized(expo.planImage.alt, locale)}
                   fill
+                  data-zoom=""
                   className="object-contain p-3"
                   sizes="(max-width: 1024px) 100vw, 55vw"
                 />

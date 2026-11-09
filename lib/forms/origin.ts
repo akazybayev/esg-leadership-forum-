@@ -50,7 +50,10 @@ function expectedHosts(request: Request): Set<string> {
   return hosts;
 }
 
-/** Browser posts must come from this site. A cross-site page is rejected. */
+/**
+ * Blocks a browser page on another site. A non-browser client can set these
+ * headers, so this check does not admit a submission on its own.
+ */
 export function requestIsSameOrigin(request: Request): boolean {
   const fetchSite = request.headers.get("sec-fetch-site")?.trim().toLowerCase();
   if (fetchSite === "cross-site") return false;
